@@ -1,0 +1,255 @@
+"use client";
+import { useState, useRef } from "react";
+import { Upload, Phone, MessageCircle, CheckCircle, Camera, FileText, X } from "lucide-react";
+
+export default function DamageFormSection() {
+  const [unfallart, setUnfallart] = useState<"haftpflicht" | "kasko">("haftpflicht");
+  const [files, setFiles] = useState<File[]>([]);
+  const [dragging, setDragging] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setDragging(false);
+    const dropped = Array.from(e.dataTransfer.files).filter(f => f.type.startsWith("image/") || f.type === "application/pdf");
+    setFiles(prev => [...prev, ...dropped].slice(0, 6));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files) return;
+    const picked = Array.from(e.target.files);
+    setFiles(prev => [...prev, ...picked].slice(0, 6));
+  };
+
+  const removeFile = (idx: number) => setFiles(prev => prev.filter((_, i) => i !== idx));
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  if (submitted) {
+    return (
+      <section id="schaden" className="py-20 px-5 bg-white">
+        <div className="max-w-2xl mx-auto text-center">
+          <div className="w-16 h-16 bg-[#22c55e]/10 rounded-full flex items-center justify-center mx-auto mb-5">
+            <CheckCircle size={32} className="text-[#22c55e]" />
+          </div>
+          <h2 className="font-display font-black text-3xl text-[#080D14] mb-3 uppercase">Anfrage eingegangen!</h2>
+          <p className="text-gray-500 text-[15px] mb-8">Wir melden uns innerhalb von 30 Minuten bei Ihnen. Bei Notfall direkt anrufen:</p>
+          <a href="tel:+4915560003661" className="inline-flex items-center gap-3 bg-[#E11D2F] text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg shadow-[#E11D2F]/25 hover:bg-[#B91C1C] transition-all">
+            <Phone size={20} />+49 155 60003661
+          </a>
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section id="schaden" className="py-0 bg-white">
+      {/* Top divider accent */}
+      <div className="h-1 bg-[#E11D2F]" />
+
+      <div className="max-w-6xl mx-auto px-5 py-16">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#16a34a] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
+            Kostenlose Schadensprüfung — Antwort in 30 Min.
+          </div>
+          <h2 className="font-display font-black text-4xl md:text-5xl text-[#080D14] uppercase tracking-tight leading-tight mb-3">
+            Schaden jetzt<br />
+            <span className="text-[#E11D2F]">online melden</span>
+          </h2>
+          <p className="text-gray-500 text-[16px] max-w-lg mx-auto">
+            Fotos hochladen, Formular ausfüllen — wir melden uns innerhalb von 30 Minuten und übernehmen alles für Sie.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          {/* Left – File Upload */}
+          <div>
+            {/* Upload zone */}
+            <div
+              className={`relative rounded-2xl border-2 border-dashed transition-all cursor-pointer ${
+                dragging
+                  ? "border-[#E11D2F] bg-[#E11D2F]/5"
+                  : "border-gray-200 bg-gray-50 hover:border-[#E11D2F]/50 hover:bg-gray-100"
+              }`}
+              onDragOver={(e) => { e.preventDefault(); setDragging(true); }}
+              onDragLeave={() => setDragging(false)}
+              onDrop={handleDrop}
+              onClick={() => fileInputRef.current?.click()}
+            >
+              <input
+                ref={fileInputRef}
+                type="file"
+                multiple
+                accept="image/*,.pdf"
+                className="hidden"
+                onChange={handleFileChange}
+              />
+              <div className="p-10 text-center">
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 transition-colors ${dragging ? "bg-[#E11D2F]" : "bg-gray-200"}`}>
+                  <Upload size={24} className={dragging ? "text-white" : "text-gray-400"} />
+                </div>
+                <p className="font-display font-bold text-[#080D14] text-[16px] mb-1">
+                  Fotos hier ablegen
+                </p>
+                <p className="text-gray-400 text-[13px] mb-4">
+                  oder klicken zum Auswählen
+                </p>
+                <div className="flex items-center justify-center gap-4 text-[11px] text-gray-400 font-medium uppercase tracking-wider">
+                  <span className="flex items-center gap-1"><Camera size={12} />Fotos (JPG, PNG)</span>
+                  <span>·</span>
+                  <span className="flex items-center gap-1"><FileText size={12} />PDF bis 20MB</span>
+                </div>
+              </div>
+            </div>
+
+            {/* File previews */}
+            {files.length > 0 && (
+              <div className="mt-3 grid grid-cols-3 gap-2">
+                {files.map((file, i) => (
+                  <div key={i} className="relative rounded-xl overflow-hidden bg-gray-100 aspect-square flex items-center justify-center group">
+                    {file.type.startsWith("image/") ? (
+                      <img src={URL.createObjectURL(file)} alt="" className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="flex flex-col items-center gap-1">
+                        <FileText size={24} className="text-gray-400" />
+                        <span className="text-[10px] text-gray-400 px-1 truncate w-full text-center">{file.name}</span>
+                      </div>
+                    )}
+                    <button
+                      onClick={(e) => { e.stopPropagation(); removeFile(i); }}
+                      className="absolute top-1 right-1 w-5 h-5 bg-black/60 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <X size={10} className="text-white" />
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Trust indicators */}
+            <div className="mt-6 grid grid-cols-3 gap-3">
+              {[
+                { val: "100%", label: "Kostenlos" },
+                { val: "24h", label: "Gutachten" },
+                { val: "TÜV", label: "Zertifiziert" },
+              ].map(({ val, label }) => (
+                <div key={val} className="bg-[#080D14] rounded-xl p-4 text-center">
+                  <p className="font-display font-black text-[22px] text-white leading-none">{val}</p>
+                  <p className="text-[11px] text-white/40 mt-1">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right – Form */}
+          <form onSubmit={handleSubmit} className="bg-[#080D14] rounded-2xl p-8 space-y-5">
+            <h3 className="font-display font-bold text-white text-[20px] uppercase tracking-tight mb-2">
+              Ihre Kontaktdaten
+            </h3>
+
+            {/* Unfallart toggle */}
+            <div>
+              <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest mb-2 block">
+                Unfallart
+              </label>
+              <div className="flex gap-2 p-1 bg-white/5 rounded-xl">
+                {(["haftpflicht", "kasko"] as const).map((typ) => (
+                  <button
+                    key={typ}
+                    type="button"
+                    onClick={() => setUnfallart(typ)}
+                    className={`flex-1 py-2.5 rounded-lg text-[13px] font-bold uppercase tracking-wide transition-all ${
+                      unfallart === typ
+                        ? "bg-[#E11D2F] text-white shadow-md shadow-[#E11D2F]/30"
+                        : "text-white/40 hover:text-white/70"
+                    }`}
+                  >
+                    {typ === "haftpflicht" ? "Haftpflicht" : "Kasko"}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest mb-2 block">
+                Ihr Name
+              </label>
+              <input
+                type="text"
+                required
+                placeholder="Max Mustermann"
+                className="w-full bg-white border border-white/20 rounded-xl px-4 py-3 text-[#080D14] text-[14px] placeholder-gray-400 focus:outline-none focus:border-[#E11D2F] transition-all"
+              />
+            </div>
+
+            <div>
+              <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest mb-2 block">
+                Telefonnummer
+              </label>
+              <input
+                type="tel"
+                required
+                placeholder="+49 155 ..."
+                className="w-full bg-white border border-white/20 rounded-xl px-4 py-3 text-[#080D14] text-[14px] placeholder-gray-400 focus:outline-none focus:border-[#E11D2F] transition-all"
+              />
+            </div>
+
+            <div>
+              <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest mb-2 block">
+                Unfallort / Beschreibung (optional)
+              </label>
+              <textarea
+                rows={3}
+                placeholder="Kurze Beschreibung des Schadens..."
+                className="w-full bg-white border border-white/20 rounded-xl px-4 py-3 text-[#080D14] text-[14px] placeholder-gray-400 focus:outline-none focus:border-[#E11D2F] transition-all resize-none"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-[#E11D2F] hover:bg-[#B91C1C] text-white font-display font-black uppercase tracking-wider text-[14px] py-4 rounded-xl shadow-lg shadow-[#E11D2F]/25 hover:shadow-[#E11D2F]/40 transition-all hover:-translate-y-0.5"
+            >
+              Kostenlose Prüfung anfragen →
+            </button>
+
+            {/* Or quick contact */}
+            <div className="flex items-center gap-3">
+              <div className="flex-1 h-px bg-white/8" />
+              <span className="text-[11px] text-white/25 uppercase tracking-wider">oder direkt</span>
+              <div className="flex-1 h-px bg-white/8" />
+            </div>
+
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href="tel:+4915560003661"
+                className="flex items-center justify-center gap-2 border border-white/10 hover:border-white/25 text-white/70 hover:text-white text-[13px] font-semibold py-3 rounded-xl transition-all"
+              >
+                <Phone size={14} />
+                Anrufen
+              </a>
+              <a
+                href="https://wa.me/4915560003661"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-[#128C7E]/10 border border-[#25D366]/20 text-[#4ade80] text-[13px] font-semibold py-3 rounded-xl hover:bg-[#128C7E]/20 transition-all"
+              >
+                <MessageCircle size={14} />
+                WhatsApp
+              </a>
+            </div>
+
+            <p className="text-[11px] text-white/20 text-center leading-relaxed">
+              Ihre Daten werden vertraulich behandelt und nur zur Bearbeitung Ihres Anliegens verwendet.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+}
