@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: "Gutachten Prenzl <onboarding@resend.dev>",
+      from: "Gutachten Prenzl <noreply@gutachtenprenzl.de>",
       to: ["gutachtenprenzl@gmail.com"],
       replyTo: undefined,
       subject: `🚗 Neue Schadensmeldung von ${name}`,
