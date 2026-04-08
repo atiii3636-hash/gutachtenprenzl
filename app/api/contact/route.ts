@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Name und Telefon erforderlich" }, { status: 400 });
     }
 
-    await resend.emails.send({
+    const { data, error } = await resend.emails.send({
       from: "Gutachten Prenzl <onboarding@resend.dev>",
       to: ["gutachtenprenzl@gmail.com"],
       replyTo: undefined,
@@ -81,9 +81,15 @@ export async function POST(req: NextRequest) {
       `,
     });
 
+    if (error) {
+      console.error("Resend error:", JSON.stringify(error));
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    console.log("Email sent:", data?.id);
     return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error("Email error:", error);
-    return NextResponse.json({ error: "E-Mail konnte nicht gesendet werden" }, { status: 500 });
+  } catch (err) {
+    console.error("Unexpected error:", err);
+    return NextResponse.json({ error: "Unbekannter Fehler" }, { status: 500 });
   }
 }
