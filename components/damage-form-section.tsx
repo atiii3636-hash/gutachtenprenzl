@@ -1,12 +1,17 @@
 "use client";
 import { useState, useRef } from "react";
-import { Upload, Phone, MessageCircle, CheckCircle, Camera, FileText, X } from "lucide-react";
+import { Upload, Phone, MessageCircle, CheckCircle, Camera, FileText, X, Loader2 } from "lucide-react";
 
 export default function DamageFormSection() {
   const [unfallart, setUnfallart] = useState<"haftpflicht" | "kasko">("haftpflicht");
   const [files, setFiles] = useState<File[]>([]);
   const [dragging, setDragging] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
+  const [name, setName] = useState("");
+  const [telefon, setTelefon] = useState("");
+  const [beschreibung, setBeschreibung] = useState("");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleDrop = (e: React.DragEvent) => {
@@ -24,9 +29,23 @@ export default function DamageFormSection() {
 
   const removeFile = (idx: number) => setFiles(prev => prev.filter((_, i) => i !== idx));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, telefon, beschreibung, unfallart, anzahlFotos: files.length }),
+      });
+      if (!res.ok) throw new Error("Fehler");
+      setSubmitted(true);
+    } catch {
+      setError("Etwas ist schiefgelaufen. Bitte ruf uns direkt an.");
+    } finally {
+      setSending(false);
+    }
   };
 
   if (submitted) {
@@ -184,6 +203,8 @@ export default function DamageFormSection() {
                 type="text"
                 required
                 placeholder="Max Mustermann"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full bg-white border border-white/20 rounded-xl px-4 py-3 text-[#080D14] text-[14px] placeholder-gray-400 focus:outline-none focus:border-[#E11D2F] transition-all"
               />
             </div>
@@ -196,6 +217,8 @@ export default function DamageFormSection() {
                 type="tel"
                 required
                 placeholder="+49 155 ..."
+                value={telefon}
+                onChange={(e) => setTelefon(e.target.value)}
                 className="w-full bg-white border border-white/20 rounded-xl px-4 py-3 text-[#080D14] text-[14px] placeholder-gray-400 focus:outline-none focus:border-[#E11D2F] transition-all"
               />
             </div>
@@ -207,15 +230,25 @@ export default function DamageFormSection() {
               <textarea
                 rows={3}
                 placeholder="Kurze Beschreibung des Schadens..."
+                value={beschreibung}
+                onChange={(e) => setBeschreibung(e.target.value)}
                 className="w-full bg-white border border-white/20 rounded-xl px-4 py-3 text-[#080D14] text-[14px] placeholder-gray-400 focus:outline-none focus:border-[#E11D2F] transition-all resize-none"
               />
             </div>
 
+            {error && (
+              <p className="text-[#E11D2F] text-[13px] text-center">{error}</p>
+            )}
             <button
               type="submit"
-              className="w-full bg-[#E11D2F] hover:bg-[#B91C1C] text-white font-display font-black uppercase tracking-wider text-[14px] py-4 rounded-xl shadow-lg shadow-[#E11D2F]/25 hover:shadow-[#E11D2F]/40 transition-all hover:-translate-y-0.5"
+              disabled={sending}
+              className="w-full bg-[#E11D2F] hover:bg-[#B91C1C] disabled:opacity-60 text-white font-display font-black uppercase tracking-wider text-[14px] py-4 rounded-xl shadow-lg shadow-[#E11D2F]/25 hover:shadow-[#E11D2F]/40 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
             >
-              Kostenlose Prüfung anfragen →
+              {sending ? (
+                <><Loader2 size={16} className="animate-spin" /> Wird gesendet...</>
+              ) : (
+                "Kostenlose Prüfung anfragen →"
+              )}
             </button>
 
             {/* Or quick contact */}
