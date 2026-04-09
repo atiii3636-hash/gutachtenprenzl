@@ -81,7 +81,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-white/6">
           <p className="text-[14px] text-white/25">© 2026 Gutachten Prenzl. Alle Rechte vorbehalten.</p>
           <div className="flex gap-5">
-            <a href="#" className="text-[14px] text-white/25 hover:text-white/60 transition-colors">Impressum</a>
+            <a href="/impressum" className="text-[14px] text-white/25 hover:text-white/60 transition-colors">Impressum</a>
             <a href="/datenschutz" className="text-[14px] text-white/25 hover:text-white/60 transition-colors">Datenschutz</a>
           </div>
         </div>
