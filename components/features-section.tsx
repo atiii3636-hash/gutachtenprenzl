@@ -111,7 +111,7 @@ export default function FeaturesSection() {
               {/* Unsplash car image */}
               <div className="mt-4 rounded-xl overflow-hidden h-36 relative">
                 <img
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+                  src="/feature-car.jpg"
                   alt="KFZ Begutachtung"
                   className="w-full h-full object-cover opacity-60"
                 />

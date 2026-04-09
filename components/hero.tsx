@@ -8,7 +8,7 @@ export default function Hero() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1800&q=80')`,
+            backgroundImage: `url('/hero-car.jpg')`,
           }}
         />
         {/* Left-heavy overlay so text is readable, right side shows more image */}

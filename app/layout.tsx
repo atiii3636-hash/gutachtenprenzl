@@ -1,7 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Karla, Saira } from "next/font/google";
 import "./globals.css";
 import CookieBanner from "@/components/cookie-banner";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
 
 const karla = Karla({
   subsets: ["latin"],
