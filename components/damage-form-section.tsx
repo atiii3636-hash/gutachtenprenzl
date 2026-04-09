@@ -12,6 +12,7 @@ export default function DamageFormSection() {
   const [name, setName] = useState("");
   const [telefon, setTelefon] = useState("");
   const [beschreibung, setBeschreibung] = useState("");
+  const [datenschutz, setDatenschutz] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleDrop = (e: React.DragEvent) => {
@@ -236,12 +237,39 @@ export default function DamageFormSection() {
               />
             </div>
 
+            {/* Datenschutz */}
+            <label className="flex items-start gap-3 cursor-pointer group">
+              <div className="relative mt-0.5 flex-shrink-0">
+                <input
+                  type="checkbox"
+                  required
+                  checked={datenschutz}
+                  onChange={(e) => setDatenschutz(e.target.checked)}
+                  className="sr-only"
+                />
+                <div className={`w-5 h-5 rounded border-2 flex items-center justify-center transition-all ${datenschutz ? "bg-[#E11D2F] border-[#E11D2F]" : "border-white/30 bg-white/5 group-hover:border-white/50"}`}>
+                  {datenschutz && (
+                    <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                      <path d="M1 4L3.5 6.5L9 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  )}
+                </div>
+              </div>
+              <span className="text-[12px] text-white/50 leading-relaxed">
+                Ich habe die{" "}
+                <a href="/datenschutz" className="text-white/80 underline hover:text-white transition-colors">
+                  Datenschutzerklärung
+                </a>{" "}
+                gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu. *
+              </span>
+            </label>
+
             {error && (
               <p className="text-[#E11D2F] text-[13px] text-center">{error}</p>
             )}
             <button
               type="submit"
-              disabled={sending}
+              disabled={sending || !datenschutz}
               className="w-full bg-[#E11D2F] hover:bg-[#B91C1C] disabled:opacity-60 text-white font-display font-black uppercase tracking-wider text-[14px] py-4 rounded-xl shadow-lg shadow-[#E11D2F]/25 hover:shadow-[#E11D2F]/40 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
             >
               {sending ? (
@@ -278,7 +306,7 @@ export default function DamageFormSection() {
             </div>
 
             <p className="text-[11px] text-white/20 text-center leading-relaxed">
-              Ihre Daten werden vertraulich behandelt und nur zur Bearbeitung Ihres Anliegens verwendet.
+              * Pflichtfeld. Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.
             </p>
           </form>
         </div>
