@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Karla, Saira } from "next/font/google";
 import "./globals.css";
+import CookieBanner from "@/components/cookie-banner";
 
 const karla = Karla({
   subsets: ["latin"],
@@ -210,6 +211,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${karla.variable} ${saira.variable} font-sans antialiased noise`}>
         {children}
+        <CookieBanner />
       </body>
     </html>
   );
