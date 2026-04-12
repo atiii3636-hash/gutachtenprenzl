@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Karla, Saira } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import CookieBanner from "@/components/cookie-banner";
 
@@ -218,6 +219,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${karla.variable} ${saira.variable} font-sans antialiased noise`}>
         {children}
         <CookieBanner />
+        {/* Google tag (gtag.js) – Conversion-ID: 18025620294 | Label: frZvCLbrpJAcEMbGpJND */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18025620294"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18025620294');
+          `}
+        </Script>
       </body>
     </html>
   );
