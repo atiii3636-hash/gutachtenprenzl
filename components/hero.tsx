@@ -19,9 +19,9 @@ export default function Hero() {
       <div className="relative z-10 max-w-6xl mx-auto px-5 w-full py-20">
         <div className="max-w-[680px]">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-white/70 text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#E11D2F] animate-pulse" />
-            TÜV-Zertifizierter KFZ-Sachverständiger · Berlin Prenzlauer Berg
+          <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-white/70 text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-8 max-w-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#E11D2F] animate-pulse flex-shrink-0" />
+            <span className="text-center leading-snug">TÜV-Zertifiziert · KFZ-Sachverständiger Berlin</span>
           </div>
 
           {/* Big headline – competitor style: bold, uppercase */}
