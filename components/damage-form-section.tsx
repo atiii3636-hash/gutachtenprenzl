@@ -41,6 +41,12 @@ export default function DamageFormSection() {
         body: JSON.stringify({ name, telefon, beschreibung, unfallart, anzahlFotos: files.length }),
       });
       if (!res.ok) throw new Error("Fehler");
+      // Google Ads Conversion-Tracking
+      if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+        (window as any).gtag("event", "conversion", {
+          send_to: "AW-18025620294/frZvCLbrpJAcEMbGpJND",
+        });
+      }
       setSubmitted(true);
     } catch {
       setError("Etwas ist schiefgelaufen. Bitte ruf uns direkt an.");
@@ -202,6 +208,7 @@ export default function DamageFormSection() {
               </label>
               <input
                 type="text"
+                name="name"
                 required
                 placeholder="Max Mustermann"
                 value={name}
@@ -216,6 +223,7 @@ export default function DamageFormSection() {
               </label>
               <input
                 type="tel"
+                name="telefon"
                 required
                 placeholder="+49 155 ..."
                 value={telefon}
@@ -230,6 +238,7 @@ export default function DamageFormSection() {
               </label>
               <textarea
                 rows={3}
+                name="nachricht"
                 placeholder="Kurze Beschreibung des Schadens..."
                 value={beschreibung}
                 onChange={(e) => setBeschreibung(e.target.value)}
