@@ -16,7 +16,7 @@ export default function LandingPage() {
       <section className="relative px-5 pt-16 pb-14 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: "url('/hero-car.jpg')" }}
+          style={{ backgroundImage: "url('/hero-accident.jpg')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#080D14]/60 to-[#080D14]" />
 
