@@ -30,23 +30,60 @@ export default function DamageFormSection() {
 
   const removeFile = (idx: number) => setFiles(prev => prev.filter((_, i) => i !== idx));
 
+  // Bilder im Browser komprimieren (max 1600px, JPEG 80%) bevor sie gesendet werden
+  const compressImage = (file: File): Promise<File> => {
+    if (!file.type.startsWith("image/")) return Promise.resolve(file);
+    return new Promise((resolve) => {
+      const img = new Image();
+      const url = URL.createObjectURL(file);
+      img.onload = () => {
+        URL.revokeObjectURL(url);
+        const MAX = 1600;
+        let { width, height } = img;
+        if (width > MAX) { height = Math.round((height * MAX) / width); width = MAX; }
+        if (height > MAX) { width = Math.round((width * MAX) / height); height = MAX; }
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d")!.drawImage(img, 0, 0, width, height);
+        canvas.toBlob(
+          (blob) => {
+            if (blob) {
+              const name = file.name.replace(/\.[^.]+$/, ".jpg");
+              resolve(new File([blob], name, { type: "image/jpeg" }));
+            } else {
+              resolve(file);
+            }
+          },
+          "image/jpeg",
+          0.82
+        );
+      };
+      img.onerror = () => { URL.revokeObjectURL(url); resolve(file); };
+      img.src = url;
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
     setError("");
     try {
+      // Alle Bilder komprimieren
+      const compressed = await Promise.all(files.map(compressImage));
+
       const formData = new FormData();
       formData.append("name", name);
       formData.append("telefon", telefon);
       formData.append("beschreibung", beschreibung);
       formData.append("unfallart", unfallart);
-      files.forEach((file) => formData.append("fotos", file));
+      compressed.forEach((file) => formData.append("fotos", file));
 
       const res = await fetch("/api/contact", {
         method: "POST",
         body: formData,
       });
-      if (!res.ok) throw new Error("Fehler");
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       // Google Ads Conversion-Tracking
       if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
         (window as any).gtag("event", "conversion", {
@@ -54,8 +91,8 @@ export default function DamageFormSection() {
         });
       }
       setSubmitted(true);
-    } catch {
-      setError("Etwas ist schiefgelaufen. Bitte ruf uns direkt an.");
+    } catch (err: any) {
+      setError(`Etwas ist schiefgelaufen (${err?.message ?? "unbekannt"}). Bitte ruf uns direkt an.`);
     } finally {
       setSending(false);
     }
