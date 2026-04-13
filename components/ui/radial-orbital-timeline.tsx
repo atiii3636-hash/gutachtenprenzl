@@ -208,8 +208,17 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
                 <div
                   className={`
                     absolute top-12 left-1/2 -translate-x-1/2 whitespace-nowrap
-                    text-xs font-semibold tracking-wide transition-all duration-300
-                    ${isExpanded ? "text-white scale-110" : "text-white/60"}
+                    text-sm font-bold tracking-wide transition-all duration-300
+                    ${isExpanded ? "text-white scale-110" : "text-white/75"}
+                  `}
+                >
+                  {item.date}
+                </div>
+                <div
+                  className={`
+                    absolute top-[4.5rem] left-1/2 -translate-x-1/2 whitespace-nowrap
+                    text-[11px] font-medium tracking-wide transition-all duration-300
+                    ${isExpanded ? "text-white/90" : "text-white/45"}
                   `}
                 >
                   {item.title}
@@ -221,14 +230,14 @@ export default function RadialOrbitalTimeline({ timelineData }: RadialOrbitalTim
                     <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-px h-2 bg-[#E11D2F]/60" />
                     <CardHeader className="pb-2 pt-4 px-4">
                       <div className="flex justify-between items-center gap-2">
-                        <Badge className={`px-2 py-0.5 text-[10px] ${getStatusStyles(item.status)}`}>
+                        <Badge className={`px-2 py-0.5 text-[11px] ${getStatusStyles(item.status)}`}>
                           {getStatusLabel(item.status)}
                         </Badge>
-                        <span className="text-[10px] font-mono text-white/40">{item.date}</span>
+                        <span className="text-[12px] font-bold text-[#E11D2F]">{item.date}</span>
                       </div>
-                      <CardTitle className="text-sm mt-2 text-white">{item.title}</CardTitle>
+                      <CardTitle className="text-base mt-2 text-white">{item.title}</CardTitle>
                     </CardHeader>
-                    <CardContent className="text-xs text-white/70 px-4 pb-4">
+                    <CardContent className="text-[13px] text-white/75 px-4 pb-4">
                       <p className="leading-relaxed">{item.content}</p>
 
                       <div className="mt-3 pt-3 border-t border-white/8">

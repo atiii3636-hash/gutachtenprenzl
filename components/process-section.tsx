@@ -99,10 +99,10 @@ export default function ProcessSection() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[10px] font-mono text-[#E11D2F]">{step.date}</span>
+                    <span className="text-[13px] font-bold text-[#E11D2F]">{step.date}</span>
                   </div>
-                  <p className="font-semibold text-white text-[14px] mb-1">{step.title}</p>
-                  <p className="text-white/45 text-[12px] leading-relaxed">{step.content}</p>
+                  <p className="font-bold text-white text-[16px] mb-1.5">{step.title}</p>
+                  <p className="text-white/55 text-[14px] leading-relaxed">{step.content}</p>
                 </div>
               </div>
             );
