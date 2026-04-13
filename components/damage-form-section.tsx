@@ -35,10 +35,16 @@ export default function DamageFormSection() {
     setSending(true);
     setError("");
     try {
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("telefon", telefon);
+      formData.append("beschreibung", beschreibung);
+      formData.append("unfallart", unfallart);
+      files.forEach((file) => formData.append("fotos", file));
+
       const res = await fetch("/api/contact", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, telefon, beschreibung, unfallart, anzahlFotos: files.length }),
+        body: formData,
       });
       if (!res.ok) throw new Error("Fehler");
       // Google Ads Conversion-Tracking

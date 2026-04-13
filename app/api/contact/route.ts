@@ -5,16 +5,33 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, telefon, beschreibung, unfallart, anzahlFotos } = await req.json();
+    const formData = await req.formData();
+
+    const name        = formData.get("name")        as string;
+    const telefon     = formData.get("telefon")     as string;
+    const beschreibung= formData.get("beschreibung")as string ?? "";
+    const unfallart   = formData.get("unfallart")   as string;
+    const fotoFiles   = formData.getAll("fotos")    as File[];
 
     if (!name || !telefon) {
       return NextResponse.json({ error: "Name und Telefon erforderlich" }, { status: 400 });
     }
 
+    // Bilder in Resend-Anhänge umwandeln
+    const attachments = await Promise.all(
+      fotoFiles
+        .filter((f) => f.size > 0)
+        .map(async (file) => ({
+          filename: file.name,
+          content: Buffer.from(await file.arrayBuffer()),
+        }))
+    );
+
     const { data, error } = await resend.emails.send({
       from: "Gutachten Prenzl <anfrage@gutachtenprenzl.de>",
       to: ["gutachtenprenzl@gmail.com"],
       subject: `Neue Schadensmeldung von ${name}`,
+      attachments,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 20px; border-radius: 8px;">
 
@@ -53,7 +70,9 @@ export async function POST(req: NextRequest) {
               <tr>
                 <td style="padding: 12px 0; color: #888; font-size: 13px;">Fotos</td>
                 <td style="padding: 12px 0; color: #333; font-size: 14px;">
-                  ${anzahlFotos > 0 ? `${anzahlFotos} Foto(s) hochgeladen` : "Keine Fotos"}
+                  ${attachments.length > 0
+                    ? `<strong>${attachments.length} Foto(s)</strong> als Anhang beigefügt`
+                    : "Keine Fotos hochgeladen"}
                 </td>
               </tr>
             </table>
@@ -85,7 +104,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
-    console.log("Email sent:", data?.id);
+    console.log("Email sent:", data?.id, `| Anhänge: ${attachments.length}`);
     return NextResponse.json({ success: true });
   } catch (err) {
     console.error("Unexpected error:", err);
