@@ -1,22 +1,23 @@
 "use client";
 import { MapPin, Zap } from "lucide-react";
+import Link from "next/link";
 
 const einsatzgebiete = [
-  "Prenzlauer Berg",
-  "Mitte",
-  "Charlottenburg",
-  "Friedrichshain",
-  "Kreuzberg",
-  "Neukölln",
-  "Schöneberg",
-  "Tempelhof",
-  "Steglitz",
-  "Spandau",
-  "Reinickendorf",
-  "Marzahn",
-  "Lichtenberg",
-  "Köpenick",
-  "Pankow",
+  { name: "Prenzlauer Berg", href: "/kfz-sachverstaendiger-berlin-prenzlauer-berg" },
+  { name: "Mitte", href: "/kfz-sachverstaendiger-berlin-mitte" },
+  { name: "Charlottenburg", href: "/kfz-sachverstaendiger-berlin-charlottenburg" },
+  { name: "Friedrichshain", href: "/kfz-sachverstaendiger-berlin-friedrichshain" },
+  { name: "Kreuzberg", href: "/kfz-sachverstaendiger-berlin-kreuzberg" },
+  { name: "Neukölln", href: "/kfz-sachverstaendiger-berlin-neukoelln" },
+  { name: "Schöneberg", href: "/kfz-sachverstaendiger-berlin-schoeneberg" },
+  { name: "Tempelhof", href: "/kfz-sachverstaendiger-berlin-tempelhof" },
+  { name: "Steglitz", href: "/kfz-sachverstaendiger-berlin-steglitz" },
+  { name: "Spandau", href: "/kfz-sachverstaendiger-berlin-spandau" },
+  { name: "Reinickendorf", href: "/kfz-sachverstaendiger-berlin-reinickendorf" },
+  { name: "Marzahn", href: "/kfz-sachverstaendiger-berlin-marzahn" },
+  { name: "Lichtenberg", href: "/kfz-gutachter-lichtenberg" },
+  { name: "Köpenick", href: "/kfz-sachverstaendiger-berlin-koepenick" },
+  { name: "Pankow", href: "/kfz-sachverstaendiger-berlin-pankow" },
 ];
 
 export default function BerlinMapSection() {
@@ -28,14 +29,14 @@ export default function BerlinMapSection() {
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 bg-[#E11D2F]/10 border border-[#E11D2F]/30 text-[#E11D2F] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-5">
             <MapPin size={12} />
-            Einsatzgebiet Berlin & Umland
+            KFZ Gutachter Berlin – Alle Bezirke
           </div>
           <h2 className="font-display font-black text-4xl md:text-5xl text-white uppercase tracking-tight leading-tight mb-4">
-            Wir kommen in <span className="text-[#E11D2F]">alle Bezirke</span>
+            KFZ Sachverständiger in <span className="text-[#E11D2F]">ganz Berlin</span>
           </h2>
           <p className="text-white/45 text-[16px] max-w-xl mx-auto">
-            Als mobiler KFZ-Sachverständiger sind wir in ganz Berlin für Sie da —
-            wir kommen direkt zu Ihnen, egal in welchem Bezirk.
+            Als mobiler KFZ-Gutachter und KFZ-Sachverständiger sind wir in allen Berliner Bezirken für Sie da —
+            wir kommen direkt zu Ihnen, egal wo der Unfall war.
           </p>
         </div>
 
@@ -54,28 +55,28 @@ export default function BerlinMapSection() {
           </div>
         </div>
 
-        {/* Tag cloud */}
+        {/* Tag cloud – now with links to landing pages */}
         <div className="flex flex-wrap gap-2.5 justify-center mb-14">
-          {einsatzgebiete.map((ort) => (
-            <a
-              key={ort}
-              href="#kontakt"
+          {einsatzgebiete.map(({ name, href }) => (
+            <Link
+              key={name}
+              href={href}
               className="group flex items-center gap-1.5 bg-white/4 hover:bg-[#E11D2F]/12 border border-white/8 hover:border-[#E11D2F]/40 text-white/60 hover:text-white px-4 py-2 rounded-full text-[13px] font-medium transition-all duration-200"
             >
               <MapPin size={11} className="text-white/25 group-hover:text-[#E11D2F] transition-colors flex-shrink-0" />
-              {ort}
-            </a>
+              {name}
+            </Link>
           ))}
         </div>
 
         {/* Quote */}
         <div className="bg-white/3 border border-white/8 rounded-2xl p-8 text-center">
           <p className="text-[17px] text-white/70 leading-relaxed italic max-w-2xl mx-auto mb-6">
-            „Egal wo in Berlin — wir sind Ihr Partner. Wir kommen direkt zu Ihnen und kümmern uns um alles: vom Gutachten bis zur vollständigen Regulierung durch die Versicherung."
+            „Egal wo in Berlin — Ihr KFZ Sachverständiger und KFZ Gutachter ist für Sie da. Wir kommen direkt zu Ihnen und kümmern uns um alles: vom Gutachten bis zur vollständigen Regulierung durch die Versicherung."
           </p>
           {/* SEO text */}
           <p className="text-[12px] text-white/25 leading-relaxed max-w-3xl mx-auto">
-            KFZ-Sachverständiger Berlin · Unfallgutachten in{" "}
+            KFZ Sachverständiger Berlin · KFZ Gutachter Berlin · Unfallgutachten in{" "}
             <strong className="text-white/35">
               Prenzlauer Berg, Mitte, Charlottenburg, Friedrichshain, Kreuzberg, Neukölln, Schöneberg, Tempelhof, Steglitz, Spandau, Reinickendorf, Marzahn, Lichtenberg, Köpenick und Pankow
             </strong>.
