@@ -1,5 +1,24 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+
+const bezirke = [
+  { name: "KFZ Gutachter Berlin Pankow", href: "/kfz-sachverstaendiger-berlin-pankow", sub: "Prenzlauer Berg, Weißensee, Karow" },
+  { name: "KFZ Gutachter Prenzlauer Berg", href: "/kfz-sachverstaendiger-berlin-prenzlauer-berg", sub: "Schönhauser Allee, Prenzlauer Allee" },
+  { name: "KFZ Gutachter Berlin Mitte", href: "/kfz-sachverstaendiger-berlin-mitte", sub: "Alexanderplatz, Hackescher Markt" },
+  { name: "KFZ Gutachter Kreuzberg", href: "/kfz-sachverstaendiger-berlin-kreuzberg", sub: "Bergmannkiez, Kottbusser Tor" },
+  { name: "KFZ Gutachter Friedrichshain", href: "/kfz-sachverstaendiger-berlin-friedrichshain", sub: "Frankfurter Allee, Warschauer Str." },
+  { name: "KFZ Gutachter Neukölln", href: "/kfz-sachverstaendiger-berlin-neukoelln", sub: "Karl-Marx-Straße, Sonnenallee" },
+  { name: "KFZ Gutachter Schöneberg", href: "/kfz-sachverstaendiger-berlin-schoeneberg", sub: "Nollendorfplatz, Innsbrucker Platz" },
+  { name: "KFZ Gutachter Tempelhof", href: "/kfz-sachverstaendiger-berlin-tempelhof", sub: "Tempelhofer Damm, Mariendorf" },
+  { name: "KFZ Gutachter Charlottenburg", href: "/kfz-sachverstaendiger-berlin-charlottenburg", sub: "Kurfürstendamm, Westend" },
+  { name: "KFZ Gutachter Steglitz", href: "/kfz-sachverstaendiger-berlin-steglitz", sub: "Schloßstraße, Lichterfelde" },
+  { name: "KFZ Gutachter Spandau", href: "/kfz-sachverstaendiger-berlin-spandau", sub: "Heerstraße, Spandauer Altstadt" },
+  { name: "KFZ Gutachter Reinickendorf", href: "/kfz-sachverstaendiger-berlin-reinickendorf", sub: "Tegel, Wittenau" },
+  { name: "KFZ Gutachter Lichtenberg", href: "/kfz-gutachter-lichtenberg", sub: "Fennpfuhl, Rummelsburg, Karlshorst" },
+  { name: "KFZ Gutachter Marzahn", href: "/kfz-sachverstaendiger-berlin-marzahn", sub: "Marzahn-Hellersdorf, Biesdorf" },
+  { name: "KFZ Gutachter Köpenick", href: "/kfz-sachverstaendiger-berlin-koepenick", sub: "Treptow, Grünau, Schmöckwitz" },
+];
 
 export default function Footer() {
   return (
@@ -70,12 +89,29 @@ export default function Footer() {
               <li>
                 <span className="flex items-start gap-2 text-[15px] text-white/45">
                   <MapPin size={13} className="text-[#E11D2F] mt-1 flex-shrink-0" />
-                  <span>Berlin Prenzlauer Berg<br />
-                  <span className="text-[13px] text-white/25">10435 Berlin, Deutschland</span></span>
+                  <span>Prenzlauer Allee 88<br />
+                  <span className="text-[13px] text-white/25">10405 Berlin, Deutschland</span></span>
                 </span>
               </li>
             </ul>
           </div>
+        </div>
+
+        {/* Bezirke – interne Links für SEO */}
+        <div className="pt-10 pb-6 border-t border-white/6">
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-white/25 mb-5">
+            KFZ Sachverständiger in allen Berliner Bezirken
+          </p>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-x-4 gap-y-3">
+            {bezirke.map((b) => (
+              <li key={b.href}>
+                <Link href={b.href} className="text-[13px] text-white/45 hover:text-white transition-colors leading-snug block">
+                  {b.name}
+                </Link>
+                <span className="text-[11px] text-white/20 leading-tight block mt-0.5">{b.sub}</span>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-white/6">

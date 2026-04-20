@@ -61,7 +61,7 @@ export default function Navbar() {
             +49 155 60003661
           </a>
           <a
-            href="https://wa.me/4915566166533"
+            href="https://wa.me/4915560003661"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-[13px] font-semibold text-white bg-[#E11D2F] hover:bg-[#B91C1C] px-4 py-2 rounded-lg shadow-md shadow-[#E11D2F]/25 hover:shadow-[#E11D2F]/40 transition-all"

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Phone, MessageCircle, ChevronRight } from "lucide-react";
 
 export default function Hero() {
@@ -5,11 +6,14 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-[#080D14]">
       {/* Background */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('/hero-accident.jpg')`,
-          }}
+        <Image
+          src="/hero-mechanic.jpg"
+          alt="KFZ Sachverständiger Berlin – Fahrzeugbegutachtung"
+          fill
+          priority
+          className="object-cover object-[center_40%]"
+          sizes="100vw"
+          quality={85}
         />
         {/* Left-heavy overlay so text is readable, right side shows more image */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#080D14] via-[#080D14]/80 to-[#080D14]/30" />

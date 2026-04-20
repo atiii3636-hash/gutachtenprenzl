@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Phone, MessageCircle, CheckCircle, Clock, Shield, Star } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "KFZ Sachverständiger Berlin Prenzlauer Berg – Unfallgutachten in 24h | Gutachten Prenzl",
+  title: "KFZ Sachverständiger Berlin Prenzlauer Berg – Unfallgutachten in 24h",
   description: "TÜV-zertifizierter KFZ Sachverständiger in Berlin Prenzlauer Berg. Unfallgutachten in 24h, kostenlos bei Fremdverschulden. Jetzt anrufen: 0155 60003661",
   alternates: { canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin-prenzlauer-berg" },
   keywords: [
@@ -20,9 +21,14 @@ export default function LandingPage() {
 
       {/* Hero */}
       <section className="relative px-5 pt-16 pb-14 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: "url('/hero-accident.jpg')" }}
+        <Image
+          src="/hero-accident.jpg"
+          alt="KFZ Sachverständiger bei der Schadensbegutachtung in Berlin Prenzlauer Berg"
+          fill
+          priority
+          sizes="100vw"
+          quality={75}
+          className="object-cover object-center opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#080D14]/60 to-[#080D14]" />
 
@@ -113,9 +119,6 @@ export default function LandingPage() {
             Als <strong className="text-white">KFZ Sachverständiger Berlin Prenzlauer Berg</strong> und <strong className="text-white">KFZ Gutachter Berlin Prenzlauer Berg</strong> stehen wir Ihnen nach jedem Unfall sofort zur Seite.
             Unser Unfallgutachten für Prenzlauer Berg ist TÜV Rheinland zertifiziert und wird von allen Versicherungen anerkannt.
             Als unabhängiger Gutachter in Berlin Prenzlauer Berg arbeiten wir ausschließlich in Ihrem Interesse — nicht im Interesse der Versicherung.
-          </p>
-          <p className="text-white/20 text-[11px] mt-4">
-            kfz sachverständiger prenzlauer berg · kfz gutachter prenzlauer berg · unfallgutachten prenzlauer berg · gutachter schönhauser allee
           </p>
         </div>
       </section>

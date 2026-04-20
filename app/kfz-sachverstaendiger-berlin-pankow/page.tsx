@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Phone, MessageCircle, CheckCircle, Clock, Shield, Star } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "KFZ Sachverständiger Berlin Pankow – Unfallgutachten in 24h | Gutachten Prenzl",
+  title: "KFZ Sachverständiger Berlin Pankow – Unfallgutachten in 24h",
   description: "TÜV-zertifizierter KFZ Sachverständiger in Berlin Pankow. Unfallgutachten in 24h, kostenlos bei Fremdverschulden. Jetzt anrufen: 0155 60003661",
   alternates: { canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin-pankow" },
   keywords: [
@@ -20,9 +21,14 @@ export default function LandingPage() {
 
       {/* Hero */}
       <section className="relative px-5 pt-16 pb-14 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{ backgroundImage: "url('/hero-accident.jpg')" }}
+        <Image
+          src="/hero-accident.jpg"
+          alt="KFZ Sachverständiger bei der Schadensbegutachtung in Berlin Pankow"
+          fill
+          priority
+          sizes="100vw"
+          quality={75}
+          className="object-cover object-center opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#080D14]/60 to-[#080D14]" />
 
@@ -116,6 +122,21 @@ export default function LandingPage() {
           </p>
           <p className="text-white/20 text-[11px] mt-4">
             kfz sachverständiger pankow · kfz gutachter pankow berlin · unfallgutachten pankow · gutachter berlin pankow weißensee
+          </p>
+        </div>
+      </section>
+
+      {/* Bezirks-Content */}
+      <section className="bg-white px-5 py-14 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-4">
+            KFZ Gutachter in Berlin Pankow
+          </h2>
+          <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
+            Pankow ist Berlins einwohnerreichster Bezirk — von Weißensee über Buch bis nach Französisch Buchholz. Unfälle auf der Schönhauser Allee, der Berliner Straße oder am Vinetaplatz gehören zu unseren häufigsten Einsätzen. Wir kennen die lokalen Verkehrsverhältnisse und sind nach einem Unfall in Pankow schnell vor Ort.
+          </p>
+          <p className="text-gray-600 text-[15px] leading-relaxed">
+            Unser Standort in der Prenzlauer Allee 88 ist nur wenige Minuten von Pankow entfernt. Wir kommen direkt zu Ihnen — ob in Buch, Weißensee, Heinersdorf oder ins Zentrum von Pankow.
           </p>
         </div>
       </section>
