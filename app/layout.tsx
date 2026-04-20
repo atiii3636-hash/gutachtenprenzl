@@ -3,6 +3,7 @@ import { Karla, Saira } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import CookieBanner from "@/components/cookie-banner";
+import { faqs } from "@/lib/faqs";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: "KFZ Sachverständiger Berlin | Unfallgutachten 24h – Gutachten Prenzl",
-    template: "%s | Gutachten Prenzl – KFZ Sachverständiger Berlin",
+    template: "%s | Gutachten Prenzl",
   },
   description:
     "✓ TÜV-zertifizierter KFZ Sachverständiger in Berlin ✓ Unfallgutachten in 24h ✓ Kostenlos bei Fremdverschulden ✓ Alle Bezirke ✓ 24/7 Notfall-Hotline: 0155 60003661",
@@ -86,9 +87,6 @@ export const metadata: Metadata = {
       "TÜV-zertifizierter KFZ Sachverständiger in Berlin. Kostenlos bei Fremdverschulden. 24/7 erreichbar.",
     images: ["/og-image.jpg"],
   },
-  verification: {
-    google: "", // Google Search Console Verification Code hier einfügen
-  },
 };
 
 const jsonLd = {
@@ -105,12 +103,18 @@ const jsonLd = {
       telephone: "+4915560003661",
       email: "info@gutachtenprenzl.de",
       image: `${siteUrl}/logos/logo-full.png`,
-      logo: `${siteUrl}/logos/logo-icon.png`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/logos/logo-512.png`,
+        width: 512,
+        height: 512,
+      },
       address: {
         "@type": "PostalAddress",
+        streetAddress: "Prenzlauer Allee 88",
         addressLocality: "Berlin",
         addressRegion: "Berlin",
-        postalCode: "10435",
+        postalCode: "10405",
         addressCountry: "DE",
       },
       geo: {
@@ -153,56 +157,14 @@ const jsonLd = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Was kostet ein KFZ Sachverständiger nach einem Unfall in Berlin?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Bei einem unverschuldeten Unfall (Haftpflichtschaden) entstehen Ihnen keinerlei Kosten. Die Haftpflichtversicherung des Unfallverursachers trägt die vollen Kosten für den KFZ Sachverständigen. Sie zahlen 0 €.",
-          },
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.a,
         },
-        {
-          "@type": "Question",
-          name: "Wie schnell bekomme ich ein Unfallgutachten in Berlin?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Wir erstellen Ihr Unfallgutachten in Berlin innerhalb von 24 Stunden nach der Besichtigung. Wir kommen mobil zu Ihnen – nach Hause, in die Werkstatt oder direkt zum Unfallort.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "In welchen Berliner Bezirken sind Sie als KFZ Sachverständiger tätig?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Wir sind in allen Berliner Bezirken tätig: Prenzlauer Berg, Mitte, Charlottenburg, Friedrichshain, Kreuzberg, Neukölln, Schöneberg, Tempelhof, Steglitz, Spandau, Reinickendorf, Marzahn, Lichtenberg, Köpenick und Pankow.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Muss ich mit meinem Fahrzeug zu Ihnen kommen?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Nein – wir kommen zu Ihnen. Als mobiler KFZ Sachverständiger in Berlin kommen wir direkt zu Ihrem Unfallort, nach Hause oder in die Werkstatt. Kein Aufwand für Sie.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Sind Sie TÜV-zertifizierter KFZ Sachverständiger?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Ja, wir sind TÜV Rheinland zertifizierter KFZ Sachverständiger (ID 0217466029, gültig bis 18.12.2028). Unsere Gutachten werden von allen deutschen Versicherungen anerkannt.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Was ist der Unterschied zwischen Haftpflicht- und Kaskogutachten?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Ein Haftpflichtgutachten wird erstellt, wenn Sie unverschuldet in einen Unfall verwickelt wurden – die Kosten trägt die gegnerische Versicherung. Ein Kaskogutachten wird bei selbstverschuldeten Unfällen oder Fahrzeugschäden (z.B. Wildunfall, Vandalismus) benötigt.",
-          },
-        },
-      ],
+      })),
     },
   ],
 };
@@ -211,8 +173,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="de" className="scroll-smooth">
       <head>
+        {/* Preconnect zu Google-Domains für schnelleres Laden */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* Google Tag Manager */}
-        <Script id="gtm-head" strategy="beforeInteractive">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N5CCZ6MN');`}</Script>
+        <Script id="gtm-head" strategy="afterInteractive">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N5CCZ6MN');`}</Script>
         {/* End Google Tag Manager */}
         <script
           type="application/ld+json"
