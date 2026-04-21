@@ -120,8 +120,20 @@ export default function LandingPage() {
             Unser Unfallgutachten für Reinickendorf ist TÜV Rheinland zertifiziert und wird von allen Versicherungen anerkannt.
             Als unabhängiger Gutachter in Berlin Reinickendorf arbeiten wir ausschließlich in Ihrem Interesse — nicht im Interesse der Versicherung.
           </p>
-          <p className="text-white/20 text-[11px] mt-4">
-            kfz sachverständiger reinickendorf · kfz gutachter reinickendorf berlin · unfallgutachten reinickendorf · gutachter tegel berlin
+        </div>
+      </section>
+
+      {/* Bezirks-Content */}
+      <section className="bg-white px-5 py-14 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-4">
+            KFZ Gutachter in Berlin Reinickendorf
+          </h2>
+          <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
+            Reinickendorf im Norden Berlins hat mit dem ehemaligen Flughafen Tegel, der Residenzstraße und dem Wittenauer Damm mehrere stark befahrene Korridore. Unfälle auf der A111 und an den Einfahrten zum Berliner Ring sowie Schäden durch engen Parkraum in Wohngebieten wie Wedding oder Hermsdorf sind typisch für diesen Bezirk.
+          </p>
+          <p className="text-gray-600 text-[15px] leading-relaxed">
+            Wir kommen zu Ihnen nach Reinickendorf — ob Tegel, Märkisches Viertel oder Frohnau. Unser Gutachter ist innerhalb von 25 Minuten bei Ihnen vor Ort.
           </p>
         </div>
       </section>

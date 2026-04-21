@@ -120,9 +120,6 @@ export default function LandingPage() {
             Unser Unfallgutachten für Neukölln ist TÜV Rheinland zertifiziert und wird von allen Versicherungen anerkannt.
             Als unabhängiger Gutachter in Berlin Neukölln arbeiten wir ausschließlich in Ihrem Interesse — nicht im Interesse der Versicherung.
           </p>
-          <p className="text-white/20 text-[11px] mt-4">
-            kfz sachverständiger neukölln · kfz gutachter neukölln berlin · unfallgutachten neukölln · gutachter sonnenallee
-          </p>
         </div>
       </section>
 

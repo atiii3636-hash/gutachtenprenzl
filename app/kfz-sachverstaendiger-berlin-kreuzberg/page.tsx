@@ -120,9 +120,6 @@ export default function LandingPage() {
             Unser Unfallgutachten für Kreuzberg ist TÜV Rheinland zertifiziert und wird von allen Versicherungen anerkannt.
             Als unabhängiger Gutachter in Berlin Kreuzberg arbeiten wir ausschließlich in Ihrem Interesse — nicht im Interesse der Versicherung.
           </p>
-          <p className="text-white/20 text-[11px] mt-4">
-            kfz sachverständiger kreuzberg · kfz gutachter kreuzberg berlin · unfallgutachten kreuzberg · gutachter berlin kreuzberg
-          </p>
         </div>
       </section>
 

@@ -120,8 +120,20 @@ export default function LandingPage() {
             Unser Unfallgutachten für Köpenick ist TÜV Rheinland zertifiziert und wird von allen Versicherungen anerkannt.
             Als unabhängiger Gutachter in Berlin Köpenick arbeiten wir ausschließlich in Ihrem Interesse — nicht im Interesse der Versicherung.
           </p>
-          <p className="text-white/20 text-[11px] mt-4">
-            kfz sachverständiger köpenick · kfz gutachter köpenick berlin · unfallgutachten köpenick · gutachter berlin köpenick treptow
+        </div>
+      </section>
+
+      {/* Bezirks-Content */}
+      <section className="bg-white px-5 py-14 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-4">
+            KFZ Gutachter in Berlin Köpenick
+          </h2>
+          <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
+            Treptow-Köpenick ist Berlins flächengrößter Bezirk — mit viel Pendlerverkehr auf der Adlergestell, der Köpenicker Landstraße und rund um den Bahnhof Köpenick. Wildunfälle auf Außenstadtstraßen und Blechschäden in Wohngebieten wie Grünau oder Schmöckwitz sind typische Schadensfälle in dieser Region.
+          </p>
+          <p className="text-gray-600 text-[15px] leading-relaxed">
+            Auch ins südöstliche Berlin kommen wir zu Ihnen — direkt vor Ort, ohne dass Sie Ihr Fahrzeug irgendwo hinbringen müssen. Von der Prenzlauer Allee 88 erreichen wir Köpenick in etwa 30 Minuten.
           </p>
         </div>
       </section>

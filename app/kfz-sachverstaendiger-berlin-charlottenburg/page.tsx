@@ -121,8 +121,20 @@ export default function LandingPage() {
             Unser Unfallgutachten für Charlottenburg ist TÜV Rheinland zertifiziert und wird von allen Versicherungen anerkannt.
             Als unabhängiger Gutachter in Berlin Charlottenburg arbeiten wir ausschließlich in Ihrem Interesse — nicht im Interesse der Versicherung.
           </p>
-          <p className="text-white/20 text-[11px] mt-4">
-            kfz sachverständiger berlin charlottenburg · kfz gutachter charlottenburg · unfallgutachten charlottenburg · gutachter ku'damm · kfz gutachter wilmersdorf
+        </div>
+      </section>
+
+      {/* Bezirks-Content */}
+      <section className="bg-white px-5 py-14 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-4">
+            KFZ Gutachter in Berlin Charlottenburg
+          </h2>
+          <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
+            Charlottenburg zählt zu den verkehrsreichsten Bezirken Berlins — mit Unfallschwerpunkten auf dem Kurfürstendamm, der Kantstraße und rund um den Ernst-Reuter-Platz. Als KFZ-Gutachter für Charlottenburg kennen wir die typischen Schadensbilder: Parkrempler in den Seitenstraßen rund um den Ku'damm, Auffahrunfälle auf der Stadtautobahn und Kollisionen im dichten City-Verkehr.
+          </p>
+          <p className="text-gray-600 text-[15px] leading-relaxed">
+            Von unserem Standort in der Prenzlauer Allee 88 sind wir in etwa 20 Minuten in Charlottenburg. Wir kommen direkt zu Ihnen — zur Unfallstelle, in die Werkstatt oder nach Hause.
           </p>
         </div>
       </section>

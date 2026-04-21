@@ -120,8 +120,20 @@ export default function LandingPage() {
             Unser Unfallgutachten für Spandau ist TÜV Rheinland zertifiziert und wird von allen Versicherungen anerkannt.
             Als unabhängiger Gutachter in Berlin Spandau arbeiten wir ausschließlich in Ihrem Interesse — nicht im Interesse der Versicherung.
           </p>
-          <p className="text-white/20 text-[11px] mt-4">
-            kfz sachverständiger spandau · kfz gutachter spandau berlin · unfallgutachten spandau · gutachter berlin spandau
+        </div>
+      </section>
+
+      {/* Bezirks-Content */}
+      <section className="bg-white px-5 py-14 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-4">
+            KFZ Gutachter in Berlin Spandau
+          </h2>
+          <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
+            Spandau ist Berlins westlichster Bezirk mit viel Pendler- und Transitverkehr auf der Heerstraße, der B5 und dem Spandauer Damm. Unfälle an der Stadtautobahn-Ausfahrt Spandau, auf der Falkenseer Chaussee und in der Altstadt Spandau zählen zu den häufigsten Einsatzorten in diesem Bezirk.
+          </p>
+          <p className="text-gray-600 text-[15px] leading-relaxed">
+            Wir kommen auch nach Spandau — direkt zur Unfallstelle oder in Ihre Werkstatt. Fahrzeit von unserem Standort in der Prenzlauer Allee 88 beträgt ca. 30–35 Minuten.
           </p>
         </div>
       </section>

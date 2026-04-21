@@ -123,6 +123,21 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Bezirks-Content */}
+      <section className="bg-white px-5 py-14 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-4">
+            KFZ Gutachter in Berlin Prenzlauer Berg
+          </h2>
+          <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
+            Prenzlauer Berg ist unser Heimatbezirk — und einer der am stärksten frequentierten in ganz Berlin. Unfälle auf der Schönhauser Allee, der Prenzlauer Allee und rund um den Kollwitzplatz gehören zu unseren häufigsten Einsätzen. Als lokaler KFZ-Gutachter kennen wir die Verkehrsverhältnisse hier wie kein anderer.
+          </p>
+          <p className="text-gray-600 text-[15px] leading-relaxed">
+            Unser Büro befindet sich direkt in der Prenzlauer Allee 88 — wir sind in wenigen Minuten bei Ihnen, egal ob in Prenzlauer Berg, Pankow oder dem angrenzenden Mitte.
+          </p>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-[#E11D2F] px-5 py-14 text-center">
         <div className="max-w-2xl mx-auto">

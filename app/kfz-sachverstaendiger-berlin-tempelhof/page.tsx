@@ -120,8 +120,20 @@ export default function LandingPage() {
             Unser Unfallgutachten für Tempelhof ist TÜV Rheinland zertifiziert und wird von allen Versicherungen anerkannt.
             Als unabhängiger Gutachter in Berlin Tempelhof arbeiten wir ausschließlich in Ihrem Interesse — nicht im Interesse der Versicherung.
           </p>
-          <p className="text-white/20 text-[11px] mt-4">
-            kfz sachverständiger tempelhof · kfz gutachter tempelhof berlin · unfallgutachten tempelhof · gutachter berlin tempelhof
+        </div>
+      </section>
+
+      {/* Bezirks-Content */}
+      <section className="bg-white px-5 py-14 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-4">
+            KFZ Gutachter in Berlin Tempelhof-Schöneberg
+          </h2>
+          <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
+            Tempelhof liegt zentral im Süden Berlins — mit stark befahrenen Achsen wie der Tempelhofer Damm, der Ringbahnstraße und dem Columbiadamm. Auf dem ehemaligen Tempelhofer Feld und in den angrenzenden Wohngebieten sind Unfälle auf Parkplätzen und in Wohnstraßen besonders häufig.
+          </p>
+          <p className="text-gray-600 text-[15px] leading-relaxed">
+            Von unserem Standort in der Prenzlauer Allee 88 sind wir in etwa 20 Minuten in Tempelhof — direkt bei Ihnen, ohne Mehraufwand und ohne bürokratische Hürden.
           </p>
         </div>
       </section>

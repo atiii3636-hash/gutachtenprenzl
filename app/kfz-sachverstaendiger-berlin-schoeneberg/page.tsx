@@ -120,8 +120,20 @@ export default function LandingPage() {
             Unser Unfallgutachten für Schöneberg ist TÜV Rheinland zertifiziert und wird von allen Versicherungen anerkannt.
             Als unabhängiger Gutachter in Berlin Schöneberg arbeiten wir ausschließlich in Ihrem Interesse — nicht im Interesse der Versicherung.
           </p>
-          <p className="text-white/20 text-[11px] mt-4">
-            kfz sachverständiger schöneberg · kfz gutachter schöneberg berlin · unfallgutachten schöneberg · gutachter berlin schöneberg
+        </div>
+      </section>
+
+      {/* Bezirks-Content */}
+      <section className="bg-white px-5 py-14 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-4">
+            KFZ Gutachter in Berlin Schöneberg
+          </h2>
+          <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
+            Schöneberg ist ein dicht besiedeltes, verkehrsintensives Viertel — mit Unfallhäufungen auf dem Innsbrucker Platz, der Hauptstraße und rund um den Kleistpark. Dooring-Schäden durch geöffnete Autotüren, Kreuzungsunfälle und Parkrempler in engen Wohnstraßen sind hier alltäglich.
+          </p>
+          <p className="text-gray-600 text-[15px] leading-relaxed">
+            Als KFZ-Sachverständiger kommen wir direkt zu Ihnen nach Schöneberg — ob Nollendorfplatz, Bayerischer Platz oder Friedenau. Von der Prenzlauer Allee 88 erreichen wir Sie in etwa 20 Minuten.
           </p>
         </div>
       </section>

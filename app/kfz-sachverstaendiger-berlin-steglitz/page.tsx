@@ -120,8 +120,20 @@ export default function LandingPage() {
             Unser Unfallgutachten für Steglitz ist TÜV Rheinland zertifiziert und wird von allen Versicherungen anerkannt.
             Als unabhängiger Gutachter in Berlin Steglitz arbeiten wir ausschließlich in Ihrem Interesse — nicht im Interesse der Versicherung.
           </p>
-          <p className="text-white/20 text-[11px] mt-4">
-            kfz sachverständiger steglitz · kfz gutachter steglitz berlin · unfallgutachten steglitz · gutachter schlossstraße berlin
+        </div>
+      </section>
+
+      {/* Bezirks-Content */}
+      <section className="bg-white px-5 py-14 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-4">
+            KFZ Gutachter in Berlin Steglitz-Zehlendorf
+          </h2>
+          <p className="text-gray-600 text-[15px] leading-relaxed mb-4">
+            Steglitz-Zehlendorf ist ein ruhigerer, aber flächenmäßig großer Bezirk — mit Unfallschwerpunkten auf der Schlossstraße, dem Teltower Damm und rund um den Mexikoplatz. Besonders auf den langen Ausfallstraßen in Richtung Potsdam und beim Einparken in dichten Wohngebieten wie Lichterfelde entstehen häufig Schäden.
+          </p>
+          <p className="text-gray-600 text-[15px] leading-relaxed">
+            Wir begutachten Ihren Schaden direkt vor Ort in Steglitz, Zehlendorf oder Lichterfelde — ohne Umweg über eine Werkstatt. Fahrzeit von der Prenzlauer Allee 88 beträgt ca. 25 Minuten.
           </p>
         </div>
       </section>
