@@ -45,7 +45,10 @@ export default function AboutSection() {
 
             <p className="text-white/55 text-[15px] leading-relaxed mb-5">
               Gutachten Prenzl ist ein TÜV Rheinland zertifizierter KFZ Sachverständiger
-              mit Büro in der <strong className="text-white">Prenzlauer Allee 88, 10405 Berlin</strong>.
+              mit Büro in der{" "}
+              <Link href="/kfz-sachverstaendiger-berlin-prenzlauer-berg" className="text-white font-bold hover:text-[#E11D2F] transition-colors underline underline-offset-2 decoration-white/30 hover:decoration-[#E11D2F]/50">
+                Prenzlauer Allee 88, 10405 Berlin
+              </Link>.
               Als unabhängiger Einzelgutachter stehen wir persönlich bei jedem Auftrag zur Verfügung —
               kein anonymes Büro, kein Callcenter.
             </p>

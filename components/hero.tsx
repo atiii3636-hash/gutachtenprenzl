@@ -28,15 +28,14 @@ export default function Hero() {
             <span className="text-center leading-snug">TÜV-Zertifiziert · KFZ-Sachverständiger Berlin</span>
           </div>
 
-          {/* Big headline – competitor style: bold, uppercase */}
+          {/* H1 keyword-first — matches title tag so Google stops rewriting it */}
           <h1 className="font-display font-black leading-[0.95] tracking-tight text-white uppercase mb-6">
-            <span className="block text-[clamp(13px,1.6vw,18px)] font-bold tracking-widest text-white/50 mb-3 normal-case">
-              KFZ Sachverständiger Berlin
-            </span>
             <span className="block text-[clamp(42px,7vw,80px)]">
-              Unfall<br />
-              gehabt?<br />
-              <span className="text-[#E11D2F]">Wir helfen.</span>
+              KFZ Sachverständiger<br />
+              <span className="text-[#E11D2F]">Berlin</span>
+            </span>
+            <span className="block text-[clamp(20px,3vw,32px)] text-white/55 mt-3">
+              Unfall gehabt? Wir helfen.
             </span>
           </h1>
 

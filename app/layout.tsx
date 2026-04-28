@@ -151,7 +151,7 @@ const jsonLd = {
         { "@type": "AdministrativeArea", name: "Brandenburg" },
       ],
       sameAs: [
-        "https://www.google.com/maps/search/?api=1&query=Gutachten+Prenzl+KFZ+Sachverst%C3%A4ndiger+Berlin",
+        "https://www.google.com/maps/place/?q=place_id:ChIJ6WBvNC7A_yQR59KBPvyK9UY",
         "https://www.instagram.com/gutachtenprenzl/",
         "https://www.tiktok.com/@gutachtenprenzl",
       ],
