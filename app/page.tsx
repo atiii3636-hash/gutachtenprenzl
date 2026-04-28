@@ -5,7 +5,6 @@ import TrustBand from "@/components/trust-band";
 import DamageFormSection from "@/components/damage-form-section";
 import ServicesSection from "@/components/services-section";
 import AboutSection from "@/components/about-section";
-import ProcessSection from "@/components/process-section";
 import FeaturesSection from "@/components/features-section";
 import GoogleReviewsSection from "@/components/google-reviews-section";
 import FaqSection from "@/components/faq-section";
@@ -40,7 +39,6 @@ export default function Home() {
       <DamageFormSection />
       <ServicesSection />
       <AboutSection />
-      <ProcessSection />
       <FeaturesSection />
       <GoogleReviewsSection />
       <FaqSection />
