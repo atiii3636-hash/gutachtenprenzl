@@ -40,17 +40,6 @@ export default function Footer() {
               Ihr unabhängiger TÜV-zertifizierter KFZ Sachverständiger in Berlin Prenzlauer Berg.
               Schnell, seriös und auf Ihrer Seite.
             </p>
-            <div className="flex gap-2">
-              {["📷", "💬", "🎵"].map((icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="w-8 h-8 bg-white/4 hover:bg-white/8 border border-white/8 hover:border-white/16 rounded-lg flex items-center justify-center text-[14px] transition-all"
-                >
-                  {icon}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Links */}

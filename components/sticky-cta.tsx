@@ -3,7 +3,7 @@ import { Phone, MessageCircle } from "lucide-react";
 
 export default function StickyCTA() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden" style={{ paddingBottom: "env(safe-area-inset-bottom)" }}>
       <div className="flex gap-0 shadow-2xl shadow-black/40">
         <a
           href="tel:+4915560003661"

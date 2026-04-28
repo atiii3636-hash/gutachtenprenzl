@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | Gutachten Prenzl",
   },
   description:
-    "✓ TÜV-zertifizierter KFZ Sachverständiger in Berlin ✓ Unfallgutachten in 24h ✓ Kostenlos bei Fremdverschulden ✓ Alle Bezirke ✓ 24/7 Notfall-Hotline: 0155 60003661",
+    "TÜV-zertifizierter KFZ Sachverständiger Berlin. Unfallgutachten in 24h, kostenlos bei Fremdverschulden. Alle Bezirke. 24/7 Hotline: 0155 60003661",
   keywords: [
     "KFZ Sachverständiger Berlin",
     "Unfallgutachten Berlin",
@@ -102,6 +102,18 @@ const jsonLd = {
       url: siteUrl,
       telephone: "+4915560003661",
       email: "info@gutachtenprenzl.de",
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+4915560003661",
+        contactType: "Customer Service",
+        availableLanguage: ["German"],
+        hoursAvailable: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          opens: "00:00",
+          closes: "23:59",
+        },
+      },
       image: `${siteUrl}/logos/logo-full.png`,
       logo: {
         "@type": "ImageObject",
