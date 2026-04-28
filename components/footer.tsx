@@ -97,8 +97,29 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bezirke – interne Links für SEO */}
+        {/* Leistungsseiten */}
         <div className="pt-10 pb-6 border-t border-white/6">
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-white/25 mb-4">
+            Unsere Leistungen
+          </p>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
+            {[
+              { href: "/unfallgutachten-berlin", label: "Unfallgutachten Berlin" },
+              { href: "/heckauffahrunfall-berlin", label: "Heckauffahrunfall Berlin" },
+              { href: "/parkschaden-gutachten-berlin", label: "Parkschaden Berlin" },
+              { href: "/totalschaden-gutachten-berlin", label: "Totalschaden Berlin" },
+            ].map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="text-[13px] text-white/45 hover:text-white transition-colors">
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Bezirke – interne Links für SEO */}
+        <div className="pb-6 border-t border-white/6">
           <p className="text-[11px] font-semibold uppercase tracking-widest text-white/25 mb-5">
             KFZ Sachverständiger in allen Berliner Bezirken
           </p>

@@ -11,6 +11,7 @@ export async function POST(req: NextRequest) {
     const telefon     = formData.get("telefon")     as string;
     const beschreibung= formData.get("beschreibung")as string ?? "";
     const unfallart   = formData.get("unfallart")   as string;
+    const schadenstyp = formData.get("schadenstyp") as string ?? "";
     const fotoFiles   = formData.getAll("fotos")    as File[];
 
     if (!name || !telefon) {
@@ -61,6 +62,16 @@ export async function POST(req: NextRequest) {
                   </span>
                 </td>
               </tr>
+              ${schadenstyp ? `
+              <tr style="border-bottom: 1px solid #f0f0f0;">
+                <td style="padding: 12px 0; color: #888; font-size: 13px;">Schadenstyp</td>
+                <td style="padding: 12px 0;">
+                  <span style="background: #080D14; color: white; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: bold;">
+                    ${schadenstyp}
+                  </span>
+                </td>
+              </tr>
+              ` : ""}
               ${beschreibung ? `
               <tr style="border-bottom: 1px solid #f0f0f0;">
                 <td style="padding: 12px 0; color: #888; font-size: 13px;">Beschreibung</td>

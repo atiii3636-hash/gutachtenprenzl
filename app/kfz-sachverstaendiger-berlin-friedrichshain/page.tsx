@@ -119,7 +119,6 @@ export default function LandingPage() {
             Als <strong className="text-white">KFZ Sachverständiger Berlin Friedrichshain</strong> und <strong className="text-white">KFZ Gutachter Berlin Friedrichshain</strong> stehen wir Ihnen nach jedem Unfall sofort zur Seite.
             Unser Unfallgutachten für Friedrichshain ist TÜV Rheinland zertifiziert und wird von allen Versicherungen anerkannt.
             Als unabhängiger Gutachter in Berlin Friedrichshain arbeiten wir ausschließlich in Ihrem Interesse — nicht im Interesse der Versicherung.
-          </p>
             kfz sachverständiger friedrichshain · kfz gutachter friedrichshain · unfallgutachten friedrichshain berlin · gutachter east side gallery
           </p>
         </div>

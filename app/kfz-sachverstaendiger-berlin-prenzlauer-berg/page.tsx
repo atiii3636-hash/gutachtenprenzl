@@ -4,7 +4,7 @@ import { Phone, MessageCircle, CheckCircle, Clock, Shield, Star } from "lucide-r
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "KFZ Sachverständiger Berlin Prenzlauer Berg – Unfallgutachten in 24h",
+  title: "KFZ Sachverständiger Prenzlauer Berg – Unfallgutachten 24h",
   description: "TÜV-zertifizierter KFZ Sachverständiger in Berlin Prenzlauer Berg. Unfallgutachten in 24h, kostenlos bei Fremdverschulden. Jetzt anrufen: 0155 60003661",
   alternates: { canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin-prenzlauer-berg" },
   keywords: [

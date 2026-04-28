@@ -29,10 +29,15 @@ export default function Hero() {
           </div>
 
           {/* Big headline – competitor style: bold, uppercase */}
-          <h1 className="font-display font-black text-[clamp(42px,7vw,80px)] leading-[0.95] tracking-tight text-white uppercase mb-6">
-            Unfall<br />
-            gehabt?<br />
-            <span className="text-[#E11D2F]">Wir helfen.</span>
+          <h1 className="font-display font-black leading-[0.95] tracking-tight text-white uppercase mb-6">
+            <span className="block text-[clamp(13px,1.6vw,18px)] font-bold tracking-widest text-white/50 mb-3 normal-case">
+              KFZ Sachverständiger Berlin
+            </span>
+            <span className="block text-[clamp(42px,7vw,80px)]">
+              Unfall<br />
+              gehabt?<br />
+              <span className="text-[#E11D2F]">Wir helfen.</span>
+            </span>
           </h1>
 
           <p className="text-[16px] text-white/60 leading-relaxed max-w-[480px] mb-10">

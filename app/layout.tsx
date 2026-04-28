@@ -3,7 +3,7 @@ import { Karla, Saira } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import CookieBanner from "@/components/cookie-banner";
-import { faqs } from "@/lib/faqs";
+import FloatingWhatsApp from "@/components/floating-whatsapp";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -28,7 +28,7 @@ const siteUrl = "https://gutachtenprenzl.de";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "KFZ Sachverständiger Berlin | Unfallgutachten 24h – Gutachten Prenzl",
+    default: "KFZ Sachverständiger Berlin | Unfallgutachten 24/7",
     template: "%s | Gutachten Prenzl",
   },
   description:
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: siteUrl,
     siteName: "Gutachten Prenzl – KFZ Sachverständiger Berlin",
-    title: "KFZ Sachverständiger Berlin | Unfallgutachten 24h – Gutachten Prenzl",
+    title: "KFZ Sachverständiger Berlin | Unfallgutachten 24/7",
     description:
       "TÜV-zertifizierter KFZ Sachverständiger in Berlin. Unfallgutachten in 24h, kostenlos bei Fremdverschulden. 24/7 erreichbar für alle Berliner Bezirke.",
     images: [
@@ -93,10 +93,10 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": siteUrl,
       name: "Gutachten Prenzl – KFZ Sachverständiger Berlin",
-      alternateName: "GP KFZ Sachverständiger",
+      alternateName: ["GP KFZ Sachverständiger", "Gutachten Prenzl"],
       description:
         "TÜV-zertifizierter KFZ Sachverständiger in Berlin. Unfallgutachten in 24 Stunden, kostenlos bei unverschuldetem Unfall. Alle Berliner Bezirke.",
       url: siteUrl,
@@ -132,18 +132,25 @@ const jsonLd = {
         closes: "23:59",
       },
       priceRange: "Kostenlos bei Fremdverschulden",
+      currenciesAccepted: "EUR",
+      paymentAccepted: "Rechnung, Überweisung",
       areaServed: [
         { "@type": "City", name: "Berlin" },
-        { "@type": "State", name: "Brandenburg" },
+        { "@type": "AdministrativeArea", name: "Brandenburg" },
+      ],
+      sameAs: [
+        "https://www.google.com/maps/search/?api=1&query=Gutachten+Prenzl+KFZ+Sachverst%C3%A4ndiger+Berlin",
+        "https://www.instagram.com/gutachtenprenzl/",
+        "https://www.tiktok.com/@gutachtenprenzl",
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "KFZ Gutachten Leistungen Berlin",
         itemListElement: [
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Unfallgutachten Berlin" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Haftpflichtschaden Gutachten" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Kaskoschadens Gutachten" } },
-          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Wertgutachten Fahrzeug" } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Unfallgutachten Berlin", url: `${siteUrl}/unfallgutachten-berlin` } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Heckauffahrunfall Gutachten Berlin", url: `${siteUrl}/heckauffahrunfall-berlin` } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Parkschaden Gutachten Berlin", url: `${siteUrl}/parkschaden-gutachten-berlin` } },
+          { "@type": "Offer", itemOffered: { "@type": "Service", name: "Totalschaden Gutachten Berlin", url: `${siteUrl}/totalschaden-gutachten-berlin` } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Schadensregulierung Berlin" } },
         ],
       },
@@ -154,17 +161,26 @@ const jsonLd = {
         bestRating: "5",
         worstRating: "1",
       },
-    },
-    {
-      "@type": "FAQPage",
-      mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
-        name: faq.q,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.a,
+      review: [
+        {
+          "@type": "Review",
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          author: { "@type": "Person", name: "Michael R." },
+          reviewBody: "Absolut top! Nach dem Auffahrunfall war ich total überfordert. Herr Arslan hat innerhalb von 24 Stunden ein vollständiges Gutachten erstellt. Die Versicherung des Verursachers hat alles bezahlt – für mich komplett kostenlos.",
         },
-      })),
+        {
+          "@type": "Review",
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          author: { "@type": "Person", name: "Sabine K." },
+          reviewBody: "Sehr professionell und schnell. Der Parkschaden wurde präzise dokumentiert, die Gegenseite konnte nicht mehr bestreiten. Klare Empfehlung für jeden, der in Berlin einen unabhängigen Gutachter braucht.",
+        },
+        {
+          "@type": "Review",
+          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+          author: { "@type": "Person", name: "Thomas W." },
+          reviewBody: "Hatte einen Totalschaden und wusste nicht, was mir zusteht. Gutachten Prenzl hat den Wiederbeschaffungswert korrekt ermittelt – deutlich höher als das Angebot der Versicherung.",
+        },
+      ],
     },
   ],
 };
@@ -190,6 +206,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5CCZ6MN" height="0" width="0" style={{display:"none",visibility:"hidden"}}></iframe></noscript>
         {/* End Google Tag Manager (noscript) */}
         {children}
+        <FloatingWhatsApp />
         <CookieBanner />
         {/* Google tag (gtag.js) – Conversion-ID: 18025620294 | Label: frZvCLbrpJAcEMbGpJND */}
         <Script

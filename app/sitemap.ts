@@ -21,6 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kfz-gutachter-lichtenberg",
     "/kfz-sachverstaendiger-berlin",
     "/unfallgutachten-berlin",
+    "/heckauffahrunfall-berlin",
+    "/parkschaden-gutachten-berlin",
+    "/totalschaden-gutachten-berlin",
   ];
 
   return [

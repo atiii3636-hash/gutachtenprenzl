@@ -1,4 +1,3 @@
-"use client";
 import { MapPin, Zap } from "lucide-react";
 import Link from "next/link";
 
@@ -69,17 +68,19 @@ export default function BerlinMapSection() {
           ))}
         </div>
 
-        {/* Quote */}
+        {/* Quote + info */}
         <div className="bg-white/3 border border-white/8 rounded-2xl p-8 text-center">
           <p className="text-[17px] text-white/70 leading-relaxed italic max-w-2xl mx-auto mb-6">
             „Egal wo in Berlin — Ihr KFZ Sachverständiger und KFZ Gutachter ist für Sie da. Wir kommen direkt zu Ihnen und kümmern uns um alles: vom Gutachten bis zur vollständigen Regulierung durch die Versicherung."
           </p>
-          {/* SEO text */}
-          <p className="text-[12px] text-white/25 leading-relaxed max-w-3xl mx-auto">
-            KFZ Sachverständiger Berlin · KFZ Gutachter Berlin · Unfallgutachten in{" "}
-            <strong className="text-white/35">
-              Prenzlauer Berg, Mitte, Charlottenburg, Friedrichshain, Kreuzberg, Neukölln, Schöneberg, Tempelhof, Steglitz, Spandau, Reinickendorf, Marzahn, Lichtenberg, Köpenick und Pankow
-            </strong>.
+          <p className="text-[14px] text-white/45 leading-relaxed max-w-3xl mx-auto">
+            Als <strong className="text-white/70">KFZ Sachverständiger Berlin</strong> und{" "}
+            <strong className="text-white/70">KFZ Gutachter Berlin</strong> erstellen wir TÜV-zertifizierte
+            Unfallgutachten in allen Berliner Bezirken — von{" "}
+            <strong className="text-white/70">Prenzlauer Berg</strong> über{" "}
+            <strong className="text-white/70">Mitte, Charlottenburg, Friedrichshain, Kreuzberg, Neukölln</strong> bis
+            nach <strong className="text-white/70">Tempelhof, Steglitz, Spandau, Reinickendorf, Marzahn,
+            Lichtenberg, Köpenick und Pankow</strong>. Anfahrtszeit garantiert unter 30 Minuten.
           </p>
         </div>
 
