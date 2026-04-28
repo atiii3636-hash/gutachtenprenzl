@@ -177,7 +177,7 @@ export default async function GoogleReviewsSection() {
         {/* CTA to Google */}
         <div className="text-center">
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Gutachten+Prenzl+KFZ+Sachverst%C3%A4ndiger+Berlin"
+            href="https://www.google.com/maps/search/?api=1&query=Kfz+Gutachten+Prenzl&query_place_id=ChIJ6WBvNC7A_yQR59KBPvyK9UY"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#080D14] hover:bg-[#111820] text-white font-semibold text-[14px] px-6 py-3.5 rounded-xl transition-colors"
