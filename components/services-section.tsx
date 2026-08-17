@@ -5,7 +5,7 @@ const services = [
   {
     icon: Search,
     title: "Unfallgutachten Berlin",
-    desc: "Detaillierte, TÜV-zertifizierte Schadensanalyse nach Verkehrsunfall. Rechtssicher und von allen Versicherungen anerkannt.",
+    desc: "Detaillierte, TÜV-zertifizierte Schadensanalyse nach Verkehrsunfall. Rechtssicher, von Versicherungen im Regelfall anerkannt.",
     tag: "Kernleistung",
     href: "/unfallgutachten-berlin",
   },
@@ -48,18 +48,17 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="leistungen" className="py-24 px-5">
+    <section id="leistungen" className="py-16 md:py-24 px-5 bg-[#080D14]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-14">
-          <div className="inline-flex items-center gap-2 text-[#E11D2F] text-[11px] font-semibold uppercase tracking-widest mb-4">
-            <span className="w-5 h-px bg-[#E11D2F]" />
+        <div className="text-center mb-14" data-reveal>
+          <span className="inline-flex items-center gap-2 bg-[#E11D2F]/10 border border-[#E11D2F]/25 text-[#E11D2F] text-[13px] font-bold px-4 py-1.5 rounded-full mb-4">
             Leistungen
-          </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-white tracking-tight mb-3">
+          </span>
+          <h2 className="font-display font-extrabold text-white tracking-tight text-3xl md:text-[42px] leading-tight mb-3">
             KFZ Gutachten Leistungen in Berlin
           </h2>
-          <p className="text-white/45 text-[15px] max-w-md leading-relaxed">
+          <p className="text-white/50 text-[16px] max-w-lg mx-auto leading-relaxed">
             Als unabhängiger KFZ Sachverständiger in Berlin stehen wir ausschließlich auf Ihrer Seite –
             nicht auf der der Versicherung.
           </p>
@@ -67,41 +66,32 @@ export default function ServicesSection() {
 
         {/* Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {services.map(({ icon: Icon, title, desc, tag, href }) => {
+          {services.map(({ icon: Icon, title, desc, tag, href }, i) => {
             const inner = (
               <>
-                {/* Hover glow */}
-                <div className="absolute inset-0 bg-gradient-to-b from-[#E11D2F]/0 to-[#E11D2F]/4 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                <div className="relative">
-                  <div className="w-11 h-11 rounded-xl bg-[#E11D2F]/8 border border-[#E11D2F]/15 flex items-center justify-center mb-5 group-hover:bg-[#E11D2F]/15 transition-colors">
-                    <Icon size={20} className="text-[#E11D2F]" />
-                  </div>
-                  <h3 className="font-display font-semibold text-white text-[16px] mb-2">{title}</h3>
-                  <p className="text-white/45 text-[13px] leading-relaxed mb-4">{desc}</p>
-                  <span className="inline-block text-[11px] font-semibold text-[#E11D2F] bg-[#E11D2F]/8 px-2.5 py-1 rounded-md">
-                    {tag}
-                  </span>
-                  {href && (
-                    <span className="block text-[11px] text-[#E11D2F]/60 group-hover:text-[#E11D2F] mt-3 transition-colors">
-                      Mehr erfahren →
-                    </span>
-                  )}
+                <div className="w-11 h-11 rounded-xl bg-[#E11D2F]/10 flex items-center justify-center mb-5 group-hover:bg-[#E11D2F]/20 transition-colors">
+                  <Icon size={20} className="text-[#E11D2F]" />
                 </div>
+                <h3 className="font-display font-bold text-white text-[16px] mb-2">{title}</h3>
+                <p className="text-white/50 text-[13.5px] leading-relaxed mb-4">{desc}</p>
+                <span className="inline-block text-[11px] font-semibold text-[#E11D2F] bg-[#E11D2F]/10 px-2.5 py-1 rounded-md">
+                  {tag}
+                </span>
+                {href && (
+                  <span className="block text-[12px] font-semibold text-white/35 group-hover:text-[#E11D2F] mt-3 transition-colors">
+                    Mehr erfahren →
+                  </span>
+                )}
               </>
             );
+            const cardClass =
+              "group bg-[#0C1420] border border-white/8 rounded-2xl p-6 hover:border-white/15 transition-all duration-300 hover:-translate-y-1 block";
             return href ? (
-              <Link
-                key={title}
-                href={href}
-                className="group relative bg-[#0C1420] border border-white/6 rounded-xl p-6 hover:border-[#E11D2F]/30 transition-all duration-300 hover:-translate-y-1 overflow-hidden block"
-              >
+              <Link key={title} href={href} className={cardClass} data-reveal style={{ transitionDelay: `${(i % 3) * 80}ms` }}>
                 {inner}
               </Link>
             ) : (
-              <div
-                key={title}
-                className="group relative bg-[#0C1420] border border-white/6 rounded-xl p-6 hover:border-[#E11D2F]/30 transition-all duration-300 hover:-translate-y-1 overflow-hidden"
-              >
+              <div key={title} className={cardClass} data-reveal style={{ transitionDelay: `${(i % 3) * 80}ms` }}>
                 {inner}
               </div>
             );

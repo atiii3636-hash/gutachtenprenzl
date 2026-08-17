@@ -46,7 +46,7 @@ export default function Footer() {
           <div>
             <h4 className="text-[12px] font-semibold uppercase tracking-widest text-white/30 mb-4">Navigation</h4>
             <ul className="space-y-3">
-              {["#leistungen|Leistungen", "#ablauf|Ablauf", "#vorteile|Vorteile", "#kontakt|Kontakt"].map((item) => {
+              {["#leistungen|Leistungen", "#vertrauen|Ablauf", "#vorteile|Vorteile", "#kontakt|Kontakt"].map((item) => {
                 const [href, label] = item.split("|");
                 return (
                   <li key={href}>
@@ -93,10 +93,16 @@ export default function Footer() {
           </p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
             {[
+              // Beide Hauptseiten waren bisher intern unverlinkt (nur in der Sitemap).
+              { href: "/kfz-gutachter-berlin", label: "KFZ-Gutachter Berlin" },
+              { href: "/kfz-sachverstaendiger-berlin", label: "KFZ Sachverständiger Berlin" },
               { href: "/unfallgutachten-berlin", label: "Unfallgutachten Berlin" },
               { href: "/heckauffahrunfall-berlin", label: "Heckauffahrunfall Berlin" },
               { href: "/parkschaden-gutachten-berlin", label: "Parkschaden Berlin" },
               { href: "/totalschaden-gutachten-berlin", label: "Totalschaden Berlin" },
+              { href: "/ueber-uns", label: "Über Atakan Arslan" },
+              { href: "/kontakt", label: "Kontakt & Anfahrt" },
+              { href: "/blog", label: "Ratgeber & Blog" },
             ].map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className="text-[13px] text-white/45 hover:text-white transition-colors">
@@ -127,6 +133,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-white/6">
           <p className="text-[14px] text-white/25">© 2026 Gutachten Prenzl. Alle Rechte vorbehalten.</p>
           <div className="flex gap-5">
+            <a href="/ueber-uns" className="text-[14px] text-white/25 hover:text-white/60 transition-colors">Über uns</a>
+            <a href="/kosten-kfz-gutachten-berlin" className="text-[14px] text-white/25 hover:text-white/60 transition-colors">Kosten</a>
+            <a href="/nutzungsausfall-tabelle-berlin" className="text-[14px] text-white/25 hover:text-white/60 transition-colors">Nutzungsausfall</a>
+            <a href="/eigener-gutachter-oder-versicherungsgutachter" className="text-[14px] text-white/25 hover:text-white/60 transition-colors">Gutachter-Vergleich</a>
+            <a href="/blog" className="text-[14px] text-white/25 hover:text-white/60 transition-colors">Ratgeber</a>
             <a href="/impressum" className="text-[14px] text-white/25 hover:text-white/60 transition-colors">Impressum</a>
             <a href="/datenschutz" className="text-[14px] text-white/25 hover:text-white/60 transition-colors">Datenschutz</a>
           </div>

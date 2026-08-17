@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
   title: "Impressum",
   description: "Impressum von Gutachten Prenzl – KFZ Sachverständiger Berlin.",
-  robots: { index: false, follow: false },
+  alternates: { canonical: "https://gutachtenprenzl.de/impressum" },
 };
 
 export default function ImpressumPage() {
@@ -35,6 +35,7 @@ export default function ImpressumPage() {
           <h2 className="font-display font-black text-xl text-[#080D14] uppercase mb-3">Anbieter</h2>
           <div className="p-4 bg-gray-50 rounded-xl text-[14px] space-y-1">
             <p className="font-bold text-[#080D14]">Atakan Arslan</p>
+            <p className="text-gray-500">handelnd unter der Bezeichnung „Gutachten Prenzl"</p>
             <p>KFZ Sachverständiger</p>
             <p>Prenzlauer Allee 88</p>
             <p>10405 Berlin</p>

@@ -7,48 +7,49 @@ export default function FaqSection() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-20 px-5 bg-[#080D14]">
+    <section id="faq" className="py-16 md:py-24 px-5 bg-[#080D14] border-t border-white/5">
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 text-[#E11D2F] text-[11px] font-semibold uppercase tracking-widest mb-4">
-            <span className="w-5 h-px bg-[#E11D2F]" />
+        <div className="text-center mb-12" data-reveal>
+          <span className="inline-flex items-center gap-2 bg-[#E11D2F]/10 border border-[#E11D2F]/25 text-[#E11D2F] text-[13px] font-bold px-4 py-1.5 rounded-full mb-4">
             Häufige Fragen
-            <span className="w-5 h-px bg-[#E11D2F]" />
-          </div>
-          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase tracking-tight">
-            Ihre Fragen —<br />
-            <span className="text-[#E11D2F]">unsere Antworten</span>
+          </span>
+          <h2 className="font-display font-extrabold text-white tracking-tight text-3xl md:text-[42px] leading-tight">
+            Ihre Fragen — unsere Antworten
           </h2>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2" data-reveal style={{ transitionDelay: "120ms" }}>
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className={`border rounded-xl transition-all duration-200 overflow-hidden ${
-                open === i
-                  ? "border-[#E11D2F]/30 bg-white/4"
-                  : "border-white/6 bg-white/2 hover:border-white/12"
+              className={`border rounded-2xl transition-all duration-200 overflow-hidden bg-[#0C1420] ${
+                open === i ? "border-[#E11D2F]/30" : "border-white/8 hover:border-white/15"
               }`}
             >
               <button
                 onClick={() => setOpen(open === i ? null : i)}
+                aria-expanded={open === i}
+                aria-controls={`faq-answer-${i}`}
                 className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
               >
-                <span className={`text-[15px] font-semibold leading-snug transition-colors ${open === i ? "text-white" : "text-white/75"}`}>
+                <span className={`text-[15px] font-semibold leading-snug transition-colors ${open === i ? "text-white" : "text-white/80"}`}>
                   {faq.q}
                 </span>
-                <span className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all ${
-                  open === i ? "bg-[#E11D2F] text-white" : "bg-white/6 text-white/40"
-                }`}>
+                <span
+                  className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all ${
+                    open === i ? "bg-[#E11D2F] text-white" : "bg-white/8 text-white/40"
+                  }`}
+                >
                   {open === i ? <Minus size={14} /> : <Plus size={14} />}
                 </span>
               </button>
-              {open === i && (
-                <div className="px-6 pb-5">
-                  <p className="text-white/55 text-[14px] leading-relaxed">{faq.a}</p>
-                </div>
-              )}
+              {/* Antwort steht immer im HTML (SSR + Crawler lesen sie), nur die Höhe wird animiert */}
+              <div
+                id={`faq-answer-${i}`}
+                className={`overflow-hidden transition-all duration-200 ${open === i ? "max-h-96" : "max-h-0"}`}
+              >
+                <p className="px-6 pb-5 text-white/55 text-[14px] leading-relaxed">{faq.a}</p>
+              </div>
             </div>
           ))}
         </div>

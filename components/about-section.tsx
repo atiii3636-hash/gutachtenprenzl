@@ -5,7 +5,7 @@ const credentials = [
   {
     icon: ShieldCheck,
     title: "TÜV Rheinland zertifiziert",
-    text: "Zertifikat-ID 0217466029, gültig bis 18.12.2028. Anerkannt von allen Versicherungen in Deutschland.",
+    text: "Zertifikat-ID 0217466029, gültig bis 18.12.2028. Von Versicherungen in Deutschland im Regelfall anerkannt.",
   },
   {
     icon: Award,
@@ -96,7 +96,7 @@ export default function AboutSection() {
               </div>
               <div>
                 <p className="text-white font-bold text-[13px]">TÜV Rheinland Zertifikat</p>
-                <p className="text-white/40 text-[12px]">ID: 0217466029 · Gültig bis 18.12.2028 · Anerkannt von allen deutschen Versicherungen</p>
+                <p className="text-white/40 text-[12px]">ID: 0217466029 · Gültig bis 18.12.2028 · Von deutschen Versicherungen im Regelfall anerkannt</p>
               </div>
             </div>
           </div>
