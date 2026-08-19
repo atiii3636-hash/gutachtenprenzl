@@ -113,7 +113,7 @@ export default function Hero() {
               style={{ animationDelay: "350ms" }}
             >
               <MessageCircle size={18} />
-              WhatsApp-Chat starten
+              Kostenlose Ersteinschätzung
             </a>
           </div>
 
