@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Phone, MessageCircle, Info, ArrowRight, Calendar } from "lucide-react";
 import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/contact";
+import NavbarNeu from "@/components/navbar-neu";
+import FooterNeu from "@/components/footer-neu";
 
 /* Nutzungsausfall-Tabelle. Seitentyp ist bei Sachverständigenbüros nachweislich
    erfolgreich (hb-gutachten, besa-gutachter, gutachter-koop, unfallpaten ranken
@@ -138,7 +140,9 @@ const jsonLd = {
 
 export default function NutzungsausfallTabelle() {
   return (
-    <div className="min-h-screen bg-[#080D14]">
+    <div className="min-h-screen bg-[#050507]">
+      <NavbarNeu />
+      <div className="pt-16" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero + Direktantwort */}
@@ -368,14 +372,7 @@ export default function NutzungsausfallTabelle() {
         </div>
       </section>
 
-      <div className="bg-[#080D14] px-5 py-6 text-center">
-        <p className="text-white/25 text-[12px]">
-          © 2026 Gutachten Prenzl ·{" "}
-          <Link href="/impressum" className="hover:text-white/50 transition-colors">Impressum</Link>
-          {" · "}
-          <Link href="/datenschutz" className="hover:text-white/50 transition-colors">Datenschutz</Link>
-        </p>
-      </div>
+      <FooterNeu />
     </div>
   );
 }

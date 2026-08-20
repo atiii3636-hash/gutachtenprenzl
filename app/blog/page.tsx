@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpen, Clock, ArrowRight } from "lucide-react";
+import NavbarNeu from "@/components/navbar-neu";
+import FooterNeu from "@/components/footer-neu";
 
 export const metadata: Metadata = {
   title: { absolute: "Ratgeber: KFZ Gutachten & Unfallrecht Berlin" },
@@ -38,7 +40,9 @@ const articles = [
 
 export default function BlogIndex() {
   return (
-    <div className="min-h-screen bg-[#080D14]">
+    <div className="min-h-screen bg-[#050507]">
+      <NavbarNeu />
+      <div className="pt-16" />
 
       {/* Header */}
       <section className="px-5 pt-20 pb-14">
@@ -172,14 +176,7 @@ export default function BlogIndex() {
         </div>
       </section>
 
-      <div className="bg-[#080D14] px-5 py-6 text-center">
-        <p className="text-white/25 text-[12px]">
-          © 2026 Gutachten Prenzl ·{" "}
-          <Link href="/impressum" className="hover:text-white/50 transition-colors">Impressum</Link>
-          {" · "}
-          <Link href="/datenschutz" className="hover:text-white/50 transition-colors">Datenschutz</Link>
-        </p>
-      </div>
+      <FooterNeu />
     </div>
   );
 }

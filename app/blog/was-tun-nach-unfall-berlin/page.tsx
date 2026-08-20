@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Phone, ArrowLeft, CheckCircle, AlertTriangle, Clock } from "lucide-react";
+import NavbarNeu from "@/components/navbar-neu";
+import FooterNeu from "@/components/footer-neu";
 
 export const metadata: Metadata = {
   title: "Was tun nach einem Unfall in Berlin?: Schritt für Schritt",
@@ -79,7 +81,9 @@ const steps = [
 
 export default function WasTunNachUnfall() {
   return (
-    <div className="min-h-screen bg-[#080D14]">
+    <div className="min-h-screen bg-[#050507]">
+      <NavbarNeu />
+      <div className="pt-16" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -303,14 +307,7 @@ export default function WasTunNachUnfall() {
         </div>
       </section>
 
-      <div className="bg-[#080D14] px-5 py-6 text-center">
-        <p className="text-white/25 text-[12px]">
-          © 2026 Gutachten Prenzl ·{" "}
-          <Link href="/impressum" className="hover:text-white/50 transition-colors">Impressum</Link>
-          {" · "}
-          <Link href="/datenschutz" className="hover:text-white/50 transition-colors">Datenschutz</Link>
-        </p>
-      </div>
+      <FooterNeu />
     </div>
   );
 }

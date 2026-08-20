@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, MessageCircle, CheckCircle, Clock, Shield, Star, AlertTriangle, ChevronRight, MapPin, Euro, Car, Gauge, FileText } from "lucide-react";
 import StandortKarte from "@/components/standort-karte";
+import NavbarNeu from "@/components/navbar-neu";
+import FooterNeu from "@/components/footer-neu";
 import type { BezirkContent } from "@/lib/bezirk-content";
 import { bezirkContent } from "@/lib/bezirk-content";
 import { WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
@@ -42,10 +44,11 @@ export default function BezirkPageTemplate({ content }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
 
-      <div className="min-h-screen bg-[#080D14]">
+      <div className="min-h-screen bg-[#050507]">
+        <NavbarNeu />
 
-        {/* Breadcrumb */}
-        <nav className="bg-[#080D14]/80 px-5 pt-5 pb-0" aria-label="Breadcrumb">
+        {/* Breadcrumb – pt-24 schafft Platz unter der festen Navigationsleiste */}
+        <nav className="px-5 pt-24 pb-0" aria-label="Breadcrumb">
           <div className="max-w-3xl mx-auto">
             <ol className="flex items-center flex-wrap gap-1 text-[12px] text-white/30" itemScope itemType="https://schema.org/BreadcrumbList">
               <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
@@ -77,7 +80,7 @@ export default function BezirkPageTemplate({ content }: Props) {
             quality={75}
             className="object-cover object-center opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#080D14]/60 to-[#080D14]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050507]/60 to-[#050507]" />
 
           <div className="relative max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
@@ -157,7 +160,7 @@ export default function BezirkPageTemplate({ content }: Props) {
         </section>
 
         {/* Hotspots — unique per Bezirk */}
-        <section className="bg-[#080D14] px-5 py-14 border-t border-white/6">
+        <section className="bg-[#050507] px-5 py-14 border-t border-white/6">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display font-black text-2xl md:text-3xl text-white uppercase mb-2">
               Unfallschwerpunkte in {name}
@@ -205,7 +208,7 @@ export default function BezirkPageTemplate({ content }: Props) {
         </section>
 
         {/* Ablauf — nutzt Bezirksdaten (Anfahrtszeit, Ortsteile), variiert also je Seite */}
-        <section className="bg-[#080D14] px-5 py-14 border-t border-white/6">
+        <section className="bg-[#050507] px-5 py-14 border-t border-white/6">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display font-black text-2xl md:text-3xl text-white uppercase mb-3">
               So läuft es ab in {nameShort}
@@ -310,7 +313,7 @@ export default function BezirkPageTemplate({ content }: Props) {
         </section>
 
         {/* Geldseiten — bisher verlinkte keine Bezirksseite hierhin */}
-        <section className="bg-[#080D14] px-5 py-10 border-t border-white/6">
+        <section className="bg-[#050507] px-5 py-10 border-t border-white/6">
           <div className="max-w-3xl mx-auto">
             <p className="text-[12px] font-semibold uppercase tracking-widest text-white/30 mb-4">
               Mehr zu Kosten und Ansprüchen
@@ -404,16 +407,7 @@ export default function BezirkPageTemplate({ content }: Props) {
           </div>
         </section>
 
-        {/* Footer minimal */}
-        <div className="bg-[#080D14] px-5 py-6 text-center">
-          <p className="text-white/25 text-[12px]">
-            © 2026 Gutachten Prenzl · Atakan Arslan ·{" "}
-            <Link href="/impressum" className="hover:text-white/50 transition-colors">Impressum</Link>
-            {" · "}
-            <Link href="/datenschutz" className="hover:text-white/50 transition-colors">Datenschutz</Link>
-          </p>
-        </div>
-
+        <FooterNeu />
       </div>
     </>
   );

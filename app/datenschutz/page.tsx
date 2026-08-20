@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import NavbarNeu from "@/components/navbar-neu";
+import FooterNeu from "@/components/footer-neu";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
@@ -11,8 +13,9 @@ export const metadata: Metadata = {
 export default function DatenschutzPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="bg-[#080D14] py-10 px-5">
+      <NavbarNeu />
+      {/* Header – pt-28 schafft Platz unter der festen Navigationsleiste */}
+      <div className="bg-[#050507] pt-28 pb-10 px-5">
         <div className="max-w-3xl mx-auto">
           <Link
             href="/"
@@ -162,6 +165,8 @@ export default function DatenschutzPage() {
           </Link>
         </div>
       </div>
+
+      <FooterNeu />
     </div>
   );
 }

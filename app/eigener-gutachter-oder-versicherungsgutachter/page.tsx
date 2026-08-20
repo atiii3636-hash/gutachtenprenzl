@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Phone, MessageCircle, Check, X, ArrowRight, Scale } from "lucide-react";
 import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/contact";
+import NavbarNeu from "@/components/navbar-neu";
+import FooterNeu from "@/components/footer-neu";
 
 /* Vergleichsseite. Vergleichsinhalte sind das mit Abstand am häufigsten zitierte
    Format in KI-Antworten — deshalb bewusst als echte Vergleichstabelle mit
@@ -160,7 +162,9 @@ const jsonLd = {
 
 export default function GutachterVergleich() {
   return (
-    <div className="min-h-screen bg-[#080D14]">
+    <div className="min-h-screen bg-[#050507]">
+      <NavbarNeu />
+      <div className="pt-16" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section className="relative px-5 pt-16 pb-14 overflow-hidden">
@@ -388,14 +392,7 @@ export default function GutachterVergleich() {
         </div>
       </section>
 
-      <div className="bg-[#080D14] px-5 py-6 text-center">
-        <p className="text-white/25 text-[12px]">
-          © 2026 Gutachten Prenzl ·{" "}
-          <Link href="/impressum" className="hover:text-white/50 transition-colors">Impressum</Link>
-          {" · "}
-          <Link href="/datenschutz" className="hover:text-white/50 transition-colors">Datenschutz</Link>
-        </p>
-      </div>
+      <FooterNeu />
     </div>
   );
 }
