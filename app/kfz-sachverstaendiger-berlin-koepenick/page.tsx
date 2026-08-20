@@ -5,7 +5,7 @@ import BezirkPageTemplate from "@/components/bezirk-page-template";
 const content = getBezirkBySlug("kfz-sachverstaendiger-berlin-koepenick")!;
 
 export const metadata: Metadata = {
-  title: content.title,
+  title: { absolute: content.title },
   description: content.metaDescription,
   alternates: { canonical: content.canonical },
   keywords: content.keywords,

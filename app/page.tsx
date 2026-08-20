@@ -1,14 +1,15 @@
-import Script from "next/script";
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import TrustBand from "@/components/trust-band";
-import DamageFormSection from "@/components/damage-form-section";
-import ServicesSection from "@/components/services-section";
-import AboutSection from "@/components/about-section";
-import FeaturesSection from "@/components/features-section";
+import TrustStepsSection from "@/components/trust-steps-section";
 import GoogleReviewsSection from "@/components/google-reviews-section";
+import PhotoGallerySection from "@/components/photo-gallery-section";
+import ServicesSection from "@/components/services-section";
+import FeaturesSection from "@/components/features-section";
 import FaqSection from "@/components/faq-section";
 import BerlinMapSection from "@/components/berlin-map-section";
+import StandortKarte from "@/components/standort-karte";
+import DamageFormSection from "@/components/damage-form-section";
 import Footer from "@/components/footer";
 import { faqs } from "@/lib/faqs";
 
@@ -28,21 +29,24 @@ const faqJsonLd = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#080D14]">
-      <Script
-        id="faq-jsonld"
+      {/* Plain <script>, kein next/script: next/script rendert JSON-LD nur in den
+          React-Flight-Payload, nicht als echtes Tag ins HTML. */}
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Navbar />
       <Hero />
-      <TrustBand />
+      <TrustStepsSection />
       <DamageFormSection />
-      <ServicesSection />
-      <AboutSection />
-      <FeaturesSection />
+      <TrustBand />
       <GoogleReviewsSection />
+      <PhotoGallerySection />
+      <ServicesSection />
+      <FeaturesSection />
       <FaqSection />
       <BerlinMapSection />
+      <StandortKarte variant="dark" />
       <Footer />
     </main>
   );

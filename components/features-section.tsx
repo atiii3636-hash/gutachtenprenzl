@@ -1,122 +1,102 @@
-import { Check } from "lucide-react";
+import { Check, Phone } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const features = [
   {
     title: "TÜV-zertifiziert & unabhängig",
-    desc: "Staatlich anerkannte Zertifizierung. Keine Abhängigkeit von Versicherungen oder Kfz-Werkstätten.",
+    desc: "Keine Abhängigkeit von Versicherungen oder Werkstätten.",
   },
   {
-    title: "Vollständige Schadenserfassung",
-    desc: "Wir erfassen alle Schäden – auch versteckte und Folgeschäden – damit Sie keine Ansprüche verlieren.",
+    title: "Persönlicher Ansprechpartner",
+    desc: "Sie sprechen direkt mit dem zertifizierten Sachverständigen — kein Callcenter.",
   },
   {
     title: "Direktübermittlung an die Versicherung",
-    desc: "Das Gutachten geht direkt von uns an die Versicherung. Sie müssen sich um nichts kümmern.",
-  },
-  {
-    title: "Lokal in Prenzlauer Berg",
-    desc: "Kurze Wege, schnelle Reaktionszeiten. Wir kennen Berlin und sind schnell bei Ihnen.",
-  },
-  {
-    title: "Kostenlos bei unverschuldetem Unfall",
-    desc: "Bei Fremdverschulden übernimmt die Haftpflichtversicherung des Verursachers alle Kosten.",
+    desc: "Das Gutachten geht direkt von uns an die Versicherung.",
   },
 ];
 
 export default function FeaturesSection() {
   return (
-    <section id="vorteile" className="py-24 px-5">
+    <section id="vorteile" className="py-16 md:py-24 px-5 bg-[#F8FAFC] border-t border-gray-100">
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left */}
-          <div>
-            <div className="inline-flex items-center gap-2 text-[#E11D2F] text-[11px] font-semibold uppercase tracking-widest mb-4">
-              <span className="w-5 h-px bg-[#E11D2F]" />
-              Warum Gutachten Prenzl
-            </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white tracking-tight mb-3">
-              Ihr unabhängiger Sachverständiger
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left – text */}
+          <div data-reveal>
+            <h2 className="font-display font-extrabold text-[#080D14] tracking-tight text-3xl md:text-[40px] leading-tight mb-5">
+              Ihr unabhängiger KFZ Sachverständiger in Berlin
             </h2>
-            <p className="text-white/45 text-[15px] leading-relaxed mb-10 max-w-md">
-              Wir arbeiten ausschließlich für Sie. Kein Interessenkonflikt
-              mit Versicherungen oder Werkstätten – nur objektive, vollständige Gutachten.
+
+            <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
+              TÜV Rheinland zertifiziert, mit Büro in der{" "}
+              <Link
+                href="/kfz-sachverstaendiger-berlin-prenzlauer-berg"
+                className="text-[#080D14] font-semibold hover:text-[#E11D2F] transition-colors underline underline-offset-2 decoration-gray-300"
+              >
+                Prenzlauer Allee 88
+              </Link>{" "}
+              — unabhängig von Versicherungen und Werkstätten, damit Sie sich zu 100 % auf uns verlassen können.
             </p>
 
-            <div className="space-y-0">
+            <div className="space-y-6 mb-8">
               {features.map(({ title, desc }) => (
-                <div key={title} className="flex gap-4 py-5 border-b border-white/6 first:border-t first:border-t-white/6">
-                  <div className="w-5 h-5 rounded-md bg-[#E11D2F]/10 border border-[#E11D2F]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check size={11} className="text-[#E11D2F] stroke-[2.5]" />
-                  </div>
+                <div key={title} className="flex gap-4">
+                  <span className="w-8 h-8 rounded-full bg-[#E11D2F]/10 flex items-center justify-center flex-shrink-0">
+                    <Check size={15} className="text-[#E11D2F] stroke-[3]" />
+                  </span>
                   <div>
-                    <p className="font-semibold text-white text-[14px] mb-1">{title}</p>
-                    <p className="text-white/45 text-[13px] leading-relaxed">{desc}</p>
+                    <p className="font-bold text-[#080D14] text-[15px] mb-0.5">{title}</p>
+                    <p className="text-gray-500 text-[13.5px] leading-relaxed">{desc}</p>
                   </div>
                 </div>
               ))}
             </div>
+
+            {/* TÜV certificate card */}
+            <div className="bg-white border border-gray-200 rounded-2xl px-5 py-4 flex items-center gap-4 mb-8">
+              <Image
+                src="/tuev-zertifikat.png"
+                alt="TÜV Rheinland Zertifikat – Geprüfte Qualifikation, gültig bis 18.12.2028"
+                width={600}
+                height={220}
+                className="h-10 w-auto object-contain"
+              />
+              <div className="w-px h-10 bg-gray-200 flex-shrink-0" />
+              <p className="text-[12px] text-gray-500 leading-snug">
+                <span className="font-bold text-[#080D14]">TÜV Rheinland</span>
+                <br />
+                <span className="font-bold text-[#080D14]">Geprüfte Qualifikation</span> — gültig bis 18.12.2028
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="tel:+4915560003661"
+                className="inline-flex items-center gap-2 bg-[#E11D2F] hover:bg-[#C11527] text-white font-bold text-[14px] px-6 py-3.5 rounded-full shadow-lg shadow-[#E11D2F]/25 transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <Phone size={14} />
+                Jetzt anrufen
+              </a>
+              <Link
+                href="/ueber-uns"
+                className="inline-flex items-center gap-2 border border-gray-200 hover:border-gray-300 text-gray-500 hover:text-[#080D14] font-semibold text-[14px] px-6 py-3.5 rounded-full transition-all"
+              >
+                Mehr über uns →
+              </Link>
+            </div>
           </div>
 
-          {/* Right – big stat card */}
-          <div className="relative">
-            {/* Subtle background glow */}
-            <div className="absolute -inset-8 bg-[#E11D2F]/4 rounded-3xl blur-3xl pointer-events-none" />
-
-            <div className="relative bg-[#0C1420] border border-white/8 rounded-2xl p-8 overflow-hidden">
-              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-[#E11D2F] via-[#E11D2F]/40 to-transparent" />
-
-              {/* Hero number */}
-              <div className="mb-6">
-                <div className="font-display font-bold text-[90px] leading-none tracking-tighter text-white">
-                  24<span className="text-[#E11D2F]">h</span>
-                </div>
-                <p className="text-white/45 text-[14px] leading-relaxed mt-2">
-                  Ihr Gutachten ist fertig.<br />
-                  Schneller geht es nicht.
-                </p>
-              </div>
-
-              {/* Mini stats */}
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  { val: "0 €", label: "Kosten für Sie" },
-                  { val: "100%", label: "Anerkannte Gutachten" },
-                  { val: "24/7", label: "Notfall-Hotline" },
-                  { val: "TÜV", label: "Zertifiziert" },
-                ].map(({ val, label }) => (
-                  <div key={val} className="bg-[#0F172A] rounded-xl p-4 border border-white/5">
-                    <p className="font-display font-bold text-white text-[22px] leading-none mb-1">{val}</p>
-                    <p className="text-[11px] text-white/35 font-medium">{label}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* TÜV Certificate */}
-              <div className="mt-4 flex items-center gap-3 bg-white/3 border border-white/6 rounded-xl px-4 py-3">
-                <Image
-                  src="/tuev-zertifikat.png"
-                  alt="TÜV Rheinland Zertifikat – Geprüfte Qualifikation, gültig bis 18.12.2028"
-                  width={600}
-                  height={220}
-                  className="h-10 w-auto object-contain"
-                />
-                <div className="w-px h-8 bg-white/10 flex-shrink-0" />
-                <p className="text-[11px] text-white/40 leading-snug">
-                  Geprüfte Qualifikation<br />
-                  <span className="text-white/25">Gültig bis 18.12.2028</span>
-                </p>
-              </div>
-
-              {/* Unsplash car image */}
-              <div className="mt-4 rounded-xl overflow-hidden h-36 relative">
-                <img
-                  src="/feature-car.jpg"
-                  alt="KFZ Begutachtung"
-                  className="w-full h-full object-cover opacity-60"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1420] via-transparent to-transparent" />
-              </div>
+          {/* Right – Schadensaufnahme-Foto */}
+          <div className="relative" data-reveal style={{ transitionDelay: "120ms" }}>
+            <div className="relative rounded-3xl overflow-hidden shadow-xl shadow-black/5 border border-gray-200 h-80 sm:h-[440px] lg:h-[560px]">
+              <Image
+                src="/inhaber2.jpg"
+                alt="KFZ Sachverständiger Gutachten Prenzl – Schadensaufnahme vor Ort in Berlin"
+                fill
+                sizes="(max-width: 1024px) 100vw, 560px"
+                className="object-cover object-[50%_30%]"
+              />
             </div>
           </div>
         </div>

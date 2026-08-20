@@ -20,10 +20,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kfz-sachverstaendiger-berlin-prenzlauer-berg",
     "/kfz-gutachter-lichtenberg",
     "/kfz-sachverstaendiger-berlin",
+    "/kfz-gutachter-berlin",
     "/unfallgutachten-berlin",
     "/heckauffahrunfall-berlin",
     "/parkschaden-gutachten-berlin",
     "/totalschaden-gutachten-berlin",
+    "/kosten-kfz-gutachten-berlin",
+    "/eigener-gutachter-oder-versicherungsgutachter",
+    "/nutzungsausfall-tabelle-berlin",
+  ];
+
+  const blogPages = [
+    "/blog",
+    "/blog/was-tun-nach-unfall-berlin",
+    "/blog/recht-auf-eigenen-gutachter",
+    "/blog/parkschaden-was-tun",
   ];
 
   return [
@@ -33,11 +44,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: `${baseUrl}/ueber-uns`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/kontakt`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
     ...districtPages.map((path) => ({
       url: `${baseUrl}${path}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.85,
+    })),
+    ...blogPages.map((path) => ({
+      url: `${baseUrl}${path}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
     })),
     {
       url: `${baseUrl}/impressum`,

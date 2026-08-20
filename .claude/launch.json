@@ -1,0 +1,43 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Gutachten Prenzl (Original)",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["next", "dev"],
+      "port": 3001,
+      "autoPort": true
+    },
+    {
+      "name": "Gutachten Prenzl (Redesigned)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3001,
+      "autoPort": true
+    }
+    ,{
+      "name": "Gutachten Assistent HTML",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "3002", "."],
+      "port": 3002
+    }
+    ,{
+      "name": "Gutachten Cockpit",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["/Users/atakan/Gutachten-Cockpit/server.py", "--kein-fenster"],
+      "port": 8765
+    }
+    ,{
+      "name": "Gutachten Web App (separates Projekt)",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8099", "--directory", "/Users/atakan/Gutachten-Web"],
+      "port": 8099
+    }
+    ,{
+      "name": "Fahrer-Check (separates Projekt)",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "/Users/atakan/Claude/fahrer-check", "run", "dev"],
+      "port": 3100
+    }
+  ]
+}

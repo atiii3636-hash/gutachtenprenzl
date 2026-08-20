@@ -112,12 +112,12 @@ export default function DamageFormSection() {
 
         {/* Header */}
         <div className="text-center mb-8" data-reveal>
-          <p className="text-gray-400 text-[14px] mb-2">Kostenlose Schadenprüfung — Antwort in 30 Minuten</p>
+          <p className="text-gray-400 text-[14px] mb-2">Kostenlose Schadenprüfung, Antwort in 30 Minuten</p>
           <h2 className="font-display font-extrabold text-3xl md:text-[36px] text-[#080D14] tracking-tight leading-tight mb-3">
             Schaden jetzt online melden
           </h2>
           <p className="text-gray-500 text-[15.5px]">
-            Zwei Minuten ausfüllen — den Rest übernehmen wir für Sie.
+            Zwei Minuten ausfüllen, den Rest übernehmen wir für Sie.
           </p>
         </div>
 

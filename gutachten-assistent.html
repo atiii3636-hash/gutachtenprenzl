@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gutachten-Assistent · Gutachten Prenzl</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Palette – Trust & Authority / Slate */
+      --ink:         #0F172A;
+      --slate-800:   #1E293B;
+      --slate-700:   #334155;
+      --slate-600:   #475569;
+      --slate-500:   #64748B;
+      --slate-400:   #94A3B8;
+      --slate-300:   #CBD5E1;
+      --slate-200:   #E2E8F0;
+      --slate-100:   #F1F5F9;
+      --slate-50:    #F8FAFC;
+      --accent:      #2563EB;
+      --accent-dark: #1D4ED8;
+      --accent-pale: #EFF6FF;
+      --success:     #059669;
+      --success-pale:#ECFDF5;
+      --error:       #DC2626;
+      --error-pale:  #FEF2F2;
+      --white:       #FFFFFF;
+
+      /* Sidebar */
+      --sidebar-bg:  #0F172A;
+      --sidebar-w:   256px;
+      --header-h:    52px;
+
+      /* Radii */
+      --r:    8px;
+      --r-sm: 5px;
+      --r-lg: 12px;
+
+      /* Shadows */
+      --sh-xs: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --sh-sm: 0 2px 8px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.04);
+      --sh-md: 0 8px 28px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.06);
+
+      /* Transitions */
+      --t: 180ms ease;
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--slate-50);
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER ──────────────────────────── */
+    .hdr {
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: var(--header-h);
+      background: var(--sidebar-bg);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      z-index: 300;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      user-select: none;
+    }
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      background: var(--accent);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .brand-mark svg { width: 16px; height: 16px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; }
+    .brand-name {
+      font-family: 'EB Garamond', serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: rgba(255,255,255,.92);
+      letter-spacing: .01em;
+    }
+    .brand-divider {
+      width: 1px;
+      height: 14px;
+      background: rgba(255,255,255,.15);
+      margin: 0 2px;
+    }
+    .brand-sub {
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      color: rgba(255,255,255,.38);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+
+    /* ─── LAYOUT ──────────────────────────── */
+    .shell {
+      display: flex;
+      height: 100vh;
+      padding-top: var(--header-h);
+    }
+
+    /* ─── SIDEBAR ─────────────────────────── */
+    .sidebar {
+      width: var(--sidebar-w);
+      flex-shrink: 0;
+      background: var(--sidebar-bg);
+      position: fixed;
+      top: var(--header-h);
+      left: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      overflow-x: hidden;
+      border-right: 1px solid rgba(255,255,255,.05);
+      z-index: 200;
+    }
+
+    /* stepper */
+    .stepper {
+      padding: 28px 16px 24px;
+    }
+    .stepper-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.22);
+      margin-bottom: 20px;
+      padding-left: 4px;
+    }
+
+    .s-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 6px 4px;
+      position: relative;
+      border-radius: var(--r-sm);
+      transition: background var(--t);
+    }
+    .s-row.active { background: rgba(255,255,255,.05); }
+
+    /* vertical connector */
+    .s-row:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 19px;
+      top: 34px;
+      width: 1px;
+      height: 20px;
+      background: rgba(255,255,255,.08);
+    }
+    .s-row.done::after { background: rgba(37,99,235,.35); }
+
+    .s-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,.25);
+      flex-shrink: 0;
+      margin-top: 1px;
+      transition: all var(--t);
+    }
+    .s-row.active .s-circle {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .s-row.done .s-circle {
+      background: rgba(37,99,235,.2);
+      border-color: rgba(37,99,235,.5);
+      color: #93C5FD;
+    }
+
+    .s-meta { flex: 1; min-width: 0; padding-top: 2px; }
+    .s-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,.25);
+      transition: color var(--t);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .s-row.active .s-label { color: rgba(255,255,255,.92); }
+    .s-row.done  .s-label { color: rgba(255,255,255,.5); }
+
+    .s-desc {
+      font-size: 11px;
+      color: rgba(255,255,255,.17);
+      margin-top: 1px;
+      transition: color var(--t);
+    }
+    .s-row.active .s-desc { color: rgba(255,255,255,.4); }
+    .s-row.done  .s-desc { color: rgba(255,255,255,.28); }
+
+    /* examples block */
+    .ex-block {
+      margin-top: auto;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .ex-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 20px;
+      cursor: pointer;
+      user-select: none;
+      transition: background var(--t);
+    }
+    .ex-toggle:hover { background: rgba(255,255,255,.04); }
+    .ex-toggle-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+    }
+    .ex-count {
+      background: rgba(37,99,235,.5);
+      color: #93C5FD;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 10px;
+    }
+    .ex-chev {
+      font-size: 9px;
+      color: rgba(255,255,255,.2);
+      transition: transform var(--t);
+    }
+    .ex-toggle.open .ex-chev { transform: rotate(180deg); }
+
+    .ex-panel { display: none; padding: 0 14px 16px; }
+    .ex-panel.open { display: block; }
+
+    .ex-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 10px;
+      max-height: 170px;
+      overflow-y: auto;
+    }
+    .ex-list:empty::after {
+      content: 'Noch keine Beispiele gespeichert.';
+      font-size: 11px;
+      color: rgba(255,255,255,.22);
+      display: block;
+      padding: 4px 2px;
+    }
+    .ex-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,.05);
+      border-radius: var(--r-sm);
+    }
+    .ex-item-name {
+      flex: 1;
+      font-size: 11px;
+      color: rgba(255,255,255,.6);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .ex-del {
+      background: none; border: none;
+      color: rgba(255,255,255,.22);
+      cursor: pointer; font-size: 16px;
+      line-height: 1; padding: 0;
+      transition: color var(--t);
+      flex-shrink: 0;
+    }
+    .ex-del:hover { color: var(--error); }
+
+    .ex-add {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px dashed rgba(37,99,235,.4);
+      background: rgba(37,99,235,.08);
+      border-radius: var(--r-sm);
+      font-family: 'Lato', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,.45);
+      cursor: pointer;
+      transition: all var(--t);
+      letter-spacing: .02em;
+    }
+    .ex-add:hover {
+      background: rgba(37,99,235,.18);
+      border-color: rgba(37,99,235,.6);
+      color: rgba(255,255,255,.8);
+    }
+
+    /* ─── MAIN ────────────────────────────── */
+    .main {
+      flex: 1;
+      margin-left: var(--sidebar-w);
+      overflow-y: auto;
+      height: 100%;
+    }
+    .inner {
+      max-width: 760px;
+      padding: 48px 52px 96px;
+    }
+
+    /* ─── PANEL ───────────────────────────── */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* step breadcrumb */
+    .step-crumb {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .step-crumb-dot {
+      width: 5px; height: 5px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: .6;
+    }
+
+    .panel-h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 32px;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: -.01em;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .panel-lead {
+      font-size: 14px;
+      color: var(--slate-600);
+      line-height: 1.65;
+      margin-bottom: 32px;
+      max-width: 560px;
+    }
+
+    /* ─── CARD ────────────────────────────── */
+    .card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--r-lg);
+      padding: 24px;
+      box-shadow: var(--sh-sm);
+      margin-bottom: 16px;
+    }
+
+    /* ─── FORM ELEMENTS ───────────────────── */
+    .f-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--slate-500);
+      margin-bottom: 8px;
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      border: 1.5px solid var(--slate-200);
+      border-radius: var(--r);
+      padding: 12px 14px;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--ink);
+      background: var(--slate-50);
+      resize: vertical;
+      line-height: 1.7;
+      transition: border-color var(--t), background var(--t), box-shadow var(--t);
+    }
+    textarea:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+    }
+    textarea::placeholder, input::placeholder {
+      color: var(--slate-400);
+      font-style: italic;
+    }
+
+    select {
+      width: 100%;
+      border: 1.5px solid var(--slate-200);
+      border-radius: var(--r);
+      padding: 11px 40px 11px 14px;
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+      background: var(--slate-50);
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394A3B8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 16px;
+      transition: border-color var(--t), box-shadow var(--t);
+    }
+    select:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+    }
+
+    /* ─── BUTTONS ─────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 20px;
+      border-radius: var(--r);
+      font-family: 'Lato', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .01em;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all var(--t);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover:not(:disabled) {
+      background: var(--accent-dark);
+      box-shadow: 0 4px 16px rgba(37,99,235,.3);
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--slate-600);
+      border: 1.5px solid var(--slate-200);
+    }
+    .btn-ghost:hover:not(:disabled) {
+      background: var(--slate-100);
+      border-color: var(--slate-300);
+      color: var(--ink);
+    }
+    .btn:disabled {
+      opacity: .4;
+      cursor: not-allowed;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+    .btn:focus-visible {
+      outline: 3px solid rgba(37,99,235,.4);
+      outline-offset: 2px;
+    }
+    .btn-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── LOADING ─────────────────────────── */
+    .loading-state {
+      display: none;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+      padding: 16px 20px;
+      background: var(--accent-pale);
+      border: 1px solid rgba(37,99,235,.15);
+      border-radius: var(--r);
+    }
+    .loading-state.active { display: flex; }
+
+    .spinner {
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(37,99,235,.2);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin .7s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .loading-txt {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-dark);
+      letter-spacing: .01em;
+    }
+
+    /* ─── ERROR ───────────────────────────── */
+    .err-box {
+      display: none;
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: var(--error-pale);
+      border: 1px solid rgba(220,38,38,.2);
+      border-radius: var(--r);
+      color: var(--error);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .err-box.active { display: block; }
+
+    /* ─── QUESTION CARDS ──────────────────── */
+    .q-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--r-lg);
+      padding: 20px 22px;
+      box-shadow: var(--sh-xs);
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .q-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 14px; bottom: 14px;
+      width: 3px;
+      background: var(--accent);
+      border-radius: 0 3px 3px 0;
+      opacity: .5;
+    }
+
+    .q-num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 5px;
+      padding-left: 2px;
+    }
+    .q-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 12px;
+      line-height: 1.45;
+    }
+
+    .no-q-banner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      background: var(--success-pale);
+      border: 1px solid rgba(5,150,105,.2);
+      border-radius: var(--r-lg);
+      color: #065F46;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .no-q-icon {
+      width: 32px; height: 32px;
+      background: rgba(5,150,105,.15);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .no-q-icon svg { width: 16px; height: 16px; stroke: #059669; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ─── OUTPUT ──────────────────────────── */
+    .output-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 14px 18px;
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--r-lg);
+      box-shadow: var(--sh-xs);
+      margin-bottom: 20px;
+    }
+    .output-bar-txt {
+      font-size: 13px;
+      color: var(--slate-600);
+      font-weight: 400;
+    }
+    .output-bar-txt strong { color: var(--ink); font-weight: 700; }
+    .output-bar-actions { display: flex; gap: 8px; }
+
+    .out-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      box-shadow: var(--sh-xs);
+      margin-bottom: 14px;
+    }
+    .out-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background: var(--slate-800);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .out-title {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.7);
+    }
+    .cp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-family: 'Lato', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.7);
+      transition: all var(--t);
+    }
+    .cp-btn:hover { background: rgba(255,255,255,.16); color: #fff; border-color: rgba(255,255,255,.25); }
+    .cp-btn.done { background: rgba(5,150,105,.3); border-color: rgba(5,150,105,.5); color: #6EE7B7; }
+    .cp-btn svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .out-body { padding: 18px; }
+    .out-ta {
+      width: 100%;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--r);
+      padding: 13px 15px;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--ink);
+      background: var(--slate-50);
+      resize: vertical;
+      min-height: 90px;
+      line-height: 1.75;
+      transition: border-color var(--t), box-shadow var(--t);
+    }
+    .out-ta:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(37,99,235,.08);
+    }
+
+    /* ─── DIVIDER ─────────────────────────── */
+    .hdivider {
+      height: 1px;
+      background: var(--slate-200);
+      margin: 28px 0;
+    }
+
+    /* ─── MODAL ───────────────────────────── */
+    .modal-bg {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(15,23,42,.55);
+      backdrop-filter: blur(3px);
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-bg.open { display: flex; }
+
+    .modal {
+      background: var(--white);
+      border-radius: var(--r-lg);
+      padding: 28px 30px 24px;
+      width: 100%;
+      max-width: 660px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--sh-md);
+      border: 1px solid var(--slate-200);
+      animation: mIn .18s ease;
+    }
+    @keyframes mIn {
+      from { opacity:0; transform: translateY(8px) scale(.98); }
+      to   { opacity:1; transform: none; }
+    }
+
+    .modal-hdr {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .modal-title {
+      font-family: 'EB Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .modal-x {
+      background: none; border: none;
+      width: 28px; height: 28px;
+      border-radius: var(--r-sm);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      color: var(--slate-400);
+      font-size: 18px;
+      transition: all var(--t);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .modal-x:hover { background: var(--slate-100); color: var(--ink); }
+
+    .modal-desc {
+      font-size: 13px;
+      color: var(--slate-600);
+      margin-bottom: 20px;
+      line-height: 1.65;
+    }
+    .modal input[type="text"] { margin-bottom: 10px; }
+    .modal textarea { min-height: 260px; margin-bottom: 20px; }
+    .modal-ftr { display: flex; justify-content: flex-end; gap: 8px; }
+
+    /* ─── TOAST ───────────────────────────── */
+    #toast {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      padding: 11px 18px;
+      border-radius: var(--r);
+      font-family: 'Lato', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: var(--sh-md);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all .2s ease;
+      z-index: 9999;
+      pointer-events: none;
+      max-width: 320px;
+    }
+    #toast.show { opacity: 1; transform: none; }
+    #toast.success { background: var(--success); }
+    #toast.error   { background: var(--error); }
+    #toast.info    { background: var(--slate-800); }
+
+    /* ─── RESPONSIVE ──────────────────────── */
+    @media (max-width: 768px) {
+      .sidebar { display: none; }
+      .main { margin-left: 0; }
+      .inner { padding: 28px 20px 72px; }
+      .panel-h1 { font-size: 26px; }
+      .brand-divider, .brand-sub { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div class="brand">
+    <div class="brand-mark">
+      <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+    </div>
+    <span class="brand-name">Gutachten Prenzl</span>
+    <span class="brand-divider"></span>
+    <span class="brand-sub">Assistent</span>
+  </div>
+</header>
+
+<!-- SHELL -->
+<div class="shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <nav class="stepper" aria-label="Arbeitsschritte">
+      <div class="stepper-eyebrow">Arbeitsschritte</div>
+
+      <div class="s-row active" id="si1">
+        <div class="s-circle" id="sc1">1</div>
+        <div class="s-meta">
+          <div class="s-label">Rohdaten</div>
+          <div class="s-desc">Notizen &amp; Diktat eingeben</div>
+        </div>
+      </div>
+
+      <div class="s-row" id="si2">
+        <div class="s-circle" id="sc2">2</div>
+        <div class="s-meta">
+          <div class="s-label">Rückfragen</div>
+          <div class="s-desc">Fehlende Infos ergänzen</div>
+        </div>
+      </div>
+
+      <div class="s-row" id="si3">
+        <div class="s-circle" id="sc3">3</div>
+        <div class="s-meta">
+          <div class="s-label">Gutachtentexte</div>
+          <div class="s-desc">Bearbeiten &amp; kopieren</div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Examples -->
+    <div class="ex-block">
+      <div class="ex-toggle" id="exToggle" onclick="toggleExamples()">
+        <div class="ex-toggle-left">
+          <span>Beispielgutachten</span>
+          <span class="ex-count" id="exBadge">0</span>
+        </div>
+        <span class="ex-chev">▼</span>
+      </div>
+      <div class="ex-panel" id="exPanel">
+        <div class="ex-list" id="exList"></div>
+        <button class="ex-add" onclick="openExModal()">+ Beispiel hinzufügen</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main" id="main">
+    <div class="inner">
+
+      <!-- PANEL 1 -->
+      <div class="panel active" id="p1">
+        <div class="step-crumb">
+          <span class="step-crumb-dot"></span>
+          Schritt 1 von 3
+        </div>
+        <h1 class="panel-h1">Rohdaten eingeben</h1>
+        <p class="panel-lead">Stichpunkte, Diktat oder gemischte Notizen zum Schadensfall — alles rein, der Assistent analysiert und fragt nur gezielt nach.</p>
+
+        <div class="card">
+          <label class="f-label" for="rawInput">Rohdaten &amp; Notizen zum Fall</label>
+          <textarea id="rawInput" rows="15"
+            placeholder="Schadenstellen, Altschäden, Reparaturweg, sonstige Infos hier einfügen ...
+
+Beispiel:
+- Toyota Camry 2020, 92.000 km
+- Heck links — Stoßstange, Kotflügel hinten links
+- Rücklicht links gebrochen, Einparksensor unklar
+- Altschaden vorne rechts, Delle ca. 5 cm, nicht repariert
+- Fahrzeug fahrbereit
+- Unfall: 18.04.2025, Parkplatz, Gegenfahrzeug geflüchtet"></textarea>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn btn-primary" id="analyzeBtn" onclick="step1Analyze()">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Weiter &amp; analysieren
+          </button>
+        </div>
+
+        <div class="loading-state" id="loadingStep1">
+          <div class="spinner"></div>
+          <div class="loading-txt" id="loadingStep1Msg">Analysiere Rohdaten …</div>
+        </div>
+        <div class="err-box" id="errorStep1"></div>
+      </div>
+
+      <!-- PANEL 2 -->
+      <div class="panel" id="p2">
+        <div class="step-crumb">
+          <span class="step-crumb-dot"></span>
+          Schritt 2 von 3
+        </div>
+        <h1 class="panel-h1">Rückfragen</h1>
+        <p class="panel-lead">Bitte ergänzen Sie die fehlenden Angaben, damit ein vollständiges und belastbares Gutachten erstellt werden kann.</p>
+
+        <div id="questionsWrap"></div>
+
+        <div class="btn-row">
+          <button class="btn btn-ghost" onclick="goStep(1)">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Zurück
+          </button>
+          <button class="btn btn-primary" id="generateBtn" onclick="step2Generate()">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Texte generieren
+          </button>
+        </div>
+
+        <div class="loading-state" id="loadingStep2">
+          <div class="spinner"></div>
+          <div class="loading-txt">Generiere Gutachtentexte …</div>
+        </div>
+        <div class="err-box" id="errorStep2"></div>
+      </div>
+
+      <!-- PANEL 3 -->
+      <div class="panel" id="p3">
+        <div class="step-crumb">
+          <span class="step-crumb-dot"></span>
+          Schritt 3 von 3
+        </div>
+        <h1 class="panel-h1">Gutachtentexte</h1>
+        <p class="panel-lead">Texte können direkt bearbeitet werden. Einzelne Sektionen oder alle auf einmal kopieren.</p>
+
+        <div class="output-bar">
+          <span class="output-bar-txt">
+            <strong>Alle Sektionen</strong> als formatierten Block kopieren
+          </span>
+          <div class="output-bar-actions">
+            <button class="btn btn-ghost" style="font-size:13px;padding:8px 14px;" onclick="restart()">Neu starten</button>
+            <button class="btn btn-primary" style="font-size:13px;padding:8px 16px;" onclick="copyAll()">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+              Alle kopieren
+            </button>
+          </div>
+        </div>
+
+        <div id="outputWrap"></div>
+
+        <div class="hdivider"></div>
+        <div class="btn-row">
+          <button class="btn btn-ghost" onclick="goStep(2)">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            Rückfragen bearbeiten
+          </button>
+          <button class="btn btn-primary" onclick="restart()">Neu starten</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- EXAMPLE MODAL -->
+<div class="modal-bg" id="exModal">
+  <div class="modal">
+    <div class="modal-hdr">
+      <div class="modal-title">Beispielgutachten hinzufügen</div>
+      <button class="modal-x" onclick="closeExModal()" aria-label="Schließen">✕</button>
+    </div>
+    <p class="modal-desc">
+      Fügen Sie ein vollständiges Gutachten oder relevante Textabschnitte ein. Diese werden dauerhaft in Ihrem Browser gespeichert und als Stilvorlage für alle künftigen Generierungen herangezogen.
+    </p>
+    <label class="f-label" for="exName">Bezeichnung</label>
+    <input type="text" id="exName" placeholder="z. B. Heckschaden VW Golf, April 2024">
+    <label class="f-label" for="exText" style="margin-top:4px;">Gutachtentext</label>
+    <textarea id="exText" placeholder="Gutachtentext hier einfügen …" style="font-size:12px;min-height:260px;"></textarea>
+    <div class="modal-ftr">
+      <button class="btn btn-ghost" onclick="closeExModal()">Abbrechen</button>
+      <button class="btn btn-primary" onclick="saveExample()">Speichern</button>
+    </div>
+  </div>
+</div>
+
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+// ─────────────────────────────────────────────────────
+//  Config  ←  Ihren Schlüssel hier eintragen (sk-ant-...)
+// ─────────────────────────────────────────────────────
+const API_KEY = '';
+const MODEL   = 'claude-sonnet-4-6';
+
+const SYSTEM_QUESTIONS = `Du bist ein erfahrener Kfz-Sachverständiger-Assistent. Der Nutzer gibt dir Rohdaten für ein Gutachten. Deine Aufgabe: Analysiere die Rohdaten und stelle AUSSCHLIESSLICH die Rückfragen, die zwingend nötig sind um vollständige Gutachtentexte zu erstellen.
+
+Frage NUR nach wenn wirklich fehlend:
+- Schadenhergang (falls nicht vorhanden oder unvollständig)
+- Ob PDC/Sensoren betroffen sind (falls unklar)
+- Ob eine Beilackierung angrenzender Teile nötig ist
+- Ob Achsvermessung erforderlich ist
+- Ob reparierte Vorschäden bekannt sind (Anspruchstellerangabe)
+- Plausibilitätsbewertung möglich? (ja/nein)
+
+Antworte NUR mit einem JSON Array von Frage-Objekten:
+[{"id": "schadenhergang", "frage": "...", "typ": "textarea"},
+ {"id": "beilackierung", "frage": "...", "typ": "select", "optionen": ["Ja", "Nein", "Nicht erforderlich"]}]
+
+Typen: "textarea", "select", "text"
+Maximal 6 Fragen. Keine Fragen stellen wenn die Info bereits in den Rohdaten vorhanden ist.`;
+
+const SYSTEM_GENERATE_BASE = `Du bist ein öffentlich bestellter und vereidigter Kfz-Sachverständiger bei Gutachten Prenzl. Erstelle aus den gegebenen Rohdaten und Antworten professionelle Gutachten-Textabschnitte auf Deutsch.
+
+WICHTIGE FORMATREGELN:
+
+SCHADENHERGANG:
+Fließtext beginnend mit "Laut Aussagen des Anspruchstellers..."
+
+SCHADENBESCHREIBUNG:
+Einleitungssatz: "Am Fahrzeug sind infolge des aktuellen Unfallereignisses folgende Schäden feststellbar:"
+Danach Aufzählung mit vollständigen Sätzen je Bauteil inkl. Artikel.
+PDC-Sensoren immer mit Sicherheitsbegründung + Fehlerspeicher-Hinweis.
+
+REPARIERTE VORSCHÄDEN:
+Wenn Lackschichtmessung auffällig: Dokumentiere die erhöhten Werte als Hinweis auf Instandsetzung, mit Hinweis dass dem Anspruchsteller keine vorherigen Schäden bekannt sind (wenn so angegeben). Abschluss: "Diese Vorschäden werden bei der Ermittlung des Wiederbeschaffungswertes wertmindernd berücksichtigt."
+Wenn unauffällig: Standardformulierung keine Nachlackierungen.
+
+NICHT REPARIERTE VORSCHÄDEN (ALTSCHÄDEN):
+Einleitung: "Wegen möglicher Einflüsse auf die Bewertung des Fahrzeuges..."
+Dann zwei Blöcke:
+"Abgrenzbare Altschäden:" – Bullet-Liste
+"Nicht abgrenzbare Altschäden:" – Bullet-Liste (mit Hinweis auf Berücksichtigung in Kalkulation)
+Abschlusssatz: "Sämtliche festgestellten Altschäden wurden bei der Ermittlung des Wiederbeschaffungswertes wertmindernd berücksichtigt."
+
+PLAUSIBILITÄT (wenn generierbar):
+"Der geschilderte Unfallhergang ist mit den festgestellten Beschädigungen technisch nachvollziehbar und aus sachverständiger Sicht als plausibel und vereinbar einzustufen."
+
+Gib die Sektionen als JSON zurück:
+{"sektionen": [
+  {"titel": "Schadenhergang", "inhalt": "..."},
+  {"titel": "Schadenbeschreibung", "inhalt": "..."},
+  {"titel": "Reparierte Vorschäden", "inhalt": "..."},
+  {"titel": "Nicht reparierte Vorschäden", "inhalt": "..."},
+  {"titel": "Plausibilität", "inhalt": "..."}
+]}
+Nur Sektionen einschließen für die genug Information vorhanden ist.`;
+
+// ─────────────────────────────────────────────────────
+//  State
+// ─────────────────────────────────────────────────────
+let currentStep = 1;
+let rawData     = '';
+let questions   = [];
+let examples    = [];
+
+// ─────────────────────────────────────────────────────
+//  Init
+// ─────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const stored = localStorage.getItem('ibu_examples_v2');
+  if (stored) {
+    try { examples = JSON.parse(stored); } catch { examples = []; }
+    renderExList();
+  }
+});
+
+// ─────────────────────────────────────────────────────
+//  Navigation
+// ─────────────────────────────────────────────────────
+function goStep(n) {
+  currentStep = n;
+  [1,2,3].forEach(i => {
+    document.getElementById('p' + i).classList.toggle('active', i === n);
+    const si = document.getElementById('si' + i);
+    const sc = document.getElementById('sc' + i);
+    si.className = 's-row' + (i < n ? ' done' : i === n ? ' active' : '');
+    sc.textContent = i < n ? '✓' : String(i);
+  });
+  document.getElementById('main').scrollTop = 0;
+}
+
+// ─────────────────────────────────────────────────────
+//  Step 1 – Analyse
+// ─────────────────────────────────────────────────────
+async function step1Analyze() {
+  const raw = document.getElementById('rawInput').value.trim();
+  if (!raw) { toast('Bitte zuerst Rohdaten eingeben.', 'error'); return; }
+
+  rawData = raw;
+  const btn = document.getElementById('analyzeBtn');
+  const bar = document.getElementById('loadingStep1');
+  const msg = document.getElementById('loadingStep1Msg');
+  const err = document.getElementById('errorStep1');
+
+  btn.disabled = true;
+  bar.classList.add('active');
+  err.classList.remove('active');
+  msg.textContent = 'Analysiere Rohdaten …';
+
+  try {
+    const res = await claude(SYSTEM_QUESTIONS, `Rohdaten:\n${rawData}`);
+    const match = res.match(/\[[\s\S]*\]/);
+    if (!match) throw new Error('API lieferte kein gültiges JSON-Array.');
+    questions = JSON.parse(match[0]);
+
+    if (questions.length === 0) {
+      msg.textContent = 'Alle Infos vorhanden – generiere Texte direkt …';
+      await doGenerate();
+      return;
+    }
+
+    renderQuestions();
+    goStep(2);
+
+  } catch (e) {
+    err.textContent = 'Fehler: ' + e.message;
+    err.classList.add('active');
+  } finally {
+    btn.disabled = false;
+    bar.classList.remove('active');
+  }
+}
+
+function renderQuestions() {
+  const wrap = document.getElementById('questionsWrap');
+  wrap.innerHTML = '';
+
+  if (questions.length === 0) {
+    wrap.innerHTML = `<div class="no-q-banner">
+      <div class="no-q-icon">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      Alle notwendigen Informationen sind in den Rohdaten vorhanden. Keine Rückfragen erforderlich.
+    </div>`;
+    return;
+  }
+
+  questions.forEach((q, idx) => {
+    const card = document.createElement('div');
+    card.className = 'q-card';
+
+    const num = document.createElement('div');
+    num.className = 'q-num';
+    num.textContent = `Frage ${idx + 1}`;
+    card.appendChild(num);
+
+    const qt = document.createElement('div');
+    qt.className = 'q-text';
+    qt.textContent = q.frage;
+    card.appendChild(qt);
+
+    let field;
+    if (q.typ === 'textarea') {
+      field = document.createElement('textarea');
+      field.rows = 3;
+      field.placeholder = 'Antwort eingeben …';
+    } else if (q.typ === 'select' && q.optionen?.length) {
+      field = document.createElement('select');
+      const def = document.createElement('option');
+      def.value = ''; def.textContent = '— Bitte auswählen —';
+      field.appendChild(def);
+      q.optionen.forEach(o => {
+        const opt = document.createElement('option');
+        opt.value = opt.textContent = o;
+        field.appendChild(opt);
+      });
+    } else {
+      field = document.createElement('input');
+      field.type = 'text';
+      field.placeholder = 'Antwort eingeben …';
+    }
+    field.dataset.qid = q.id;
+    field.className = 'ans-field';
+    card.appendChild(field);
+    wrap.appendChild(card);
+  });
+}
+
+// ─────────────────────────────────────────────────────
+//  Step 2 – Generate
+// ─────────────────────────────────────────────────────
+async function step2Generate() {
+  const bar = document.getElementById('loadingStep2');
+  const err = document.getElementById('errorStep2');
+  const btn = document.getElementById('generateBtn');
+
+  btn.disabled = true;
+  bar.classList.add('active');
+  err.classList.remove('active');
+
+  try {
+    await doGenerate();
+  } catch (e) {
+    err.textContent = 'Fehler: ' + e.message;
+    err.classList.add('active');
+  } finally {
+    btn.disabled = false;
+    bar.classList.remove('active');
+  }
+}
+
+async function doGenerate() {
+  const answers = {};
+  document.querySelectorAll('.ans-field').forEach(f => {
+    if (f.value) answers[f.dataset.qid] = f.value;
+  });
+
+  const answersText = Object.entries(answers)
+    .map(([id, v]) => `${id}: ${v}`)
+    .join('\n') || '(keine weiteren Angaben)';
+
+  let sys = SYSTEM_GENERATE_BASE;
+  if (examples.length > 0) {
+    sys += '\n\nBEISPIEL-GUTACHTEN ALS STILVORLAGE (orientiere dich an Stil, Tonalität und Struktur):\n';
+    examples.forEach((ex, i) => {
+      sys += `\n--- Beispiel ${i+1}: ${ex.name} ---\n${ex.text}\n--- Ende Beispiel ${i+1} ---\n`;
+    });
+  }
+
+  const res = await claude(sys, `Rohdaten:\n${rawData}\n\nAntworten auf Rückfragen:\n${answersText}`);
+
+  const match = res.match(/\{[\s\S]*"sektionen"[\s\S]*\}/);
+  if (!match) throw new Error('API lieferte keine gültigen Sektionen.');
+
+  const data = JSON.parse(match[0]);
+  renderOutput(data.sektionen);
+  goStep(3);
+}
+
+function renderOutput(sektionen) {
+  const wrap = document.getElementById('outputWrap');
+  wrap.innerHTML = '';
+
+  sektionen.forEach(s => {
+    const card = document.createElement('div');
+    card.className = 'out-card';
+
+    const head = document.createElement('div');
+    head.className = 'out-head';
+
+    const title = document.createElement('div');
+    title.className = 'out-title';
+    title.textContent = s.titel;
+
+    const cb = document.createElement('button');
+    cb.className = 'cp-btn';
+    cb.innerHTML = `<svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Kopieren`;
+
+    head.appendChild(title);
+    head.appendChild(cb);
+
+    const body = document.createElement('div');
+    body.className = 'out-body';
+
+    const ta = document.createElement('textarea');
+    ta.className = 'out-ta';
+    ta.value = s.inhalt;
+    ta.addEventListener('input', () => autoH(ta));
+
+    body.appendChild(ta);
+    card.appendChild(head);
+    card.appendChild(body);
+    wrap.appendChild(card);
+
+    cb.onclick = () => {
+      navigator.clipboard.writeText(ta.value).then(() => {
+        cb.innerHTML = `<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Kopiert`;
+        cb.classList.add('done');
+        setTimeout(() => {
+          cb.innerHTML = `<svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Kopieren`;
+          cb.classList.remove('done');
+        }, 2200);
+      });
+    };
+
+    requestAnimationFrame(() => autoH(ta));
+  });
+}
+
+function autoH(ta) {
+  ta.style.height = 'auto';
+  ta.style.height = ta.scrollHeight + 'px';
+}
+
+function copyAll() {
+  const parts = [];
+  document.querySelectorAll('.out-card').forEach(card => {
+    const t = card.querySelector('.out-title').textContent;
+    const v = card.querySelector('.out-ta').value;
+    parts.push(`${t.toUpperCase()}\n${'─'.repeat(Math.max(t.length, 20))}\n${v}`);
+  });
+  navigator.clipboard.writeText(parts.join('\n\n')).then(() => toast('Alle Sektionen kopiert!', 'success'));
+}
+
+function restart() {
+  goStep(1);
+  rawData = '';
+  questions = [];
+  document.getElementById('questionsWrap').innerHTML = '';
+  document.getElementById('outputWrap').innerHTML = '';
+  document.getElementById('errorStep1').classList.remove('active');
+  document.getElementById('errorStep2').classList.remove('active');
+}
+
+// ─────────────────────────────────────────────────────
+//  Examples
+// ─────────────────────────────────────────────────────
+function toggleExamples() {
+  document.getElementById('exToggle').classList.toggle('open');
+  document.getElementById('exPanel').classList.toggle('open');
+}
+
+function openExModal() {
+  document.getElementById('exName').value = '';
+  document.getElementById('exText').value = '';
+  document.getElementById('exModal').classList.add('open');
+}
+function closeExModal() {
+  document.getElementById('exModal').classList.remove('open');
+}
+document.getElementById('exModal').addEventListener('click', e => {
+  if (e.target === document.getElementById('exModal')) closeExModal();
+});
+
+function saveExample() {
+  const name = document.getElementById('exName').value.trim();
+  const text = document.getElementById('exText').value.trim();
+  if (!name || !text) { toast('Bitte Bezeichnung und Text eingeben.', 'error'); return; }
+  examples.push({ id: Date.now(), name, text });
+  persist();
+  renderExList();
+  closeExModal();
+  toast('Beispielgutachten gespeichert.', 'success');
+}
+
+function deleteExample(id) {
+  examples = examples.filter(e => e.id !== id);
+  persist();
+  renderExList();
+  toast('Beispiel gelöscht.', 'info');
+}
+
+function persist() {
+  localStorage.setItem('ibu_examples_v2', JSON.stringify(examples));
+}
+
+function renderExList() {
+  const list  = document.getElementById('exList');
+  const badge = document.getElementById('exBadge');
+  badge.textContent = examples.length;
+  list.innerHTML = '';
+  examples.forEach(ex => {
+    const item = document.createElement('div');
+    item.className = 'ex-item';
+    const name = document.createElement('div');
+    name.className = 'ex-item-name';
+    name.textContent = ex.name;
+    name.title = ex.name;
+    const del = document.createElement('button');
+    del.className = 'ex-del';
+    del.textContent = '×';
+    del.title = 'Löschen';
+    del.onclick = () => deleteExample(ex.id);
+    item.appendChild(name);
+    item.appendChild(del);
+    list.appendChild(item);
+  });
+}
+
+// ─────────────────────────────────────────────────────
+//  Claude API
+// ─────────────────────────────────────────────────────
+async function claude(system, user) {
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: MODEL,
+      max_tokens: 2000,
+      system,
+      messages: [{ role: 'user', content: user }]
+    })
+  });
+
+  if (!res.ok) {
+    let msg = `HTTP ${res.status}`;
+    try { const j = await res.json(); msg = j.error?.message || msg; } catch {}
+    throw new Error(msg);
+  }
+
+  const j = await res.json();
+  return j.content[0].text;
+}
+
+// ─────────────────────────────────────────────────────
+//  Toast
+// ─────────────────────────────────────────────────────
+let toastTimer;
+function toast(msg, type = 'info') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = `show ${type}`;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { el.className = ''; }, 3200);
+}
+</script>
+</body>
+</html>

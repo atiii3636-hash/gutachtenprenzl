@@ -11,11 +11,27 @@ export default function CookieBanner() {
 
   const accept = () => {
     localStorage.setItem("cookie-consent", "accepted");
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("consent", "update", {
+        ad_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted",
+        analytics_storage: "granted",
+      });
+    }
     setVisible(false);
   };
 
   const decline = () => {
     localStorage.setItem("cookie-consent", "declined");
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      window.gtag("consent", "update", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+      });
+    }
     setVisible(false);
   };
 
@@ -25,9 +41,9 @@ export default function CookieBanner() {
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6">
       <div className="max-w-4xl mx-auto bg-[#080D14] border border-white/10 rounded-2xl shadow-2xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
         <div className="flex-1">
-          <p className="text-white font-bold text-[14px] mb-1">Wir verwenden Cookies</p>
+          <p className="text-white font-bold text-[14px] mb-1">Datenschutz &amp; Cookies</p>
           <p className="text-white/50 text-[12px] leading-relaxed">
-            Diese Website verwendet ausschließlich technisch notwendige Cookies und lokalen Speicher, die für den Betrieb der Seite erforderlich sind. Es werden keine Tracking- oder Werbe-Cookies eingesetzt. Weitere Informationen finden Sie in unserer{" "}
+            Wir verwenden technisch notwendige Cookies sowie — nur mit Ihrer Einwilligung — Google Ads und Google Tag Manager zur anonymisierten Reichweiten- und Werbemessung. Mit „Akzeptieren" stimmen Sie dem zu, bei „Ablehnen" werden keine Marketing-Cookies gesetzt. Ihre Wahl können Sie jederzeit widerrufen. Mehr in unserer{" "}
             <a href="/datenschutz" className="text-white/80 underline hover:text-white transition-colors">
               Datenschutzerklärung
             </a>

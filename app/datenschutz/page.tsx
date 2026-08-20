@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
   description: "Datenschutzerklärung von Gutachten Prenzl – KFZ Sachverständiger Berlin.",
-  robots: { index: false, follow: false },
+  alternates: { canonical: "https://gutachtenprenzl.de/datenschutz" },
 };
 
 export default function DatenschutzPage() {
@@ -24,7 +24,7 @@ export default function DatenschutzPage() {
           <h1 className="font-display font-black text-3xl md:text-4xl text-white uppercase tracking-tight">
             Datenschutzerklärung
           </h1>
-          <p className="text-white/40 text-[14px] mt-2">Stand: April 2026</p>
+          <p className="text-white/40 text-[14px] mt-2">Stand: Juni 2026</p>
         </div>
       </div>
 
@@ -65,7 +65,13 @@ export default function DatenschutzPage() {
         <section>
           <h2 className="font-display font-black text-xl text-[#080D14] uppercase mb-3">3. Drittdienste</h2>
 
-          <h3 className="font-bold text-[#080D14] mb-2">E-Mail-Versand (Resend)</h3>
+          <h3 className="font-bold text-[#080D14] mb-2">Google Ads &amp; Google Tag Manager (nur mit Einwilligung)</h3>
+          <p className="text-[14px]">
+            Zur Erfolgsmessung unserer Werbeanzeigen nutzen wir <strong>Google Ads</strong> und den <strong>Google Tag Manager</strong> (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Erfasst wird dabei, ob ein Besuch über eine Anzeige zustande kam und ob anschließend eine Kontaktaufnahme erfolgte – etwa ein Anruf, ein WhatsApp-Klick oder eine Formularanfrage (sogenanntes Conversion-Tracking). Diese Dienste werden <strong>erst nach Ihrer aktiven Einwilligung</strong> über den Cookie-Hinweis aktiviert. Wir setzen den <strong>Google Consent Mode v2</strong> ein: Ohne Einwilligung werden keine Marketing-Cookies gesetzt; übermittelt werden dann lediglich anonyme, cookielose Signale ohne Personenbezug. Eine Datenübermittlung in die USA (Google LLC) kann erfolgen; Grundlage sind die EU-Standardvertragsklauseln (Art. 46 DSGVO) sowie das EU-US Data Privacy Framework. Rechtsgrundlage: <strong>Art. 6 Abs. 1 lit. a DSGVO</strong> (Einwilligung). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie die Website-Daten in Ihrem Browser löschen und Ihre Auswahl im Cookie-Hinweis neu treffen.{" "}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#E11D2F] hover:underline">Datenschutzerklärung Google</a>.
+          </p>
+
+          <h3 className="font-bold text-[#080D14] mt-5 mb-2">E-Mail-Versand (Resend)</h3>
           <p className="text-[14px]">
             Für den Versand von E-Mails nutzen wir <strong>Resend</strong> (Resend Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA). Die über das Kontaktformular übermittelten Daten (Name, Telefonnummer) werden zur E-Mail-Zustellung an Resend weitergeleitet. Die Übermittlung in die USA erfolgt auf Basis der EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO). Mit Resend besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO.{" "}
             <a href="https://resend.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#E11D2F] hover:underline">Datenschutzerklärung Resend</a>.
@@ -93,7 +99,7 @@ export default function DatenschutzPage() {
         <section>
           <h2 className="font-display font-black text-xl text-[#080D14] uppercase mb-3">4. Lokaler Speicher (localStorage)</h2>
           <p>
-            Diese Website verwendet den lokalen Speicher Ihres Browsers (localStorage), um Ihre Kenntnisnahme des Cookie-Hinweises zu speichern. Dabei werden keine personenbezogenen Daten erhoben. Der Eintrag verbleibt in Ihrem Browser, bis Sie ihn manuell löschen (Browser-Einstellungen → Websitedaten löschen).
+            Diese Website verwendet den lokalen Speicher Ihres Browsers (localStorage), um Ihre Einwilligung oder Ablehnung zum Marketing-Tracking zu speichern. Dabei werden keine personenbezogenen Daten erhoben. Der Eintrag verbleibt in Ihrem Browser, bis Sie ihn manuell löschen (Browser-Einstellungen → Websitedaten löschen) — anschließend wird der Cookie-Hinweis erneut angezeigt und Sie können Ihre Auswahl widerrufen oder ändern.
           </p>
           <div className="mt-3 overflow-x-auto">
             <table className="w-full text-[13px] border border-gray-200 rounded-xl overflow-hidden">
@@ -107,7 +113,7 @@ export default function DatenschutzPage() {
               <tbody>
                 <tr className="border-t border-gray-100">
                   <td className="px-4 py-3 font-mono text-[12px]">cookie-consent</td>
-                  <td className="px-4 py-3">Speichert Kenntnisnahme des Cookie-Hinweises</td>
+                  <td className="px-4 py-3">Speichert Ihre Einwilligung bzw. Ablehnung zum Marketing-Tracking (Google Ads / Tag Manager)</td>
                   <td className="px-4 py-3">Bis zur manuellen Löschung</td>
                 </tr>
               </tbody>

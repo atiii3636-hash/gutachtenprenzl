@@ -1,4 +1,5 @@
 import { Phone, MessageCircle } from "lucide-react";
+import { WHATSAPP_URL } from "@/lib/contact";
 
 export default function CtaSection() {
   return (
@@ -49,7 +50,7 @@ export default function CtaSection() {
                 info@gutachtenprenzl.de
               </a>
               <a
-                href="https://wa.me/4915566166533"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 bg-[#128C7E]/8 hover:bg-[#128C7E]/15 border border-[#25D366]/20 text-[#25D366] font-semibold text-[14px] px-7 py-3.5 rounded-xl transition-all w-full md:w-auto justify-center"

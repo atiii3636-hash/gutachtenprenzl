@@ -1,112 +1,88 @@
-"use client";
-import { Phone, Calendar, Car, FileCheck, CheckCircle } from "lucide-react";
-import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
+import { Phone, Car, FileCheck, CheckCircle } from "lucide-react";
+import { WHATSAPP_URL } from "@/lib/contact";
+import { MessageCircle } from "lucide-react";
 
-const processData = [
+const steps = [
   {
-    id: 1,
-    title: "Unfall melden",
-    date: "Schritt 1",
-    content:
-      "Rufen Sie uns an oder schreiben Sie per WhatsApp. Wir beraten Sie kostenlos und sofort – 24 Stunden am Tag, 7 Tage die Woche.",
-    category: "Kontakt",
     icon: Phone,
-    relatedIds: [2],
-    status: "completed" as const,
-    energy: 100,
+    title: "Unfall melden",
+    desc: "Rufen Sie an oder schreiben Sie per WhatsApp. Kostenlose Ersteinschätzung — 24/7 erreichbar.",
   },
   {
-    id: 2,
-    title: "Termin vereinbaren",
-    date: "Schritt 2",
-    content:
-      "Wir vereinbaren schnellstmöglich einen Termin – bei Ihnen zu Hause, am Arbeitsplatz, in der Werkstatt oder bei uns.",
-    category: "Termin",
-    icon: Calendar,
-    relatedIds: [1, 3],
-    status: "completed" as const,
-    energy: 80,
-  },
-  {
-    id: 3,
-    title: "Begutachtung",
-    date: "Schritt 3",
-    content:
-      "Unser TÜV-zertifizierter Sachverständiger begutachtet Ihr Fahrzeug sorgfältig und erfasst alle sichtbaren und versteckten Schäden.",
-    category: "Gutachten",
     icon: Car,
-    relatedIds: [2, 4],
-    status: "in-progress" as const,
-    energy: 60,
+    title: "Begutachtung vor Ort",
+    desc: "Wir kommen zu Ihnen — nach Hause, zur Arbeit oder in die Werkstatt. Dauer: ca. 20–30 Minuten.",
   },
   {
-    id: 4,
-    title: "Gutachten fertig",
-    date: "Schritt 4",
-    content:
-      "Innerhalb von 24 Stunden erhalten Sie das fertige Gutachten. Wir leiten es direkt an die zuständige Versicherung weiter.",
-    category: "Dokument",
     icon: FileCheck,
-    relatedIds: [3, 5],
-    status: "pending" as const,
-    energy: 40,
+    title: "Gutachten in 24h",
+    desc: "Sie erhalten das fertige Gutachten. Wir leiten es direkt an die zuständige Versicherung weiter.",
   },
   {
-    id: 5,
-    title: "Versicherung zahlt",
-    date: "Ergebnis",
-    content:
-      "Bei unverschuldetem Unfall zahlen Sie nichts. Die Kosten trägt die Haftpflichtversicherung des Unfallverursachers vollständig.",
-    category: "Abrechnung",
     icon: CheckCircle,
-    relatedIds: [4],
-    status: "pending" as const,
-    energy: 20,
+    title: "Versicherung zahlt",
+    desc: "Bei unverschuldetem Unfall trägt die gegnerische Versicherung alle Kosten — 0 € für Sie.",
   },
 ];
 
 export default function ProcessSection() {
   return (
-    <section id="ablauf" className="py-24 px-5 bg-[#090E18]">
+    <section id="ablauf" className="py-20 md:py-24 px-5 bg-[#F8FAFC]">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-4">
-          <div className="inline-flex items-center gap-2 text-[#E11D2F] text-[11px] font-semibold uppercase tracking-widest mb-4">
-            <span className="w-5 h-px bg-[#E11D2F]" />
-            Ablauf
-            <span className="w-5 h-px bg-[#E11D2F]" />
-          </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-white tracking-tight mb-3">
-            In 5 Schritten zu Ihrem Gutachten
+        <div className="text-center mb-14" data-reveal>
+          <span className="inline-block text-[12px] font-bold uppercase tracking-[0.18em] text-[#E11D2F] mb-3">
+            So einfach geht&apos;s
+          </span>
+          <h2 className="font-display font-black text-[#080D14] tracking-tight text-3xl md:text-4xl mb-3">
+            In 4 Schritten zu Ihrem Gutachten
           </h2>
-          <p className="text-white/45 text-[15px] max-w-lg mx-auto leading-relaxed">
-            Klicken Sie auf einen Schritt im Orbit, um Details zu sehen.
-            Einfach, schnell und ohne Stress.
+          <p className="text-gray-500 text-[15px] max-w-lg mx-auto leading-relaxed">
+            Vom ersten Anruf bis zur Auszahlung — wir übernehmen den kompletten Ablauf für Sie.
           </p>
         </div>
 
-        {/* Orbital Timeline */}
-        <RadialOrbitalTimeline timelineData={processData} />
-
-        {/* Mobile fallback list */}
-        <div className="md:hidden mt-8 space-y-3">
-          {processData.map((step) => {
-            const Icon = step.icon;
-            return (
-              <div key={step.id} className="flex gap-4 bg-[#0C1420] border border-white/6 rounded-xl p-4">
-                <div className="w-10 h-10 rounded-lg bg-[#E11D2F]/10 border border-[#E11D2F]/20 flex items-center justify-center flex-shrink-0">
-                  <Icon size={17} className="text-[#E11D2F]" />
+        {/* Steps */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          {steps.map(({ icon: Icon, title, desc }, i) => (
+            <div
+              key={title}
+              data-reveal
+              style={{ transitionDelay: `${i * 80}ms` }}
+              className="relative bg-white border border-gray-100 rounded-2xl p-6 shadow-sm"
+            >
+              <div className="flex items-center justify-between mb-5">
+                <div className="w-11 h-11 rounded-xl bg-[#E11D2F]/8 flex items-center justify-center">
+                  <Icon size={20} className="text-[#E11D2F]" />
                 </div>
-                <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[13px] font-bold text-[#E11D2F]">{step.date}</span>
-                  </div>
-                  <p className="font-bold text-white text-[16px] mb-1.5">{step.title}</p>
-                  <p className="text-white/55 text-[14px] leading-relaxed">{step.content}</p>
-                </div>
+                <span className="font-display font-black text-[28px] leading-none text-gray-200 select-none">
+                  0{i + 1}
+                </span>
               </div>
-            );
-          })}
+              <h3 className="font-display font-bold text-[#080D14] text-[16px] mb-2">{title}</h3>
+              <p className="text-gray-500 text-[13.5px] leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3" data-reveal>
+          <a
+            href="tel:+4915560003661"
+            className="flex items-center justify-center gap-2.5 bg-[#E11D2F] hover:bg-[#C11527] text-white font-bold text-[15px] px-7 py-3.5 rounded-full shadow-lg shadow-[#E11D2F]/20 transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <Phone size={16} />
+            Jetzt anrufen
+          </a>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2.5 bg-white border border-gray-200 hover:border-[#25D366] text-[#080D14] font-bold text-[15px] px-7 py-3.5 rounded-full transition-all duration-300 hover:-translate-y-0.5"
+          >
+            <MessageCircle size={16} className="text-[#25D366]" />
+            WhatsApp schreiben
+          </a>
         </div>
       </div>
     </section>

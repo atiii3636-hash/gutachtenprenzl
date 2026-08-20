@@ -1,0 +1,208 @@
+# NEGATIV-KEYWORDS — Fahrschule Prenzl (Klasse B / B197 / BE)
+# Standort: Prenzlauer Berg / Pankow
+# Ziel: nur qualitative Anmelde-Leads, kein Streuverlust
+# Empfehlung: als PHRASE-Negativ hinzufügen (Einzelwörter wie "job", "kostenlos" als Negativ-Broad)
+# ============================================================
+
+# --- 1. JOBS & PERSONALSUCHE (Bewerber, keine Schüler) ---
+fahrlehrer
+fahrlehrer werden
+fahrlehrer ausbildung
+fahrlehrerausbildung
+fahrlehrerschein
+fahrlehrer job
+fahrlehrer jobs
+fahrlehrer gehalt
+fahrlehrer verdienst
+job
+jobs
+stellenangebot
+stellenangebote
+ausbildung
+praktikum
+bewerbung
+gehalt
+verdienst
+lohn
+minijob
+aushilfe
+nebenjob
+arbeit
+karriere
+quereinsteiger
+
+# --- 2. GRATIS / KOSTENLOS / SELBST-LERNEN (kein Kaufinteresse) ---
+kostenlos
+kostenlose
+gratis
+umsonst
+kostenfrei
+app
+apps
+theorie app
+theorie lernen
+theorie üben
+fahren lernen app
+prüfungsfragen
+theoriefragen
+theoriebogen
+fragebogen
+fragenkatalog
+test online
+online test
+übungstest
+probetest
+musterprüfung
+download
+pdf
+vorlage
+spickzettel
+
+# --- 3. ANDERE KLASSEN (NICHT angeboten — B/B197/BE bleibt!) ---
+lkw
+lkw führerschein
+klasse c
+klasse ce
+c1
+klasse d
+bus
+busführerschein
+motorrad
+motorradführerschein
+klasse a
+klasse a1
+klasse a2
+klasse am
+mofa
+moped
+roller
+klasse t
+klasse l
+traktor
+schlepper
+boot
+bootsführerschein
+sportbootführerschein
+segelschein
+flugschein
+pilotenschein
+drohnenführerschein
+drohne
+staplerschein
+gabelstapler
+kran
+jagdschein
+angelschein
+waffenschein
+hundeführerschein
+
+# --- 4. FÜHRERSCHEIN KAUFEN / BETRUG / AUSLAND (unseriös) ---
+kaufen
+führerschein kaufen
+führerschein online kaufen
+ohne prüfung
+ohne theorie
+ohne theorieprüfung
+ohne fahrstunden
+echter führerschein
+registrierter führerschein
+blauer schein
+express führerschein
+führerschein ausland
+ausland
+tschechien
+polen
+österreich
+schnell kaufen
+
+# --- 5. MPU / IDIOTENTEST (anderer Dienst) ---
+mpu
+idiotentest
+mpu vorbereitung
+mpu beratung
+abstinenznachweis
+mpu kosten
+
+# --- 6. BEHÖRDE / AMT / VERWALTUNG (kein Fahrschul-Geschäft) ---
+führerscheinstelle
+fahrerlaubnisbehörde
+bürgeramt
+landesamt
+führerschein beantragen
+führerschein umtausch
+umtausch
+pflichtumtausch
+führerschein verlängern
+führerschein verloren
+führerschein ersatz
+ersatzführerschein
+internationaler führerschein
+führerschein umschreiben
+umschreibung
+ausländischen führerschein umschreiben
+eu führerschein umschreiben
+
+# --- 7. PUNKTE / FLENSBURG (nur negativ falls kein ASF angeboten — prüfen!) ---
+punkte
+flensburg
+fahreignungsseminar
+punkte abbauen
+
+# --- 8. ANDERE STÄDTE / FERNE BEZIRKE (außerhalb Einzugsgebiet) ---
+hamburg
+münchen
+köln
+frankfurt
+stuttgart
+düsseldorf
+leipzig
+dresden
+hannover
+bremen
+potsdam
+spandau
+köpenick
+marzahn
+hellersdorf
+reinickendorf
+steglitz
+zehlendorf
+neukölln
+tempelhof
+charlottenburg
+wilmersdorf
+lichtenberg
+treptow
+schöneberg
+kreuzberg
+
+# --- 9. KINDER / SPIEL / SIMULATION (Produktsuche) ---
+spielzeug
+spiel
+game
+simulator
+fahrsimulator
+ps4
+ps5
+xbox
+kinderauto
+kettcar
+gokart
+
+# --- 10. B2B / GEWERBE / SONSTIGES ---
+fahrschule eröffnen
+fahrschule gründen
+fahrschule kaufen
+fahrschule verkaufen
+fahrschule franchise
+fahrschulauto
+fahrschulwagen
+fahrschulsoftware
+fahrschule software
+
+# ============================================================
+# NICHT als Negativ hinzufügen (das sind QUALITÄTS-Käufer!):
+#   kosten, preis, preise, günstig, was kostet, automatik,
+#   intensivkurs, crashkurs, ferienkurs, schnell, bf17,
+#   begleitetes fahren, fahrstunden, anmelden, in der nähe
+# ============================================================

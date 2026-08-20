@@ -5,7 +5,7 @@
 //
 // WICHTIG: Wenn du hier etwas änderst, wird es automatisch auf beiden Stellen
 // aktualisiert. Google erwartet, dass sichtbare FAQ und Schema-FAQ exakt
-// übereinstimmen – sonst droht Strukturdaten-Penalty.
+// übereinstimmen, sonst wertet Google die Strukturdaten ab.
 
 export type Faq = {
   q: string;
@@ -19,27 +19,27 @@ export const faqs: Faq[] = [
   },
   {
     q: "Was kostet ein KFZ-Gutachten in Berlin?",
-    a: "Bei einem unverschuldeten Unfall zahlen Sie 0 €. Die Haftpflichtversicherung des Unfallverursachers trägt alle Kosten für den KFZ Sachverständiger – das ist gesetzlich geregelt. Nur bei selbstverschuldetem Unfall werden die Kosten über Ihre Kaskoversicherung abgerechnet.",
+    a: "Bei einem unverschuldeten Unfall zahlen Sie 0 €. Die Haftpflichtversicherung des Unfallverursachers trägt alle Kosten für den KFZ Sachverständigen, das ist gesetzlich geregelt. Nur bei selbstverschuldetem Unfall werden die Kosten über Ihre Kaskoversicherung abgerechnet.",
   },
   {
     q: "Wann ist ein Gutachten nach einem Unfall Pflicht?",
-    a: "Ab einem Schadenwert von ca. 750 € empfiehlt sich ein unabhängiges Gutachten. Bei unverschuldetem Unfall haben Sie grundsätzlich immer das Recht auf einen eigenen KFZ Gutachter – unabhängig von der Versicherung des Unfallgegners. Verlassen Sie sich nicht auf den Gutachter der gegnerischen Versicherung.",
+    a: "Ab einem Schadenwert von ca. 750 € empfiehlt sich ein unabhängiges Gutachten. Bei unverschuldetem Unfall haben Sie grundsätzlich immer das Recht auf einen eigenen KFZ Gutachter, unabhängig von der Versicherung des Unfallgegners. Verlassen Sie sich nicht auf den Gutachter der gegnerischen Versicherung.",
   },
   {
-    q: "Wer trägt die Kosten für ein KFZ-Gutachten — ich oder die Versicherung?",
-    a: "Bei Fremdverschulden trägt die Haftpflichtversicherung des Unfallverursachers alle Kosten – Gutachten, Anwaltskosten und Reparatur. Sie müssen nichts vorstrecken. Wir rechnen direkt mit der Versicherung ab und kümmern uns um die gesamte Kommunikation.",
+    q: "Wer trägt die Kosten für ein KFZ-Gutachten, ich oder die Versicherung?",
+    a: "Bei Fremdverschulden trägt die Haftpflichtversicherung des Unfallverursachers alle Kosten: Gutachten, Anwaltskosten und Reparatur. Sie müssen nichts vorstrecken. Wir rechnen direkt mit der Versicherung ab und kümmern uns um die gesamte Kommunikation.",
   },
   {
     q: "Was ist der Unterschied zwischen Schadensgutachten und Wertgutachten?",
-    a: "Ein Schadensgutachten dokumentiert den Unfallschaden und die Reparaturkosten – es wird nach einem Unfall benötigt. Ein Wertgutachten (auch Marktwertgutachten) stellt den aktuellen Fahrzeugwert fest – z. B. für Kauf, Verkauf, Erbschaft oder Versicherung. Als KFZ Sachverständiger in Berlin erstellen wir beide Gutachtentypen.",
+    a: "Ein Schadensgutachten dokumentiert den Unfallschaden und die Reparaturkosten, es wird nach einem Unfall benötigt. Ein Wertgutachten (auch Marktwertgutachten) stellt den aktuellen Fahrzeugwert fest, zum Beispiel für Kauf, Verkauf, Erbschaft oder Versicherung. Als KFZ Sachverständiger in Berlin erstellen wir beide Gutachtentypen.",
   },
   {
     q: "Wie finde ich einen unabhängigen KFZ Gutachter in Berlin?",
-    a: "Ein unabhängiger KFZ Gutachter arbeitet für Sie – nicht für die Versicherung. Achten Sie auf eine anerkannte Zertifizierung (z. B. TÜV Rheinland) und lokale Erfahrung in Berlin. Wir sind TÜV Rheinland zertifiziert (ID 0217466029) und in allen Berliner Bezirken aktiv – von Mitte bis Spandau, von Pankow bis Tempelhof.",
+    a: "Ein unabhängiger KFZ Gutachter arbeitet für Sie, nicht für die Versicherung. Achten Sie auf eine anerkannte Zertifizierung (z. B. TÜV Rheinland) und lokale Erfahrung in Berlin. Wir sind TÜV Rheinland zertifiziert (ID 0217466029) und in allen Berliner Bezirken aktiv, von Mitte bis Spandau, von Pankow bis Tempelhof.",
   },
   {
     q: "Wie schnell bekomme ich einen Termin beim KFZ Sachverständiger in Berlin?",
-    a: "In der Regel am selben oder nächsten Werktag. Als mobiler KFZ Gutachter kommen wir direkt zu Ihnen – nach Hause, in die Werkstatt oder zum Unfallort in ganz Berlin. Das fertige Gutachten erhalten Sie innerhalb von 24 Stunden nach der Besichtigung.",
+    a: "In der Regel am selben oder nächsten Werktag. Als mobiler KFZ Gutachter kommen wir direkt zu Ihnen: nach Hause, in die Werkstatt oder zum Unfallort in ganz Berlin. Das fertige Gutachten erhalten Sie innerhalb von 24 Stunden nach der Besichtigung.",
   },
   {
     q: "Brauche ich nach einem Unfall in Berlin einen eigenen Gutachter?",
@@ -47,18 +47,18 @@ export const faqs: Faq[] = [
   },
   {
     q: "Was ist ein amtlich anerkannter Sachverständiger und brauche ich das?",
-    a: "Eine „amtliche Anerkennung“ im engeren Sinn ist die öffentliche Bestellung und Vereidigung durch die IHK — das ist eine andere Qualifikation als eine private Zertifizierung wie TÜV oder DEKRA. Unsere TÜV Rheinland Zertifizierung (ID 0217466029, gültig bis 18.12.2028) ist eine unabhängig geprüfte Qualifikation nach dem Standard von TÜV Rheinland. Deutsche Versicherungen akzeptieren Gutachten TÜV-zertifizierter Sachverständiger im Regelfall, eine gesetzliche Pflicht dazu besteht aber nicht.",
+    a: "Eine „amtliche Anerkennung“ im engeren Sinn ist die öffentliche Bestellung und Vereidigung durch die IHK. Das ist eine andere Qualifikation als eine private Zertifizierung wie TÜV oder DEKRA. Unsere TÜV Rheinland Zertifizierung (ID 0217466029, gültig bis 18.12.2028) ist eine unabhängig geprüfte Qualifikation nach dem Standard von TÜV Rheinland. Deutsche Versicherungen akzeptieren Gutachten TÜV-zertifizierter Sachverständiger im Regelfall, eine gesetzliche Pflicht dazu besteht aber nicht.",
   },
   {
     q: "Welche Unterlagen brauche ich für ein KFZ-Gutachten?",
-    a: "Sie benötigen: Fahrzeugschein (Zulassungsbescheinigung Teil I), Fahrzeugbrief (Teil II), Führerschein, Unfallbericht oder Polizeiprotokoll (falls vorhanden) und die Daten des Unfallgegners. Haben Sie nicht alles zur Hand? Kein Problem – wir helfen Ihnen dabei und koordinieren alles mit Ihrer Versicherung.",
+    a: "Sie benötigen: Fahrzeugschein (Zulassungsbescheinigung Teil I), Fahrzeugbrief (Teil II), Führerschein, Unfallbericht oder Polizeiprotokoll (falls vorhanden) und die Daten des Unfallgegners. Haben Sie nicht alles zur Hand? Kein Problem, wir helfen Ihnen dabei und koordinieren alles mit Ihrer Versicherung.",
   },
   // Ab hier: Fragen mit lokalem Bezug. Sie zahlen auf die Maps-Sichtbarkeit ein
   // (Kfz Gutachter Prenzlauer Berg / Pankow / in der Nähe) und stehen bewusst
   // erst weit unten auf der Seite, nicht im oberen Sichtbereich.
   {
     q: "Wo finde ich einen KFZ Gutachter in Prenzlauer Berg?",
-    a: "Unser Sachverständigenbüro sitzt in der Prenzlauer Allee 88 in 10405 Berlin, direkt am S-Bahnhof Prenzlauer Allee. Von dort sind wir in wenigen Minuten in der Schönhauser Allee, an der Danziger Straße, am Prenzlauer Berg rund um den Helmholtzplatz oder in Weißensee. Wenn Sie nicht zu uns kommen können, kommen wir zu Ihnen – Termin telefonisch unter 0155 60003661 oder per WhatsApp.",
+    a: "Unser Sachverständigenbüro sitzt in der Prenzlauer Allee 88 in 10405 Berlin, direkt am S-Bahnhof Prenzlauer Allee. Von dort sind wir in wenigen Minuten in der Schönhauser Allee, an der Danziger Straße, am Prenzlauer Berg rund um den Helmholtzplatz oder in Weißensee. Wenn Sie nicht zu uns kommen können, kommen wir zu Ihnen. Einen Termin vereinbaren Sie telefonisch unter 0155 60003661 oder per WhatsApp.",
   },
   {
     q: "Sind Sie auch der KFZ Sachverständiger für Pankow und Weißensee?",
@@ -74,7 +74,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Was kostet ein Parkschaden-Gutachten in Berlin?",
-    a: "Hat ein anderer Ihr Fahrzeug beschädigt und ist die Person bekannt, übernimmt deren Haftpflichtversicherung die Gutachterkosten vollständig. Bei Fahrerflucht ohne ermittelten Verursacher übernimmt in der Regel Ihre Vollkaskoversicherung, die Teilkasko meist nicht — hier klären wir vorab mit Ihnen, ob sich das Gutachten rechnet. Auch kleine Parkschäden dokumentieren wir mit vollständiger Fotoserie und Kalkulation.",
+    a: "Hat ein anderer Ihr Fahrzeug beschädigt und ist die Person bekannt, übernimmt deren Haftpflichtversicherung die Gutachterkosten vollständig. Bei Fahrerflucht ohne ermittelten Verursacher übernimmt in der Regel Ihre Vollkaskoversicherung, die Teilkasko meist nicht. Hier klären wir vorab mit Ihnen, ob sich das Gutachten rechnet. Auch kleine Parkschäden dokumentieren wir mit vollständiger Fotoserie und Kalkulation.",
   },
   {
     q: "Wie läuft die Bewertung bei einem Totalschaden ab?",

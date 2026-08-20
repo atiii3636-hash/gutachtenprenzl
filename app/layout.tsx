@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Karla, Saira } from "next/font/google";
+import { Karla, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import CookieBanner from "@/components/cookie-banner";
 import FloatingWhatsApp from "@/components/floating-whatsapp";
+import ConversionTracking from "@/components/conversion-tracking";
+import { REVIEW_COUNT } from "@/lib/contact";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -17,10 +19,10 @@ const karla = Karla({
   weight: ["400", "500", "600", "700", "800"],
 });
 
-const saira = Saira({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-saira",
-  weight: ["500", "600", "700", "800", "900"],
+  weight: ["500", "600", "700", "800"],
 });
 
 const siteUrl = "https://gutachtenprenzl.de";
@@ -28,11 +30,11 @@ const siteUrl = "https://gutachtenprenzl.de";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "KFZ Sachverständiger Berlin | Unfallgutachten 24/7",
+    default: "Unfallgutachten Berlin – 100% kostenlos, in 24h",
     template: "%s | Gutachten Prenzl",
   },
   description:
-    "TÜV-zertifizierter KFZ Sachverständiger Berlin. Unfallgutachten in 24h, kostenlos bei Fremdverschulden. Alle Bezirke. 24/7 Hotline: 0155 60003661",
+    "Unfall gehabt? Gutachten in 24h – 100% kostenlos bei Fremdverschulden. TÜV-zertifiziert, alle Berliner Bezirke. ☎ 0155 60003661",
   keywords: [
     "KFZ Sachverständiger Berlin",
     "Unfallgutachten Berlin",
@@ -68,9 +70,9 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: siteUrl,
     siteName: "Gutachten Prenzl – KFZ Sachverständiger Berlin",
-    title: "KFZ Sachverständiger Berlin | Unfallgutachten 24/7",
+    title: "Unfallgutachten Berlin – 100% kostenlos, in 24h",
     description:
-      "TÜV-zertifizierter KFZ Sachverständiger in Berlin. Unfallgutachten in 24h, kostenlos bei Fremdverschulden. 24/7 erreichbar für alle Berliner Bezirke.",
+      "Unfall gehabt? Gutachten in 24h – 100% kostenlos bei Fremdverschulden. TÜV-zertifiziert, alle Berliner Bezirke.",
     images: [
       {
         url: "/og-image.jpg",
@@ -82,9 +84,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "KFZ Sachverständiger Berlin | Unfallgutachten 24h",
+    title: "Unfallgutachten Berlin – 100% kostenlos, in 24h",
     description:
-      "TÜV-zertifizierter KFZ Sachverständiger in Berlin. Kostenlos bei Fremdverschulden. 24/7 erreichbar.",
+      "Unfall gehabt? Gutachten in 24h – 100% kostenlos bei Fremdverschulden. TÜV-zertifiziert.",
     images: ["/og-image.jpg"],
   },
 };
@@ -93,15 +95,72 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Person",
+      "@id": `${siteUrl}/#person`,
+      name: "Atakan Arslan",
+      alternateName: "Atakan Arslan – Gutachten Prenzl",
+      jobTitle: "TÜV Rheinland zertifizierter KFZ Sachverständiger",
+      description:
+        "TÜV Rheinland zertifizierter KFZ Sachverständiger in Berlin. Spezialisiert auf Unfallgutachten, Schadensregulierung und Fahrzeugbewertung. Tätig in allen Berliner Bezirken.",
+      url: `${siteUrl}/ueber-uns`,
+      telephone: "+4915560003661",
+      email: "info@gutachtenprenzl.de",
+      worksFor: { "@id": siteUrl },
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Prenzlauer Allee 88",
+        addressLocality: "Berlin",
+        postalCode: "10405",
+        addressCountry: "DE",
+      },
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        name: "TÜV Rheinland Zertifikat KFZ Sachverständiger",
+        credentialCategory: "certification",
+        recognizedBy: {
+          "@type": "Organization",
+          name: "TÜV Rheinland",
+          url: "https://www.tuv.com",
+        },
+        identifier: "0217466029",
+        validUntil: "2028-12-18",
+      },
+      knowsAbout: [
+        "Unfallgutachten",
+        "Kfz-Schadensregulierung",
+        "Fahrzeugbewertung",
+        "Haftpflichtschäden",
+        "Totalschadenbewertung",
+        "Parkschaden",
+        "Versicherungsrecht Kfz",
+      ],
+      sameAs: [
+        "https://www.instagram.com/gutachtenprenzl/",
+        "https://www.tiktok.com/@gutachtenprenzl",
+        "https://www.google.com/maps/place/?q=place_id:ChIJ6WBvNC7A_yQR59KBPvyK9UY",
+      ],
+    },
+    {
       "@type": ["LocalBusiness", "ProfessionalService"],
       "@id": siteUrl,
-      name: "Gutachten Prenzl – KFZ Sachverständiger Berlin",
-      alternateName: ["GP KFZ Sachverständiger", "Gutachten Prenzl"],
+      // Muss exakt dem Google-Business-Profile-Namen entsprechen, damit Google
+      // Website und Maps-Eintrag derselben Entität zuordnet.
+      name: "Kfz Gutachten Prenzl - Sachverständigenbüro",
+      alternateName: [
+        "Gutachten Prenzl",
+        "Gutachten Prenzl – KFZ Sachverständiger Berlin",
+        "GP KFZ Sachverständiger",
+      ],
       description:
         "TÜV-zertifizierter KFZ Sachverständiger in Berlin. Unfallgutachten in 24 Stunden, kostenlos bei unverschuldetem Unfall. Alle Berliner Bezirke.",
       url: siteUrl,
       telephone: "+4915560003661",
       email: "info@gutachtenprenzl.de",
+      // Entity-Verknüpfung: KI-Systeme sollen "Gutachten Prenzl" und
+      // "Atakan Arslan" als dieselbe Einheit erkennen.
+      founder: { "@id": `${siteUrl}/#person` },
+      employee: { "@id": `${siteUrl}/#person` },
+      knowsLanguage: ["de", "tr", "en"],
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+4915560003661",
@@ -134,6 +193,9 @@ const jsonLd = {
         latitude: 52.5376,
         longitude: 13.4155,
       },
+      hasMap:
+        "https://www.google.com/maps/place/?q=place_id:ChIJ6WBvNC7A_yQR59KBPvyK9UY",
+      vatID: "DE815908789",
       openingHoursSpecification: {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: [
@@ -166,33 +228,11 @@ const jsonLd = {
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Schadensregulierung Berlin" } },
         ],
       },
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "5.0",
-        reviewCount: "47",
-        bestRating: "5",
-        worstRating: "1",
-      },
-      review: [
-        {
-          "@type": "Review",
-          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-          author: { "@type": "Person", name: "Michael R." },
-          reviewBody: "Absolut top! Nach dem Auffahrunfall war ich total überfordert. Herr Arslan hat innerhalb von 24 Stunden ein vollständiges Gutachten erstellt. Die Versicherung des Verursachers hat alles bezahlt – für mich komplett kostenlos.",
-        },
-        {
-          "@type": "Review",
-          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-          author: { "@type": "Person", name: "Sabine K." },
-          reviewBody: "Sehr professionell und schnell. Der Parkschaden wurde präzise dokumentiert, die Gegenseite konnte nicht mehr bestreiten. Klare Empfehlung für jeden, der in Berlin einen unabhängigen Gutachter braucht.",
-        },
-        {
-          "@type": "Review",
-          reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-          author: { "@type": "Person", name: "Thomas W." },
-          reviewBody: "Hatte einen Totalschaden und wusste nicht, was mir zusteht. Gutachten Prenzl hat den Wiederbeschaffungswert korrekt ermittelt – deutlich höher als das Angebot der Versicherung.",
-        },
-      ],
+      // Bewusst KEIN aggregateRating / review hier:
+      // Google untersagt selbst ausgezeichnete Bewertungen auf der eigenen Domain
+      // ("self-serving reviews"). Die Sterne werden nicht ausgespielt und riskieren
+      // eine manuelle Maßnahme. Die echten Google-Bewertungen stehen sichtbar in
+      // components/google-reviews-section.tsx – das ist erlaubt und ausreichend.
     },
   ],
 };
@@ -201,6 +241,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="de" className="scroll-smooth">
       <head>
+        {/* Google Consent Mode v2 – MUSS als erstes Skript laufen, vor GTM & gtag.
+            Standard: alle Marketing-/Analyse-Signale verweigert bis zur aktiven Einwilligung.
+            Bereits erteilte Einwilligung (wiederkehrende Besucher) wird sofort angewandt. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+              try{if(localStorage.getItem('cookie-consent')==='accepted'){gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}}catch(e){}
+            `,
+          }}
+        />
         {/* Preconnect zu Google-Domains für schnelleres Laden */}
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -213,12 +266,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${karla.variable} ${saira.variable} font-sans antialiased noise`}>
+      <body className={`${karla.variable} ${jakarta.variable} font-sans antialiased noise`}>
         {/* Google Tag Manager (noscript) */}
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5CCZ6MN" height="0" width="0" style={{display:"none",visibility:"hidden"}}></iframe></noscript>
         {/* End Google Tag Manager (noscript) */}
         {children}
         <FloatingWhatsApp />
+        <ConversionTracking />
         <CookieBanner />
         {/* Google tag (gtag.js) – Conversion-ID: 18025620294 | Label: frZvCLbrpJAcEMbGpJND */}
         <Script
@@ -231,6 +285,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-18025620294');
+          `}
+        </Script>
+        {/* Scroll-in reveal for [data-reveal] elements — plain script, no React client component (avoids RSC lazy-chunk boundary).
+            Scroll-Listener statt IntersectionObserver: deckt auch Anker-Sprünge ab, bei denen IO nicht feuert. */}
+        <Script id="scroll-reveal" strategy="afterInteractive">
+          {`
+            (function () {
+              var els = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+              if (!els.length) return;
+              var ticking = false;
+              function check() {
+                ticking = false;
+                var limit = window.innerHeight * 0.92;
+                els = els.filter(function (el) {
+                  if (el.getBoundingClientRect().top < limit) {
+                    el.classList.add('is-visible');
+                    return false;
+                  }
+                  return true;
+                });
+                if (!els.length) {
+                  window.removeEventListener('scroll', onScroll);
+                  window.removeEventListener('resize', onScroll);
+                }
+              }
+              function onScroll() {
+                if (!ticking) { ticking = true; requestAnimationFrame(check); }
+              }
+              window.addEventListener('scroll', onScroll, { passive: true });
+              window.addEventListener('resize', onScroll, { passive: true });
+              check();
+            })();
           `}
         </Script>
       </body>

@@ -33,3 +33,7 @@ Thumbs.db
 
 # Vercel
 .vercel
+
+# Personenbezogene Daten: gehören nicht ins Repository
+leads_output.csv
+tsconfig.tsbuildinfo
