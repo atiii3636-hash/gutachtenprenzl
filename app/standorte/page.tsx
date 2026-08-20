@@ -106,7 +106,7 @@ export default function StandorteNeu() {
       <JsonLd data={[breadcrumbLd([{ name: "Standorte", path: PATH }]), placeLd]} />
 
       <NavbarNeu />
-      <Breadcrumb items={[{ name: "Standorte", href: "/neu/standorte" }]} />
+      <Breadcrumb items={[{ name: "Standorte", href: "/standorte" }]} />
 
       <PageHero
         kicker="Standorte & Einsatzgebiet"

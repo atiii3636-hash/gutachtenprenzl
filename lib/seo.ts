@@ -12,11 +12,11 @@ export const BUSINESS_ID = SITE_URL;
 export const PERSON_ID = `${SITE_URL}/#person`;
 
 /**
- * Solange die neuen Seiten unter /neu liegen, dürfen sie nicht in den Index –
- * sonst konkurrieren sie mit den Live-Seiten um dieselben Keywords.
- * Beim Umzug auf die echten Pfade: hier auf `false` setzen, sonst nichts.
+ * Steuert, ob die mit pageMetadata() gebauten Seiten indexiert werden dürfen.
+ * Stand 20.08.2026 liegen sie auf ihren echten Pfaden und sind freigegeben.
+ * Auf `true` setzen, falls sie noch einmal als Entwurf laufen sollen.
  */
-export const DRAFT_MODE = true;
+export const DRAFT_MODE = false;
 
 type PageSeoInput = {
   /** Titel ohne Suffix – das Template in layout.tsx hängt "| Gutachten Prenzl" an. */

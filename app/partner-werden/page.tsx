@@ -100,7 +100,7 @@ export default function PartnerWerdenNeu() {
       <JsonLd data={[breadcrumbLd([{ name: "Partner werden", path: PATH }]), faqLd(faqs)]} />
 
       <NavbarNeu />
-      <Breadcrumb items={[{ name: "Partner werden", href: "/neu/partner-werden" }]} />
+      <Breadcrumb items={[{ name: "Partner werden", href: "/partner-werden" }]} />
 
       <PageHero
         kicker="Kooperationspartner"

@@ -118,7 +118,7 @@ export default function RatgeberNeu() {
       <JsonLd data={[breadcrumbLd([{ name: "Ratgeber", path: PATH }]), collectionLd]} />
 
       <NavbarNeu />
-      <Breadcrumb items={[{ name: "Ratgeber", href: "/neu/ratgeber" }]} />
+      <Breadcrumb items={[{ name: "Ratgeber", href: "/ratgeber" }]} />
 
       <PageHero
         kicker="Ratgeber"

@@ -22,20 +22,20 @@ const bezirke = [
 ];
 
 const leistungen = [
-  { href: "/neu/schadengutachten", label: "Schadengutachten" },
-  { href: "/neu/wertgutachten", label: "Wertgutachten" },
-  { href: "/neu/wertminderung", label: "Wertminderung" },
-  { href: "/neu/restwertermittlung", label: "Restwertermittlung" },
+  { href: "/schadengutachten", label: "Schadengutachten" },
+  { href: "/wertgutachten", label: "Wertgutachten" },
+  { href: "/wertminderung", label: "Wertminderung" },
+  { href: "/restwertermittlung", label: "Restwertermittlung" },
 ];
 
 const nav = [
-  { href: "/neu/leistungen", label: "Leistungen" },
-  { href: "/neu/flotten-partner", label: "Flotten & Gewerbe" },
-  { href: "/neu/partner-werden", label: "Partner werden" },
-  { href: "/neu/ratgeber", label: "Ratgeber" },
-  { href: "/neu/ueber-uns", label: "Über uns" },
-  { href: "/neu/standorte", label: "Standorte" },
-  { href: "/neu/kontakt", label: "Kontakt" },
+  { href: "/leistungen", label: "Leistungen" },
+  { href: "/flotten-partner", label: "Flotten & Gewerbe" },
+  { href: "/partner-werden", label: "Partner werden" },
+  { href: "/ratgeber", label: "Ratgeber" },
+  { href: "/ueber-uns", label: "Über uns" },
+  { href: "/standorte", label: "Standorte" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 export default function FooterNeu() {

@@ -8,12 +8,12 @@ import Link from "next/link";
 // "Partner werden" steht bewusst nur im Footer – sechs Punkte sind das Maximum,
 // das neben Bewertung und Buttons in die Leiste passt.
 const links = [
-  { href: "/neu/leistungen", label: "Leistungen" },
-  { href: "/neu/flotten-partner", label: "Flotten & Gewerbe" },
-  { href: "/neu/ratgeber", label: "Ratgeber" },
-  { href: "/neu/ueber-uns", label: "Über uns" },
-  { href: "/neu/standorte", label: "Standorte" },
-  { href: "/neu/kontakt", label: "Kontakt" },
+  { href: "/leistungen", label: "Leistungen" },
+  { href: "/flotten-partner", label: "Flotten & Gewerbe" },
+  { href: "/ratgeber", label: "Ratgeber" },
+  { href: "/ueber-uns", label: "Über uns" },
+  { href: "/standorte", label: "Standorte" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 const GOOGLE_PROFILE_URL =
@@ -39,7 +39,7 @@ export default function NavbarNeu() {
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-5 flex items-center justify-between h-[68px] gap-4">
-        <Link href="/neu" className="flex items-center flex-shrink-0">
+        <Link href="/" className="flex items-center flex-shrink-0">
           <Image
             src="/logos/logo-full.png"
             alt="Gutachten Prenzl – KFZ Sachverständiger"

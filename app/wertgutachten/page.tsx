@@ -119,8 +119,8 @@ export default function WertgutachtenNeu() {
       <NavbarNeu />
       <Breadcrumb
         items={[
-          { name: "Leistungen", href: "/neu/leistungen" },
-          { name: "Wertgutachten", href: "/neu/wertgutachten" },
+          { name: "Leistungen", href: "/leistungen" },
+          { name: "Wertgutachten", href: "/wertgutachten" },
         ]}
       />
 
@@ -254,9 +254,9 @@ export default function WertgutachtenNeu() {
           </p>
           <div className="grid sm:grid-cols-3 gap-3" data-reveal>
             {[
-              { href: "/neu/schadengutachten", label: "Schadengutachten", sub: "Nach einem Unfall" },
-              { href: "/neu/wertminderung", label: "Wertminderung", sub: "Verlust nach Reparatur" },
-              { href: "/neu/restwertermittlung", label: "Restwertermittlung", sub: "Wert nach Totalschaden" },
+              { href: "/schadengutachten", label: "Schadengutachten", sub: "Nach einem Unfall" },
+              { href: "/wertminderung", label: "Wertminderung", sub: "Verlust nach Reparatur" },
+              { href: "/restwertermittlung", label: "Restwertermittlung", sub: "Wert nach Totalschaden" },
             ].map((l) => (
               <Link
                 key={l.href}

@@ -143,7 +143,7 @@ export default function FlottenPartnerNeu() {
       />
 
       <NavbarNeu />
-      <Breadcrumb items={[{ name: "Flotten & Gewerbe", href: "/neu/flotten-partner" }]} />
+      <Breadcrumb items={[{ name: "Flotten & Gewerbe", href: "/flotten-partner" }]} />
 
       <PageHero
         kicker="Für Flottenbetreiber"

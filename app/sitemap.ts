@@ -37,6 +37,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/parkschaden-was-tun",
   ];
 
+  // Seiten aus dem Redesign vom 20.08.2026. Bestehende URLs bleiben unverändert,
+  // diese kommen zusätzlich dazu.
+  const neueSeiten = [
+    "/leistungen",
+    "/schadengutachten",
+    "/wertgutachten",
+    "/wertminderung",
+    "/restwertermittlung",
+    "/standorte",
+    "/flotten-partner",
+    "/partner-werden",
+    "/ratgeber",
+  ];
+
   return [
     {
       url: baseUrl,
@@ -67,6 +81,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    ...neueSeiten.map((path) => ({
+      url: `${baseUrl}${path}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
     })),
     {
       url: `${baseUrl}/impressum`,

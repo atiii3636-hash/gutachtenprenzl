@@ -32,25 +32,25 @@ export const metadata: Metadata = pageMetadata({
 const detailseiten = [
   {
     num: "01",
-    href: "/neu/schadengutachten",
+    href: "/schadengutachten",
     title: "Schadengutachten",
     text: "Nach einem Unfall: Reparaturkosten, Wertminderung und Nutzungsausfall vollständig erfasst. Bei fremdem Verschulden für Sie kostenfrei.",
   },
   {
     num: "02",
-    href: "/neu/wertgutachten",
+    href: "/wertgutachten",
     title: "Wertgutachten",
     text: "Für Kauf, Verkauf, Erbschaft oder Versicherung. Der Marktwert Ihres Fahrzeugs, neutral festgestellt und belegt.",
   },
   {
     num: "03",
-    href: "/neu/wertminderung",
+    href: "/wertminderung",
     title: "Wertminderung",
     text: "Ein repariertes Unfallfahrzeug ist weniger wert. Diesen Verlust weisen wir aus und setzen ihn gegenüber der Versicherung durch.",
   },
   {
     num: "04",
-    href: "/neu/restwertermittlung",
+    href: "/restwertermittlung",
     title: "Restwertermittlung",
     text: "Beim Totalschaden entscheidet der Restwert über Ihre Auszahlung. Wir ermitteln ihn am regionalen Markt.",
   },
@@ -73,7 +73,7 @@ const saeulen = [
       "Direkte Abrechnung mit der gegnerischen Versicherung",
       "Rechtssicher und gerichtsverwertbar",
     ],
-    href: "/neu/schadengutachten",
+    href: "/schadengutachten",
     faqs: [
       {
         q: "Wer trägt die Kosten für das Gutachten?",
@@ -125,7 +125,7 @@ const saeulen = [
       "Prüfung, ob sich eine Reparatur noch lohnt",
       "Nachvollziehbare, belegte Kalkulation",
     ],
-    href: "/neu/restwertermittlung",
+    href: "/restwertermittlung",
     faqs: [
       {
         q: "Warum weicht das Angebot der Versicherung oft nach unten ab?",
@@ -213,7 +213,7 @@ export default function LeistungenNeu() {
       />
 
       <NavbarNeu />
-      <Breadcrumb items={[{ name: "Leistungen", href: "/neu/leistungen" }]} />
+      <Breadcrumb items={[{ name: "Leistungen", href: "/leistungen" }]} />
 
       <PageHero
         kicker="Leistungen"

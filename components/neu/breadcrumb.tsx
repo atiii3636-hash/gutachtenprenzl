@@ -8,7 +8,7 @@ export default function Breadcrumb({ items }: { items: { name: string; href: str
     <nav aria-label="Brotkrumennavigation" className="max-w-6xl mx-auto px-5 pt-24 pb-2">
       <ol className="flex flex-wrap items-center gap-2 text-[12px] text-white/30">
         <li>
-          <Link href="/neu" className="hover:text-white/70 transition-colors">
+          <Link href="/" className="hover:text-white/70 transition-colors">
             Startseite
           </Link>
         </li>

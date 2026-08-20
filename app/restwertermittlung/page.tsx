@@ -112,8 +112,8 @@ export default function RestwertermittlungNeu() {
       <NavbarNeu />
       <Breadcrumb
         items={[
-          { name: "Leistungen", href: "/neu/leistungen" },
-          { name: "Restwertermittlung", href: "/neu/restwertermittlung" },
+          { name: "Leistungen", href: "/leistungen" },
+          { name: "Restwertermittlung", href: "/restwertermittlung" },
         ]}
       />
 
@@ -276,9 +276,9 @@ export default function RestwertermittlungNeu() {
           </p>
           <div className="grid sm:grid-cols-3 gap-3" data-reveal>
             {[
-              { href: "/neu/schadengutachten", label: "Schadengutachten", sub: "Nach einem Unfall" },
-              { href: "/neu/wertgutachten", label: "Wertgutachten", sub: "Marktwert feststellen" },
-              { href: "/neu/wertminderung", label: "Wertminderung", sub: "Verlust nach Reparatur" },
+              { href: "/schadengutachten", label: "Schadengutachten", sub: "Nach einem Unfall" },
+              { href: "/wertgutachten", label: "Wertgutachten", sub: "Marktwert feststellen" },
+              { href: "/wertminderung", label: "Wertminderung", sub: "Verlust nach Reparatur" },
             ].map((l) => (
               <Link
                 key={l.href}
