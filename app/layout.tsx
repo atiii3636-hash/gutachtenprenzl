@@ -5,6 +5,7 @@ import "./globals.css";
 import CookieBanner from "@/components/cookie-banner";
 import FloatingWhatsApp from "@/components/floating-whatsapp";
 import ConversionTracking from "@/components/conversion-tracking";
+import ScrollReveal from "@/components/scroll-reveal";
 import { REVIEW_COUNT } from "@/lib/contact";
 
 export const viewport: Viewport = {
@@ -287,38 +288,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', 'AW-18025620294');
           `}
         </Script>
-        {/* Scroll-in reveal for [data-reveal] elements — plain script, no React client component (avoids RSC lazy-chunk boundary).
-            Scroll-Listener statt IntersectionObserver: deckt auch Anker-Sprünge ab, bei denen IO nicht feuert. */}
-        <Script id="scroll-reveal" strategy="afterInteractive">
-          {`
-            (function () {
-              var els = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
-              if (!els.length) return;
-              var ticking = false;
-              function check() {
-                ticking = false;
-                var limit = window.innerHeight * 0.92;
-                els = els.filter(function (el) {
-                  if (el.getBoundingClientRect().top < limit) {
-                    el.classList.add('is-visible');
-                    return false;
-                  }
-                  return true;
-                });
-                if (!els.length) {
-                  window.removeEventListener('scroll', onScroll);
-                  window.removeEventListener('resize', onScroll);
-                }
-              }
-              function onScroll() {
-                if (!ticking) { ticking = true; requestAnimationFrame(check); }
-              }
-              window.addEventListener('scroll', onScroll, { passive: true });
-              window.addEventListener('resize', onScroll, { passive: true });
-              check();
-            })();
-          `}
-        </Script>
+        {/* Einblenden der [data-reveal]-Elemente. Als Client-Komponente, weil sie
+            bei jedem Seitenwechsel neu greifen muss: Next.js wechselt Seiten ohne
+            Neuladen, ein einmalig laufendes Skript würde Folgeseiten unsichtbar lassen. */}
+        <ScrollReveal />
       </body>
     </html>
   );

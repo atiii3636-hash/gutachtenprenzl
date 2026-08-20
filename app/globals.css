@@ -95,6 +95,15 @@
   transform: translateY(0);
 }
 
+/* Notbremse: Ohne JavaScript würde der Seiteninhalt dauerhaft unsichtbar bleiben.
+   Dann lieber ohne Animation anzeigen als gar nicht. */
+@media (scripting: none) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Subtle noise texture */
 .noise::after {
   content: '';
