@@ -49,6 +49,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/flotten-partner",
     "/partner-werden",
     "/ratgeber",
+    "/130-prozent-regelung",
+    "/fiktive-abrechnung",
   ];
 
   return [

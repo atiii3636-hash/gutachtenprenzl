@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, MessageCircle, BookOpen, Euro, CalendarClock, Scale, AlertTriangle, ParkingCircle, ArrowRight } from "lucide-react";
+import { Phone, MessageCircle, BookOpen, Euro, CalendarClock, Scale, AlertTriangle, ParkingCircle, ArrowRight, Car, Banknote } from "lucide-react";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
 import Breadcrumb from "@/components/neu/breadcrumb";
@@ -32,10 +32,26 @@ const artikel = [
     icon: AlertTriangle,
     kategorie: "Sofort nach dem Unfall",
     title: "Was tun nach einem Unfall in Berlin?",
-    text: "Absichern, Polizei, Fotos, Daten austauschen — und warum Sie den Gutachter selbst beauftragen sollten. Schritt für Schritt erklärt.",
+    text: "Absichern, Polizei, Fotos, Daten austauschen und warum Sie den Gutachter selbst beauftragen sollten. Schritt für Schritt erklärt.",
     href: "/blog/was-tun-nach-unfall-berlin",
     dauer: "6 Min. Lesezeit",
     prominent: true,
+  },
+  {
+    icon: Car,
+    kategorie: "Totalschaden",
+    title: "Die 130-Prozent-Regel",
+    text: "Reparatur teurer als das Auto wert ist? Bis 30 Prozent darüber dürfen Sie trotzdem reparieren lassen. Bedingungen und Rechenbeispiel.",
+    href: "/130-prozent-regelung",
+    dauer: "5 Min. Lesezeit",
+  },
+  {
+    icon: Banknote,
+    kategorie: "Abrechnung",
+    title: "Fiktive Abrechnung: Geld statt Reparatur",
+    text: "Sie müssen nicht reparieren lassen. Was dabei erstattet wird, was nicht, und wo die Versicherung kürzen darf.",
+    href: "/fiktive-abrechnung",
+    dauer: "5 Min. Lesezeit",
   },
   {
     icon: Euro,
