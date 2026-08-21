@@ -17,12 +17,16 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Neutrales Wertgutachten für Kauf, Verkauf, Erbschaft, Scheidung oder Versicherung. TÜV-zertifizierter Sachverständiger in Berlin, Bewertung nach realem Marktwert.",
   path: PATH,
+  // Keywords aus dem Search-Console-Export vom 21.08.2026, nach Impressionen sortiert.
+  // Oldtimer bewusst nicht dabei: das Feld wird organisch nicht aktiv bespielt.
   keywords: [
+    "Kfz Wertgutachten",
+    "Wertgutachten Auto",
     "Wertgutachten Berlin",
     "Fahrzeugbewertung Berlin",
+    "Wertgutachten Leasingrückgabe",
     "Marktwertgutachten Auto",
     "Zeitwertgutachten Kfz",
-    "Oldtimer Wertgutachten Berlin",
   ],
 });
 
@@ -93,6 +97,14 @@ const faqs = [
   {
     q: "Wie lange ist ein Wertgutachten gültig?",
     a: "Es beschreibt den Wert zu einem bestimmten Stichtag. Da sich der Fahrzeugmarkt bewegt, sollte ein Gutachten für Verkauf oder Versicherung nicht wesentlich älter als etwa ein Jahr sein.",
+  },
+  {
+    q: "Lohnt sich ein Gutachten vor der Leasingrückgabe?",
+    a: "In den meisten Fällen ja. Der Gutachter der Leasinggesellschaft listet bei der Rückgabe jede Position einzeln auf, und die Rechnung fällt regelmäßig höher aus als erwartet. Wenn Sie vorher wissen, was echter Minderwert ist und was als übliche Abnutzung gilt, können Sie gezielt entscheiden, ob sich eine Reparatur vorab rechnet. Der richtige Zeitpunkt sind zwei bis vier Wochen vor dem Termin.",
+  },
+  {
+    q: "Ich will privat verkaufen. Welcher Wert steht dann im Gutachten?",
+    a: "Für den Privatverkauf ist der Marktwert die relevante Zahl, also der Preis, den Sie zwischen Privatleuten realistisch erzielen. Wir weisen zusätzlich den Händlereinkaufswert aus, damit Sie einordnen können, was ein Händler Ihnen bieten würde. Der Abstand zwischen beiden ist oft das stärkste Argument dafür, doch privat zu verkaufen.",
   },
 ];
 
@@ -232,11 +244,92 @@ export default function WertgutachtenNeu() {
         </div>
       </section>
 
-      {/* ============ 04 · FAQ ============ */}
+      {/* ============ 04 · DIE WERTE ============ */}
       <section className="px-5 py-20 md:py-24 border-t border-white/6">
         <div className="max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-4" data-reveal>
             <span className="font-display font-black text-[#E11D2F] text-[15px]">04</span>
+            <span className="text-[11px] font-bold tracking-[0.3em] text-white/40 uppercase">Hintergrund</span>
+          </div>
+          <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-12" data-reveal>
+            Ein Auto hat nicht einen Wert.
+          </h2>
+
+          <div className="space-y-12">
+            <div data-reveal>
+              <h3 className="font-display font-black tracking-tight text-[clamp(19px,2.6vw,26px)] leading-[1.2] mb-4">
+                Vier Zahlen, die alle etwas anderes bedeuten
+              </h3>
+              <p className="text-white/55 text-[15.5px] leading-relaxed mb-4">
+                Wer nach dem Wert seines Fahrzeugs fragt, bekommt je nach Quelle vier verschiedene
+                Antworten, und alle vier können richtig sein. Der Händlereinkaufswert ist das, was ein
+                Händler zahlt, wenn er das Auto in Zahlung nimmt. Der Händlerverkaufswert ist das, was
+                dasselbe Auto anschließend auf dem Hof kostet, inklusive Aufbereitung, Gewährleistung
+                und Marge. Zwischen beiden liegen bei einem Mittelklassewagen schnell 2.000 bis 3.000 Euro.
+              </p>
+              <p className="text-white/55 text-[15.5px] leading-relaxed mb-4">
+                Der Wiederbeschaffungswert beschreibt, was Sie zahlen müssten, um ein gleichwertiges
+                Fahrzeug bei einem seriösen Händler zu kaufen. Das ist die Zahl, die bei Versicherungen
+                und nach einem Totalschaden zählt. Der Marktwert schließlich ist der Preis, den Sie im
+                Privatverkauf realistisch erzielen, und liegt meist zwischen Einkauf und Verkauf.
+              </p>
+              <p className="text-white/55 text-[15.5px] leading-relaxed">
+                Im Gutachten weisen wir aus, welche dieser Werte für Ihren Fall relevant sind und wie
+                wir dorthin kommen. Eine einzelne Zahl ohne Herleitung nützt Ihnen gegenüber Käufer,
+                Leasinggeber oder Gericht wenig.
+              </p>
+            </div>
+
+            <div data-reveal>
+              <h3 className="font-display font-black tracking-tight text-[clamp(19px,2.6vw,26px)] leading-[1.2] mb-4">
+                Leasingrückgabe: der teuerste Termin des Leasingvertrags
+              </h3>
+              <p className="text-white/55 text-[15.5px] leading-relaxed mb-4">
+                Bei der Rückgabe prüft ein Sachverständiger im Auftrag der Leasinggesellschaft das
+                Fahrzeug und listet auf, was über normale Gebrauchsspuren hinausgeht. Diese Liste ist
+                die Rechnungsgrundlage, und sie fällt regelmäßig höher aus als erwartet. Steinschläge,
+                Kratzer an der Ladekante, ein abgefahrener Reifensatz, fehlender zweiter Schlüssel:
+                jede Position wird einzeln bepreist.
+              </p>
+              <p className="text-white/55 text-[15.5px] leading-relaxed mb-4">
+                Ein eigenes Gutachten vor der Rückgabe verschiebt die Ausgangslage. Sie wissen vorher,
+                was tatsächlich Minderwert ist und was als übliche Abnutzung durchgeht, und können
+                entscheiden, ob sich eine Reparatur vorab rechnet. Eine Smart-Repair-Beule für 180 Euro
+                schlägt bei der Rückgabe oft mit dem Dreifachen zu Buche.
+              </p>
+              <p className="text-white/55 text-[15.5px] leading-relaxed">
+                Der richtige Zeitpunkt sind zwei bis vier Wochen vor dem Rückgabetermin. Dann bleibt
+                noch Zeit, etwas machen zu lassen, und das Fahrzeug ist zum Termin in dem Zustand, den
+                das Gutachten beschreibt.
+              </p>
+            </div>
+
+            <div data-reveal>
+              <h3 className="font-display font-black tracking-tight text-[clamp(19px,2.6vw,26px)] leading-[1.2] mb-4">
+                Wann sich ein Wertgutachten nicht lohnt
+              </h3>
+              <p className="text-white/55 text-[15.5px] leading-relaxed mb-4">
+                Bei einem zehn Jahre alten Kleinwagen mit 180.000 Kilometern steht der Wert innerhalb
+                einer engen Spanne fest, die jeder Online-Rechner ähnlich trifft. Ein Gutachten kostet
+                dann mehr, als es an Verhandlungsspielraum bringt. Dasselbe gilt, wenn Sie ohnehin an
+                einen Händler verkaufen, der nach eigener Kalkulation einkauft.
+              </p>
+              <p className="text-white/55 text-[15.5px] leading-relaxed">
+                Interessant wird es, wenn eine der Zahlen strittig werden kann: bei Sonderausstattung,
+                Umbauten, sehr geringer Laufleistung, einem dokumentierten Vorschaden oder wenn eine
+                dritte Partei die Zahl akzeptieren muss. Sagen Sie am Telefon kurz, worum es geht.
+                Wenn wir denken, dass es sich für Sie nicht rechnet, sagen wir das.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ 05 · FAQ ============ */}
+      <section className="px-5 py-20 md:py-24 border-t border-white/6">
+        <div className="max-w-3xl mx-auto">
+          <div className="flex items-center justify-center gap-3 mb-4" data-reveal>
+            <span className="font-display font-black text-[#E11D2F] text-[15px]">05</span>
             <span className="text-[11px] font-bold tracking-[0.3em] text-white/40 uppercase">FAQ</span>
           </div>
           <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-12" data-reveal>
