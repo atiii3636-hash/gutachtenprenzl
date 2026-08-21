@@ -69,15 +69,32 @@ const nextConfig = {
         permanent: true,
       },
       // Aus der Search Console am 21.08.2026: lieferten weiterhin 404.
-      // Weißensee gehört zum Bezirk Pankow, daher dorthin.
       {
         source: '/kfz-gutachter-weissensee',
-        destination: '/kfz-sachverstaendiger-berlin-pankow',
+        destination: '/kfz-sachverstaendiger-berlin-weissensee',
         permanent: true,
       },
       {
         source: '/kfz-gutachten-nach-unfall',
         destination: '/unfallgutachten-berlin',
+        permanent: true,
+      },
+
+      // --- SEO-Audit 21.08.2026 ---
+      // /kfz-gutachter-berlin war von keiner einzigen Seite intern verlinkt und
+      // konkurrierte mit der Startseite um dasselbe Keyword ("kfz gutachter berlin",
+      // 1.940 Impressionen). Die Startseite trägt die gesamte Autorität und rankt
+      // dafür bereits — daher zusammengelegt statt zwei schwache Signale zu behalten.
+      {
+        source: '/kfz-gutachter-berlin',
+        destination: '/',
+        permanent: true,
+      },
+      // Lichtenberg lief als einziger Bezirk auf dem alten URL-Muster und rankte
+      // mit Ø-Position 20,2 deutlich schlechter als vergleichbare Bezirke.
+      {
+        source: '/kfz-gutachter-lichtenberg',
+        destination: '/kfz-sachverstaendiger-berlin-lichtenberg',
         permanent: true,
       },
     ];

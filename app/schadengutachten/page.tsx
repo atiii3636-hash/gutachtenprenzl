@@ -293,6 +293,9 @@ export default function SchadengutachtenNeu() {
               { href: "/wertgutachten", label: "Wertgutachten", sub: "Marktwert feststellen" },
               { href: "/wertminderung", label: "Wertminderung", sub: "Verlust nach Reparatur" },
               { href: "/restwertermittlung", label: "Restwertermittlung", sub: "Wert nach Totalschaden" },
+              { href: "/130-prozent-regelung", label: "130-Prozent-Regel", sub: "Reparieren trotz Totalschaden" },
+              { href: "/fiktive-abrechnung", label: "Fiktive Abrechnung", sub: "Geld statt Reparatur" },
+              { href: "/kurzgutachten-berlin", label: "Kurzgutachten", sub: "Für kleine Schäden" },
             ].map((l) => (
               <Link
                 key={l.href}

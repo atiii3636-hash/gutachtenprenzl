@@ -27,8 +27,9 @@ export const metadata: Metadata = pageMetadata({
 
 /* Bezirke mit Ortsteilen — trägt die lokale Sichtbarkeit und verlinkt die Bezirksseiten. */
 const bezirke = [
-  { name: "Pankow", href: "/kfz-sachverstaendiger-berlin-pankow", orte: "Prenzlauer Berg, Weißensee, Karow", heimat: true },
+  { name: "Pankow", href: "/kfz-sachverstaendiger-berlin-pankow", orte: "Niederschönhausen, Karow, Buch", heimat: true },
   { name: "Prenzlauer Berg", href: "/kfz-sachverstaendiger-berlin-prenzlauer-berg", orte: "Schönhauser Allee, Helmholtzplatz", heimat: true },
+  { name: "Weißensee", href: "/kfz-sachverstaendiger-berlin-weissensee", orte: "Antonplatz, Berliner Allee, Weißer See", heimat: true },
   { name: "Mitte", href: "/kfz-sachverstaendiger-berlin-mitte", orte: "Alexanderplatz, Wedding, Moabit" },
   { name: "Friedrichshain", href: "/kfz-sachverstaendiger-berlin-friedrichshain", orte: "Frankfurter Allee, Warschauer Str." },
   { name: "Kreuzberg", href: "/kfz-sachverstaendiger-berlin-kreuzberg", orte: "Bergmannkiez, Kottbusser Tor" },
@@ -39,9 +40,12 @@ const bezirke = [
   { name: "Steglitz", href: "/kfz-sachverstaendiger-berlin-steglitz", orte: "Schloßstraße, Lichterfelde" },
   { name: "Spandau", href: "/kfz-sachverstaendiger-berlin-spandau", orte: "Altstadt Spandau, Heerstraße" },
   { name: "Reinickendorf", href: "/kfz-sachverstaendiger-berlin-reinickendorf", orte: "Tegel, Wittenau, Frohnau" },
-  { name: "Lichtenberg", href: "/kfz-gutachter-lichtenberg", orte: "Fennpfuhl, Rummelsburg, Karlshorst" },
-  { name: "Marzahn", href: "/kfz-sachverstaendiger-berlin-marzahn", orte: "Hellersdorf, Biesdorf, Kaulsdorf" },
-  { name: "Köpenick", href: "/kfz-sachverstaendiger-berlin-koepenick", orte: "Treptow, Grünau, Schmöckwitz" },
+  { name: "Lichtenberg", href: "/kfz-sachverstaendiger-berlin-lichtenberg", orte: "Fennpfuhl, Rummelsburg, Karlshorst" },
+  { name: "Marzahn", href: "/kfz-sachverstaendiger-berlin-marzahn", orte: "Biesdorf, Ahrensfelde, Marzahner Promenade" },
+  { name: "Hellersdorf", href: "/kfz-sachverstaendiger-berlin-hellersdorf", orte: "Kaulsdorf, Mahlsdorf, Helle Mitte" },
+  { name: "Treptow", href: "/kfz-sachverstaendiger-berlin-treptow", orte: "Adlershof, Baumschulenweg, Johannisthal" },
+  { name: "Köpenick", href: "/kfz-sachverstaendiger-berlin-koepenick", orte: "Altstadt Köpenick, Grünau, Schmöckwitz" },
+  { name: "Zehlendorf", href: "/kfz-sachverstaendiger-berlin-zehlendorf", orte: "Dahlem, Wannsee, Nikolassee" },
 ];
 
 const vorOrt = [

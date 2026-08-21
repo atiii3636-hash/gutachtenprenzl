@@ -18,9 +18,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kfz-sachverstaendiger-berlin-koepenick",
     "/kfz-sachverstaendiger-berlin-pankow",
     "/kfz-sachverstaendiger-berlin-prenzlauer-berg",
-    "/kfz-gutachter-lichtenberg",
+    // Lichtenberg lief bis 21.08.2026 auf /kfz-gutachter-lichtenberg (301 steht).
+    "/kfz-sachverstaendiger-berlin-lichtenberg",
+    // Neu 21.08.2026: Bezirke mit Nachfrage in der Search Console, aber ohne Zielseite.
+    "/kfz-sachverstaendiger-berlin-hellersdorf",
+    "/kfz-sachverstaendiger-berlin-treptow",
+    "/kfz-sachverstaendiger-berlin-zehlendorf",
+    "/kfz-sachverstaendiger-berlin-weissensee",
     "/kfz-sachverstaendiger-berlin",
-    "/kfz-gutachter-berlin",
     "/unfallgutachten-berlin",
     "/heckauffahrunfall-berlin",
     "/parkschaden-gutachten-berlin",
@@ -51,6 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ratgeber",
     "/130-prozent-regelung",
     "/fiktive-abrechnung",
+    "/kurzgutachten-berlin",
   ];
 
   return [

@@ -13,6 +13,13 @@ export interface BezirkContent {
   distanceMin: number;
   faqs: { q: string; a: string }[];
   neighborSlugs: string[];
+  /**
+   * Optionale Vertiefung für Bezirke, in denen wir um die Top 3 kämpfen.
+   * Der gemeinsame Template-Text ist auf allen Bezirksseiten identisch; ohne
+   * zusätzlichen eigenen Inhalt bleiben pro Seite nur rund 280 einzigartige
+   * Wörter übrig. Zu wenig, um gegen Wettbewerber auf Position 1 bis 3 zu bestehen.
+   */
+  deepDive?: { h: string; p: string[] }[];
 }
 
 export const bezirkContent: BezirkContent[] = [
@@ -41,7 +48,32 @@ export const bezirkContent: BezirkContent[] = [
       { q: "Ich hatte einen Unfall auf der Berliner Allee. Was soll ich jetzt tun?", a: "Rufen Sie uns direkt an: 0155 60003661. Wir kommen zum Unfallort oder zu Ihrem Fahrzeug und erstellen das Gutachten innerhalb von 24 Stunden. Bei Fremdverschulden entstehen Ihnen keine Kosten." },
       { q: "Gilt das Gutachten auch für Unfälle in Weißensee?", a: "Ja. Unser Gutachten gilt für den gesamten Bezirk Pankow inklusive Weißensee, Heinersdorf und Niederschönhausen — und wird von deutschen Versicherungen im Regelfall anerkannt." },
     ],
-    neighborSlugs: ["kfz-sachverstaendiger-berlin-prenzlauer-berg", "kfz-sachverstaendiger-berlin-mitte", "kfz-sachverstaendiger-berlin-reinickendorf"],
+    neighborSlugs: ["kfz-sachverstaendiger-berlin-prenzlauer-berg", "kfz-sachverstaendiger-berlin-weissensee", "kfz-sachverstaendiger-berlin-mitte", "kfz-sachverstaendiger-berlin-reinickendorf"],
+    deepDive: [
+      {
+        h: "Ein Bezirk, der in zwei Hälften zerfällt",
+        p: [
+          "Pankow ist auf der Karte ein einziger Bezirk, im Verkehr sind es zwei. Südlich der Ringbahn liegt dichte Altbaustadt mit Parkraumbewirtschaftung, Straßenbahn und viel Radverkehr. Nördlich von Niederschönhausen wird es Vorstadt: Einfamilienhäuser, Tempo 30 in Wohnstraßen, und dazwischen die A114 als Zubringer Richtung Autobahnring.",
+          "Diese Zweiteilung merkt man an den Schäden. In Prenzlauer Berg und Niederschönhausen nehmen wir überwiegend Parkschäden und Rangierschäden auf. In Karow, Buch und Französisch Buchholz sind es eher Auffahrunfälle im Pendelverkehr und Wildschäden auf den Zufahrtsstraßen Richtung Brandenburg.",
+          "Die B2, also Berliner Straße und Berliner Allee, ist die Achse, auf der beide Welten aufeinandertreffen. Morgens staut es sich stadteinwärts bis Buch, nachmittags in die Gegenrichtung. Auffahrunfälle im Stop-and-go sind dort der mit Abstand häufigste Fall.",
+        ],
+      },
+      {
+        h: "Anfahrt und Bearbeitungszeiten im Bezirk",
+        p: [
+          "Von der Prenzlauer Allee 88 aus liegen die südlichen Ortsteile in 10 bis 15 Minuten. Pankow-Zentrum, Niederschönhausen und Heinersdorf erreichen wir in rund 15 bis 20 Minuten. Für Karow, Blankenburg und Französisch Buchholz rechnen wir 20 bis 25 Minuten, für Buch bis zu 30.",
+          "Wir nehmen den Termin dort wahr, wo das Fahrzeug steht. Das kann die eigene Einfahrt sein, der Werkstatthof oder der Stellplatz, auf dem das Auto nach dem Abschleppen abgestellt wurde. Ein nicht fahrbereites Fahrzeug muss für die Begutachtung nicht bewegt werden.",
+          "Das fertige Gutachten geht in der Regel innerhalb von 24 Stunden nach der Besichtigung raus, an Sie und auf Wunsch direkt an die regulierende Versicherung und Ihren Anwalt.",
+        ],
+      },
+      {
+        h: "Wenn der Unfallgegner aus Brandenburg kommt",
+        p: [
+          "In Nordpankow passiert das regelmäßig, weil über die B2 und die A114 viel Pendelverkehr aus dem Barnim kommt. An Ihren Ansprüchen ändert das nichts. Zuständig ist immer die Haftpflichtversicherung des Verursachers, unabhängig davon, wo dessen Fahrzeug zugelassen ist.",
+          "Praktisch relevant wird es nur bei ausländischen Kennzeichen. Dann läuft die Regulierung über den Zentralruf der Autoversicherer und gegebenenfalls über einen Schadenregulierungsbeauftragten in Deutschland. Das dauert länger, ändert aber nichts daran, dass Sie Ihren eigenen Gutachter frei wählen dürfen.",
+        ],
+      },
+    ],
   },
   {
     slug: "kfz-sachverstaendiger-berlin-prenzlauer-berg",
@@ -69,6 +101,32 @@ export const bezirkContent: BezirkContent[] = [
       { q: "Kann ich das Gutachten auch für die gegnerische Versicherung nutzen?", a: "Ja. Unser TÜV Rheinland-zertifiziertes Gutachten wird von deutschen Versicherungen im Regelfall anerkannt und ist gerichtsverwertbar. Die Gegenseite kann es nicht pauschal ablehnen." },
     ],
     neighborSlugs: ["kfz-sachverstaendiger-berlin-pankow", "kfz-sachverstaendiger-berlin-mitte", "kfz-sachverstaendiger-berlin-friedrichshain"],
+    deepDive: [
+      {
+        h: "Was ein Büro im Kiez praktisch ändert",
+        p: [
+          "Die meisten Kfz-Sachverständigen, die für Prenzlauer Berg werben, sitzen in Reinickendorf, Lichtenberg oder am Stadtrand. Das steht selten auf deren Website, macht aber im Schadenfall den Unterschied. Wir sind in der Prenzlauer Allee 88, zwischen Danziger Straße und Marienburger Straße. Zum Kollwitzplatz sind es fünf Minuten, zum Mauerpark sieben, zum Helmholtzplatz knapp zehn.",
+          "Das heißt konkret: Wenn Sie vormittags anrufen, sehen wir Ihr Fahrzeug in der Regel noch am selben Tag. Sie müssen nicht in eine Werkstatt am anderen Ende der Stadt fahren, nur damit jemand den Schaden begutachten kann. Bei Fahrzeugen, die nach dem Unfall nicht mehr fahrbereit sind, ist das ohnehin der einzige gangbare Weg.",
+          "Ein zweiter Punkt, den Ortsfremde unterschätzen: Prenzlauer Berg ist fast flächendeckend Parkraumbewirtschaftung. Ein Gutachter ohne Anwohnervignette kreist erst zwanzig Minuten um den Block oder stellt sich in zweiter Reihe. Wir kennen die Ecken, an denen man kurz stehen kann, ohne den Verkehr zu blockieren.",
+        ],
+      },
+      {
+        h: "Die Schadensbilder, die hier immer wieder auftauchen",
+        p: [
+          "Prenzlauer Berg produziert andere Schäden als eine Ausfallstraße am Stadtrand. Der häufigste Fall, den wir aufnehmen, ist der Parkrempler in einer engen Altbaustraße: seitliche Streifschäden an Kotflügel und Tür, oft ohne Zeugen, oft mit einem Verursacher, der weg ist. Ohne saubere Dokumentation und Plausibilitätsprüfung wird so ein Schaden von der Versicherung gern angezweifelt.",
+          "Der zweite Klassiker sind Kollisionen mit Radfahrern, vor allem beim Öffnen der Fahrertür. Die Kastanienallee, die Danziger Straße und die Schönhauser Allee haben viel Radverkehr direkt neben dem Parkstreifen. Solche Fälle enden fast immer bei der Haftungsfrage, und da zählt, wie genau die Schadenshöhe und die Anstoßrichtung dokumentiert sind.",
+          "Dazu kommen Abbiegeunfälle an den Straßenbahntrassen. Die M1 über die Schönhauser Allee, die M2 über die Prenzlauer Allee und die M10 über die Eberswalder Straße kreuzen den Autoverkehr an Stellen, an denen Sichtachsen durch parkende Fahrzeuge verdeckt sind. Wer dort links abbiegt, sieht die Bahn oft erst spät.",
+        ],
+      },
+      {
+        h: "Die ersten zwei Stunden nach dem Unfall",
+        p: [
+          "Fotografieren Sie, bevor irgendetwas bewegt wird. Gesamtansicht von allen vier Seiten, dann die Schadenstelle aus zwei Metern und aus dreißig Zentimetern. Wenn es die Verkehrslage zulässt, auch die Endstellung beider Fahrzeuge samt Umgebung, damit die Position später nachvollziehbar bleibt.",
+          "Notieren Sie Kennzeichen, Versicherung und Versicherungsnummer der Gegenseite. Falls jemand stehen bleibt und etwas gesehen hat: Name und Telefonnummer. Ein Zeuge, den man später nicht mehr findet, hilft niemandem.",
+          "Unterschreiben Sie nichts, was die gegnerische Versicherung Ihnen anbietet, bevor die Schadenshöhe feststeht. Der Anruf, in dem ein Schadensregulierer freundlich einen Sofortbetrag vorschlägt, kommt in der Regel innerhalb von 24 Stunden. Er liegt fast immer unter dem, was Ihnen tatsächlich zusteht, weil Wertminderung und Nutzungsausfall darin nicht auftauchen.",
+        ],
+      },
+    ],
   },
   {
     slug: "kfz-sachverstaendiger-berlin-mitte",
@@ -96,6 +154,32 @@ export const bezirkContent: BezirkContent[] = [
       { q: "Ich parkte in einer Tiefgarage am Alexanderplatz und jemand hat mein Auto gerammt. Hilft ein Gutachten?", a: "Ja. Wir dokumentieren Parkschadensfälle vollständig — inklusive Kostenvoranschlag und Minderwert. Das Gutachten ist die Grundlage für Ihre Schadensforderung gegenüber dem Verursacher oder seiner Versicherung." },
     ],
     neighborSlugs: ["kfz-sachverstaendiger-berlin-prenzlauer-berg", "kfz-sachverstaendiger-berlin-friedrichshain", "kfz-sachverstaendiger-berlin-kreuzberg"],
+    deepDive: [
+      {
+        h: "Warum Unfälle in Mitte anders reguliert werden",
+        p: [
+          "In keinem anderen Berliner Bezirk sind so viele Fahrzeuge unterwegs, die dem Fahrer nicht gehören. Mietwagen, Carsharing, Firmenflotten, Lieferfahrzeuge, dazu Touristen mit auswärtigen und ausländischen Kennzeichen. Für die Schadensregulierung heißt das: Halter, Fahrer und Versicherungsnehmer sind oft drei verschiedene Parteien.",
+          "Das verlangsamt die Regulierung, und es ändert, worauf es im Gutachten ankommt. Bei einem Carsharing-Fahrzeug muss die Schadenshöhe besonders sauber belegt sein, weil der Anbieter intern nach eigenen Sätzen abrechnet. Bei Mietwagen kommt regelmäßig die Frage nach der Vorschädigung auf, weil die Fahrzeuge viele Hände durchlaufen haben.",
+          "Wir dokumentieren deshalb in Mitte grundsätzlich auch das Umfeld der Schadenstelle und trennen im Gutachten klar zwischen dem aktuellen Schaden und erkennbaren Altschäden. Das nimmt der Gegenseite das häufigste Argument.",
+        ],
+      },
+      {
+        h: "Die Stellen, an denen es in Mitte regelmäßig kracht",
+        p: [
+          "Die Grunerstraße und der Alexanderplatz sind die offensichtlichen Kandidaten: viele Spuren, viele Spurwechsel, Straßenbahn, und Fahrer, die die Ausschilderung zum ersten Mal sehen. Fahrstreifenwechsel-Kollisionen sind hier der Standardfall, und die Haftungsfrage hängt fast immer an Details, die man nur mit Fotos vom Anstoßwinkel klärt.",
+          "Weniger bekannt, aber in unserer Praxis mindestens genauso häufig: die Torstraße und die Invalidenstraße. Beide sind eng, beidseitig zugeparkt und haben durchgehend Lieferverkehr in zweiter Reihe. Wer daran vorbeizieht, streift die Gegenrichtung oder die geöffnete Ladetür.",
+          "Rund um Hackescher Markt und Museumsinsel kommt der Fußgänger- und E-Scooter-Verkehr dazu. Anstöße bei Schrittgeschwindigkeit sehen harmlos aus und kosten trotzdem schnell vierstellig, sobald Sensorik in der Stoßstange verbaut ist.",
+        ],
+      },
+      {
+        h: "Wenn Ihr Fahrzeug in Mitte abgeschleppt wurde",
+        p: [
+          "Nach einem Unfall in der Innenstadt wird häufig zügig abgeschleppt, weil der Wagen den Verkehr blockiert. Wo Ihr Fahrzeug steht, erfahren Sie über die Polizei oder das Abschleppunternehmen, das den Auftrag hatte.",
+          "Wichtig: Lassen Sie es dort stehen, bis es begutachtet ist. Wir kommen auf den Verwahrplatz. Wird vorher repariert oder verwertet, fehlt die Grundlage für die Schadenshöhe, und die Versicherung kürzt.",
+          "Die Kosten für Abschleppen und Standgebühr gehören bei Fremdverschulden zum ersatzfähigen Schaden. Heben Sie die Belege auf, wir nehmen sie mit ins Gutachten.",
+        ],
+      },
+    ],
   },
   {
     slug: "kfz-sachverstaendiger-berlin-kreuzberg",
@@ -365,7 +449,7 @@ export const bezirkContent: BezirkContent[] = [
       { q: "Ich wurde in einer Tiefgarage in Marzahn beschädigt und der Verursacher ist weggefahren. Was nun?", a: "Das ist ein Fahrerflucht-Fall. Erstatten Sie Anzeige bei der Polizei und rufen Sie uns an. Wir dokumentieren den Schaden vollständig. Falls Kameraaufnahmen vorhanden sind, können wir bei der Aufklärung helfen." },
       { q: "Ist ein Gutachten bei kleinen Blechschäden in Marzahn sinnvoll?", a: "Ja — auch bei vermeintlich kleinen Schäden können versteckte Deformationen vorliegen, die sich erst später zeigen. Ein Gutachten sichert Ihre Ansprüche vollständig ab." },
     ],
-    neighborSlugs: ["kfz-gutachter-lichtenberg", "kfz-sachverstaendiger-berlin-reinickendorf", "kfz-sachverstaendiger-berlin-koepenick"],
+    neighborSlugs: ["kfz-sachverstaendiger-berlin-lichtenberg", "kfz-sachverstaendiger-berlin-reinickendorf", "kfz-sachverstaendiger-berlin-koepenick"],
   },
   {
     slug: "kfz-sachverstaendiger-berlin-koepenick",
@@ -392,16 +476,16 @@ export const bezirkContent: BezirkContent[] = [
       { q: "Ich hatte einen Unfall am Adlergestell. Wie schnell kommen Sie?", a: "In der Regel in 25–30 Minuten. Rufen Sie uns an: 0155 60003661. Wir kommen direkt zum Unfallort oder zur Werkstatt." },
       { q: "Mein Fahrzeug stand in der Altstadt Köpenick und wurde von einem Touristen beschädigt, der einfach weitergefahren ist. Was kann ich tun?", a: "Das ist ein Fahrerflucht-Fall. Erstatten Sie Anzeige bei der Polizei und sichern Sie alle Beweise (Fotos, Zeugen, Kameras). Wir erstellen das Gutachten für Ihre Kaskoversicherung oder zur Vorlage bei den Ermittlungen." },
     ],
-    neighborSlugs: ["kfz-gutachter-lichtenberg", "kfz-sachverstaendiger-berlin-marzahn", "kfz-sachverstaendiger-berlin-neukoelln"],
+    neighborSlugs: ["kfz-sachverstaendiger-berlin-lichtenberg", "kfz-sachverstaendiger-berlin-marzahn", "kfz-sachverstaendiger-berlin-neukoelln"],
   },
   {
-    slug: "kfz-gutachter-lichtenberg",
+    slug: "kfz-sachverstaendiger-berlin-lichtenberg",
     name: "Berlin Lichtenberg",
     nameShort: "Lichtenberg",
     title: "KFZ Gutachter Lichtenberg – kostenlos, 24h",
     metaDescription: "Unfall in Lichtenberg? Gutachten in 24h, 100% kostenlos bei Fremdverschulden. Vor Ort in Fennpfuhl & Karlshorst. ☎ 0155 60003661",
     keywords: ["kfz gutachter lichtenberg", "kfz sachverständiger lichtenberg berlin", "unfallgutachten lichtenberg", "gutachter fennpfuhl", "kfz gutachten karlshorst"],
-    canonical: "https://gutachtenprenzl.de/kfz-gutachter-lichtenberg",
+    canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin-lichtenberg",
     intro: "Lichtenberg liegt direkt östlich von Prenzlauer Berg — mit der Landsberger Allee als Hauptachse, dem Fennpfuhl als dichtem Wohngebiet und Karlshorst als ruhigem Villenviertel. Wir sind in 15–20 Minuten bei Ihnen.",
     localText: [
       "Die Landsberger Allee ist eine der am stärksten befahrenen Ausfallstraßen Berlins — mit sechs Spuren, Straßenbahn, dichtem Busverkehr und vielen Kreuzungen mit komplexen Ampelphasen. Zwischen Lichtenberg-Zentrum und Hohenschönhausen häufen sich Auffahrunfälle an Ampeln und Fahrstreifenwechsel-Kollisionen. In Karlshorst und Rummelsburg, mit ihrer gemischten Wohn- und Gewerbebebauung, sind Parkschadensfälle und Abbiegeunfälle typisch.",
@@ -419,7 +503,127 @@ export const bezirkContent: BezirkContent[] = [
       { q: "Ich hatte auf der Landsberger Allee einen Auffahrunfall. Was sind meine Ansprüche?", a: "Bei einem Auffahrunfall von hinten steht Ihnen zu: volle Reparaturkosten oder Wiederbeschaffungswert, Nutzungsausfall für jeden Tag ohne Fahrzeug, Mietwagenkosten und der Minderwert des Fahrzeugs. Wir dokumentieren alles." },
       { q: "Ist Gutachten Prenzl wirklich in der Nähe von Lichtenberg?", a: "Ja. Unser Büro in der Prenzlauer Allee 88 liegt direkt an der Grenze zu Lichtenberg — wir sind einer der nächstgelegenen Gutachter für den gesamten Bezirk." },
     ],
-    neighborSlugs: ["kfz-sachverstaendiger-berlin-pankow", "kfz-sachverstaendiger-berlin-marzahn", "kfz-sachverstaendiger-berlin-friedrichshain"],
+    neighborSlugs: ["kfz-sachverstaendiger-berlin-pankow", "kfz-sachverstaendiger-berlin-marzahn", "kfz-sachverstaendiger-berlin-weissensee", "kfz-sachverstaendiger-berlin-friedrichshain"],
+  },
+
+  // --- Neu am 21.08.2026 nach der Search-Console-Auswertung ---
+  // Diese vier Gebiete hatten zusammen 1.872 Impressionen ohne passende Zielseite.
+  // Die Anfragen liefen bis dahin auf die Startseite oder auf einen Nachbarbezirk.
+  {
+    slug: "kfz-sachverstaendiger-berlin-weissensee",
+    name: "Berlin Weißensee",
+    nameShort: "Weißensee",
+    title: "KFZ Gutachter Weißensee – kostenlos, in 24h",
+    metaDescription: "Unfall in Weißensee? Nur 10 Minuten von unserem Büro. Gutachten in 24h, 100% kostenlos bei Fremdverschulden. ☎ 0155 60003661",
+    keywords: ["kfz gutachter weißensee", "kfz sachverständiger weißensee", "unfallgutachten weißensee", "gutachter berliner allee", "kfz gutachten antonplatz"],
+    canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin-weissensee",
+    intro: "Weißensee ist einer unserer nächsten Ortsteile. Von der Prenzlauer Allee 88 sind wir in etwa 10 Minuten am Antonplatz. Unfall auf der Berliner Allee, in der Langhansstraße oder an der Buschallee? Rufen Sie an, wir kommen zu Ihnen.",
+    localText: [
+      "Die Berliner Allee ist die Achse, an der in Weißensee fast alles passiert. Vier Fahrspuren, die Straßenbahn M4 in Mittellage, Linksabbieger ohne eigene Ampelphase und beidseitig parkende Fahrzeuge, die die Sicht auf den Gegenverkehr nehmen. Die häufigsten Fälle, die wir hier aufnehmen, sind Abbiegeunfälle mit der Tram und Auffahrunfälle im Rückstau vor dem Antonplatz.",
+      "Abseits der Hauptachse sieht es anders aus. In der Langhansstraße, der Gustav-Adolf-Straße und rund um den Weißen See dominieren Parkschäden: enge Straßenquerschnitte, hoher Parkdruck und viele Fahrzeuge, die beim Ein- und Ausparken angerempelt werden. Oft ohne Zeugen und ohne Nachricht am Scheibenwischer. Genau diese Fälle brauchen eine belastbare Dokumentation, sonst zweifelt die Versicherung das Schadensbild an.",
+      "Im Norden geht Weißensee über die Falkenberger Straße und die Indira-Gandhi-Straße nach Hohenschönhausen und Marzahn über. Dort steigt das Tempo, und die Unfälle werden entsprechend schwerer. Wir sind für den gesamten Ortsteil zuständig und kommen dorthin, wo Ihr Fahrzeug steht.",
+    ],
+    subdistricts: ["Antonplatz", "Weißer See", "Komponistenviertel", "Buschallee", "Berliner Allee", "Langhansstraße", "Pistoriusplatz", "Stadtrandsiedlung Malchow"],
+    hotspots: [
+      { location: "Berliner Allee / Indira-Gandhi-Straße", desc: "Linksabbieger kreuzen die Tram M4, häufige Kollisionen mit der Straßenbahn" },
+      { location: "Antonplatz", desc: "Rückstau vor der Kreuzung, dadurch viele Auffahrunfälle im Stop-and-go" },
+      { location: "Buschallee / Falkenberger Straße", desc: "Tempoanstieg Richtung Hohenschönhausen, schwerere Seitenkollisionen" },
+    ],
+    distanceMin: 10,
+    faqs: [
+      { q: "Wie schnell sind Sie in Weißensee vor Ort?", a: "In der Regel innerhalb von 10 bis 15 Minuten. Unser Büro liegt in der Prenzlauer Allee 88, das ist über die Ostseestraße eine kurze Strecke. Bei Anruf am Vormittag sehen wir Ihr Fahrzeug meist noch am selben Tag." },
+      { q: "Ich hatte einen Unfall mit der Straßenbahn auf der Berliner Allee. Was gilt da?", a: "Bei Unfällen mit der BVG greift zusätzlich die Betriebsgefahr des Schienenfahrzeugs. Das heißt, selbst bei einer Teilschuld bekommen Sie häufig mehr ersetzt, als Sie erwarten. Voraussetzung ist ein Gutachten, das Anstoßstelle und Schadensverlauf sauber nachvollziehbar macht." },
+      { q: "Mein Auto wurde beim Parken beschädigt und der Verursacher ist weg. Lohnt sich ein Gutachten?", a: "Wenn der Schaden über der Bagatellgrenze von rund 750 Euro liegt, ja. Wir dokumentieren das Schadensbild so, dass es gegenüber Ihrer Kaskoversicherung Bestand hat, und prüfen, ob die Anstoßspuren zu einer Fahrerflucht passen. Das ist für die Anzeige relevant." },
+      { q: "Gehört Weißensee nicht zu Pankow?", a: "Ja, seit der Bezirksreform 2001 ist Weißensee ein Ortsteil des Bezirks Pankow. Für Ihr Gutachten spielt das keine Rolle. Wir sind in beiden Gebieten vor Ort, und der Ortsteil ist von unserem Büro aus sogar schneller erreichbar als Pankow-Zentrum." },
+    ],
+    neighborSlugs: ["kfz-sachverstaendiger-berlin-pankow", "kfz-sachverstaendiger-berlin-prenzlauer-berg", "kfz-sachverstaendiger-berlin-lichtenberg"],
+  },
+  {
+    slug: "kfz-sachverstaendiger-berlin-hellersdorf",
+    name: "Berlin Hellersdorf",
+    nameShort: "Hellersdorf",
+    title: "KFZ Gutachter Hellersdorf – kostenlos, in 24h",
+    metaDescription: "Unfall in Hellersdorf, Kaulsdorf oder Mahlsdorf? Gutachten in 24h, 100% kostenlos bei Fremdverschulden. ☎ 0155 60003661",
+    keywords: ["kfz gutachter hellersdorf", "kfz sachverständiger hellersdorf", "unfallgutachten hellersdorf", "kfz gutachter mahlsdorf", "kfz gutachten kaulsdorf"],
+    canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin-hellersdorf",
+    intro: "Hellersdorf, Kaulsdorf und Mahlsdorf sind drei sehr unterschiedliche Ortsteile im Osten Berlins: Plattenbau, Siedlungshäuser und die B1/B5 als Durchgangsachse nach Brandenburg. Wir kommen zu Ihnen, unabhängig davon, wo das Fahrzeug steht.",
+    localText: [
+      "Die B1/B5 zwischen Biesdorf und der Stadtgrenze bei Hoppegarten ist die Hauptunfallstrecke im Gebiet. Auf dem Hultschiner Damm und in Alt-Mahlsdorf wechseln sich Tempo 50 und Tempo 30 ab, es gibt viele Grundstückszufahrten direkt an der Fahrbahn und dazu den Pendelverkehr aus dem Landkreis Märkisch-Oderland. Auffahrunfälle und Abbiegekollisionen mit einbiegenden Fahrzeugen sind hier der Regelfall.",
+      "In Hellersdorf selbst, rund um die Hellersdorfer Straße, die Riesaer Straße und die Stendaler Straße, sieht das Schadensbild anders aus. Die Wohngebiete haben große Stellplatzanlagen und breite Erschließungsstraßen, entsprechend viele Rangier- und Parkschäden. Rund um die Helle Mitte kommt der Einkaufsverkehr dazu, mit den typischen Kollisionen beim Ausparken aus Querparkständen.",
+      "Kaulsdorf und Mahlsdorf-Süd sind Einfamilienhausgebiete mit schmalen Straßen, teilweise ohne durchgehenden Gehweg und mit unübersichtlichen Kreuzungen ohne Vorfahrtsregelung. Rechts vor links wird dort regelmäßig zum Streitfall, und ohne Gutachten steht am Ende Aussage gegen Aussage.",
+    ],
+    subdistricts: ["Hellersdorf", "Kaulsdorf", "Mahlsdorf", "Helle Mitte", "Kaulsdorf-Nord", "Mahlsdorf-Süd", "Hönow-West", "Biesdorf-Nord"],
+    hotspots: [
+      { location: "B1/B5 Hultschiner Damm", desc: "Durchgangsverkehr aus Brandenburg mit vielen Grundstückszufahrten" },
+      { location: "Hellersdorfer Straße / Stendaler Straße", desc: "Breite Kreuzung mit Straßenbahn und langen Ampelphasen" },
+      { location: "Alt-Mahlsdorf / Bahnübergang", desc: "Rückstau vor der Schranke, Auffahrunfälle im Stop-and-go" },
+    ],
+    distanceMin: 30,
+    faqs: [
+      { q: "Kommen Sie auch bis nach Mahlsdorf?", a: "Ja. Wir decken Hellersdorf, Kaulsdorf und Mahlsdorf komplett ab. Die Anfahrt von der Prenzlauer Allee dauert je nach Verkehrslage 25 bis 35 Minuten. Der Termin kostet Sie bei einem unverschuldeten Unfall nichts, auch die Anfahrt nicht." },
+      { q: "Lohnt sich ein eigener Gutachter, wenn die Versicherung schon einen geschickt hat?", a: "Der Gutachter der gegnerischen Versicherung arbeitet im Auftrag der Versicherung, nicht in Ihrem. Bei Fremdverschulden haben Sie das Recht, einen eigenen unabhängigen Sachverständigen zu beauftragen, und die Gegenseite trägt die Kosten. Das ist kein Sonderfall, sondern die Regel." },
+      { q: "Ich hatte einen Unfall auf der B1 kurz vor der Stadtgrenze. Sind Sie da noch zuständig?", a: "Ja. Wir arbeiten in ganz Berlin und im angrenzenden Umland. Ob der Unfallort noch auf Berliner oder schon auf Brandenburger Gebiet liegt, ändert an Ihren Ansprüchen nichts." },
+      { q: "Wie lange dauert es, bis ich das Gutachten habe?", a: "In der Regel liegt es innerhalb von 24 Stunden nach der Besichtigung vor. Auf Wunsch schicken wir es direkt an Ihren Anwalt und an die regulierende Versicherung." },
+    ],
+    neighborSlugs: ["kfz-sachverstaendiger-berlin-marzahn", "kfz-sachverstaendiger-berlin-lichtenberg", "kfz-sachverstaendiger-berlin-koepenick"],
+  },
+  {
+    slug: "kfz-sachverstaendiger-berlin-treptow",
+    name: "Berlin Treptow",
+    nameShort: "Treptow",
+    title: "KFZ Gutachter Treptow – kostenlos, in 24h",
+    metaDescription: "Unfall in Treptow, Baumschulenweg oder Adlershof? Gutachten in 24h, 100% kostenlos bei Fremdverschulden. ☎ 0155 60003661",
+    keywords: ["kfz gutachter treptow", "kfz sachverständiger treptow", "unfallgutachten treptow berlin", "kfz gutachter adlershof", "kfz gutachten baumschulenweg"],
+    canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin-treptow",
+    intro: "Treptow reicht von Alt-Treptow an der Spree bis nach Altglienicke und Bohnsdorf an der Stadtgrenze. Dazwischen liegen die A113, der Technologiepark Adlershof und die Engstelle an der Elsenbrücke. Wir kommen dorthin, wo Ihr Fahrzeug steht.",
+    localText: [
+      "Die Elsenstraße und die Zufahrt zur Elsenbrücke sind seit Jahren die kritischste Stelle im Ortsteil. Durch die Bauarbeiten an der Brücke ist die Verkehrsführung verengt und wechselt immer wieder. Wer sich auf die Spurmarkierung von letzter Woche verlässt, findet sie diese Woche unter Umständen anders vor. Fahrstreifenwechsel-Kollisionen und Auffahrunfälle im zähen Verkehr sind dort unser häufigster Fall.",
+      "Die zweite Achse ist das Adlergestell mit der parallel verlaufenden A113. An den Anschlussstellen Späthstraße, Adlershof und Stubenrauchstraße treffen Beschleunigungsstreifen auf dichten Verkehr. Auffahrunfälle beim Einfädeln enden hier oft mit erheblichem Schaden, weil die Geschwindigkeitsdifferenz größer ist als im Stadtverkehr. Rund um den Technologiepark Adlershof kommt morgens und nachmittags ein konzentrierter Berufsverkehr dazu.",
+      "In Baumschulenweg, Johannisthal, Altglienicke und Bohnsdorf dominieren dagegen die üblichen Wohngebietsschäden: Parkrempler, Rangierschäden in engen Straßen und Kollisionen an unübersichtlichen Einmündungen. Auch in Alt-Treptow und Plänterwald, wo der Parkdruck rund um den Treptower Park hoch ist, nehmen wir überwiegend Parkschäden auf.",
+    ],
+    subdistricts: ["Alt-Treptow", "Plänterwald", "Baumschulenweg", "Johannisthal", "Adlershof", "Niederschöneweide", "Oberschöneweide", "Altglienicke", "Bohnsdorf"],
+    hotspots: [
+      { location: "Elsenstraße / Elsenbrücke", desc: "Wechselnde Verkehrsführung durch die Baustelle, viele Spurwechselunfälle" },
+      { location: "Adlergestell / A113 Späthstraße", desc: "Auffahrunfälle beim Einfädeln mit hoher Geschwindigkeitsdifferenz" },
+      { location: "Sterndamm / Groß-Berliner Damm", desc: "Berufsverkehr zum Technologiepark, Rückstau in beide Richtungen" },
+    ],
+    distanceMin: 20,
+    faqs: [
+      { q: "Deckt diese Seite auch Köpenick ab?", a: "Für Köpenick, Grünau und Schmöckwitz haben wir eine eigene Seite. Treptow und Köpenick bilden zwar einen gemeinsamen Bezirk, liegen aber weit auseinander. Wir sind in beiden Teilen vor Ort, die Anfahrtszeiten unterscheiden sich allerdings deutlich." },
+      { q: "Mein Unfall war auf der A113. Ist das ein Sonderfall?", a: "Rechtlich nicht. Auf der Autobahn ist die Beweislage aber meist schwieriger, weil die Fahrzeuge geräumt werden, bevor jemand die Endstellung dokumentiert. Umso wichtiger sind Fotos vom Schadensbild und ein Gutachten, das die Anstoßrichtung technisch nachvollziehbar macht." },
+      { q: "Wie schnell sind Sie in Adlershof?", a: "Von unserem Büro in der Prenzlauer Allee 88 sind es je nach Verkehrslage 20 bis 30 Minuten. Bei einem nicht fahrbereiten Fahrzeug kommen wir zum Standort, Sie müssen nichts organisieren." },
+      { q: "Was kostet mich das Gutachten?", a: "Bei einem unverschuldeten Unfall nichts. Die Kosten trägt die Haftpflichtversicherung des Verursachers, wir rechnen direkt mit ihr ab. Bei Teilschuld wird anteilig nach der Haftungsquote abgerechnet, das klären wir vorher am Telefon." },
+    ],
+    neighborSlugs: ["kfz-sachverstaendiger-berlin-koepenick", "kfz-sachverstaendiger-berlin-neukoelln", "kfz-sachverstaendiger-berlin-friedrichshain"],
+  },
+  {
+    slug: "kfz-sachverstaendiger-berlin-zehlendorf",
+    name: "Berlin Zehlendorf",
+    nameShort: "Zehlendorf",
+    title: "KFZ Gutachter Zehlendorf – kostenlos, in 24h",
+    metaDescription: "Unfall in Zehlendorf, Dahlem oder Wannsee? Gutachten in 24h, 100% kostenlos bei Fremdverschulden. ☎ 0155 60003661",
+    keywords: ["kfz gutachter zehlendorf", "kfz sachverständiger zehlendorf", "unfallgutachten zehlendorf", "kfz gutachter dahlem", "kfz gutachten wannsee"],
+    canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin-zehlendorf",
+    intro: "Zehlendorf, Dahlem, Nikolassee und Wannsee liegen im Südwesten Berlins, durchzogen von der AVUS und umgeben von Wald und Seen. Wir fahren die Strecke, auch wenn sie länger ist. Bei Fremdverschulden zahlen Sie dafür nichts.",
+    localText: [
+      "Die A115, die alte AVUS, prägt den Verkehr im gesamten Südwesten. An den Anschlussstellen Hüttenweg, Spanische Allee und Kleinmachnow entstehen regelmäßig Auffahrunfälle, weil der fließende Verkehr auf plötzlich stehende Kolonnen trifft. Der Fahrbahnbelag und die alte Trassenführung mit ihren engen Radien tun ihr Übriges. Schäden aus AVUS-Unfällen fallen im Schnitt deutlich höher aus als im Stadtverkehr.",
+      "Im Ortskern Zehlendorf sind Teltower Damm, Clayallee und Potsdamer Chaussee die Hauptachsen. Die Kreuzung Clayallee mit der Argentinischen Allee ist wegen ihrer Größe und der langen Ampelphasen ein wiederkehrender Unfallort, vor allem bei Linksabbiegern. Rund um den Bahnhof Zehlendorf kommt der Parksuchverkehr dazu.",
+      "In Dahlem, Nikolassee und Wannsee sieht es ganz anders aus. Villenstraßen mit hohem Baumbestand, dichten Hecken an den Grundstücksgrenzen und Einmündungen, an denen man den Querverkehr erst sieht, wenn man halb drin steht. Dazu kommen im Herbst und Winter Sturm- und Astschäden, die über die Kaskoversicherung laufen und die wir ebenso begutachten wie Unfallschäden.",
+    ],
+    subdistricts: ["Zehlendorf", "Dahlem", "Nikolassee", "Wannsee", "Schlachtensee", "Düppel", "Kohlhasenbrück", "Zehlendorf-West"],
+    hotspots: [
+      { location: "A115 AVUS, Anschluss Hüttenweg", desc: "Auffahrunfälle am Stauende mit hoher Schadenshöhe" },
+      { location: "Clayallee / Argentinische Allee", desc: "Große Kreuzung, häufige Kollisionen beim Linksabbiegen" },
+      { location: "Königstraße Richtung Glienicker Brücke", desc: "Enge Waldstrecke mit Gegenverkehr und Wildwechsel" },
+    ],
+    distanceMin: 35,
+    faqs: [
+      { q: "Zehlendorf liegt weit von Ihrem Büro entfernt. Kommen Sie trotzdem?", a: "Ja. Die Anfahrt dauert je nach Tageszeit 30 bis 45 Minuten, das ändert nichts an der Zuständigkeit. Bei einem unverschuldeten Unfall trägt die gegnerische Versicherung auch die Anfahrtskosten, für Sie entsteht kein Aufpreis." },
+      { q: "Ein Ast ist auf mein Auto gefallen. Ist das ein Fall für einen Gutachter?", a: "Wenn der Schaden über der Bagatellgrenze liegt, ja. Sturm- und Astschäden laufen über die Teilkasko, und die reguliert erfahrungsgemäß genauer, wenn eine unabhängige Schadensfeststellung vorliegt. Wichtig: Fotografieren Sie den Ast am Fahrzeug, bevor Sie ihn entfernen." },
+      { q: "Mein Unfall war auf der AVUS. Was ist da anders?", a: "Die Schadenshöhe. Bei Autobahngeschwindigkeit sind Deformationen an Längsträgern und Fahrwerk häufig, die man von außen nicht sieht. Wir prüfen deshalb auf der Hebebühne oder mit Messsystem, bevor wir eine Reparaturkalkulation abgeben." },
+      { q: "Kann ich das Fahrzeug vorher in die Werkstatt bringen?", a: "Bringen Sie es hin, aber lassen Sie es noch nicht reparieren. Sobald der Schaden beseitigt ist, fehlt die Grundlage für die Bewertung, und die Versicherung kürzt. Wir kommen in die Werkstatt und begutachten dort." },
+    ],
+    neighborSlugs: ["kfz-sachverstaendiger-berlin-steglitz", "kfz-sachverstaendiger-berlin-schoeneberg", "kfz-sachverstaendiger-berlin-spandau"],
   },
 ];
 

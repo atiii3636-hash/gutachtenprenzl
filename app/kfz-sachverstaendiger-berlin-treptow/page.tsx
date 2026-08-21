@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getBezirkBySlug } from "@/lib/bezirk-content";
 import BezirkPageTemplate from "@/components/bezirk-page-template";
 
-const content = getBezirkBySlug("kfz-gutachter-lichtenberg")!;
+const content = getBezirkBySlug("kfz-sachverstaendiger-berlin-treptow")!;
 
 export const metadata: Metadata = {
   title: { absolute: content.title },

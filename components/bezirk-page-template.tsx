@@ -24,7 +24,7 @@ function Kapitel({ num, label }: { num: string; label: string }) {
 }
 
 export default function BezirkPageTemplate({ content }: Props) {
-  const { name, nameShort, intro, localText, subdistricts, hotspots, distanceMin, faqs, neighborSlugs, slug } = content;
+  const { name, nameShort, intro, localText, subdistricts, hotspots, distanceMin, faqs, neighborSlugs, slug, deepDive } = content;
 
   const neighbors = neighborSlugs
     .map((s) => bezirkContent.find((b) => b.slug === s))
@@ -311,6 +311,22 @@ export default function BezirkPageTemplate({ content }: Props) {
                 ))}
               </div>
             </div>
+
+            {/* Vertiefung: nur auf den Bezirken gepflegt, auf denen wir um die Top 3 spielen. */}
+            {deepDive && deepDive.length > 0 && (
+              <div className="mt-14 pt-10 border-t border-white/8 space-y-12">
+                {deepDive.map((block) => (
+                  <div key={block.h} data-reveal>
+                    <h3 className="font-display font-black tracking-tight text-[clamp(19px,2.6vw,26px)] leading-[1.2] mb-4">
+                      {block.h}
+                    </h3>
+                    {block.p.map((para, i) => (
+                      <p key={i} className="text-white/55 text-[15.5px] leading-relaxed mb-4">{para}</p>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </section>
 

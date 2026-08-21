@@ -6,6 +6,7 @@ import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/contact";
 const bezirke = [
   { name: "Pankow", href: "/kfz-sachverstaendiger-berlin-pankow" },
   { name: "Prenzlauer Berg", href: "/kfz-sachverstaendiger-berlin-prenzlauer-berg" },
+  { name: "Weißensee", href: "/kfz-sachverstaendiger-berlin-weissensee" },
   { name: "Mitte", href: "/kfz-sachverstaendiger-berlin-mitte" },
   { name: "Kreuzberg", href: "/kfz-sachverstaendiger-berlin-kreuzberg" },
   { name: "Friedrichshain", href: "/kfz-sachverstaendiger-berlin-friedrichshain" },
@@ -16,9 +17,12 @@ const bezirke = [
   { name: "Steglitz", href: "/kfz-sachverstaendiger-berlin-steglitz" },
   { name: "Spandau", href: "/kfz-sachverstaendiger-berlin-spandau" },
   { name: "Reinickendorf", href: "/kfz-sachverstaendiger-berlin-reinickendorf" },
-  { name: "Lichtenberg", href: "/kfz-gutachter-lichtenberg" },
+  { name: "Lichtenberg", href: "/kfz-sachverstaendiger-berlin-lichtenberg" },
   { name: "Marzahn", href: "/kfz-sachverstaendiger-berlin-marzahn" },
+  { name: "Hellersdorf", href: "/kfz-sachverstaendiger-berlin-hellersdorf" },
+  { name: "Treptow", href: "/kfz-sachverstaendiger-berlin-treptow" },
   { name: "Köpenick", href: "/kfz-sachverstaendiger-berlin-koepenick" },
+  { name: "Zehlendorf", href: "/kfz-sachverstaendiger-berlin-zehlendorf" },
 ];
 
 const leistungen = [
@@ -26,10 +30,12 @@ const leistungen = [
   { href: "/wertgutachten", label: "Wertgutachten" },
   { href: "/wertminderung", label: "Wertminderung" },
   { href: "/restwertermittlung", label: "Restwertermittlung" },
+  { href: "/kurzgutachten-berlin", label: "Kurzgutachten" },
 ];
 
 const nav = [
   { href: "/leistungen", label: "Leistungen" },
+  { href: "/kfz-sachverstaendiger-berlin", label: "Sachverständiger Berlin" },
   { href: "/flotten-partner", label: "Flotten & Gewerbe" },
   { href: "/partner-werden", label: "Partner werden" },
   { href: "/ratgeber", label: "Ratgeber" },
