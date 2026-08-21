@@ -68,6 +68,18 @@ const nextConfig = {
         destination: '/kfz-sachverstaendiger-berlin-prenzlauer-berg',
         permanent: true,
       },
+      // Aus der Search Console am 21.08.2026: lieferten weiterhin 404.
+      // Weißensee gehört zum Bezirk Pankow, daher dorthin.
+      {
+        source: '/kfz-gutachter-weissensee',
+        destination: '/kfz-sachverstaendiger-berlin-pankow',
+        permanent: true,
+      },
+      {
+        source: '/kfz-gutachten-nach-unfall',
+        destination: '/unfallgutachten-berlin',
+        permanent: true,
+      },
     ];
   },
 };
