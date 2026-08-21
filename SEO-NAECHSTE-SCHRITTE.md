@@ -90,11 +90,20 @@ Danach unter „Sitemaps" die `sitemap.xml` einmal neu einreichen.
 
 ---
 
-## Schritt 5: Eine zweite Property für www anlegen
+## Schritt 5: erledigt, und die Frage ist beantwortet
 
-Die www-Domain hing 111 Tage am alten Vercel-Projekt und lieferte ein falsches Zertifikat, behoben am 17.08.2026. Der aktuelle Export ist eine reine Apex-Property, deshalb sehen Sie dort nicht, was auf www passiert ist.
+**Korrektur zu dem, was hier ursprünglich stand.** Ich hatte angenommen, es gäbe nur eine Apex-Property, weil der Export-Ordner so hieß. Tatsächlich existierte längst eine **Domain-Property `gutachtenprenzl.de`**, die apex und www zusammen abdeckt. Die zusätzliche www-Property, die ich am 21.08.2026 angelegt habe, war also überflüssig.
 
-Legen Sie in der Search Console eine Property für `https://www.gutachtenprenzl.de` an. Wenn dort noch URLs im Index stehen, sehen Sie das und können gezielt nachhelfen. Die Weiterleitung selbst funktioniert bereits, geprüft am 21.08.2026.
+Der Vergleich beantwortet dafür die offene Frage aus dem Audit:
+
+| Property | Klicks | Impressionen |
+|---|---:|---:|
+| Domain (apex + www) | 218 | 39.902 |
+| Nur Apex | 218 | 39.900 |
+
+Differenz: **zwei Impressionen.** Das falsche www-Zertifikat hat in der Suche also praktisch nichts gekostet, weil Google ohnehin fast ausschließlich die Hauptdomain ausgespielt hat. Damit ist der Punkt vom Tisch.
+
+**Für die tägliche Arbeit** nehmen Sie die Property `gutachtenprenzl.de` ohne `https://` davor. Die deckt alles ab. Die beiden URL-Präfix-Properties darunter zeigen jeweils nur einen Ausschnitt.
 
 ---
 
