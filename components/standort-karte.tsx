@@ -15,7 +15,7 @@ export default function StandortKarte({ bezirk, minuten, variant = "dark" }: Pro
   return (
     <section
       className={`px-5 py-14 border-t ${
-        dark ? "bg-[#080D14] border-white/6" : "bg-white border-gray-100"
+        dark ? "bg-[#050507] border-white/6" : "bg-white border-gray-100"
       }`}
     >
       <div className="max-w-3xl mx-auto">

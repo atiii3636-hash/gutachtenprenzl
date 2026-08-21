@@ -93,11 +93,11 @@ export default function RechtAufGutachter() {
       </section>
 
       {/* Content */}
-      <section className="bg-white px-5 py-14">
-        <div className="max-w-2xl mx-auto space-y-8 text-gray-600 text-[15px] leading-relaxed">
+      <section className="bg-[#050507] px-5 py-14">
+        <div className="max-w-2xl mx-auto space-y-8 text-white/55 text-[15px] leading-relaxed">
 
           <div>
-            <h2 className="font-display font-black text-[#080D14] text-xl uppercase mb-3">
+            <h2 className="font-display font-black text-white text-xl uppercase mb-3">
               Was sagt das Gesetz?
             </h2>
             <p>
@@ -114,7 +114,7 @@ export default function RechtAufGutachter() {
           </div>
 
           <div>
-            <h2 className="font-display font-black text-[#080D14] text-xl uppercase mb-3">
+            <h2 className="font-display font-black text-white text-xl uppercase mb-3">
               Warum kein Gutachter der Versicherung?
             </h2>
             <p>
@@ -123,22 +123,22 @@ export default function RechtAufGutachter() {
               Dieser Gutachter arbeitet für die Versicherung, nicht für Sie.
             </p>
             <div className="mt-4 grid sm:grid-cols-2 gap-3">
-              <div className="p-4 rounded-xl border border-red-100 bg-red-50">
-                <p className="font-bold text-red-700 text-[13px] mb-2 flex items-center gap-1.5">
+              <div className="p-4 rounded-xl border border-[#E11D2F]/25 bg-[#E11D2F]/10">
+                <p className="font-bold text-[#f87171] text-[13px] mb-2 flex items-center gap-1.5">
                   <XCircle size={14} /> Gutachter der Versicherung
                 </p>
-                <ul className="space-y-1.5 text-red-600 text-[13px]">
+                <ul className="space-y-1.5 text-[#f87171]/85 text-[13px]">
                   <li>Arbeitet im Auftrag der Gegenseite</li>
                   <li>Tendiert zu niedrigeren Schadenswerten</li>
                   <li>Kann Vorschäden oder Minderwert übersehen</li>
                   <li>Nutzt günstigere Stundenverrechnungssätze</li>
                 </ul>
               </div>
-              <div className="p-4 rounded-xl border border-green-100 bg-green-50">
-                <p className="font-bold text-green-700 text-[13px] mb-2 flex items-center gap-1.5">
+              <div className="p-4 rounded-xl border border-[#22c55e]/25 bg-[#22c55e]/10">
+                <p className="font-bold text-[#4ade80] text-[13px] mb-2 flex items-center gap-1.5">
                   <CheckCircle size={14} /> Ihr unabhängiger Gutachter
                 </p>
-                <ul className="space-y-1.5 text-green-700 text-[13px]">
+                <ul className="space-y-1.5 text-[#4ade80] text-[13px]">
                   <li>Arbeitet ausschließlich für Sie</li>
                   <li>Dokumentiert alle Schäden vollständig</li>
                   <li>Berücksichtigt Minderwert & Nutzungsausfall</li>
@@ -149,7 +149,7 @@ export default function RechtAufGutachter() {
           </div>
 
           <div>
-            <h2 className="font-display font-black text-[#080D14] text-xl uppercase mb-3">
+            <h2 className="font-display font-black text-white text-xl uppercase mb-3">
               Was umfasst Ihr Schadensersatz?
             </h2>
             <p className="mb-4">
@@ -165,11 +165,11 @@ export default function RechtAufGutachter() {
                 ["Mietwagenkosten", "Kosten für ein Ersatzfahrzeug während der Reparatur"],
                 ["Gutachterkosten", "Werden vollständig von der Versicherung übernommen"],
               ].map(([title, desc]) => (
-                <div key={title} className="flex gap-3 p-4 rounded-xl border border-gray-100 bg-gray-50">
+                <div key={title} className="flex gap-3 p-4 rounded-xl border border-white/8 bg-white/[0.03]">
                   <CheckCircle size={15} className="text-[#E11D2F] mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-[#080D14] text-[14px]">{title}</p>
-                    <p className="text-gray-500 text-[13px] mt-0.5">{desc}</p>
+                    <p className="font-bold text-white text-[14px]">{title}</p>
+                    <p className="text-white/50 text-[13px] mt-0.5">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -177,7 +177,7 @@ export default function RechtAufGutachter() {
           </div>
 
           <div>
-            <h2 className="font-display font-black text-[#080D14] text-xl uppercase mb-3">
+            <h2 className="font-display font-black text-white text-xl uppercase mb-3">
               Was sagen, wenn die Versicherung widerspricht?
             </h2>
             <p>
@@ -194,9 +194,9 @@ export default function RechtAufGutachter() {
           </div>
 
           {/* Vertiefung */}
-          <div className="my-10 space-y-8 text-gray-600 text-[15px] leading-relaxed">
+          <div className="my-10 space-y-8 text-white/55 text-[15px] leading-relaxed">
             <div>
-              <h2 className="font-display font-black text-2xl text-[#080D14] uppercase mb-4">
+              <h2 className="font-display font-black text-2xl text-white uppercase mb-4">
                 Worauf sich das Recht stützt
               </h2>
               <p className="mb-4">
@@ -214,7 +214,7 @@ export default function RechtAufGutachter() {
             </div>
 
             <div>
-              <h2 className="font-display font-black text-2xl text-[#080D14] uppercase mb-4">
+              <h2 className="font-display font-black text-2xl text-white uppercase mb-4">
                 Was Versicherungen am Telefon versuchen
               </h2>
               <p className="mb-4">
@@ -231,7 +231,7 @@ export default function RechtAufGutachter() {
                   <li key={satz} className="flex gap-3">
                     <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#E11D2F] mt-2.5" />
                     <span>
-                      <strong className="text-[#080D14]">{satz}</strong>
+                      <strong className="text-white">{satz}</strong>
                       <br />
                       {antwort}
                     </span>
@@ -245,7 +245,7 @@ export default function RechtAufGutachter() {
             </div>
 
             <div>
-              <h2 className="font-display font-black text-2xl text-[#080D14] uppercase mb-4">
+              <h2 className="font-display font-black text-2xl text-white uppercase mb-4">
                 Wann das Recht nicht gilt
               </h2>
               <p className="mb-4">
@@ -265,8 +265,8 @@ export default function RechtAufGutachter() {
           </div>
 
           {/* Internal links */}
-          <div className="pt-6 border-t border-gray-100">
-            <h3 className="font-semibold text-[#080D14] text-[14px] mb-4">Weiterführende Artikel</h3>
+          <div className="pt-6 border-t border-white/8">
+            <h3 className="font-semibold text-white text-[14px] mb-4">Weiterführende Artikel</h3>
             <div className="space-y-2">
               <Link href="/blog/was-tun-nach-unfall-berlin" className="flex items-center gap-2 text-[#E11D2F] text-[14px] hover:underline">
                 <ArrowLeft size={14} className="rotate-180" />

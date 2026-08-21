@@ -121,11 +121,11 @@ export default function ParkschadenWasTun() {
       </section>
 
       {/* Content */}
-      <section className="bg-white px-5 py-14">
+      <section className="bg-[#050507] px-5 py-14">
         <div className="max-w-2xl mx-auto">
 
           {/* Intro box */}
-          <div className="p-5 rounded-2xl border border-orange-200 bg-orange-50 mb-8 flex gap-3">
+          <div className="p-5 rounded-2xl border border-[#f59e0b]/30 bg-[#f59e0b]/10 mb-8 flex gap-3">
             <AlertTriangle size={18} className="text-orange-500 mt-0.5 flex-shrink-0" />
             <p className="text-orange-800 text-[14px] leading-relaxed">
               <strong>Wichtig:</strong> Verlassen Sie den Unfallort nicht, ohne Fotos gemacht und
@@ -136,20 +136,20 @@ export default function ParkschadenWasTun() {
 
           <div className="space-y-5 mb-10">
             {steps.map((step) => (
-              <div key={step.nr} className="flex gap-5 p-5 rounded-2xl border border-gray-100 bg-gray-50">
+              <div key={step.nr} className="flex gap-5 p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
                 <div className="w-9 h-9 rounded-xl bg-[#E11D2F]/10 flex items-center justify-center flex-shrink-0 font-display font-black text-[#E11D2F] text-[16px]">
                   {step.nr}
                 </div>
                 <div>
-                  <h2 className="font-bold text-[#080D14] text-[15px] mb-2">{step.title}</h2>
-                  <p className="text-gray-600 text-[14px] leading-relaxed">{step.text}</p>
+                  <h2 className="font-bold text-white text-[15px] mb-2">{step.title}</h2>
+                  <p className="text-white/55 text-[14px] leading-relaxed">{step.text}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Fahrerflucht section */}
-          <div className="p-6 rounded-2xl bg-[#080D14] text-white mb-8">
+          <div className="p-6 rounded-2xl bg-[#050507] text-white mb-8">
             <h2 className="font-display font-black text-xl uppercase mb-4 text-[#E11D2F]">
               Was, wenn der Verursacher geflohen ist?
             </h2>
@@ -169,7 +169,7 @@ export default function ParkschadenWasTun() {
 
           {/* Was bekomme ich */}
           <div className="mb-10">
-            <h2 className="font-display font-black text-[#080D14] text-xl uppercase mb-4">
+            <h2 className="font-display font-black text-white text-xl uppercase mb-4">
               Was steht Ihnen zu?
             </h2>
             <div className="space-y-2">
@@ -179,11 +179,11 @@ export default function ParkschadenWasTun() {
                 ["Gutachterkosten", "Bei identifiziertem Verursacher vollständig erstattungsfähig"],
                 ["Mietwagenkosten", "Sofern Sie während der Reparatur ein Ersatzfahrzeug benötigen"],
               ].map(([title, desc]) => (
-                <div key={title} className="flex gap-3 p-4 rounded-xl border border-gray-100 bg-gray-50">
+                <div key={title} className="flex gap-3 p-4 rounded-xl border border-white/8 bg-white/[0.03]">
                   <CheckCircle size={15} className="text-[#E11D2F] mt-0.5 flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-[#080D14] text-[14px]">{title}</p>
-                    <p className="text-gray-500 text-[13px] mt-0.5">{desc}</p>
+                    <p className="font-bold text-white text-[14px]">{title}</p>
+                    <p className="text-white/50 text-[13px] mt-0.5">{desc}</p>
                   </div>
                 </div>
               ))}
@@ -191,9 +191,9 @@ export default function ParkschadenWasTun() {
           </div>
 
           {/* Vertiefung */}
-          <div className="mb-10 space-y-8 text-gray-600 text-[15px] leading-relaxed">
+          <div className="mb-10 space-y-8 text-white/55 text-[15px] leading-relaxed">
             <div>
-              <h2 className="font-display font-black text-2xl text-[#080D14] uppercase mb-4">
+              <h2 className="font-display font-black text-2xl text-white uppercase mb-4">
                 Wenn der Verursacher weg ist
               </h2>
               <p className="mb-4">
@@ -218,7 +218,7 @@ export default function ParkschadenWasTun() {
             </div>
 
             <div>
-              <h2 className="font-display font-black text-2xl text-[#080D14] uppercase mb-4">
+              <h2 className="font-display font-black text-2xl text-white uppercase mb-4">
                 Kasko oder selbst zahlen?
               </h2>
               <p className="mb-4">
@@ -241,7 +241,7 @@ export default function ParkschadenWasTun() {
             </div>
 
             <div>
-              <h2 className="font-display font-black text-2xl text-[#080D14] uppercase mb-4">
+              <h2 className="font-display font-black text-2xl text-white uppercase mb-4">
                 Wenn der Verursacher bekannt ist
               </h2>
               <p className="mb-4">
@@ -262,8 +262,8 @@ export default function ParkschadenWasTun() {
           </div>
 
           {/* Internal links */}
-          <div className="pt-6 border-t border-gray-100">
-            <h3 className="font-semibold text-[#080D14] text-[14px] mb-4">Weiterführende Artikel</h3>
+          <div className="pt-6 border-t border-white/8">
+            <h3 className="font-semibold text-white text-[14px] mb-4">Weiterführende Artikel</h3>
             <div className="space-y-2">
               <Link href="/blog/was-tun-nach-unfall-berlin" className="flex items-center gap-2 text-[#E11D2F] text-[14px] hover:underline">
                 <ArrowLeft size={14} className="rotate-180" />

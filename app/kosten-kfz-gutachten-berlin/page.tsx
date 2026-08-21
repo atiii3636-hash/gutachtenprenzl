@@ -190,7 +190,7 @@ export default function KostenKfzGutachtenBerlin() {
 
       {/* Hero + Direktantwort */}
       <section className="relative px-5 pt-16 pb-14 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0C1420] to-[#080D14]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0D] to-[#050507]" />
         <div className="relative max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
             <Euro size={11} />Honorartabelle 2026
@@ -226,28 +226,28 @@ export default function KostenKfzGutachtenBerlin() {
       </section>
 
       {/* Wer zahlt */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase mb-4">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
             Wer zahlt den Kfz-Gutachter?
           </h2>
-          <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
+          <p className="text-white/50 text-[15px] leading-relaxed mb-8">
             Wer das Honorar trägt, hängt allein davon ab, wie der Unfall haftungsrechtlich eingeordnet wird. Vier Fälle
             decken praktisch alles ab:
           </p>
           <div className="space-y-3">
             {werZahlt.map(({ fall, kosten, gut, text }) => (
-              <div key={fall} className="p-5 rounded-2xl border border-gray-100 bg-gray-50">
+              <div key={fall} className="p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
                 <div className="flex items-center gap-3 mb-2">
                   {gut ? (
                     <CheckCircle size={16} className="text-[#22c55e] flex-shrink-0" />
                   ) : (
                     <XCircle size={16} className="text-[#E11D2F] flex-shrink-0" />
                   )}
-                  <p className="font-bold text-[#080D14] text-[14px]">{fall}</p>
+                  <p className="font-bold text-white text-[14px]">{fall}</p>
                   <span className="ml-auto font-display font-black text-[#E11D2F] text-[14px] whitespace-nowrap">{kosten}</span>
                 </div>
-                <p className="text-gray-500 text-[13px] leading-relaxed">{text}</p>
+                <p className="text-white/50 text-[13px] leading-relaxed">{text}</p>
               </div>
             ))}
           </div>
@@ -255,7 +255,7 @@ export default function KostenKfzGutachtenBerlin() {
       </section>
 
       {/* Honorartabelle */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
             Honorartabelle nach Schadenhöhe
@@ -327,12 +327,12 @@ export default function KostenKfzGutachtenBerlin() {
       </section>
 
       {/* Rechtsgrundlagen */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl text-[#080D14] uppercase mb-4">
+          <h2 className="font-display font-black text-3xl text-white uppercase mb-4">
             Rechtsgrundlagen zum Gutachterhonorar
           </h2>
-          <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
+          <p className="text-white/50 text-[15px] leading-relaxed mb-8">
             Drei Entscheidungen bestimmen, wer zahlt und wer aussuchen darf:
           </p>
           <div className="space-y-3">
@@ -350,13 +350,13 @@ export default function KostenKfzGutachtenBerlin() {
                 text: "Der Geschädigte muss vor der Beauftragung keine Marktforschung nach dem günstigsten Sachverständigen betreiben. Ein übliches Honorar ist erstattungsfähig.",
               },
             ].map(({ titel, text }) => (
-              <div key={titel} className="p-5 rounded-2xl border border-gray-100 bg-gray-50">
-                <p className="font-bold text-[#080D14] text-[14px] mb-2">{titel}</p>
-                <p className="text-gray-500 text-[13px] leading-relaxed">{text}</p>
+              <div key={titel} className="p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
+                <p className="font-bold text-white text-[14px] mb-2">{titel}</p>
+                <p className="text-white/50 text-[13px] leading-relaxed">{text}</p>
               </div>
             ))}
           </div>
-          <p className="text-gray-400 text-[12px] leading-relaxed mt-6">
+          <p className="text-white/40 text-[12px] leading-relaxed mt-6">
             Diese Seite gibt allgemeine Informationen und ersetzt keine Rechtsberatung. Bei Streit über die
             Haftungsquote empfehlen wir einen Fachanwalt für Verkehrsrecht — dessen Kosten trägt bei Fremdverschulden
             ebenfalls die gegnerische Versicherung.
@@ -365,7 +365,7 @@ export default function KostenKfzGutachtenBerlin() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
             Häufige Fragen zu den Kosten

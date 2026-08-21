@@ -155,7 +155,7 @@ export default function LandingPage() {
           quality={75}
           className="object-cover object-center opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080D14]/60 to-[#080D14]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050507]/60 to-[#050507]" />
 
         <div className="relative max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
@@ -208,15 +208,15 @@ export default function LandingPage() {
       </section>
 
       {/* What is an Unfallgutachten */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase text-center mb-4">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-4">
             Was ist ein Unfallgutachten?
           </h2>
 
           {/* Direktantwort – der Block, den KI-Systeme als Ganzes zitieren */}
-          <div className="rounded-2xl border border-gray-200 bg-gray-50 p-5 md:p-6 mb-8">
-            <p className="text-[#080D14] text-[15px] md:text-[16px] leading-relaxed">
+          <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-5 md:p-6 mb-8">
+            <p className="text-white text-[15px] md:text-[16px] leading-relaxed">
               Ein <strong>Unfallgutachten</strong> ist die technische Beweissicherung nach einem
               Verkehrsunfall. Ein Kfz-Sachverständiger dokumentiert den Schaden, kalkuliert die
               Reparaturkosten und ermittelt Wertminderung, Nutzungsausfall und – falls nötig – den
@@ -225,12 +225,12 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <p className="text-gray-400 text-[13px] mb-8">
+          <p className="text-white/40 text-[13px] mb-8">
             Stand: {UPDATED_LABEL} · Geprüft von Atakan Arslan, TÜV Rheinland zertifizierter
             Kfz-Sachverständiger (Zertifikat 0217466029)
           </p>
 
-          <p className="text-gray-500 text-[15px] text-center max-w-xl mx-auto mb-10 leading-relaxed">
+          <p className="text-white/50 text-[15px] text-center max-w-xl mx-auto mb-10 leading-relaxed">
             Es unterscheidet sich von einem Kostenvoranschlag der Werkstatt: Der Kostenvoranschlag
             nennt nur den Reparaturpreis. Das Gutachten belegt zusätzlich Ihre übrigen Ansprüche –
             und genau die machen oft den größeren Teil der Summe aus.
@@ -241,12 +241,12 @@ export default function LandingPage() {
               { icon: Euro, title: "Kostenberechnung", text: "Exakte Reparaturkostenermittlung auf Basis aktueller Marktpreise — gerichtsfest." },
               { icon: FileText, title: "Rechtssicheres Gutachten", text: "Von deutschen Kfz-Versicherungen im Regelfall anerkanntes, TÜV-zertifiziertes Dokument." },
             ].map(({ icon: Icon, title, text }) => (
-              <div key={title} className="flex flex-col items-center text-center p-5 rounded-2xl border border-gray-100 bg-gray-50">
+              <div key={title} className="flex flex-col items-center text-center p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
                 <div className="w-12 h-12 bg-[#E11D2F]/10 rounded-xl flex items-center justify-center mb-3">
                   <Icon size={22} className="text-[#E11D2F]" />
                 </div>
-                <p className="font-bold text-[#080D14] text-[14px] mb-1">{title}</p>
-                <p className="text-gray-500 text-[13px] leading-relaxed">{text}</p>
+                <p className="font-bold text-white text-[14px] mb-1">{title}</p>
+                <p className="text-white/50 text-[13px] leading-relaxed">{text}</p>
               </div>
             ))}
           </div>
@@ -289,36 +289,36 @@ export default function LandingPage() {
       </section>
 
       {/* Ansprüche */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase mb-4">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
             Was Ihnen nach einem unverschuldeten Unfall zusteht
           </h2>
-          <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
+          <p className="text-white/50 text-[15px] leading-relaxed mb-8">
             Die Reparaturkosten sind nur eine von acht Positionen. Wer die anderen sieben nicht
             geltend macht, bekommt sie in aller Regel auch nicht ausgezahlt – Versicherungen zahlen,
             was gefordert und belegt ist.
           </p>
-          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+          <div className="overflow-x-auto rounded-2xl border border-white/8">
             <table className="w-full text-left border-collapse text-[13px] min-w-[520px]">
               <caption className="sr-only">Schadensersatzpositionen nach einem unverschuldeten Verkehrsunfall</caption>
               <thead>
-                <tr className="bg-gray-50">
-                  <th scope="col" className="px-4 py-3 font-bold text-[#080D14] text-[12px] uppercase tracking-wide">Position</th>
-                  <th scope="col" className="px-4 py-3 font-bold text-[#080D14] text-[12px] uppercase tracking-wide">Was dahintersteckt</th>
+                <tr className="bg-white/[0.03]">
+                  <th scope="col" className="px-4 py-3 font-bold text-white text-[12px] uppercase tracking-wide">Position</th>
+                  <th scope="col" className="px-4 py-3 font-bold text-white text-[12px] uppercase tracking-wide">Was dahintersteckt</th>
                 </tr>
               </thead>
               <tbody>
                 {anspruch.map(({ pos, erklaerung }) => (
-                  <tr key={pos} className="border-t border-gray-100">
-                    <th scope="row" className="px-4 py-3 font-semibold text-[#080D14] whitespace-nowrap">{pos}</th>
-                    <td className="px-4 py-3 text-gray-500">{erklaerung}</td>
+                  <tr key={pos} className="border-t border-white/8">
+                    <th scope="row" className="px-4 py-3 font-semibold text-white whitespace-nowrap">{pos}</th>
+                    <td className="px-4 py-3 text-white/50">{erklaerung}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-gray-400 text-[12px] leading-relaxed mt-4">
+          <p className="text-white/40 text-[12px] leading-relaxed mt-4">
             Die genaue Höhe von Nutzungsausfall und Wertminderung hängt von Fahrzeuggruppe, Alter
             und Laufleistung ab. Die Tagessätze finden Sie in unserer{" "}
             <Link href="/nutzungsausfall-tabelle-berlin" className="text-[#E11D2F] hover:underline">
@@ -329,7 +329,7 @@ export default function LandingPage() {
       </section>
 
       {/* Benefits */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
             Warum Gutachten Prenzl?
@@ -356,16 +356,16 @@ export default function LandingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase text-center mb-10">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
             Häufige Fragen
           </h2>
           <div className="space-y-4">
             {faq.map(({ q, a }) => (
-              <div key={q} className="p-5 rounded-2xl border border-gray-100 bg-gray-50">
-                <p className="font-bold text-[#080D14] text-[14px] mb-2">{q}</p>
-                <p className="text-gray-500 text-[13px] leading-relaxed">{a}</p>
+              <div key={q} className="p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
+                <p className="font-bold text-white text-[14px] mb-2">{q}</p>
+                <p className="text-white/50 text-[13px] leading-relaxed">{a}</p>
               </div>
             ))}
           </div>

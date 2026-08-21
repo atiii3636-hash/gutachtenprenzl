@@ -111,7 +111,7 @@ export default function LandingPage() {
           quality={75}
           className="object-cover object-center opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080D14]/60 to-[#080D14]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050507]/60 to-[#050507]" />
 
         <div className="relative max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
@@ -165,9 +165,9 @@ export default function LandingPage() {
       </section>
 
       {/* Benefits */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase text-center mb-10">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
             Ihr KFZ-Gutachter in Berlin
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -177,22 +177,22 @@ export default function LandingPage() {
               { icon: Shield, title: "TÜV Rheinland zertifiziert", text: "Zertifikat-ID 0217466029, gültig bis 18.12.2028. Von Versicherungen im Regelfall anerkannt." },
               { icon: Star, title: "5,0 Sterne auf Google", text: `Über ${REVIEW_COUNT} echte Bewertungen von Berliner Kunden. Unabhängig und transparent.` },
             ].map(({ icon: Icon, title, text }) => (
-              <div key={title} className="flex gap-4 p-5 rounded-2xl border border-gray-100 bg-gray-50">
+              <div key={title} className="flex gap-4 p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
                 <div className="w-10 h-10 bg-[#E11D2F]/10 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Icon size={18} className="text-[#E11D2F]" />
                 </div>
                 <div>
-                  <p className="font-bold text-[#080D14] text-[14px] mb-1">{title}</p>
-                  <p className="text-gray-500 text-[13px] leading-relaxed">{text}</p>
+                  <p className="font-bold text-white text-[14px] mb-1">{title}</p>
+                  <p className="text-white/50 text-[13px] leading-relaxed">{text}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Relevanz-Text für QS / Anzeigenrelevanz */}
-          <div className="max-w-2xl mx-auto mt-12 text-gray-600 text-[14px] leading-relaxed space-y-4">
+          <div className="max-w-2xl mx-auto mt-12 text-white/55 text-[14px] leading-relaxed space-y-4">
             <p>
-              Als unabhängiger <strong className="text-[#080D14]">KFZ-Gutachter in Berlin</strong> erstellen wir
+              Als unabhängiger <strong className="text-white">KFZ-Gutachter in Berlin</strong> erstellen wir
               nach einem Unfall ein neutrales Schadengutachten — beweissicher, von Versicherungen im Regelfall anerkannt
               und für die Schadenregulierung verwertbar. Ob Auffahrunfall, Parkschaden oder Totalschaden:
               Sie erhalten Ihr Unfallgutachten in der Regel innerhalb von 24 Stunden.
@@ -208,7 +208,7 @@ export default function LandingPage() {
       </section>
 
       {/* Was im Gutachten steht — beantwortet, was Geschädigte tatsächlich wissen wollen */}
-      <section className="bg-[#080D14] px-5 py-16 border-t border-white/6">
+      <section className="bg-[#050507] px-5 py-16 border-t border-white/6">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
             Was in Ihrem Gutachten steht
@@ -254,12 +254,12 @@ export default function LandingPage() {
       </section>
 
       {/* Abgrenzung + typische Fehler */}
-      <section className="bg-white px-5 py-16 border-t border-gray-100">
+      <section className="bg-[#050507] px-5 py-16 border-t border-white/8">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase mb-6">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-6">
             Gutachten oder Kostenvoranschlag?
           </h2>
-          <div className="text-gray-600 text-[15px] leading-relaxed space-y-4 mb-10">
+          <div className="text-white/55 text-[15px] leading-relaxed space-y-4 mb-10">
             <p>
               Ein Kostenvoranschlag der Werkstatt sagt, was die Reparatur kostet. Mehr nicht.
               Er erfasst weder Wertminderung noch Nutzungsausfall, und er ist kein
@@ -274,7 +274,7 @@ export default function LandingPage() {
             </p>
           </div>
 
-          <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-6">
+          <h2 className="font-display font-black text-2xl md:text-3xl text-white uppercase mb-6">
             Vier Fehler, die Geld kosten
           </h2>
           <ul className="space-y-4">
@@ -299,8 +299,8 @@ export default function LandingPage() {
               <li key={f.t} className="flex gap-3">
                 <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#E11D2F] mt-2.5" />
                 <div>
-                  <p className="font-bold text-[#080D14] text-[15px]">{f.t}</p>
-                  <p className="text-gray-600 text-[14px] leading-relaxed">{f.d}</p>
+                  <p className="font-bold text-white text-[15px]">{f.t}</p>
+                  <p className="text-white/55 text-[14px] leading-relaxed">{f.d}</p>
                 </div>
               </li>
             ))}
@@ -311,9 +311,9 @@ export default function LandingPage() {
       <StandortKarte variant="dark" />
 
       {/* FAQ */}
-      <section className="bg-white px-5 py-16 border-t border-gray-100">
+      <section className="bg-[#050507] px-5 py-16 border-t border-white/8">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase text-center mb-10">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
             Häufige Fragen zum KFZ-Gutachter in Berlin
           </h2>
           <div className="space-y-4">
@@ -324,9 +324,9 @@ export default function LandingPage() {
               { q: "Übernimmt die Versicherung die Gutachterkosten?", a: "Ja, bei Fremdverschulden trägt die gegnerische Haftpflicht sämtliche Kosten. Als Geschädigter wählen Sie Ihren Gutachter frei — Sie müssen nicht den Gutachter der Versicherung nehmen." },
               { q: "In welchen Berliner Bezirken sind Sie tätig?", a: "In ganz Berlin und im Umland — mobil von Prenzlauer Berg über Mitte, Pankow und Friedrichshain bis Spandau, Köpenick und Marzahn." },
             ].map(({ q, a }) => (
-              <div key={q} className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-                <p className="font-bold text-[#080D14] text-[15px] mb-2">{q}</p>
-                <p className="text-gray-600 text-[14px] leading-relaxed">{a}</p>
+              <div key={q} className="bg-white/[0.03] border border-white/8 rounded-2xl p-6">
+                <p className="font-bold text-white text-[15px] mb-2">{q}</p>
+                <p className="text-white/55 text-[14px] leading-relaxed">{a}</p>
               </div>
             ))}
           </div>
@@ -334,9 +334,9 @@ export default function LandingPage() {
       </section>
 
       {/* Interne Verlinkung — Leistungen + Bezirke */}
-      <section className="bg-white px-5 py-12 border-t border-gray-100">
+      <section className="bg-[#050507] px-5 py-12 border-t border-white/8">
         <div className="max-w-3xl mx-auto">
-          <p className="text-[12px] font-semibold uppercase tracking-widest text-gray-400 mb-4">
+          <p className="text-[12px] font-semibold uppercase tracking-widest text-white/40 mb-4">
             Unsere Leistungen &amp; Einsatzgebiete
           </p>
           <div className="flex flex-wrap gap-2">
@@ -350,7 +350,7 @@ export default function LandingPage() {
               { href: "/kfz-sachverstaendiger-berlin-pankow", label: "Pankow" },
               { href: "/kfz-sachverstaendiger-berlin-kreuzberg", label: "Kreuzberg" },
             ].map(({ href, label }) => (
-              <Link key={href} href={href} className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#080D14] bg-gray-50 border border-gray-200 hover:border-[#E11D2F] hover:text-[#E11D2F] px-4 py-2 rounded-xl transition-colors">
+              <Link key={href} href={href} className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-white bg-white/[0.03] border border-white/8 hover:border-[#E11D2F] hover:text-[#E11D2F] px-4 py-2 rounded-xl transition-colors">
                 <ArrowRight size={13} />{label}
               </Link>
             ))}

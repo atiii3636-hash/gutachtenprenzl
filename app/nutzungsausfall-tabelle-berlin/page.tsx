@@ -147,7 +147,7 @@ export default function NutzungsausfallTabelle() {
 
       {/* Hero + Direktantwort */}
       <section className="relative px-5 pt-16 pb-14 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0C1420] to-[#080D14]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0D] to-[#050507]" />
         <div className="relative max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
             <Calendar size={11} />Tabelle 2026
@@ -183,46 +183,46 @@ export default function NutzungsausfallTabelle() {
       </section>
 
       {/* Haupttabelle */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase mb-4">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
             Tagessätze nach Fahrzeuggruppe
           </h2>
-          <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
+          <p className="text-white/50 text-[15px] leading-relaxed mb-8">
             Grundlage ist die Tabelle von Sanden/Danner/Küppersbusch, die praktisch alle in
             Deutschland angebotenen Pkw in Gruppen von A bis L einteilt. Eingestuft wird nach
             Fahrzeugtyp, Motorisierung und Neupreis.
           </p>
 
-          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+          <div className="overflow-x-auto rounded-2xl border border-white/8">
             <table className="w-full text-left border-collapse text-[13px] min-w-[600px]">
               <caption className="sr-only">
                 Nutzungsausfallentschädigung 2026 nach Fahrzeuggruppe A bis L, Tagessätze in Euro
               </caption>
               <thead>
-                <tr className="bg-gray-50">
-                  <th scope="col" className="px-4 py-3 font-bold text-[#080D14] text-[12px] uppercase tracking-wide">Gruppe</th>
-                  <th scope="col" className="px-4 py-3 font-bold text-[#080D14] text-[12px] uppercase tracking-wide">€ pro Tag</th>
-                  <th scope="col" className="px-4 py-3 font-bold text-[#080D14] text-[12px] uppercase tracking-wide">Fahrzeugklasse</th>
-                  <th scope="col" className="px-4 py-3 font-bold text-[#080D14] text-[12px] uppercase tracking-wide">Typische Modelle</th>
+                <tr className="bg-white/[0.03]">
+                  <th scope="col" className="px-4 py-3 font-bold text-white text-[12px] uppercase tracking-wide">Gruppe</th>
+                  <th scope="col" className="px-4 py-3 font-bold text-white text-[12px] uppercase tracking-wide">€ pro Tag</th>
+                  <th scope="col" className="px-4 py-3 font-bold text-white text-[12px] uppercase tracking-wide">Fahrzeugklasse</th>
+                  <th scope="col" className="px-4 py-3 font-bold text-white text-[12px] uppercase tracking-wide">Typische Modelle</th>
                 </tr>
               </thead>
               <tbody>
                 {gruppen.map(({ gruppe, satz, klasse, beispiele }) => (
-                  <tr key={gruppe} className="border-t border-gray-100">
+                  <tr key={gruppe} className="border-t border-white/8">
                     <th scope="row" className="px-4 py-3 font-display font-black text-[#E11D2F] text-[15px]">{gruppe}</th>
-                    <td className="px-4 py-3 font-bold text-[#080D14] whitespace-nowrap">{satz}</td>
-                    <td className="px-4 py-3 text-gray-600 whitespace-nowrap">{klasse}</td>
-                    <td className="px-4 py-3 text-gray-500">{beispiele}</td>
+                    <td className="px-4 py-3 font-bold text-white whitespace-nowrap">{satz}</td>
+                    <td className="px-4 py-3 text-white/55 whitespace-nowrap">{klasse}</td>
+                    <td className="px-4 py-3 text-white/50">{beispiele}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
 
-          <div className="mt-4 flex gap-3 p-4 rounded-xl border border-gray-200 bg-gray-50">
+          <div className="mt-4 flex gap-3 p-4 rounded-xl border border-white/8 bg-white/[0.03]">
             <Info size={15} className="text-[#E11D2F] mt-0.5 flex-shrink-0" />
-            <p className="text-gray-500 text-[12px] leading-relaxed">
+            <p className="text-white/50 text-[12px] leading-relaxed">
               Orientierungswerte. Die Tabelle wird jährlich fortgeschrieben und differenziert
               innerhalb einer Baureihe nach Motorisierung und Ausstattung. Die verbindliche
               Einstufung Ihres Fahrzeugs steht im Gutachten.
@@ -232,7 +232,7 @@ export default function NutzungsausfallTabelle() {
       </section>
 
       {/* Abstufung */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
             Abstufung nach Fahrzeugalter
@@ -276,37 +276,37 @@ export default function NutzungsausfallTabelle() {
       </section>
 
       {/* Dauer */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase mb-4">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
             Für wie viele Tage?
           </h2>
-          <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
+          <p className="text-white/50 text-[15px] leading-relaxed mb-8">
             Der Tagessatz ist nur die eine Hälfte. Die andere ist der Zeitraum – und der wird von
             Versicherungen gern knapp bemessen.
           </p>
-          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+          <div className="overflow-x-auto rounded-2xl border border-white/8">
             <table className="w-full text-left border-collapse text-[13px] min-w-[520px]">
               <caption className="sr-only">Dauer des Nutzungsausfalls je nach Schadensfall</caption>
               <thead>
-                <tr className="bg-gray-50">
-                  <th scope="col" className="px-4 py-3 font-bold text-[#080D14] text-[12px] uppercase tracking-wide">Fall</th>
-                  <th scope="col" className="px-4 py-3 font-bold text-[#080D14] text-[12px] uppercase tracking-wide">Maßgeblicher Zeitraum</th>
-                  <th scope="col" className="px-4 py-3 font-bold text-[#080D14] text-[12px] uppercase tracking-wide">Hinweis</th>
+                <tr className="bg-white/[0.03]">
+                  <th scope="col" className="px-4 py-3 font-bold text-white text-[12px] uppercase tracking-wide">Fall</th>
+                  <th scope="col" className="px-4 py-3 font-bold text-white text-[12px] uppercase tracking-wide">Maßgeblicher Zeitraum</th>
+                  <th scope="col" className="px-4 py-3 font-bold text-white text-[12px] uppercase tracking-wide">Hinweis</th>
                 </tr>
               </thead>
               <tbody>
                 {dauer.map(({ fall, zeitraum, plus }) => (
-                  <tr key={fall} className="border-t border-gray-100">
-                    <th scope="row" className="px-4 py-3 font-semibold text-[#080D14] whitespace-nowrap">{fall}</th>
-                    <td className="px-4 py-3 text-gray-600">{zeitraum}</td>
-                    <td className="px-4 py-3 text-gray-500">{plus}</td>
+                  <tr key={fall} className="border-t border-white/8">
+                    <th scope="row" className="px-4 py-3 font-semibold text-white whitespace-nowrap">{fall}</th>
+                    <td className="px-4 py-3 text-white/55">{zeitraum}</td>
+                    <td className="px-4 py-3 text-white/50">{plus}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="text-gray-400 text-[12px] leading-relaxed mt-4">
+          <p className="text-white/40 text-[12px] leading-relaxed mt-4">
             Diese Seite gibt allgemeine Informationen und ersetzt keine Rechtsberatung. Bei Streit
             über Höhe oder Dauer empfehlen wir einen Fachanwalt für Verkehrsrecht – dessen Kosten
             trägt bei Fremdverschulden ebenfalls die gegnerische Versicherung.
@@ -315,7 +315,7 @@ export default function NutzungsausfallTabelle() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
             Häufige Fragen zum Nutzungsausfall

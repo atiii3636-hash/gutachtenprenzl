@@ -98,7 +98,7 @@ export default function ParkshadenBerlin() {
 
       {/* Hero */}
       <section className="relative px-5 pt-16 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a100a] to-[#080D14]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a100a] to-[#050507]" />
         <div className="relative max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
@@ -131,12 +131,12 @@ export default function ParkshadenBerlin() {
       </section>
 
       {/* Sofortmaßnahmen */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase mb-2">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-2">
             Parkschaden in Berlin entdeckt — was jetzt?
           </h2>
-          <p className="text-gray-500 text-[15px] mb-8 leading-relaxed">
+          <p className="text-white/50 text-[15px] mb-8 leading-relaxed">
             Berlin ist eine Parkschadenhauptstadt: Enge Straßen, Parkplatzmangel, hastige Fahrer. Fast jeder Berliner kennt das — man kommt zurück zum Auto und findet eine neue Delle. So gehen Sie richtig vor:
           </p>
           <div className="space-y-3">
@@ -146,11 +146,11 @@ export default function ParkshadenBerlin() {
               { step: "3", title: "Versicherung informieren", text: "Ihre Kaskoversicherung melden. Wenn der Verursacher bekannt ist: dessen Haftpflichtversicherung. Keinen Schuld eingestehen oder Vergleich akzeptieren." },
               { step: "4", title: "KFZ Gutachter beauftragen", text: "Ein Gutachten sichert den vollen Schadensersatz. Ohne Gutachten zahlen Versicherungen oft pauschal zu wenig. Wir kommen direkt zu Ihnen in Berlin." },
             ].map(({ step, title, text }) => (
-              <div key={step} className="flex gap-4 p-5 rounded-2xl border border-gray-100 bg-gray-50">
+              <div key={step} className="flex gap-4 p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
                 <div className="w-8 h-8 bg-[#E11D2F] rounded-lg flex items-center justify-center flex-shrink-0 font-display font-black text-white text-[14px]">{step}</div>
                 <div>
-                  <p className="font-bold text-[#080D14] text-[14px] mb-1">{title}</p>
-                  <p className="text-gray-500 text-[13px] leading-relaxed">{text}</p>
+                  <p className="font-bold text-white text-[14px] mb-1">{title}</p>
+                  <p className="text-white/50 text-[13px] leading-relaxed">{text}</p>
                 </div>
               </div>
             ))}
@@ -159,7 +159,7 @@ export default function ParkshadenBerlin() {
       </section>
 
       {/* Drei Szenarien */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl text-white uppercase text-center mb-10">
             Wer zahlt Ihren Parkschaden in Berlin?
@@ -198,13 +198,13 @@ export default function ParkshadenBerlin() {
       </section>
 
       {/* Berliner Hotspots */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl text-[#080D14] uppercase mb-4">
+          <h2 className="font-display font-black text-3xl text-white uppercase mb-4">
             Parkschadenhäufungen in Berlin
           </h2>
-          <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
-            In Berlin entstehen Parkschäden besonders häufig in Bezirken mit hohem Parkdruck. Als lokaler KFZ Sachverständiger mit Sitz in <strong className="text-[#080D14]">Prenzlauer Berg</strong> kennen wir die Hotspots und sind schnell vor Ort.
+          <p className="text-white/50 text-[15px] leading-relaxed mb-8">
+            In Berlin entstehen Parkschäden besonders häufig in Bezirken mit hohem Parkdruck. Als lokaler KFZ Sachverständiger mit Sitz in <strong className="text-white">Prenzlauer Berg</strong> kennen wir die Hotspots und sind schnell vor Ort.
           </p>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
@@ -215,13 +215,13 @@ export default function ParkshadenBerlin() {
               { bezirk: "Kreuzberg", details: "Bergmannkiez, Kottbusser Tor, Gneisenaustraße", href: "/kfz-sachverstaendiger-berlin-kreuzberg" },
               { bezirk: "Charlottenburg", details: "Kurfürstendamm, Savignyplatz, Kantstraße", href: "/kfz-sachverstaendiger-berlin-charlottenburg" },
             ].map(({ bezirk, details, href }) => (
-              <Link key={bezirk} href={href} className="flex items-start gap-3 p-4 rounded-xl border border-gray-100 bg-gray-50 hover:border-[#E11D2F]/30 hover:bg-[#E11D2F]/3 transition-all group">
+              <Link key={bezirk} href={href} className="flex items-start gap-3 p-4 rounded-xl border border-white/8 bg-white/[0.03] hover:border-[#E11D2F]/30 hover:bg-[#E11D2F]/3 transition-all group">
                 <MapPin size={15} className="text-[#E11D2F] mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="font-bold text-[#080D14] text-[13px] group-hover:text-[#E11D2F] transition-colors">{bezirk}</p>
-                  <p className="text-gray-400 text-[12px]">{details}</p>
+                  <p className="font-bold text-white text-[13px] group-hover:text-[#E11D2F] transition-colors">{bezirk}</p>
+                  <p className="text-white/40 text-[12px]">{details}</p>
                 </div>
-                <ArrowRight size={13} className="text-gray-300 group-hover:text-[#E11D2F] transition-colors mt-0.5 ml-auto flex-shrink-0" />
+                <ArrowRight size={13} className="text-white/35 group-hover:text-[#E11D2F] transition-colors mt-0.5 ml-auto flex-shrink-0" />
               </Link>
             ))}
           </div>
@@ -229,7 +229,7 @@ export default function ParkshadenBerlin() {
       </section>
 
       {/* Benefits */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl text-white uppercase text-center mb-10">Warum Gutachten Prenzl?</h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -254,9 +254,9 @@ export default function ParkshadenBerlin() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase text-center mb-10">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
             Häufige Fragen zum Parkschaden in Berlin
           </h2>
           <div className="space-y-4">
@@ -267,9 +267,9 @@ export default function ParkshadenBerlin() {
               { q: "Wie schnell kommt ein KFZ Gutachter nach Berlin bei einem Parkschaden?", a: "In der Regel am selben oder nächsten Tag. Wir kommen zu Ihnen — zum Parkplatz, nach Hause oder in die Werkstatt in ganz Berlin. Das fertige Gutachten innerhalb von 24 Stunden." },
               { q: "Kann ich den Parkschaden selbst reparieren lassen bevor ich ein Gutachten mache?", a: "Nein — unbedingt erst das Gutachten abwarten. Wenn das Fahrzeug bereits repariert ist, kann der Schaden nicht mehr vollständig begutachtet werden und Sie verlieren möglicherweise Ansprüche." },
             ].map(({ q, a }) => (
-              <div key={q} className="p-5 rounded-2xl border border-gray-100 bg-gray-50">
-                <p className="font-bold text-[#080D14] text-[14px] mb-2">{q}</p>
-                <p className="text-gray-500 text-[13px] leading-relaxed">{a}</p>
+              <div key={q} className="p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
+                <p className="font-bold text-white text-[14px] mb-2">{q}</p>
+                <p className="text-white/50 text-[13px] leading-relaxed">{a}</p>
               </div>
             ))}
           </div>

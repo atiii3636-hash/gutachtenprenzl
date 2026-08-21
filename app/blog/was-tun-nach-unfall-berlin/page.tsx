@@ -132,7 +132,7 @@ export default function WasTunNachUnfall() {
       </section>
 
       {/* Content */}
-      <section className="bg-white px-5 py-14">
+      <section className="bg-[#050507] px-5 py-14">
         <div className="max-w-2xl mx-auto">
 
           <div className="space-y-6">
@@ -141,29 +141,29 @@ export default function WasTunNachUnfall() {
                 key={step.nr}
                 className={`flex gap-5 p-5 rounded-2xl border ${
                   step.warning
-                    ? "border-orange-200 bg-orange-50"
-                    : "border-gray-100 bg-gray-50"
+                    ? "border-[#f59e0b]/30 bg-[#f59e0b]/10"
+                    : "border-white/8 bg-white/[0.03]"
                 }`}
               >
                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 font-display font-black text-[18px] ${
                   step.warning
-                    ? "bg-orange-100 text-orange-600"
+                    ? "bg-[#f59e0b]/15 text-[#f59e0b]"
                     : "bg-[#E11D2F]/10 text-[#E11D2F]"
                 }`}>
                   {step.warning ? <AlertTriangle size={18} /> : step.nr}
                 </div>
                 <div>
-                  <h2 className="font-bold text-[#080D14] text-[15px] mb-2">{step.title}</h2>
-                  <p className="text-gray-600 text-[14px] leading-relaxed">{step.text}</p>
+                  <h2 className="font-bold text-white text-[15px] mb-2">{step.title}</h2>
+                  <p className="text-white/55 text-[14px] leading-relaxed">{step.text}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Vertiefung */}
-          <div className="mt-12 space-y-8 text-gray-600 text-[15px] leading-relaxed">
+          <div className="mt-12 space-y-8 text-white/55 text-[15px] leading-relaxed">
             <div>
-              <h2 className="font-display font-black text-2xl text-[#080D14] uppercase mb-4">
+              <h2 className="font-display font-black text-2xl text-white uppercase mb-4">
                 Was in den Stunden danach passiert
               </h2>
               <p className="mb-4">
@@ -189,7 +189,7 @@ export default function WasTunNachUnfall() {
             </div>
 
             <div>
-              <h2 className="font-display font-black text-2xl text-[#080D14] uppercase mb-4">
+              <h2 className="font-display font-black text-2xl text-white uppercase mb-4">
                 Fünf Sätze, die Sie besser nicht sagen
               </h2>
               <p className="mb-4">
@@ -208,7 +208,7 @@ export default function WasTunNachUnfall() {
                   <li key={satz} className="flex gap-3">
                     <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#E11D2F] mt-2.5" />
                     <span>
-                      <strong className="text-[#080D14]">{satz}</strong>
+                      <strong className="text-white">{satz}</strong>
                       <br />
                       {erklaerung}
                     </span>
@@ -218,7 +218,7 @@ export default function WasTunNachUnfall() {
             </div>
 
             <div>
-              <h2 className="font-display font-black text-2xl text-[#080D14] uppercase mb-4">
+              <h2 className="font-display font-black text-2xl text-white uppercase mb-4">
                 Was in Berlin anders läuft
               </h2>
               <p className="mb-4">
@@ -243,7 +243,7 @@ export default function WasTunNachUnfall() {
           </div>
 
           {/* Key takeaway */}
-          <div className="mt-10 p-6 rounded-2xl bg-[#080D14] border border-white/10">
+          <div className="mt-10 p-6 rounded-2xl bg-[#050507] border border-white/10">
             <h3 className="font-display font-black text-white uppercase text-lg mb-3">
               Das Wichtigste in Kürze
             </h3>
@@ -264,8 +264,8 @@ export default function WasTunNachUnfall() {
           </div>
 
           {/* Internal links */}
-          <div className="mt-8 pt-8 border-t border-gray-100">
-            <h3 className="font-semibold text-[#080D14] text-[14px] mb-4">Weiterführende Artikel</h3>
+          <div className="mt-8 pt-8 border-t border-white/8">
+            <h3 className="font-semibold text-white text-[14px] mb-4">Weiterführende Artikel</h3>
             <div className="space-y-2">
               <Link href="/blog/recht-auf-eigenen-gutachter" className="flex items-center gap-2 text-[#E11D2F] text-[14px] hover:underline">
                 <ArrowLeft size={14} className="rotate-180" />

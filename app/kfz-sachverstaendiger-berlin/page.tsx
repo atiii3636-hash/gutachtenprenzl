@@ -110,7 +110,7 @@ export default function LandingPage() {
           quality={75}
           className="object-cover object-center opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080D14]/60 to-[#080D14]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050507]/60 to-[#050507]" />
 
         <div className="relative max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
@@ -164,9 +164,9 @@ export default function LandingPage() {
       </section>
 
       {/* Benefits */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase text-center mb-10">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
             Warum Gutachten Prenzl?
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -176,13 +176,13 @@ export default function LandingPage() {
               { icon: Shield, title: "TÜV Rheinland zertifiziert", text: "Zertifikat-ID 0217466029, gültig bis 18.12.2028. Von Versicherungen im Regelfall anerkannt." },
               { icon: Star, title: "5,0 Sterne auf Google", text: `Über ${REVIEW_COUNT} echte Bewertungen von Berliner Kunden. Transparent und unabhängig.` },
             ].map(({ icon: Icon, title, text }) => (
-              <div key={title} className="flex gap-4 p-5 rounded-2xl border border-gray-100 bg-gray-50">
+              <div key={title} className="flex gap-4 p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
                 <div className="w-10 h-10 bg-[#E11D2F]/10 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Icon size={18} className="text-[#E11D2F]" />
                 </div>
                 <div>
-                  <p className="font-bold text-[#080D14] text-[14px] mb-1">{title}</p>
-                  <p className="text-gray-500 text-[13px] leading-relaxed">{text}</p>
+                  <p className="font-bold text-white text-[14px] mb-1">{title}</p>
+                  <p className="text-white/50 text-[13px] leading-relaxed">{text}</p>
                 </div>
               </div>
             ))}
@@ -191,14 +191,14 @@ export default function LandingPage() {
       </section>
 
       {/* Keyword-reicher Fließtext — Relevanz für QS & SEO */}
-      <section className="bg-white px-5 py-16 border-t border-gray-100">
+      <section className="bg-[#050507] px-5 py-16 border-t border-white/8">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase mb-6">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-6">
             KFZ Sachverständiger in Berlin — neutral &amp; unabhängig
           </h2>
-          <div className="text-gray-600 text-[15px] leading-relaxed space-y-4">
+          <div className="text-white/55 text-[15px] leading-relaxed space-y-4">
             <p>
-              Als <strong className="text-[#080D14]">unabhängiger KFZ Sachverständiger in Berlin</strong> erstellen
+              Als <strong className="text-white">unabhängiger KFZ Sachverständiger in Berlin</strong> erstellen
               wir nach einem Unfall ein neutrales Schadengutachten — beweissicher, von Versicherungen im
               Regelfall anerkannt und vor Gericht verwertbar. Im Gegensatz zum Gutachter der gegnerischen Versicherung
               arbeiten wir ausschließlich in Ihrem Interesse als Geschädigter und sorgen dafür, dass kein
@@ -211,7 +211,7 @@ export default function LandingPage() {
               (Zertifikat-ID 0217466029) dokumentieren wir Ihren Schaden lückenlos und meist innerhalb von 24 Stunden.
             </p>
             <p>
-              Bei einem <strong className="text-[#080D14]">unverschuldeten Unfall</strong> haben Sie das Recht,
+              Bei einem <strong className="text-white">unverschuldeten Unfall</strong> haben Sie das Recht,
               Ihren eigenen Sachverständigen frei zu wählen. Die Kosten trägt die Haftpflichtversicherung des
               Verursachers — für Sie ist das Gutachten dann kostenlos. Wir sind mobil in ganz Berlin unterwegs:
               von Prenzlauer Berg über Mitte, Pankow und Friedrichshain bis Spandau, Köpenick und Marzahn.
@@ -222,7 +222,7 @@ export default function LandingPage() {
 
       {/* Gutachtenarten — inhaltliche Abgrenzung zu /kfz-gutachter-berlin,
           damit die beiden Seiten unterschiedliche Suchintentionen bedienen */}
-      <section className="bg-[#080D14] px-5 py-16 border-t border-white/6">
+      <section className="bg-[#050507] px-5 py-16 border-t border-white/6">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
             Welches Gutachten brauchen Sie?
@@ -268,17 +268,17 @@ export default function LandingPage() {
       </section>
 
       {/* Qualifikation — Trust-Signal, das Wettbewerber selten sauber erklären */}
-      <section className="bg-white px-5 py-16 border-t border-gray-100">
+      <section className="bg-[#050507] px-5 py-16 border-t border-white/8">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase mb-6">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-6">
             Woran Sie einen seriösen Sachverständigen erkennen
           </h2>
-          <div className="text-gray-600 text-[15px] leading-relaxed space-y-4">
+          <div className="text-white/55 text-[15px] leading-relaxed space-y-4">
             <p>
               Die Berufsbezeichnung Sachverständiger ist in Deutschland nicht geschützt.
               Theoretisch darf sich jeder so nennen. Entscheidend ist deshalb, ob eine
               anerkannte Stelle die Qualifikation geprüft hat. Wir sind vom{" "}
-              <strong className="text-[#080D14]">TÜV Rheinland zertifiziert</strong>{" "}
+              <strong className="text-white">TÜV Rheinland zertifiziert</strong>{" "}
               (Zertifikat-ID 0217466029, gültig bis 18.12.2028). Diese Zertifizierung wird
               von deutschen Versicherungen im Regelfall anerkannt, und die Gutachten sind vor
               Gericht verwertbar.
@@ -303,9 +303,9 @@ export default function LandingPage() {
       <StandortKarte variant="dark" />
 
       {/* FAQ */}
-      <section className="bg-white px-5 py-16 border-t border-gray-100">
+      <section className="bg-[#050507] px-5 py-16 border-t border-white/8">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase text-center mb-10">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
             Häufige Fragen zum KFZ Sachverständigen
           </h2>
           <div className="space-y-4">
@@ -316,9 +316,9 @@ export default function LandingPage() {
               { q: "Was kostet ein KFZ Sachverständiger in Berlin?", a: "Bei Fremdverschulden 0 € — die gegnerische Haftpflicht zahlt. Bei Kasko-/Eigenschäden klären wir die Kostenübernahme vorab transparent." },
               { q: "Ist der Sachverständige in ganz Berlin verfügbar?", a: "Ja, mobil in allen Bezirken und im Umland. Wir kommen zu Ihnen nach Hause, in die Werkstatt oder zum Unfallort." },
             ].map(({ q, a }) => (
-              <div key={q} className="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-                <p className="font-bold text-[#080D14] text-[15px] mb-2">{q}</p>
-                <p className="text-gray-600 text-[14px] leading-relaxed">{a}</p>
+              <div key={q} className="bg-white/[0.03] border border-white/8 rounded-2xl p-6">
+                <p className="font-bold text-white text-[15px] mb-2">{q}</p>
+                <p className="text-white/55 text-[14px] leading-relaxed">{a}</p>
               </div>
             ))}
           </div>
@@ -326,9 +326,9 @@ export default function LandingPage() {
       </section>
 
       {/* Interne Verlinkung — Leistungen + Bezirke */}
-      <section className="bg-white px-5 py-12 border-t border-gray-100">
+      <section className="bg-[#050507] px-5 py-12 border-t border-white/8">
         <div className="max-w-3xl mx-auto">
-          <p className="text-[12px] font-semibold uppercase tracking-widest text-gray-400 mb-4">
+          <p className="text-[12px] font-semibold uppercase tracking-widest text-white/40 mb-4">
             Unsere Leistungen &amp; Einsatzgebiete
           </p>
           <div className="flex flex-wrap gap-2">
@@ -342,7 +342,7 @@ export default function LandingPage() {
               { href: "/kfz-sachverstaendiger-berlin-mitte", label: "Mitte" },
               { href: "/kfz-sachverstaendiger-berlin-friedrichshain", label: "Friedrichshain" },
             ].map(({ href, label }) => (
-              <Link key={href} href={href} className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-[#080D14] bg-gray-50 border border-gray-200 hover:border-[#E11D2F] hover:text-[#E11D2F] px-4 py-2 rounded-xl transition-colors">
+              <Link key={href} href={href} className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-white bg-white/[0.03] border border-white/8 hover:border-[#E11D2F] hover:text-[#E11D2F] px-4 py-2 rounded-xl transition-colors">
                 <ArrowRight size={13} />{label}
               </Link>
             ))}

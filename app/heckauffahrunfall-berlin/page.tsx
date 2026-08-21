@@ -105,7 +105,7 @@ export default function HeckauffahrunfallBerlin() {
 
       {/* Hero */}
       <section className="relative px-5 pt-16 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a0a] to-[#080D14]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a0a0a] to-[#050507]" />
         <div className="relative max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#E11D2F]/10 border border-[#E11D2F]/30 text-[#E11D2F] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#E11D2F] animate-pulse" />
@@ -138,12 +138,12 @@ export default function HeckauffahrunfallBerlin() {
       </section>
 
       {/* Wichtig: Was zu tun ist */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-[#E11D2F]/8 text-[#E11D2F] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
             <AlertCircle size={12} />Sofortmaßnahmen nach dem Auffahrunfall
           </div>
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase mb-6">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-6">
             Was tun nach einem Heckauffahrunfall in Berlin?
           </h2>
           <div className="space-y-3">
@@ -153,11 +153,11 @@ export default function HeckauffahrunfallBerlin() {
               { step: "3", title: "Eigenen KFZ Gutachter beauftragen — JETZT", text: "Beauftragen Sie sofort einen eigenen unabhängigen Gutachter. Keinen Gutachter der gegnerischen Versicherung annehmen — der arbeitet für die Versicherung, nicht für Sie." },
               { step: "4", title: "Nicht unterschreiben ohne Gutachten", text: "Unterschreiben Sie keine Vergleichsangebote, Regulierungsvereinbarungen oder Reparaturaufträge, bevor ein unabhängiges Gutachten vorliegt." },
             ].map(({ step, title, text }) => (
-              <div key={step} className="flex gap-4 p-5 rounded-2xl border border-gray-100 bg-gray-50">
+              <div key={step} className="flex gap-4 p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
                 <div className="w-8 h-8 bg-[#E11D2F] rounded-lg flex items-center justify-center flex-shrink-0 font-display font-black text-white text-[14px]">{step}</div>
                 <div>
-                  <p className="font-bold text-[#080D14] text-[14px] mb-1">{title}</p>
-                  <p className="text-gray-500 text-[13px] leading-relaxed">{text}</p>
+                  <p className="font-bold text-white text-[14px] mb-1">{title}</p>
+                  <p className="text-white/50 text-[13px] leading-relaxed">{text}</p>
                 </div>
               </div>
             ))}
@@ -166,7 +166,7 @@ export default function HeckauffahrunfallBerlin() {
       </section>
 
       {/* Versteckte Schäden */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-4">
             Diese Schäden übersieht der Versicherungsgutachter
@@ -196,16 +196,16 @@ export default function HeckauffahrunfallBerlin() {
       </section>
 
       {/* Warum eigener Gutachter */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase text-center mb-4">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-4">
             Eigener Gutachter vs. Versicherungsgutachter
           </h2>
-          <p className="text-gray-500 text-[15px] text-center mb-10">
+          <p className="text-white/50 text-[15px] text-center mb-10">
             Der Unterschied kann Tausende Euro bedeuten.
           </p>
-          <div className="overflow-hidden rounded-2xl border border-gray-100">
-            <div className="grid grid-cols-3 bg-[#080D14] px-5 py-3 text-[11px] font-bold uppercase tracking-widest text-white/50">
+          <div className="overflow-hidden rounded-2xl border border-white/8">
+            <div className="grid grid-cols-3 bg-[#050507] px-5 py-3 text-[11px] font-bold uppercase tracking-widest text-white/50">
               <span>Was wird bewertet</span>
               <span className="text-center text-red-400">Versicherungsgutachter</span>
               <span className="text-center text-[#22c55e]">Gutachten Prenzl</span>
@@ -218,8 +218,8 @@ export default function HeckauffahrunfallBerlin() {
               ["Wertminderung bei älterem Fzg.", "Meist nicht", "✓"],
               ["Wer bezahlt das Gutachten?", "Versicherung", "Versicherung"],
             ].map(([item, v, g], i) => (
-              <div key={item} className={`grid grid-cols-3 px-5 py-4 text-[13px] ${i % 2 === 0 ? "bg-gray-50" : "bg-white"} border-t border-gray-100`}>
-                <span className="text-gray-700 font-medium">{item}</span>
+              <div key={item} className={`grid grid-cols-3 px-5 py-4 text-[13px] ${i % 2 === 0 ? "bg-white/[0.03]" : "bg-white"} border-t border-white/8`}>
+                <span className="text-white/60 font-medium">{item}</span>
                 <span className="text-center text-red-500">{v}</span>
                 <span className="text-center text-[#16a34a] font-medium">{g}</span>
               </div>
@@ -229,7 +229,7 @@ export default function HeckauffahrunfallBerlin() {
       </section>
 
       {/* Benefits */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl text-white uppercase text-center mb-10">Warum Gutachten Prenzl?</h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -254,9 +254,9 @@ export default function HeckauffahrunfallBerlin() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase text-center mb-10">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
             Häufige Fragen nach dem Heckauffahrunfall
           </h2>
           <div className="space-y-4">
@@ -267,9 +267,9 @@ export default function HeckauffahrunfallBerlin() {
               { q: "Wie lange dauert die Schadensregulierung nach einem Heckauffahrunfall?", a: "Mit einem vollständigen Gutachten und korrekter Schadensmeldung: 4–8 Wochen. Wir übernehmen die gesamte Kommunikation mit der gegnerischen Versicherung." },
               { q: "Kann ich trotz Heckauffahrunfall ein Nutzungsausfallentschädigung bekommen?", a: "Ja — für jeden Tag, an dem Ihr Fahrzeug nicht fahrbereit ist, steht Ihnen Nutzungsausfall zu. Das gilt auch wenn Sie keinen Mietwagen nehmen. Die Höhe richtet sich nach Fahrzeugklasse (23–59 € pro Tag)." },
             ].map(({ q, a }) => (
-              <div key={q} className="p-5 rounded-2xl border border-gray-100 bg-gray-50">
-                <p className="font-bold text-[#080D14] text-[14px] mb-2">{q}</p>
-                <p className="text-gray-500 text-[13px] leading-relaxed">{a}</p>
+              <div key={q} className="p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
+                <p className="font-bold text-white text-[14px] mb-2">{q}</p>
+                <p className="text-white/50 text-[13px] leading-relaxed">{a}</p>
               </div>
             ))}
           </div>
@@ -277,7 +277,7 @@ export default function HeckauffahrunfallBerlin() {
       </section>
 
       {/* Internal links to districts */}
-      <section className="bg-[#080D14] px-5 py-12 border-t border-white/6">
+      <section className="bg-[#050507] px-5 py-12 border-t border-white/6">
         <div className="max-w-3xl mx-auto">
           <p className="text-[11px] font-bold uppercase tracking-widest text-white/25 mb-4 text-center">
             Heckauffahrunfall Gutachter in Ihrem Bezirk

@@ -106,7 +106,7 @@ export default function TotalschadenBerlin() {
 
       {/* Hero */}
       <section className="relative px-5 pt-16 pb-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#120808] to-[#080D14]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#120808] to-[#050507]" />
         <div className="relative max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
             <AlertTriangle size={11} />Totalschaden — Nicht zu wenig akzeptieren
@@ -138,13 +138,13 @@ export default function TotalschadenBerlin() {
       </section>
 
       {/* Was ist Totalschaden */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase mb-4">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
             Was ist ein wirtschaftlicher Totalschaden?
           </h2>
-          <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
-            Von einem <strong className="text-[#080D14]">wirtschaftlichen Totalschaden</strong> spricht man, wenn die Reparaturkosten den Wiederbeschaffungswert des Fahrzeugs übersteigen. Das Fahrzeug ist technisch reparierbar, aber die Reparatur wäre wirtschaftlich nicht sinnvoll. Die Versicherung zahlt dann statt der Reparatur den Wiederbeschaffungswert.
+          <p className="text-white/50 text-[15px] leading-relaxed mb-8">
+            Von einem <strong className="text-white">wirtschaftlichen Totalschaden</strong> spricht man, wenn die Reparaturkosten den Wiederbeschaffungswert des Fahrzeugs übersteigen. Das Fahrzeug ist technisch reparierbar, aber die Reparatur wäre wirtschaftlich nicht sinnvoll. Die Versicherung zahlt dann statt der Reparatur den Wiederbeschaffungswert.
           </p>
           <div className="grid sm:grid-cols-3 gap-4 mb-8">
             {[
@@ -152,12 +152,12 @@ export default function TotalschadenBerlin() {
               { icon: Euro, title: "Wirtschaftlicher Totalschaden", text: "Reparaturkosten übersteigen den Wiederbeschaffungswert. Typisch: Reparatur kostet 8.000 €, Fahrzeug ist nur 6.000 € wert." },
               { icon: FileText, title: "Fiktiver Totalschaden", text: "Sie lassen das Fahrzeug nicht reparieren und nehmen den Geldbetrag. In bestimmten Fällen können Sie die Mehrwertsteuer einsparen." },
             ].map(({ icon: Icon, title, text }) => (
-              <div key={title} className="flex flex-col items-center text-center p-5 rounded-2xl border border-gray-100 bg-gray-50">
+              <div key={title} className="flex flex-col items-center text-center p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
                 <div className="w-12 h-12 bg-[#E11D2F]/10 rounded-xl flex items-center justify-center mb-3">
                   <Icon size={22} className="text-[#E11D2F]" />
                 </div>
-                <p className="font-bold text-[#080D14] text-[14px] mb-1">{title}</p>
-                <p className="text-gray-500 text-[13px] leading-relaxed">{text}</p>
+                <p className="font-bold text-white text-[14px] mb-1">{title}</p>
+                <p className="text-white/50 text-[13px] leading-relaxed">{text}</p>
               </div>
             ))}
           </div>
@@ -165,7 +165,7 @@ export default function TotalschadenBerlin() {
       </section>
 
       {/* Fallstricke */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl text-white uppercase text-center mb-4">
             3 Fehler die Berliner beim Totalschaden machen
@@ -204,12 +204,12 @@ export default function TotalschadenBerlin() {
       </section>
 
       {/* Was Ihnen zusteht */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl text-[#080D14] uppercase mb-4">
+          <h2 className="font-display font-black text-3xl text-white uppercase mb-4">
             Was Ihnen beim Totalschaden zusteht
           </h2>
-          <p className="text-gray-500 text-[15px] mb-8 leading-relaxed">
+          <p className="text-white/50 text-[15px] mb-8 leading-relaxed">
             Bei einem unverschuldeten Unfall mit Totalschaden haben Sie Anspruch auf weit mehr als nur den Fahrzeugwert:
           </p>
           <div className="space-y-3">
@@ -221,11 +221,11 @@ export default function TotalschadenBerlin() {
               { title: "Abschleppkosten & Standgebühren", desc: "Kosten für Abschleppdienst und eventuelle Fahrzeugverwahrung werden vollständig erstattet." },
               { title: "Anwaltskosten", desc: "Bei unverschuldetem Unfall trägt die gegnerische Versicherung Ihre Anwaltskosten. Nutzen Sie dieses Recht." },
             ].map(({ title, desc }) => (
-              <div key={title} className="flex gap-3 p-4 rounded-xl border border-gray-100 bg-gray-50">
+              <div key={title} className="flex gap-3 p-4 rounded-xl border border-white/8 bg-white/[0.03]">
                 <CheckCircle size={16} className="text-[#22c55e] mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="font-bold text-[#080D14] text-[13px]">{title}</p>
-                  <p className="text-gray-500 text-[12px] leading-relaxed">{desc}</p>
+                  <p className="font-bold text-white text-[13px]">{title}</p>
+                  <p className="text-white/50 text-[12px] leading-relaxed">{desc}</p>
                 </div>
               </div>
             ))}
@@ -234,7 +234,7 @@ export default function TotalschadenBerlin() {
       </section>
 
       {/* Benefits */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl text-white uppercase text-center mb-10">Warum Gutachten Prenzl?</h2>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -259,9 +259,9 @@ export default function TotalschadenBerlin() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase text-center mb-10">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
             Häufige Fragen zum Totalschaden in Berlin
           </h2>
           <div className="space-y-4">
@@ -272,9 +272,9 @@ export default function TotalschadenBerlin() {
               { q: "Was ist der Unterschied zwischen Wiederbeschaffungswert und Zeitwert?", a: "Wiederbeschaffungswert = Händlerkaufpreis für gleichwertiges Fahrzeug. Zeitwert = technischer Wert ohne Marktpreisbezug. Bei Haftpflichtschäden steht Ihnen der Wiederbeschaffungswert zu — der liegt immer höher." },
               { q: "Gibt es bei Totalschaden auch Nutzungsausfall?", a: "Ja — für die Beschaffungszeit eines Ersatzfahrzeugs (typisch 10–15 Tage) steht Ihnen Nutzungsausfall zu. Alternativ Mietwagen, dessen Kosten die gegnerische Versicherung trägt." },
             ].map(({ q, a }) => (
-              <div key={q} className="p-5 rounded-2xl border border-gray-100 bg-gray-50">
-                <p className="font-bold text-[#080D14] text-[14px] mb-2">{q}</p>
-                <p className="text-gray-500 text-[13px] leading-relaxed">{a}</p>
+              <div key={q} className="p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
+                <p className="font-bold text-white text-[14px] mb-2">{q}</p>
+                <p className="text-white/50 text-[13px] leading-relaxed">{a}</p>
               </div>
             ))}
           </div>
@@ -282,7 +282,7 @@ export default function TotalschadenBerlin() {
       </section>
 
       {/* Internal links */}
-      <section className="bg-[#080D14] px-5 py-12 border-t border-white/6">
+      <section className="bg-[#050507] px-5 py-12 border-t border-white/6">
         <div className="max-w-3xl mx-auto">
           <p className="text-[11px] font-bold uppercase tracking-widest text-white/25 mb-4 text-center">
             Totalschaden Gutachter in Ihrem Bezirk

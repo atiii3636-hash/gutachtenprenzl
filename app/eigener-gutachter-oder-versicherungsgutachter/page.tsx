@@ -168,7 +168,7 @@ export default function GutachterVergleich() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section className="relative px-5 pt-16 pb-14 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0C1420] to-[#080D14]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0D] to-[#050507]" />
         <div className="relative max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 bg-[#E11D2F]/10 border border-[#E11D2F]/30 text-[#E11D2F] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
             <Scale size={11} />Vergleich
@@ -203,40 +203,40 @@ export default function GutachterVergleich() {
       </section>
 
       {/* Vergleichstabelle */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display font-black text-3xl md:text-4xl text-[#080D14] uppercase mb-4">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
             Der direkte Vergleich
           </h2>
-          <p className="text-gray-500 text-[15px] leading-relaxed mb-8">
+          <p className="text-white/50 text-[15px] leading-relaxed mb-8">
             Neun Kriterien, an denen sich die beiden Wege in der Praxis unterscheiden:
           </p>
 
-          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+          <div className="overflow-x-auto rounded-2xl border border-white/8">
             <table className="w-full text-left border-collapse text-[13px] min-w-[640px]">
               <caption className="sr-only">
                 Vergleich eigener Kfz-Sachverständiger und Gutachter der gegnerischen Versicherung
               </caption>
               <thead>
-                <tr className="bg-gray-50">
-                  <th scope="col" className="px-4 py-3 font-bold text-[#080D14] text-[12px] uppercase tracking-wide">Kriterium</th>
+                <tr className="bg-white/[0.03]">
+                  <th scope="col" className="px-4 py-3 font-bold text-white text-[12px] uppercase tracking-wide">Kriterium</th>
                   <th scope="col" className="px-4 py-3 font-bold text-[#22c55e] text-[12px] uppercase tracking-wide">Eigener Sachverständiger</th>
-                  <th scope="col" className="px-4 py-3 font-bold text-gray-500 text-[12px] uppercase tracking-wide">Gutachter der Versicherung</th>
+                  <th scope="col" className="px-4 py-3 font-bold text-white/50 text-[12px] uppercase tracking-wide">Gutachter der Versicherung</th>
                 </tr>
               </thead>
               <tbody>
                 {vergleich.map(({ kriterium, eigen, versicherung }) => (
-                  <tr key={kriterium} className="border-t border-gray-100">
-                    <th scope="row" className="px-4 py-3 font-semibold text-[#080D14] align-top">{kriterium}</th>
-                    <td className="px-4 py-3 text-gray-700 align-top">
+                  <tr key={kriterium} className="border-t border-white/8">
+                    <th scope="row" className="px-4 py-3 font-semibold text-white align-top">{kriterium}</th>
+                    <td className="px-4 py-3 text-white/60 align-top">
                       <span className="inline-flex items-start gap-2">
                         <Check size={13} className="text-[#22c55e] mt-0.5 flex-shrink-0" />
                         {eigen}
                       </span>
                     </td>
-                    <td className="px-4 py-3 text-gray-500 align-top">
+                    <td className="px-4 py-3 text-white/50 align-top">
                       <span className="inline-flex items-start gap-2">
-                        <X size={13} className="text-gray-300 mt-0.5 flex-shrink-0" />
+                        <X size={13} className="text-white/35 mt-0.5 flex-shrink-0" />
                         {versicherung}
                       </span>
                     </td>
@@ -246,7 +246,7 @@ export default function GutachterVergleich() {
             </table>
           </div>
 
-          <p className="text-gray-400 text-[12px] leading-relaxed mt-4">
+          <p className="text-white/40 text-[12px] leading-relaxed mt-4">
             Die Angaben beschreiben typische Praxisunterschiede, keine Regel ohne Ausnahme. Auch Versicherungsgutachter
             arbeiten fachlich sauber — sie arbeiten nur nicht in Ihrem Auftrag.
           </p>
@@ -254,7 +254,7 @@ export default function GutachterVergleich() {
       </section>
 
       {/* Drei Positionen */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl text-white uppercase mb-4">
             Drei Positionen, bei denen es teuer wird
@@ -294,14 +294,14 @@ export default function GutachterVergleich() {
       </section>
 
       {/* Wann welcher Weg */}
-      <section className="bg-white px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display font-black text-3xl text-[#080D14] uppercase mb-8">
+          <h2 className="font-display font-black text-3xl text-white uppercase mb-8">
             Wann welcher Weg sinnvoll ist
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="p-6 rounded-2xl border border-[#22c55e]/30 bg-[#22c55e]/[0.04]">
-              <p className="font-bold text-[#080D14] text-[15px] mb-3">Eigener Sachverständiger</p>
+              <p className="font-bold text-white text-[15px] mb-3">Eigener Sachverständiger</p>
               <ul className="space-y-2">
                 {[
                   "Unverschuldeter Unfall mit Haftpflichtschaden",
@@ -311,14 +311,14 @@ export default function GutachterVergleich() {
                   "Die Haftungsfrage ist strittig",
                   "Sie wollen fiktiv abrechnen",
                 ].map((t) => (
-                  <li key={t} className="flex items-start gap-2 text-gray-600 text-[13px] leading-relaxed">
+                  <li key={t} className="flex items-start gap-2 text-white/55 text-[13px] leading-relaxed">
                     <Check size={13} className="text-[#22c55e] mt-1 flex-shrink-0" />{t}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="p-6 rounded-2xl border border-gray-200 bg-gray-50">
-              <p className="font-bold text-[#080D14] text-[15px] mb-3">Kostenvoranschlag oder Kaskoweg reicht</p>
+            <div className="p-6 rounded-2xl border border-white/8 bg-white/[0.03]">
+              <p className="font-bold text-white text-[15px] mb-3">Kostenvoranschlag oder Kaskoweg reicht</p>
               <ul className="space-y-2">
                 {[
                   "Echter Bagatellschaden unter rund 750 €",
@@ -326,8 +326,8 @@ export default function GutachterVergleich() {
                   "Selbstverschuldeter Schaden ohne Kaskoschutz",
                   "Reine Lackkratzer ohne Bauteilbeteiligung",
                 ].map((t) => (
-                  <li key={t} className="flex items-start gap-2 text-gray-500 text-[13px] leading-relaxed">
-                    <ArrowRight size={13} className="text-gray-400 mt-1 flex-shrink-0" />{t}
+                  <li key={t} className="flex items-start gap-2 text-white/50 text-[13px] leading-relaxed">
+                    <ArrowRight size={13} className="text-white/40 mt-1 flex-shrink-0" />{t}
                   </li>
                 ))}
               </ul>
@@ -337,7 +337,7 @@ export default function GutachterVergleich() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#080D14] px-5 py-16">
+      <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
             Häufige Fragen

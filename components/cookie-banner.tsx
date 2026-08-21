@@ -39,7 +39,7 @@ export default function CookieBanner() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 md:p-6">
-      <div className="max-w-4xl mx-auto bg-[#080D14] border border-white/10 rounded-2xl shadow-2xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
+      <div className="max-w-4xl mx-auto bg-[#050507] border border-white/10 rounded-2xl shadow-2xl p-5 md:p-6 flex flex-col md:flex-row md:items-center gap-4 md:gap-6">
         <div className="flex-1">
           <p className="text-white font-bold text-[14px] mb-1">Datenschutz &amp; Cookies</p>
           <p className="text-white/50 text-[12px] leading-relaxed">

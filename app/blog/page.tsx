@@ -95,10 +95,10 @@ export default function BlogIndex() {
       </section>
 
       {/* Einordnung, gibt der Übersichtsseite eigenen Inhalt statt nur Anrisstexte */}
-      <section className="bg-white px-5 py-16 border-t border-white/6">
-        <div className="max-w-3xl mx-auto text-gray-600 text-[15px] leading-relaxed space-y-8">
+      <section className="bg-[#050507] px-5 py-16 border-t border-white/6">
+        <div className="max-w-3xl mx-auto text-white/55 text-[15px] leading-relaxed space-y-8">
           <div>
-            <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-4">
+            <h2 className="font-display font-black text-2xl md:text-3xl text-white uppercase mb-4">
               Warum dieser Ratgeber existiert
             </h2>
             <p className="mb-4">
@@ -116,7 +116,7 @@ export default function BlogIndex() {
           </div>
 
           <div>
-            <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-4">
+            <h2 className="font-display font-black text-2xl md:text-3xl text-white uppercase mb-4">
               Die vier Posten, die am häufigsten fehlen
             </h2>
             <p className="mb-4">
@@ -133,7 +133,7 @@ export default function BlogIndex() {
                 <li key={t} className="flex gap-3">
                   <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#E11D2F] mt-2.5" />
                   <span>
-                    <strong className="text-[#080D14]">{t}</strong>
+                    <strong className="text-white">{t}</strong>
                     <br />
                     {d}
                   </span>
@@ -143,7 +143,7 @@ export default function BlogIndex() {
           </div>
 
           <div>
-            <h2 className="font-display font-black text-2xl md:text-3xl text-[#080D14] uppercase mb-4">
+            <h2 className="font-display font-black text-2xl md:text-3xl text-white uppercase mb-4">
               Wenn Sie gerade wenig Zeit haben
             </h2>
             <p>
