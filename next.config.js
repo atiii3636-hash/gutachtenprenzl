@@ -97,6 +97,23 @@ const nextConfig = {
         destination: '/kfz-sachverstaendiger-berlin-lichtenberg',
         permanent: true,
       },
+
+      // Die Design-Vorschau lag unter /neu/* auf der Live-Domain — ohne noindex
+      // und ohne Disallow, Google konnte sie also crawlen. Seit dem Umzug auf die
+      // echten URLs (20.08.2026) liefern alle /neu-Adressen 404.
+      // /neu selbst braucht eine eigene Regel: über :path* mit null Segmenten
+      // baut Next einen leeren Location-Header und die Weiterleitung läuft ins
+      // Nichts (lokal geprüft). Exakte Regel steht daher zuerst.
+      {
+        source: '/neu',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/neu/:path*',
+        destination: '/:path*',
+        permanent: true,
+      },
     ];
   },
 };
