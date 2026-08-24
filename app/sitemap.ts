@@ -1,5 +1,13 @@
 import { MetadataRoute } from "next";
 
+// Bewusst ohne lastModified: der Wert wurde als `new Date()` zur Build-Zeit
+// gesetzt, also trugen alle 48 URLs denselben Zeitstempel und meldeten bei
+// jedem Deploy "gerade eben geändert". Google stellt dann alles neu in die
+// Crawl-Warteschlange (23 Seiten hingen am 21.08.2026 in "Gefunden – zurzeit
+// nicht indexiert") und traut dem Feld irgendwann gar nicht mehr. lastmod ist
+// optional; ohne Angabe entscheidet Google selbst, was neu geprüft wird.
+// Echte Daten pro Seite wären besser — dann aus dem letzten Git-Commit der
+// jeweiligen page.tsx erzeugen, nicht wieder pauschal aus der Build-Zeit.
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://gutachtenprenzl.de";
 
@@ -62,49 +70,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/ueber-uns`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/kontakt`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     ...districtPages.map((path) => ({
       url: `${baseUrl}${path}`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.85,
     })),
     ...blogPages.map((path) => ({
       url: `${baseUrl}${path}`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
     ...neueSeiten.map((path) => ({
       url: `${baseUrl}${path}`,
-      lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.85,
     })),
     {
       url: `${baseUrl}/impressum`,
-      lastModified: new Date(),
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/datenschutz`,
-      lastModified: new Date(),
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },
