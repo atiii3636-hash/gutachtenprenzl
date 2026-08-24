@@ -17,7 +17,7 @@ const UPDATED_LABEL = "21. August 2026";
 export const metadata: Metadata = pageMetadata({
   title: "Fiktive Abrechnung: Geld statt Reparatur nach dem Unfall",
   description:
-    "Sie können sich den Schaden auszahlen lassen, statt zu reparieren. Was dabei erstattet wird, was nicht, und wo die Versicherung kürzen darf. Mit Übersicht der Posten.",
+    "Sie können sich den Schaden auszahlen lassen, statt zu reparieren. Was dabei erstattet wird, was nicht, und wo die Versicherung kürzen darf.",
   path: PATH,
   keywords: [
     "fiktive abrechnung unfall",

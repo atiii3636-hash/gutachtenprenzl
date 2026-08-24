@@ -29,6 +29,17 @@ type PageSeoInput = {
   image?: string;
 };
 
+/**
+ * Das Template in layout.tsx hängt " | Gutachten Prenzl" an — 19 Zeichen.
+ * Google schneidet Titel ab etwa 65 Zeichen in den Suchergebnissen ab; 13 Seiten
+ * lagen am 24.08.2026 darüber, ausnahmslos wegen dieses Suffixes. Statt die Titel
+ * selbst zu kürzen und dabei Keywords anzufassen, fällt hier nur die Marke weg,
+ * sobald sie nicht mehr passt (`absolute` umgeht das Template). Der inhaltliche
+ * Teil des Titels bleibt damit Zeichen für Zeichen unverändert.
+ */
+const TITEL_SUFFIX_LAENGE = " | Gutachten Prenzl".length;
+const TITEL_MAXLAENGE = 65;
+
 export function pageMetadata({
   title,
   description,
@@ -37,9 +48,11 @@ export function pageMetadata({
   image = "/og-image.jpg",
 }: PageSeoInput): Metadata {
   const url = `${SITE_URL}${path}`;
+  const titelFeld =
+    title.length + TITEL_SUFFIX_LAENGE > TITEL_MAXLAENGE ? { absolute: title } : title;
 
   return {
-    title,
+    title: titelFeld,
     description,
     ...(keywords?.length ? { keywords } : {}),
     alternates: { canonical: url },

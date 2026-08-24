@@ -5,9 +5,10 @@ import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
 
 export const metadata: Metadata = {
-  title: "Ihr Recht auf einen unabhängigen KFZ Gutachter: Ratgeber Berlin",
+  // absolute: ohne das Suffix aus dem Layout, sonst 82 Zeichen und in der Suche abgeschnitten.
+  title: { absolute: "Ihr Recht auf einen unabhängigen KFZ Gutachter in Berlin" },
   description:
-    "Bei unverschuldetem Unfall haben Sie das gesetzliche Recht auf einen eigenen Gutachter, kostenlos. Was bedeutet das und wie setzen Sie es durch? Ratgeber von Gutachten Prenzl.",
+    "Bei unverschuldetem Unfall haben Sie das gesetzliche Recht auf einen eigenen Gutachter, kostenlos. Was das bedeutet und wie Sie es durchsetzen.",
   alternates: { canonical: "https://gutachtenprenzl.de/blog/recht-auf-eigenen-gutachter" },
 };
 

@@ -17,7 +17,7 @@ const UPDATED_LABEL = "21. August 2026";
 export const metadata: Metadata = pageMetadata({
   title: "130-Prozent-Regel: wann sich die Reparatur trotzdem lohnt",
   description:
-    "Reparatur teurer als das Auto wert ist? Bis 130 Prozent des Wiederbeschaffungswerts dürfen Sie trotzdem reparieren lassen. Bedingungen, Rechenbeispiel und Fallstricke.",
+    "Reparatur teurer als das Auto wert ist? Bis 130 Prozent des Wiederbeschaffungswerts dürfen Sie trotzdem reparieren lassen. Bedingungen und Rechenbeispiel.",
   path: PATH,
   keywords: [
     "130 prozent regelung",

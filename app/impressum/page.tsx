@@ -6,7 +6,8 @@ import FooterNeu from "@/components/footer-neu";
 
 export const metadata: Metadata = {
   title: "Impressum",
-  description: "Impressum von Gutachten Prenzl – KFZ Sachverständiger Berlin.",
+  description:
+    "Impressum von Gutachten Prenzl, Kfz-Sachverständigenbüro in Berlin Prenzlauer Berg. Anbieterkennzeichnung nach § 5 TMG mit Anschrift und Kontaktdaten.",
   alternates: { canonical: "https://gutachtenprenzl.de/impressum" },
 };
 
