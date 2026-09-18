@@ -12,10 +12,10 @@ export const WHATSAPP_URL = `https://wa.me/4915560003661?text=${encodeURICompone
   WHATSAPP_TEXT
 )}`;
 
-// Google-Bewertungen: Fallback, solange die Places API 403 liefert (Key/Abrechnung
-// prüfen). Sobald sie wieder antwortet, zieht google-reviews-section den Live-Wert.
-// Hier bei neuen Bewertungen von Hand hochsetzen. Auch public/llms.txt mitziehen.
-// Sichtbare Anzeige auf der Website. Stand 17.08.2026: 84 Google-Bewertungen.
-// Wird nur noch im Fließtext genutzt, nicht mehr im Schema (self-serving reviews).
-export const REVIEW_COUNT = 84;
+// Google-Bewertungen: Live-Wert kommt aus der Places API (google-reviews-section).
+// Der API-Key ist auf den Referrer gutachtenprenzl.de beschränkt, deshalb schickt
+// der Server-Fetch diesen Referer mit. Die Werte hier sind nur noch der Fallback,
+// falls die API ausfällt. Stand 18.09.2026: 91 Google-Bewertungen, 5,0 Sterne.
+// Auch public/llms.txt mitziehen.
+export const REVIEW_COUNT = 91;
 export const REVIEW_RATING = 5.0;

@@ -1,4 +1,5 @@
 import { Star, ExternalLink } from "lucide-react";
+import { REVIEW_COUNT, REVIEW_RATING } from "@/lib/contact";
 
 interface GoogleReview {
   name: string;
@@ -17,49 +18,49 @@ interface PlaceDetailsResponse {
 
 interface ReviewData {
   name: string;
-  date: string;
+  // ponytail: optional — nur gesetzt, wo das Datum bei Google geprueft ist.
+  // Falsche "vor einem Monat"-Angaben sind schlimmer als gar keine.
+  date?: string;
   text: string;
   stars: number;
 }
 
-const FALLBACK_REVIEWS: ReviewData[] = [
+export const FALLBACK_REVIEWS: ReviewData[] = [
+  {
+    name: "Sevo",
+    date: "vor einem Monat",
+    text: "Der Gutachter meines Vertrauens 😊 Ich bin mehr als zufrieden mit dem gesamten Ablauf. Alles hat von Anfang bis Ende reibungslos funktioniert und ich habe mich jederzeit gut aufgehoben gefühlt. Der Gutachter war sehr kompetent, freundlich und hat sich die Zeit genommen, alles verständlich zu erklären.",
+    stars: 5,
+  },
+  {
+    name: "Valerie M.",
+    date: "vor 2 Monaten",
+    text: "Sehr professioneller und zuverlässiger Gutachter, dem man sofort anmerkt, dass er sein Fach versteht. Ich habe kurzfristig einen Termin bekommen und wurde von Anfang an freundlich, ehrlich und kompetent beraten. Besonders positiv war die transparente Abwicklung.",
+    stars: 5,
+  },
   {
     name: "Arda A.",
-    date: "vor einem Monat",
+    date: "vor 6 Monaten",
     text: "Sehr kompetentes und freundliches Team. Man merkt sofort, dass hier Profis am Werk sind. Alles wurde mir verständlich erklärt und die gesamte Abwicklung verlief absolut reibungslos. Gerne wieder!",
     stars: 5,
   },
   {
     name: "Esra A.",
-    date: "vor einem Monat",
     text: "Top Service! Sehr freundlich und zuverlässig. Ich habe mich sehr gut beraten gefühlt. Das Gutachten wurde super schnell erstellt und ich wurde über alle Schritte ausführlich aufgeklärt. Klare Weiterempfehlung für Gutachten Prenzl 😊",
     stars: 5,
   },
   {
     name: "Nisa Ö.",
-    date: "vor einem Monat",
     text: "Ich kann den Gutachter nur wärmstens empfehlen! Vom ersten Kontakt bis zur Übergabe des Gutachtens war alles freundlich und sehr professionell. Ich habe mich gut aufgehoben gefühlt.",
     stars: 5,
   },
   {
-    name: "Beyza D.",
-    date: "vor einem Monat",
-    text: "Ich habe mich sehr wohlgefühlt und wurde bei all meinen Fragen umfassend unterstützt. Zudem ist der Gutachter äußerst kompetent und hilfsbereit.",
-    stars: 5,
-  },
-  {
     name: "Efe A.",
-    date: "vor einem Monat",
     text: "Sehr professionelles und detailliert erstelltes Gutachten — schnell und zuverlässig. Kann ich nur weiterempfehlen!",
     stars: 5,
   },
-  {
-    name: "Fatih A.",
-    date: "vor einem Monat",
-    text: "Super Gutachter, sehr sympathisch und professionell. Berät einen sehr gut, auch wenn man sich nicht mit der Materie auskennt.",
-    stars: 5,
-  },
 ];
+
 
 async function fetchGoogleReviews(): Promise<{
   reviews: ReviewData[];
@@ -70,7 +71,7 @@ async function fetchGoogleReviews(): Promise<{
   const placeId = process.env.GOOGLE_PLACE_ID;
 
   if (!apiKey || !placeId) {
-    return { reviews: FALLBACK_REVIEWS, rating: 5.0, totalCount: 41 };
+    return { reviews: FALLBACK_REVIEWS, rating: REVIEW_RATING, totalCount: REVIEW_COUNT };
   }
 
   try {
@@ -79,6 +80,9 @@ async function fetchGoogleReviews(): Promise<{
     const res = await fetch(url, {
       headers: {
         "X-Goog-FieldMask": "displayName,rating,userRatingCount,reviews",
+        // Der Places-Key ist auf den Referrer gutachtenprenzl.de beschraenkt.
+        // Ohne diesen Header antwortet die API serverseitig mit 403.
+        Referer: "https://gutachtenprenzl.de/",
       },
       next: { revalidate: 86400 },
     });
@@ -89,19 +93,26 @@ async function fetchGoogleReviews(): Promise<{
 
     if (!data.rating) throw new Error("Unexpected API response");
 
-    return {
-      rating: data.rating,
-      totalCount: data.userRatingCount,
-      reviews: (data.reviews ?? []).slice(0, 6).map((r) => ({
+    const live = (data.reviews ?? [])
+      .filter((r) => r.text?.text)
+      .slice(0, 6)
+      .map((r) => ({
         name: r.authorAttribution.displayName,
         date: r.relativePublishTimeDescription,
         text: r.text.text,
         stars: r.rating,
-      })),
+      }));
+
+    // ponytail: Rating/Anzahl kommen live, Rezensionstexte liefert die API nur
+    // im teureren Enterprise-SKU. Ohne Texte die gepflegten Karten behalten.
+    return {
+      rating: data.rating,
+      totalCount: data.userRatingCount,
+      reviews: live.length > 0 ? live : FALLBACK_REVIEWS,
     };
   } catch (err) {
     console.error("[GoogleReviews] Fetch failed, using fallback:", err);
-    return { reviews: FALLBACK_REVIEWS, rating: 5.0, totalCount: 47 };
+    return { reviews: FALLBACK_REVIEWS, rating: REVIEW_RATING, totalCount: REVIEW_COUNT };
   }
 }
 
@@ -160,7 +171,7 @@ export default async function GoogleReviewsSection() {
               <div className="flex items-center justify-between">
                 <div>
                   <span className="font-semibold text-[#080D14] text-[14px] block">{r.name}</span>
-                  <span className="text-gray-400 text-[12px]">{r.date}</span>
+                  {r.date && <span className="text-gray-400 text-[12px]">{r.date}</span>}
                 </div>
                 {/* Google G */}
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-label="Google">
