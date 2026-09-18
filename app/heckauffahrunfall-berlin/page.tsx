@@ -5,6 +5,7 @@ import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import Breadcrumb from "@/components/neu/breadcrumb";
 
 export const metadata: Metadata = {
   title: { absolute: "Heckauffahrunfall Berlin – Gutachten & Schadensersatz" },
@@ -100,7 +101,7 @@ export default function HeckauffahrunfallBerlin() {
   return (
     <div className="min-h-screen bg-[#050507]">
       <NavbarNeu />
-      <div className="pt-16" />
+      <Breadcrumb items={[{ name: "Heckauffahrunfall Berlin", href: "/heckauffahrunfall-berlin" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}

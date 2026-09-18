@@ -8,6 +8,7 @@ import FaqListe from "@/components/neu/faq-liste";
 import type { BezirkContent } from "@/lib/bezirk-content";
 import { bezirkContent } from "@/lib/bezirk-content";
 import { WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
+import { serviceLd } from "@/lib/seo";
 
 interface Props {
   content: BezirkContent;
@@ -49,6 +50,20 @@ export default function BezirkPageTemplate({ content }: Props) {
       { "@type": "ListItem", position: 3, name: `KFZ Sachverständiger ${name}`, item: `https://gutachtenprenzl.de/${slug}` },
     ],
   };
+
+  // Service-Schema je Bezirk: sagt Google, dass diese Seite genau dieses
+  // Einsatzgebiet bedient, statt pauschal ganz Berlin wie die Leistungsseiten.
+  // Die Ortsteile kommen mit rein, sie sind die eigentlichen Suchbegriffe.
+  const serviceJsonLd = serviceLd({
+    name: `Kfz-Gutachten ${name}`,
+    description: `Unabhängiger Kfz-Sachverständiger für ${name}: Unfallgutachten, Wertgutachten und Schadensbewertung vor Ort.`,
+    path: `/${slug}`,
+    serviceType: "Kfz-Schadengutachten",
+    areaServed: [
+      { "@type": "AdministrativeArea", name },
+      ...subdistricts.map((o) => ({ "@type": "AdministrativeArea", name: o })),
+    ],
+  });
 
   const zahler = [
     {
@@ -100,6 +115,7 @@ export default function BezirkPageTemplate({ content }: Props) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
 
       <div className="min-h-screen bg-[#050507] text-white">
         <NavbarNeu />

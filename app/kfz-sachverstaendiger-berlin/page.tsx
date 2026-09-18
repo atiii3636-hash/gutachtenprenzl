@@ -6,6 +6,7 @@ import Link from "next/link";
 import { WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import Breadcrumb from "@/components/neu/breadcrumb";
 
 export const metadata: Metadata = {
   title: { absolute: "KFZ Sachverständiger Berlin – kostenlos, in 24h" },
@@ -96,7 +97,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#050507]">
       <NavbarNeu />
-      <div className="pt-16" />
+      <Breadcrumb items={[{ name: "KFZ Sachverständiger Berlin", href: "/kfz-sachverstaendiger-berlin" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}

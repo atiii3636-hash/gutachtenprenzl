@@ -4,6 +4,7 @@ import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import Breadcrumb from "@/components/neu/breadcrumb";
 
 /* Preis-/Kostenseite. Wichtigste AEO-Seite der Site: "Was kostet ein Kfz-Gutachten"
    ist die meistgestellte Frage zum Thema in ChatGPT & Co. Aufbau bewusst
@@ -125,9 +126,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "@id": "https://gutachtenprenzl.de/kosten-kfz-gutachten-berlin#webpage",
+      "@type": "Article",
+      "@id": "https://gutachtenprenzl.de/kosten-kfz-gutachten-berlin#article",
       url: "https://gutachtenprenzl.de/kosten-kfz-gutachten-berlin",
+      headline: "Was kostet ein Kfz-Gutachten in Berlin? Honorartabelle 2026",
+      mainEntityOfPage: { "@type": "WebPage", "@id": "https://gutachtenprenzl.de/kosten-kfz-gutachten-berlin" },
       name: "Was kostet ein Kfz-Gutachten in Berlin? Honorartabelle 2026",
       description:
         "Kosten eines Kfz-Gutachtens in Berlin: bei unverschuldetem Unfall 0 €, sonst ca. 250–1.250 € je nach Schadenhöhe. Mit Honorar- und Nebenkostentabelle.",
@@ -185,7 +188,7 @@ export default function KostenKfzGutachtenBerlin() {
   return (
     <div className="min-h-screen bg-[#050507]">
       <NavbarNeu />
-      <div className="pt-16" />
+      <Breadcrumb items={[{ name: "Kosten Kfz-Gutachten Berlin", href: "/kosten-kfz-gutachten-berlin" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero + Direktantwort */}

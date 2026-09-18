@@ -1,13 +1,21 @@
 import { MetadataRoute } from "next";
+import lastmodMap from "@/lib/lastmod.json";
 
-// Bewusst ohne lastModified: der Wert wurde als `new Date()` zur Build-Zeit
-// gesetzt, also trugen alle 48 URLs denselben Zeitstempel und meldeten bei
-// jedem Deploy "gerade eben geändert". Google stellt dann alles neu in die
-// Crawl-Warteschlange (23 Seiten hingen am 21.08.2026 in "Gefunden – zurzeit
-// nicht indexiert") und traut dem Feld irgendwann gar nicht mehr. lastmod ist
-// optional; ohne Angabe entscheidet Google selbst, was neu geprüft wird.
-// Echte Daten pro Seite wären besser — dann aus dem letzten Git-Commit der
-// jeweiligen page.tsx erzeugen, nicht wieder pauschal aus der Build-Zeit.
+// lastmod kommt aus lib/lastmod.json: je Seite das Datum ihres letzten Commits,
+// erzeugt von scripts/gen-lastmod.mjs. Frueher stand hier `new Date()` zur
+// Build-Zeit — dann trugen alle URLs denselben Zeitstempel und meldeten bei
+// jedem Deploy "gerade eben geaendert". Google stellte daraufhin alles neu in
+// die Crawl-Warteschlange (23 Seiten hingen am 21.08.2026 in "Gefunden — zurzeit
+// nicht indexiert"). Echte Daten je Seite loesen genau das.
+// Nach inhaltlichen Aenderungen: node scripts/gen-lastmod.mjs
+const lastmod: Record<string, string> = lastmodMap;
+
+// Ohne bekanntes Datum lieber kein lastmod als ein erfundenes.
+function mod(path: string) {
+  const d = lastmod[path === "" ? "/" : path];
+  return d ? { lastModified: d } : {};
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://gutachtenprenzl.de";
 
@@ -70,41 +78,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
+      ...mod("/"),
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/ueber-uns`,
+      ...mod("/ueber-uns"),
       changeFrequency: "monthly" as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/kontakt`,
+      ...mod("/kontakt"),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     },
     ...districtPages.map((path) => ({
       url: `${baseUrl}${path}`,
+      ...mod(path),
       changeFrequency: "monthly" as const,
       priority: 0.85,
     })),
     ...blogPages.map((path) => ({
       url: `${baseUrl}${path}`,
+      ...mod(path),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
     ...neueSeiten.map((path) => ({
       url: `${baseUrl}${path}`,
+      ...mod(path),
       changeFrequency: "monthly" as const,
       priority: 0.85,
     })),
     {
       url: `${baseUrl}/impressum`,
+      ...mod("/impressum"),
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },
     {
       url: `${baseUrl}/datenschutz`,
+      ...mod("/datenschutz"),
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },

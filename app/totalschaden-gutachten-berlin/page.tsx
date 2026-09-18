@@ -5,6 +5,7 @@ import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import Breadcrumb from "@/components/neu/breadcrumb";
 
 export const metadata: Metadata = {
   title: { absolute: "Totalschaden Gutachten Berlin – Wiederbeschaffungswert" },
@@ -101,7 +102,7 @@ export default function TotalschadenBerlin() {
   return (
     <div className="min-h-screen bg-[#050507]">
       <NavbarNeu />
-      <div className="pt-16" />
+      <Breadcrumb items={[{ name: "Totalschaden Gutachten Berlin", href: "/totalschaden-gutachten-berlin" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}

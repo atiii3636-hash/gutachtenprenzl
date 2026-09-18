@@ -4,6 +4,7 @@ import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import Breadcrumb from "@/components/neu/breadcrumb";
 
 /* Vergleichsseite. Vergleichsinhalte sind das mit Abstand am häufigsten zitierte
    Format in KI-Antworten — deshalb bewusst als echte Vergleichstabelle mit
@@ -164,7 +165,7 @@ export default function GutachterVergleich() {
   return (
     <div className="min-h-screen bg-[#050507]">
       <NavbarNeu />
-      <div className="pt-16" />
+      <Breadcrumb items={[{ name: "Eigener Gutachter oder Versicherungsgutachter", href: "/eigener-gutachter-oder-versicherungsgutachter" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       <section className="relative px-5 pt-16 pb-14 overflow-hidden">

@@ -105,10 +105,12 @@ type ServiceInput = {
   path: string;
   /** z. B. "Kfz-Schadengutachten" – Googles serviceType-Feld. */
   serviceType?: string;
+  /** Engeres Einsatzgebiet, z. B. ein Bezirk. Ohne Angabe: Berlin + Brandenburg. */
+  areaServed?: { "@type": string; name: string }[];
 };
 
 /** Service-Schema, das den bestehenden LocalBusiness als Anbieter referenziert. */
-export function serviceLd({ name, description, path, serviceType }: ServiceInput) {
+export function serviceLd({ name, description, path, serviceType, areaServed }: ServiceInput) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -117,7 +119,7 @@ export function serviceLd({ name, description, path, serviceType }: ServiceInput
     url: `${SITE_URL}${path}`,
     ...(serviceType ? { serviceType } : {}),
     provider: { "@id": BUSINESS_ID },
-    areaServed: [
+    areaServed: areaServed ?? [
       { "@type": "City", name: "Berlin" },
       { "@type": "AdministrativeArea", name: "Brandenburg" },
     ],

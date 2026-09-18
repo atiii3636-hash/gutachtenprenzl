@@ -6,6 +6,7 @@ import Link from "next/link";
 import { WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import Breadcrumb from "@/components/neu/breadcrumb";
 
 export const metadata: Metadata = {
   title: { absolute: "Unfallgutachten Berlin: 100% kostenlos, in 24h fertig" },
@@ -141,7 +142,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#050507]">
       <NavbarNeu />
-      <div className="pt-16" />
+      <Breadcrumb items={[{ name: "Unfallgutachten Berlin", href: "/unfallgutachten-berlin" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}

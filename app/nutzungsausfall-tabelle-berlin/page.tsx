@@ -4,6 +4,7 @@ import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import Breadcrumb from "@/components/neu/breadcrumb";
 
 /* Nutzungsausfall-Tabelle. Seitentyp ist bei Sachverständigenbüros nachweislich
    erfolgreich (hb-gutachten, besa-gutachter, gutachter-koop, unfallpaten ranken
@@ -102,9 +103,11 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "WebPage",
-      "@id": "https://gutachtenprenzl.de/nutzungsausfall-tabelle-berlin#webpage",
+      "@type": "Article",
+      "@id": "https://gutachtenprenzl.de/nutzungsausfall-tabelle-berlin#article",
       url: "https://gutachtenprenzl.de/nutzungsausfall-tabelle-berlin",
+      headline: "Nutzungsausfall-Tabelle 2026 – Tagessätze Gruppe A bis L",
+      mainEntityOfPage: { "@type": "WebPage", "@id": "https://gutachtenprenzl.de/nutzungsausfall-tabelle-berlin" },
       name: "Nutzungsausfall-Tabelle 2026 – Tagessätze Gruppe A bis L",
       description:
         "Tagessätze der Nutzungsausfallentschädigung nach Fahrzeuggruppe, Abstufung nach Fahrzeugalter und Berechnung der Ausfalldauer.",
@@ -142,7 +145,7 @@ export default function NutzungsausfallTabelle() {
   return (
     <div className="min-h-screen bg-[#050507]">
       <NavbarNeu />
-      <div className="pt-16" />
+      <Breadcrumb items={[{ name: "Nutzungsausfall-Tabelle", href: "/nutzungsausfall-tabelle-berlin" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero + Direktantwort */}
