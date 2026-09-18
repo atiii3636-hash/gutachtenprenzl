@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Phone, MessageCircle, BookOpen, Euro, CalendarClock, Scale, AlertTriangle, ParkingCircle, ArrowRight, Car, Banknote } from "lucide-react";
+import { Phone, MessageCircle, BookOpen, Euro, CalendarClock, Scale, AlertTriangle, ParkingCircle, ArrowRight, Car, Banknote, FileWarning, Wrench, KeyRound, Calculator, FileText } from "lucide-react";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
 import Breadcrumb from "@/components/neu/breadcrumb";
@@ -83,6 +83,63 @@ const artikel = [
     title: "Parkschaden — was jetzt zu tun ist",
     text: "Jemand hat Ihr geparktes Auto beschädigt? Was Sie dokumentieren sollten und was gilt, wenn der Verursacher weg ist.",
     href: "/blog/parkschaden-was-tun",
+    dauer: "5 Min. Lesezeit",
+  },
+  {
+    icon: FileWarning,
+    kategorie: "Ihre Rechte",
+    title: "Versicherung hat gekürzt — was Sie jetzt tun können",
+    text: "Welche Kürzungen typisch sind, welche davon unbegründet, und wie eine fachliche Stellungnahme das Geld zurückholt.",
+    href: "/versicherung-kuerzt-gutachten",
+    dauer: "7 Min. Lesezeit",
+    prominent: true,
+  },
+  {
+    icon: AlertTriangle,
+    kategorie: "Ihre Rechte",
+    title: "Vorschaden und Altschaden im Gutachten",
+    text: "Der häufigste Grund, aus dem Versicherungen komplett die Zahlung verweigern. Wie abgegrenzt wird und was Sie offenlegen müssen.",
+    href: "/vorschaden-altschaden-gutachten",
+    dauer: "6 Min. Lesezeit",
+  },
+  {
+    icon: Wrench,
+    kategorie: "Ihre Rechte",
+    title: "Werkstattbindung: Darf die Versicherung eine Werkstatt vorgeben?",
+    text: "Bei unverschuldetem Unfall wählen Sie die Werkstatt selbst. Was das für Stundensätze, Garantie und Wiederverkauf bedeutet.",
+    href: "/werkstattbindung-versicherung",
+    dauer: "5 Min. Lesezeit",
+  },
+  {
+    icon: KeyRound,
+    kategorie: "Entschädigung",
+    title: "Mietwagen nach Unfall — wer zahlt, und wie lange?",
+    text: "Mietwagen oder Nutzungsausfall: welche Fahrzeugklasse zusteht, wie lange der Anspruch läuft und welche Tarife gekürzt werden.",
+    href: "/mietwagen-nach-unfall",
+    dauer: "6 Min. Lesezeit",
+  },
+  {
+    icon: Calculator,
+    kategorie: "Totalschaden",
+    title: "Wiederbeschaffungswert richtig berechnen",
+    text: "Die Zahl, an der beim Totalschaden Ihre gesamte Auszahlung hängt. Wie sie ermittelt wird und warum die der Versicherung oft zu niedrig ist.",
+    href: "/wiederbeschaffungswert-berechnen",
+    dauer: "7 Min. Lesezeit",
+  },
+  {
+    icon: ParkingCircle,
+    kategorie: "Kleinschaden",
+    title: "Bagatellschaden: Ab wann lohnt ein Gutachten?",
+    text: "Wo die Grenze liegt, warum kleine Schäden teurer sind als sie aussehen und wann ein Kurzgutachten die bessere Wahl ist.",
+    href: "/bagatellschaden-grenze",
+    dauer: "5 Min. Lesezeit",
+  },
+  {
+    icon: FileText,
+    kategorie: "Vergleich",
+    title: "Kostenvoranschlag oder Gutachten?",
+    text: "Der direkte Vergleich: was der Kostenvoranschlag leistet, welche Positionen nur im Gutachten stehen und was das in Euro bedeutet.",
+    href: "/kostenvoranschlag-oder-gutachten",
     dauer: "5 Min. Lesezeit",
   },
 ];

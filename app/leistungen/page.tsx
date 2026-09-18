@@ -54,6 +54,55 @@ const detailseiten = [
     title: "Restwertermittlung",
     text: "Beim Totalschaden entscheidet der Restwert über Ihre Auszahlung. Wir ermitteln ihn am regionalen Markt.",
   },
+  {
+    num: "05",
+    href: "/kurzgutachten-berlin",
+    title: "Kurzgutachten",
+    text: "Die kompakte Variante für kleinere Schäden: Schadenbild, Reparaturweg und Kosten, ohne aufwendige Zusatzermittlungen.",
+  },
+  {
+    num: "06",
+    href: "/beweissicherungsgutachten-berlin",
+    title: "Beweissicherungsgutachten",
+    text: "Bei strittiger Schuldfrage: Schadenbild, Anstoßrichtung und Spurenlage dokumentiert, solange sie noch vorhanden sind.",
+  },
+  {
+    num: "07",
+    href: "/kaskogutachten-berlin",
+    title: "Kaskogutachten",
+    text: "Hagel, Wildunfall, Diebstahl oder selbstverschuldeter Unfall: Dokumentation für die Regulierung durch Ihre eigene Versicherung.",
+  },
+  {
+    num: "08",
+    href: "/leasinggutachten-berlin",
+    title: "Leasinggutachten",
+    text: "Vor der Rückgabe: trennt normale Abnutzung von ersatzpflichtigen Schäden und prüft Nachforderungen des Leasinggebers.",
+  },
+];
+
+/* Fahrzeugklassen mit eigener Seite. Jede ist eine eigene Suchanfrage mit
+   Kaufabsicht — die Wettbewerber führen sie einzeln, deshalb wir auch. */
+const fahrzeugklassen = [
+  {
+    href: "/motorradgutachten-berlin",
+    title: "Motorradgutachten",
+    text: "Rahmen, Gabel und Schwinge werden geprüft, nicht nur die Verkleidung. Auch Roller, Quads und Trikes.",
+  },
+  {
+    href: "/wohnmobil-gutachten-berlin",
+    title: "Wohnmobil & Wohnwagen",
+    text: "Fahrzeug und Wohnaufbau getrennt bewertet, mit Dichtigkeitsprüfung und Einbauten.",
+  },
+  {
+    href: "/lkw-gutachten-berlin",
+    title: "Transporter & Lkw",
+    text: "Mit Aufbauten, Ladung und Ausfallschaden. Für einzelne Fahrzeuge und für Fuhrparks.",
+  },
+  {
+    href: "/oldtimer-gutachten-berlin",
+    title: "Oldtimer-Wertgutachten",
+    text: "Zustandsnote 1 bis 5, Marktwert und Wiederbeschaffungswert für Klassiker und Youngtimer.",
+  },
 ];
 
 const saeulen = [
@@ -448,6 +497,39 @@ export default function LeistungenNeu() {
               <MessageCircle size={17} />
               WhatsApp
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ FAHRZEUGKLASSEN ============ */}
+      <section className="px-5 py-20 md:py-24 border-t border-white/6">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-[11px] font-bold tracking-[0.3em] text-white/35 uppercase text-center mb-4" data-reveal>
+            Nach Fahrzeugart
+          </p>
+          <h2
+            className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-4"
+            data-reveal
+          >
+            Nicht jedes Fahrzeug ist ein Pkw.
+          </h2>
+          <p className="text-white/45 text-[15.5px] leading-relaxed text-center max-w-xl mx-auto mb-10" data-reveal>
+            Motorrad, Wohnmobil, Transporter und Oldtimer werden anders bewertet als ein Auto. Für jede Klasse
+            gibt es eine eigene Seite mit den Punkten, auf die es dort ankommt.
+          </p>
+          <div className="grid sm:grid-cols-2 gap-3" data-reveal>
+            {fahrzeugklassen.map((f) => (
+              <Link
+                key={f.href}
+                href={f.href}
+                className="group bg-white/[0.03] border border-white/8 hover:border-[#E11D2F]/40 rounded-xl p-6 transition-all hover:-translate-y-0.5"
+              >
+                <p className="font-display font-bold text-[16.5px] mb-1.5 group-hover:text-[#E11D2F] transition-colors">
+                  {f.title}
+                </p>
+                <p className="text-white/50 text-[13.5px] leading-relaxed">{f.text}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

@@ -80,14 +80,16 @@ const nextConfig = {
         permanent: true,
       },
 
-      // --- SEO-Audit 21.08.2026 ---
-      // /kfz-gutachter-berlin war von keiner einzigen Seite intern verlinkt und
-      // konkurrierte mit der Startseite um dasselbe Keyword ("kfz gutachter berlin",
-      // 1.940 Impressionen). Die Startseite trägt die gesamte Autorität und rankt
-      // dafür bereits — daher zusammengelegt statt zwei schwache Signale zu behalten.
+      // --- SEO-Audit 21.08.2026, angepasst 18.09.2026 ---
+      // /kfz-gutachter-berlin war von keiner Seite intern verlinkt und
+      // konkurrierte mit der Startseite um "kfz gutachter berlin" (1.940
+      // Impressionen), deshalb zunächst auf die Startseite zusammengelegt.
+      // Seit es /kfz-gutachten-berlin gibt, ist das die passendere Zielseite:
+      // gleiche Suchintention, und die Startseite muss nicht mehr für einen
+      // Begriff mitranken, für den es jetzt eine eigene Seite gibt.
       {
         source: '/kfz-gutachter-berlin',
-        destination: '/',
+        destination: '/kfz-gutachten-berlin',
         permanent: true,
       },
       // Lichtenberg lief als einziger Bezirk auf dem alten URL-Muster und rankte

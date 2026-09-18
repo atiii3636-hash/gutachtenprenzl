@@ -31,14 +31,23 @@ const leistungen = [
   { href: "/wertminderung", label: "Wertminderung" },
   { href: "/restwertermittlung", label: "Restwertermittlung" },
   { href: "/kurzgutachten-berlin", label: "Kurzgutachten" },
+  { href: "/motorradgutachten-berlin", label: "Motorradgutachten" },
+  { href: "/wohnmobil-gutachten-berlin", label: "Wohnmobil-Gutachten" },
+  { href: "/lkw-gutachten-berlin", label: "Transporter & Lkw" },
+  { href: "/oldtimer-gutachten-berlin", label: "Oldtimer-Wertgutachten" },
+  { href: "/leasinggutachten-berlin", label: "Leasinggutachten" },
+  { href: "/kaskogutachten-berlin", label: "Kaskogutachten" },
+  { href: "/beweissicherungsgutachten-berlin", label: "Beweissicherung" },
 ];
 
 const nav = [
   { href: "/leistungen", label: "Leistungen" },
+  { href: "/kfz-gutachten-berlin", label: "Kfz-Gutachten Berlin" },
   { href: "/kfz-sachverstaendiger-berlin", label: "Sachverständiger Berlin" },
   { href: "/flotten-partner", label: "Flotten & Gewerbe" },
   { href: "/partner-werden", label: "Partner werden" },
   { href: "/ratgeber", label: "Ratgeber" },
+  { href: "/faq", label: "Häufige Fragen" },
   { href: "/ueber-uns", label: "Über uns" },
   { href: "/standorte", label: "Standorte" },
   { href: "/kontakt", label: "Kontakt" },

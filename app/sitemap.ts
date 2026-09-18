@@ -75,6 +75,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kurzgutachten-berlin",
   ];
 
+  // Ausbau 18.09.2026: Landingpage, zentrale FAQ, Fahrzeugklassen- und
+  // Spezialgutachten-Seiten sowie die neuen Ratgeber-Artikel.
+  const ausbau2026 = [
+    "/kfz-gutachten-berlin",
+    "/faq",
+    "/motorradgutachten-berlin",
+    "/wohnmobil-gutachten-berlin",
+    "/lkw-gutachten-berlin",
+    "/oldtimer-gutachten-berlin",
+    "/leasinggutachten-berlin",
+    "/kaskogutachten-berlin",
+    "/beweissicherungsgutachten-berlin",
+    "/versicherung-kuerzt-gutachten",
+    "/vorschaden-altschaden-gutachten",
+    "/werkstattbindung-versicherung",
+    "/mietwagen-nach-unfall",
+    "/bagatellschaden-grenze",
+    "/wiederbeschaffungswert-berechnen",
+    "/kostenvoranschlag-oder-gutachten",
+  ];
+
   return [
     {
       url: baseUrl,
@@ -107,6 +128,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
     ...neueSeiten.map((path) => ({
+      url: `${baseUrl}${path}`,
+      ...mod(path),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
+    ...ausbau2026.map((path) => ({
       url: `${baseUrl}${path}`,
       ...mod(path),
       changeFrequency: "monthly" as const,
