@@ -667,6 +667,44 @@ export default function NeuPage() {
         </div>
       </section>
 
+      {/* ============ STANDORTKARTE ============ */}
+      {/* Google-Maps-Einbettung des Unternehmenseintrags (nicht nur der Adresse):
+          verknüpft die Seite mit dem Profil, auf das auch sameAs im Schema zeigt.
+
+          Zoom und Mittelpunkt bleiben bewusst so, wie Google sie im
+          Einbettungscode ausgegeben hat (auf Wunsch von Atakan, 18.09.2026).
+
+          Einzige Abweichung: die festen 600x450 sind durch volle Breite mit
+          festem Seitenverhältnis ersetzt — der starre Rahmen erzeugt auf dem
+          Handy sonst waagerechtes Scrollen. loading="lazy" hält den iframe
+          aus dem LCP heraus. */}
+      <section className="px-5 py-16 border-t border-white/6">
+        <div className="max-w-4xl mx-auto">
+          <h2
+            className="font-display font-black tracking-tight text-center text-[clamp(24px,4vw,38px)] leading-[1.1] mb-3"
+            data-reveal
+          >
+            Sie finden uns in Prenzlauer Berg.
+          </h2>
+          <p className="text-white/45 text-[15.5px] leading-relaxed text-center max-w-xl mx-auto mb-8" data-reveal>
+            Prenzlauer Allee 88, 10405 Berlin — wenige Minuten vom S-Bahnhof Prenzlauer Allee. In den
+            meisten Fällen kommen aber wir zu Ihnen.
+          </p>
+          <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[4/3] sm:aspect-[16/9]" data-reveal>
+            <iframe
+              title="Standort von Kfz Gutachten Prenzl, Prenzlauer Allee 88, 10405 Berlin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2641112.8513557096!2d12.453535365793078!3d49.725639543119954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x24ffc02e346f60e9%3A0x46f58afc3e81d2e7!2sKfz%20Gutachten%20Prenzl%20-%20Sachverst%C3%A4ndigenb%C3%BCro!5e0!3m2!1sde!2sde!4v1789750190659!5m2!1sde!2sde"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          </div>
+        </div>
+      </section>
+
       <FooterNeu />
     </main>
   );
