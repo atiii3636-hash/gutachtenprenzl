@@ -28,7 +28,11 @@ export async function GET() {
     const url = `https://places.googleapis.com/v1/places/${placeId}?languageCode=de&key=${apiKey}`;
 
     const res = await fetch(url, {
-      headers: { "X-Goog-FieldMask": "displayName,rating,userRatingCount,reviews" },
+      headers: {
+        "X-Goog-FieldMask": "displayName,rating,userRatingCount,reviews",
+        // Places-Key ist auf den Referrer gutachtenprenzl.de beschraenkt.
+        Referer: "https://gutachtenprenzl.de/",
+      },
       next: { revalidate: 86400 },
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);

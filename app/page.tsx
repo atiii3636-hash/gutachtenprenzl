@@ -183,10 +183,7 @@ export default function NeuPage() {
           <h1
             className="font-display font-black tracking-tight leading-[1.03] text-[clamp(42px,7.6vw,78px)] mb-8 animate-fade-up"
           >
-            {/* Umbruch nur auf schmalen Bildschirmen, damit die Zeile nie mitten
-                im Satz bricht */}
-            Ihr Recht.
-            <br className="md:hidden" /> Ihr Gutachten.
+            Kfz Gutachten Berlin
             <span className="block text-[#E11D2F] font-extrabold text-[0.36em] leading-[1.35] mt-5">
               Kostenloser Kfz-Sachverständiger in Berlin.
             </span>

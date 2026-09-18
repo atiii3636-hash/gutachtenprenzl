@@ -1,5 +1,5 @@
 import { Star, ExternalLink } from "lucide-react";
-import { REVIEW_COUNT } from "@/lib/contact";
+import { REVIEW_COUNT, REVIEW_RATING } from "@/lib/contact";
 
 interface GoogleReview {
   name: string;
@@ -89,7 +89,7 @@ async function fetchGoogleReviews(): Promise<{
   const placeId = process.env.GOOGLE_PLACE_ID;
 
   if (!apiKey || !placeId) {
-    return { reviews: FALLBACK_REVIEWS, rating: 5.0, totalCount: REVIEW_COUNT };
+    return { reviews: FALLBACK_REVIEWS, rating: REVIEW_RATING, totalCount: REVIEW_COUNT };
   }
 
   try {
@@ -98,6 +98,9 @@ async function fetchGoogleReviews(): Promise<{
     const res = await fetch(url, {
       headers: {
         "X-Goog-FieldMask": "displayName,rating,userRatingCount,reviews",
+        // Der Places-Key ist auf den Referrer gutachtenprenzl.de beschraenkt.
+        // Ohne diesen Header antwortet die API serverseitig mit PERMISSION_DENIED.
+        Referer: "https://gutachtenprenzl.de/",
       },
       next: { revalidate: 86400 },
     });
@@ -108,19 +111,27 @@ async function fetchGoogleReviews(): Promise<{
 
     if (!data.rating) throw new Error("Unexpected API response");
 
-    return {
-      rating: data.rating,
-      totalCount: data.userRatingCount,
-      reviews: (data.reviews ?? []).slice(0, 6).map((r) => ({
+    const live = (data.reviews ?? [])
+      .filter((r) => r.text?.text)
+      .slice(0, 6)
+      .map((r) => ({
         name: r.authorAttribution.displayName,
         date: r.relativePublishTimeDescription,
         text: r.text.text,
         stars: r.rating,
-      })),
+      }));
+
+    // ponytail: Rating und Anzahl kommen live, Rezensionstexte liefert die API nur
+    // im Enterprise-SKU. Ohne Texte die von Atakan gepflegte Auswahl behalten,
+    // sonst steht das Kartenraster leer.
+    return {
+      rating: data.rating,
+      totalCount: data.userRatingCount,
+      reviews: live.length > 0 ? live : FALLBACK_REVIEWS,
     };
   } catch (err) {
     console.error("[GoogleReviews] Fetch failed, using fallback:", err);
-    return { reviews: FALLBACK_REVIEWS, rating: 5.0, totalCount: REVIEW_COUNT };
+    return { reviews: FALLBACK_REVIEWS, rating: REVIEW_RATING, totalCount: REVIEW_COUNT };
   }
 }
 
