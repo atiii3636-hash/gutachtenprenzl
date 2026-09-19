@@ -17,7 +17,7 @@ import { faqs } from "@/lib/faqs";
 import { pageMetadata, faqLd } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Kfz Gutachter Berlin, kostenlos bei unverschuldetem Unfall",
+  title: "Kfz-Gutachter Berlin: 24-Std.-Gutachten, 0 € bei Fremdschuld",
   description:
     "Unabhängiger Kfz Sachverständiger in Berlin. Gutachten in 24 Stunden, bei unverschuldetem Unfall kostenlos. TÜV-zertifiziert, in allen Bezirken vor Ort.",
   path: "/",

@@ -51,7 +51,7 @@ export const leistungContent: LeistungContent[] = [
     serviceType: "Motorradgutachten",
     metaTitle: "Motorradgutachten Berlin – Gutachter für Zweiräder",
     metaDescription:
-      "Unabhängiges Motorradgutachten in Berlin nach Sturz oder Unfall. Rahmen, Gabel und Schwinge werden geprüft, nicht nur die Verkleidung. Bei Fremdverschulden kostenlos.",
+      "Motorradgutachten in Berlin nach Sturz oder Unfall. Rahmen, Gabel und Schwinge werden geprüft, nicht nur die Verkleidung. Bei Fremdschuld 0 €.",
     keywords: [
       "motorradgutachten berlin",
       "motorrad gutachter berlin",
@@ -137,7 +137,7 @@ export const leistungContent: LeistungContent[] = [
     serviceType: "Wohnmobilgutachten",
     metaTitle: "Wohnmobil-Gutachten Berlin – Reisemobil & Wohnwagen",
     metaDescription:
-      "Gutachten für Wohnmobile, Reisemobile und Wohnwagen in Berlin. Aufbau, Dichtigkeit und Einbauten werden mit bewertet, nicht nur das Blech. Bei Fremdverschulden kostenlos.",
+      "Gutachten für Wohnmobile und Wohnwagen in Berlin. Aufbau, Dichtigkeit und Einbauten werden mitbewertet, nicht nur das Blech. Bei Fremdschuld 0 €.",
     keywords: [
       "wohnmobil gutachten berlin",
       "wohnwagen gutachten berlin",
@@ -223,7 +223,7 @@ export const leistungContent: LeistungContent[] = [
     serviceType: "Nutzfahrzeuggutachten",
     metaTitle: "Lkw- & Transporter-Gutachten Berlin – Nutzfahrzeuge",
     metaDescription:
-      "Gutachten für Transporter, Lkw, Anhänger und Auflieger in Berlin. Mit Ausfallschaden, Aufbauten und Ladung. Für Fuhrparks und Einzelfahrzeuge, bei Fremdverschulden kostenlos.",
+      "Gutachten für Transporter, Lkw und Anhänger in Berlin. Mit Ausfallschaden, Aufbauten und Ladung. Für Fuhrparks und Einzelfahrzeuge, bei Fremdschuld 0 €.",
     keywords: [
       "lkw gutachten berlin",
       "transporter gutachten berlin",
@@ -309,7 +309,7 @@ export const leistungContent: LeistungContent[] = [
     serviceType: "Oldtimer-Wertgutachten",
     metaTitle: "Oldtimer-Wertgutachten Berlin – Wert & Zustandsnote",
     metaDescription:
-      "Wertgutachten für Oldtimer und Youngtimer in Berlin: Zustandsnote 1 bis 5, Marktwert und Wiederbeschaffungswert. Grundlage für Versicherung, Verkauf und Schadenfall.",
+      "Wertgutachten für Oldtimer und Youngtimer in Berlin: Zustandsnote 1 bis 5, Marktwert und Wiederbeschaffungswert. Für Versicherung, Verkauf, Schadenfall.",
     keywords: [
       "oldtimer gutachten berlin",
       "oldtimer wertgutachten berlin",
@@ -395,7 +395,7 @@ export const leistungContent: LeistungContent[] = [
     serviceType: "Leasinggutachten",
     metaTitle: "Leasinggutachten Berlin – Rückgabe & Minderwert",
     metaDescription:
-      "Unabhängiges Gutachten vor der Leasingrückgabe in Berlin. Trennt normale Abnutzung von echten Schäden und prüft Nachforderungen des Leasinggebers. Auch nach Unfall.",
+      "Unabhängiges Gutachten vor der Leasingrückgabe in Berlin. Trennt normale Abnutzung von echten Schäden und prüft Nachforderungen des Leasinggebers.",
     keywords: [
       "leasinggutachten berlin",
       "leasingrückgabe gutachten",
@@ -481,7 +481,7 @@ export const leistungContent: LeistungContent[] = [
     serviceType: "Kaskogutachten",
     metaTitle: "Kaskogutachten Berlin – Teil- und Vollkaskoschaden",
     metaDescription:
-      "Unabhängiges Gutachten bei Teil- und Vollkaskoschäden in Berlin: Hagel, Wildunfall, Diebstahl, Brand, selbstverschuldeter Unfall. Dokumentation für Ihre Versicherung.",
+      "Unabhängiges Gutachten bei Teil- und Vollkaskoschäden in Berlin: Hagel, Wildunfall, Diebstahl, Brand. Dokumentation für Ihre Versicherung.",
     keywords: [
       "kaskogutachten berlin",
       "kaskoschaden gutachten",
@@ -567,7 +567,7 @@ export const leistungContent: LeistungContent[] = [
     serviceType: "Beweissicherungsgutachten",
     metaTitle: "Beweissicherungsgutachten Berlin – strittige Schuldfrage",
     metaDescription:
-      "Beweissicherungsgutachten in Berlin bei unklarer oder bestrittener Schuldfrage. Dokumentation von Schadenbild, Anstoßrichtung und Spurenlage für die spätere Rekonstruktion.",
+      "Beweissicherungsgutachten in Berlin bei bestrittener Schuldfrage. Schadenbild, Anstoßrichtung und Spurenlage für die spätere Rekonstruktion.",
     keywords: [
       "beweissicherungsgutachten berlin",
       "beweissicherung unfall",

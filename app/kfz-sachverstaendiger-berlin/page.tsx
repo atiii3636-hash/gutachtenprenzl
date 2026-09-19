@@ -9,7 +9,7 @@ import FooterNeu from "@/components/footer-neu";
 import Breadcrumb from "@/components/neu/breadcrumb";
 
 export const metadata: Metadata = {
-  title: { absolute: "KFZ Sachverständiger Berlin – kostenlos, in 24h" },
+  title: { absolute: "Kfz-Sachverständiger Berlin – 24 Std., 0 € bei Fremdschuld" },
   description: "Unfall in Berlin? Gutachten in 24h, 100% kostenlos bei Fremdverschulden. TÜV-zertifiziert. ☎ 0155 60003661",
   keywords: [
     "kfz sachverständiger berlin",

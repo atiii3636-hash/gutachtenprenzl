@@ -15,7 +15,7 @@ const PATH = "/wertminderung";
 export const metadata: Metadata = pageMetadata({
   title: "Wertminderung nach Unfall, Berlin",
   description:
-    "Ein repariertes Unfallfahrzeug ist weniger wert. Diese Wertminderung steht Ihnen zu. Wir ermitteln sie nachvollziehbar und setzen sie bei der Versicherung durch.",
+    "Ein repariertes Unfallfahrzeug ist weniger wert. Diese Wertminderung steht Ihnen zu. Wir ermitteln sie und setzen sie bei der Versicherung durch.",
   path: PATH,
   keywords: [
     "Wertminderung Unfall Berlin",

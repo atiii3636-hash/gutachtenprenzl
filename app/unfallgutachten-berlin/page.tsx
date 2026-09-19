@@ -9,7 +9,7 @@ import FooterNeu from "@/components/footer-neu";
 import Breadcrumb from "@/components/neu/breadcrumb";
 
 export const metadata: Metadata = {
-  title: { absolute: "Unfallgutachten Berlin: 100% kostenlos, in 24h fertig" },
+  title: { absolute: "Unfallgutachten Berlin – in 24 Std., 0 € bei Fremdschuld" },
   description: "Jetzt Gutachten sichern: TÜV-zertifiziert, in 24h fertig, bei Fremdverschulden 100% kostenlos. ☎ 0155 60003661",
   alternates: { canonical: "https://gutachtenprenzl.de/unfallgutachten-berlin" },
 };

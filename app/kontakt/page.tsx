@@ -14,7 +14,7 @@ const PATH = "/kontakt";
 export const metadata: Metadata = pageMetadata({
   title: "Kontakt – Sachverständigenbüro Prenzlauer Allee 88",
   description:
-    "So erreichen Sie Gutachten Prenzl: Prenzlauer Allee 88, 10405 Berlin. Rund um die Uhr telefonisch oder per WhatsApp. Anfahrt, Erreichbarkeit und Schadenmeldung.",
+    "So erreichen Sie Gutachten Prenzl: Prenzlauer Allee 88, 10405 Berlin. Rund um die Uhr telefonisch oder per WhatsApp. ☎ 0155 60003661",
   path: PATH,
   keywords: [
     "Kfz Gutachter Berlin Kontakt",

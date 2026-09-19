@@ -15,7 +15,7 @@ const PATH = "/kurzgutachten-berlin";
 export const metadata: Metadata = pageMetadata({
   title: "Kurzgutachten Berlin, für kleine Schäden",
   description:
-    "Kurzgutachten für Bagatellschäden bis rund 750 Euro. Wir sagen Ihnen vorher ehrlich, ob es reicht, oder ob Ihnen ein volles Gutachten zusteht, das nichts kostet.",
+    "Kurzgutachten für Bagatellschäden bis rund 750 Euro. Wir sagen Ihnen vorher, ob es reicht oder ob Ihnen ein volles Gutachten zusteht, das 0 € kostet.",
   path: PATH,
   keywords: [
     "Kurzgutachten Berlin",

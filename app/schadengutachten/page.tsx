@@ -15,7 +15,7 @@ const PATH = "/schadengutachten";
 export const metadata: Metadata = pageMetadata({
   title: "Schadengutachten Berlin, kostenlos bei fremdem Verschulden",
   description:
-    "Unabhängiges Schadengutachten nach einem Unfall in Berlin. Reparaturkosten, Wertminderung und Nutzungsausfall werden vollständig erfasst. In 24 Stunden fertig.",
+    "Unabhängiges Schadengutachten nach Unfall in Berlin. Reparaturkosten, Wertminderung und Nutzungsausfall vollständig erfasst, fertig in 24 Stunden.",
   path: PATH,
   keywords: [
     "Schadengutachten Berlin",

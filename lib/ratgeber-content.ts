@@ -48,7 +48,7 @@ export const ratgeberContent: RatgeberContent[] = [
     image: "/foto2.jpg",
     metaTitle: "Versicherung kürzt das Gutachten – was Sie tun können",
     metaDescription:
-      "Die Versicherung zahlt weniger als im Gutachten steht? Welche Kürzungen typisch sind, welche unbegründet, und wie eine Stellungnahme des Sachverständigen das Geld zurückholt.",
+      "Die Versicherung zahlt weniger als im Gutachten steht? Welche Kürzungen typisch sind, welche unbegründet, und wie Sie das Geld zurückholen.",
     keywords: [
       "versicherung kürzt gutachten",
       "versicherung zahlt nicht vollständig",
@@ -155,7 +155,7 @@ export const ratgeberContent: RatgeberContent[] = [
     image: "/foto10.jpg",
     metaTitle: "Vorschaden und Altschaden im Kfz-Gutachten",
     metaDescription:
-      "Warum ein verschwiegener Vorschaden zur kompletten Kürzung führt, wie alter und neuer Schaden abgegrenzt werden und was Sie vor der Begutachtung offenlegen sollten.",
+      "Warum ein verschwiegener Vorschaden zur Kürzung führt, wie alter und neuer Schaden abgegrenzt werden und was Sie vor der Begutachtung offenlegen.",
     keywords: [
       "vorschaden gutachten",
       "altschaden abgrenzung",
@@ -257,9 +257,9 @@ export const ratgeberContent: RatgeberContent[] = [
     titleAccent: "in ihre Partnerwerkstatt.",
     lead: "Bei einem unverschuldeten Unfall dürfen Sie selbst entscheiden, wer Ihr Auto repariert. Der Anruf, der Ihnen etwas anderes nahelegt, ist kein Bescheid, sondern ein Angebot.",
     image: "/kfz-pruefung-team.jpg",
-    metaTitle: "Werkstattbindung: Darf die Versicherung eine Werkstatt vorgeben?",
+    metaTitle: "Werkstattbindung: Muss ich in die Partnerwerkstatt?",
     metaDescription:
-      "Wann eine Werkstattbindung gilt und wann nicht, warum Sie bei unverschuldetem Unfall frei wählen dürfen und was das für Stundenverrechnungssätze und Garantie bedeutet.",
+      "Wann eine Werkstattbindung gilt und wann nicht, warum Sie bei unverschuldetem Unfall frei wählen dürfen und was das für die Garantie bedeutet.",
     keywords: [
       "werkstattbindung versicherung",
       "freie werkstattwahl unfall",
@@ -355,7 +355,7 @@ export const ratgeberContent: RatgeberContent[] = [
     image: "/feature-car.jpg",
     metaTitle: "Mietwagen nach Unfall – wer zahlt und wie lange?",
     metaDescription:
-      "Mietwagen oder Nutzungsausfall nach einem unverschuldeten Unfall: wer zahlt, welche Fahrzeugklasse zusteht, wie lange der Anspruch läuft und welche Fallen es gibt.",
+      "Mietwagen oder Nutzungsausfall nach unverschuldetem Unfall: wer zahlt, welche Fahrzeugklasse zusteht und wie lange der Anspruch läuft.",
     keywords: [
       "mietwagen nach unfall wer zahlt",
       "mietwagen unfall gegnerische versicherung",
@@ -542,7 +542,7 @@ export const ratgeberContent: RatgeberContent[] = [
     image: "/foto10.jpg",
     metaTitle: "Wiederbeschaffungswert berechnen – so wird er ermittelt",
     metaDescription:
-      "Was der Wiederbeschaffungswert ist, wie er ermittelt wird, worin er sich vom Marktwert unterscheidet und warum die Zahl der Versicherung oft zu niedrig ausfällt.",
+      "Was der Wiederbeschaffungswert ist, wie er ermittelt wird, worin er sich vom Marktwert unterscheidet und warum er bei der Versicherung zu niedrig ist.",
     keywords: [
       "wiederbeschaffungswert berechnen",
       "wiederbeschaffungswert totalschaden",

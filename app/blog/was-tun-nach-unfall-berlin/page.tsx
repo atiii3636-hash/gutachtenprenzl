@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   // absolute: ohne das Suffix aus dem Layout, sonst 76 Zeichen und in der Suche abgeschnitten.
   title: { absolute: "Was tun nach einem Unfall in Berlin? Schritt für Schritt" },
   description:
-    "Was nach einem Unfall in Berlin zu tun ist: Polizei, Fotos, eigener Gutachter. Ratgeber vom TÜV-zertifizierten Sachverständigenbüro Gutachten Prenzl Berlin.",
+    "Was nach einem Unfall in Berlin zu tun ist: Polizei, Fotos, eigener Gutachter. Ratgeber vom TÜV-zertifizierten Büro in Prenzlauer Berg.",
   alternates: { canonical: "https://gutachtenprenzl.de/blog/was-tun-nach-unfall-berlin" },
 };
 

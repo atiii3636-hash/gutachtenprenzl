@@ -16,7 +16,7 @@ const PATH = "/faq";
 export const metadata: Metadata = pageMetadata({
   title: "Häufige Fragen zum Kfz-Gutachten in Berlin",
   description:
-    "Antworten auf die häufigsten Fragen zum Kfz-Gutachten: Wer zahlt, wie lange dauert es, welche Rechte haben Sie gegenüber der Versicherung. Von einem TÜV-zertifizierten Sachverständigen.",
+    "Wer zahlt das Kfz-Gutachten, wie lange dauert es, welche Rechte haben Sie gegenüber der Versicherung? Antworten vom TÜV-zertifizierten Sachverständigen.",
   path: PATH,
   keywords: [
     "kfz gutachten fragen",

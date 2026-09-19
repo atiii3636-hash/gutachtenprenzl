@@ -15,7 +15,7 @@ const PATH = "/restwertermittlung";
 export const metadata: Metadata = pageMetadata({
   title: "Restwertermittlung Berlin, korrekter Wert bei Totalschaden",
   description:
-    "Bei Totalschaden entscheidet der Restwert über Ihre Auszahlung. Wir ermitteln ihn am regionalen Markt und prüfen überhöhte Restwertangebote der Versicherung.",
+    "Bei Totalschaden entscheidet der Restwert über Ihre Auszahlung. Wir ermitteln ihn am regionalen Markt und prüfen überhöhte Angebote der Versicherung.",
   path: PATH,
   keywords: [
     "Restwertermittlung Berlin",

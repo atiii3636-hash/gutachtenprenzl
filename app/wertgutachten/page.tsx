@@ -15,7 +15,7 @@ const PATH = "/wertgutachten";
 export const metadata: Metadata = pageMetadata({
   title: "Wertgutachten Berlin, Marktwert für Ihr Fahrzeug",
   description:
-    "Neutrales Wertgutachten für Kauf, Verkauf, Erbschaft, Scheidung oder Versicherung. TÜV-zertifizierter Sachverständiger in Berlin, Bewertung nach realem Marktwert.",
+    "Neutrales Wertgutachten für Kauf, Verkauf, Erbschaft oder Versicherung. TÜV-zertifizierter Sachverständiger in Berlin, Bewertung nach realem Marktwert.",
   path: PATH,
   // Keywords aus dem Search-Console-Export vom 21.08.2026, nach Impressionen sortiert.
   // Oldtimer bewusst nicht dabei: das Feld wird organisch nicht aktiv bespielt.

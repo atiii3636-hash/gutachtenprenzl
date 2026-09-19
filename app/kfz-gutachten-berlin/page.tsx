@@ -22,7 +22,7 @@ const PATH = "/kfz-gutachten-berlin";
 export const metadata: Metadata = pageMetadata({
   title: "Kfz-Gutachten Berlin – Arten, Inhalt und Kosten",
   description:
-    "Welches Kfz-Gutachten Sie brauchen, was Position für Position darin steht und was es kostet. Bei unverschuldetem Unfall zahlen Sie 0 €. TÜV-zertifiziert, in 24 Stunden.",
+    "Welches Kfz-Gutachten Sie brauchen, was darin steht und was es kostet. Bei unverschuldetem Unfall zahlen Sie 0 €. TÜV-zertifiziert, fertig in 24 Stunden.",
   path: PATH,
   keywords: [
     "kfz gutachten berlin",

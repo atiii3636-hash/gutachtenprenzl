@@ -5,7 +5,7 @@ import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
 
 export const metadata: Metadata = {
-  title: "Parkschaden: was jetzt tun? Ratgeber Berlin",
+  title: "Parkschaden Berlin: was jetzt tun?",
   description:
     "Jemand hat Ihr geparktes Auto beschädigt? Was Sie jetzt tun sollten, auch bei Fahrerflucht. Ratgeber vom Sachverständigenbüro Gutachten Prenzl Berlin.",
   alternates: { canonical: "https://gutachtenprenzl.de/blog/parkschaden-was-tun" },
