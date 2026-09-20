@@ -127,6 +127,65 @@ export function serviceLd({ name, description, path, serviceType, areaServed }: 
   };
 }
 
+type VideoInput = {
+  name: string;
+  description: string;
+  /** Vorschaubild, Pfad ab /public oder absolute URL. */
+  thumbnail: string;
+  /** Datum der Veröffentlichung im Format JJJJ-MM-TT. */
+  uploadDate: string;
+  /** Länge nach ISO 8601, z. B. "PT1M8S" für 1:08. */
+  duration: string;
+  /** Seite, auf der das Video eingebettet ist, z. B. "/schadengutachten". */
+  path: string;
+  /** Direkte Datei-URL (MP4). Mindestens contentUrl oder embedUrl angeben. */
+  contentUrl?: string;
+  /** Player-URL, bei YouTube https://www.youtube.com/embed/<id>. */
+  embedUrl?: string;
+  /** Volltext unter dem Video. KI-Crawler lesen kein Video, nur diesen Text. */
+  transcript?: string;
+};
+
+/**
+ * VideoObject-Schema für eingebettete Videos.
+ *
+ * Google nennt Video im Leitfaden zu generativen KI-Funktionen ausdrücklich als
+ * eigenen Weg in die Ergebnisse. Voraussetzung ist, dass das Video auf der
+ * eigenen Seite liegt: Ein Link auf TikTok oder Instagram zählt nicht, dort
+ * bleibt der Klick auf der Plattform.
+ *
+ * `transcript` ist der Teil mit dem größeren Hebel. GPTBot, PerplexityBot und
+ * ClaudeBot führen kein JavaScript aus und sehen kein Bewegtbild. Zitiert wird
+ * deshalb der Transkripttext, nicht das Video.
+ */
+export function videoLd({
+  name,
+  description,
+  thumbnail,
+  uploadDate,
+  duration,
+  path,
+  contentUrl,
+  embedUrl,
+  transcript,
+}: VideoInput) {
+  const abs = (u: string) => (u.startsWith("http") ? u : `${SITE_URL}${u}`);
+  return {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    name,
+    description,
+    thumbnailUrl: [abs(thumbnail)],
+    uploadDate,
+    duration,
+    url: `${SITE_URL}${path}`,
+    ...(contentUrl ? { contentUrl: abs(contentUrl) } : {}),
+    ...(embedUrl ? { embedUrl } : {}),
+    ...(transcript ? { transcript } : {}),
+    publisher: { "@id": BUSINESS_ID },
+  };
+}
+
 /** FAQPage-Schema. Muss inhaltlich mit der sichtbaren FAQ übereinstimmen. */
 export function faqLd(faqs: { q: string; a: string }[]) {
   return {

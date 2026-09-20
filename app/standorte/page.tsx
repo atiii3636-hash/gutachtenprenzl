@@ -269,8 +269,11 @@ export default function StandorteNeu() {
                   className="text-white/25 group-hover:text-[#E11D2F] mt-0.5 flex-shrink-0 transition-colors"
                 />
                 <div className="min-w-0">
+                  {/* Ankertext "Kfz Gutachter <Bezirk>" statt nur "<Bezirk>":
+                      Der Linktext sagt Google, wofür die Zielseite steht. Ein
+                      nackter Ortsname trägt dabei fast nichts. */}
                   <p className="text-[14.5px] font-semibold text-white/85 group-hover:text-white transition-colors flex items-center gap-2">
-                    {b.name}
+                    <span className="text-white/40 font-medium">Kfz Gutachter</span> {b.name}
                     {b.heimat && (
                       <span className="text-[9px] font-black tracking-[0.15em] text-[#E11D2F] bg-[#E11D2F]/10 border border-[#E11D2F]/25 px-1.5 py-0.5 rounded">
                         HEIMAT

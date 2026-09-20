@@ -6,7 +6,8 @@ import CookieBanner from "@/components/cookie-banner";
 import FloatingWhatsApp from "@/components/floating-whatsapp";
 import ConversionTracking from "@/components/conversion-tracking";
 import ScrollReveal from "@/components/scroll-reveal";
-import { REVIEW_COUNT } from "@/lib/contact";
+import { REVIEW_COUNT, REVIEW_RATING } from "@/lib/contact";
+import { reviewsLd } from "@/lib/reviews";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -229,11 +230,30 @@ const jsonLd = {
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Schadensregulierung Berlin" } },
         ],
       },
-      // Bewusst KEIN aggregateRating / review hier:
-      // Google untersagt selbst ausgezeichnete Bewertungen auf der eigenen Domain
-      // ("self-serving reviews"). Die Sterne werden nicht ausgespielt und riskieren
-      // eine manuelle Maßnahme. Die echten Google-Bewertungen stehen sichtbar in
-      // components/google-reviews-section.tsx – das ist erlaubt und ausreichend.
+      // Bewertungen aus dem Google-Unternehmensprofil, maschinenlesbar.
+      //
+      // Bis 20.09.2026 stand hier bewusst nichts, mit der Begründung "self-serving
+      // reviews". Der Teil stimmt weiterhin für Google: Bewertungen, die ein Betrieb
+      // über sich selbst auf der eigenen Domain auszeichnet, sind für Review-Rich-
+      // Results nicht zulässig, Sterne werden in der Suche nicht ausgespielt.
+      //
+      // Trotzdem steht der Block jetzt hier, weil er für KI-Suchmaschinen zählt:
+      // Perplexity, ChatGPT Search und AI Overviews lesen JSON-LD direkt und sind an
+      // Googles Rich-Result-Regeln nicht gebunden. Dort ist der Unterschied
+      // "5,0 aus 91 Bewertungen" gegen gar keine belegte Aussage.
+      //
+      // Bedingung, an der alles hängt: Die Zahlen müssen stimmen. Wahrheitsgemäße
+      // Auszeichnung wird von Google ignoriert, erfundene wäre Spam. REVIEW_COUNT und
+      // REVIEW_RATING in lib/contact.ts deshalb bei jeder Änderung mitziehen, und die
+      // Bewertungstexte nur aus lib/reviews.ts, nie frei formuliert.
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: REVIEW_RATING,
+        reviewCount: REVIEW_COUNT,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      review: reviewsLd(),
     },
   ],
 };

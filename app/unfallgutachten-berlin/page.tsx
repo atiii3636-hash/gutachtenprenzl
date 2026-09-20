@@ -7,6 +7,7 @@ import { WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
 import Breadcrumb from "@/components/neu/breadcrumb";
+import { bezirkContent } from "@/lib/bezirk-content";
 
 export const metadata: Metadata = {
   title: { absolute: "Unfallgutachten Berlin – in 24 Std., 0 € bei Fremdschuld" },
@@ -421,6 +422,30 @@ export default function LandingPage() {
             >
               Schaden online melden
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Bezirksseiten mit eigenem Ankertext. Vorher verlinkte diese Seite keine
+          einzige Bezirksseite, obwohl sie thematisch die passende Einstiegsseite
+          ist. Der Ankertext "Unfallgutachten in X" unterscheidet sich bewusst von
+          dem auf der Berlin-Hauptseite ("Kfz Gutachter X"), damit Google nicht
+          überall denselben Linktext auf dieselbe Zielseite sieht. */}
+      <section className="bg-[#050507] px-5 py-14 border-t border-white/8">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-[12px] font-semibold uppercase tracking-widest text-white/40 mb-5 text-center">
+            Unfallgutachten in Ihrem Bezirk
+          </p>
+          <div className="flex flex-wrap gap-2 justify-center">
+            {bezirkContent.map((b) => (
+              <Link
+                key={b.slug}
+                href={`/${b.slug}`}
+                className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-white/70 hover:text-[#E11D2F] bg-white/[0.03] border border-white/8 hover:border-[#E11D2F]/50 px-4 py-2 rounded-xl transition-colors"
+              >
+                Unfallgutachten in {b.h1Ort ?? b.nameShort}
+              </Link>
+            ))}
           </div>
         </div>
       </section>

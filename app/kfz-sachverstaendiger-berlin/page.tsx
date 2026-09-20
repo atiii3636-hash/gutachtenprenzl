@@ -7,6 +7,7 @@ import { WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
 import Breadcrumb from "@/components/neu/breadcrumb";
+import { bezirkContent } from "@/lib/bezirk-content";
 
 export const metadata: Metadata = {
   title: { absolute: "Kfz-Sachverständiger Berlin – 24 Std., 0 € bei Fremdschuld" },
@@ -338,13 +339,29 @@ export default function LandingPage() {
               { href: "/heckauffahrunfall-berlin", label: "Heckauffahrunfall" },
               { href: "/parkschaden-gutachten-berlin", label: "Parkschaden" },
               { href: "/totalschaden-gutachten-berlin", label: "Totalschaden" },
-              { href: "/kfz-sachverstaendiger-berlin-prenzlauer-berg", label: "Prenzlauer Berg" },
-              { href: "/kfz-sachverstaendiger-berlin-pankow", label: "Pankow" },
-              { href: "/kfz-sachverstaendiger-berlin-mitte", label: "Mitte" },
-              { href: "/kfz-sachverstaendiger-berlin-friedrichshain", label: "Friedrichshain" },
             ].map(({ href, label }) => (
               <Link key={href} href={href} className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-white bg-white/[0.03] border border-white/8 hover:border-[#E11D2F] hover:text-[#E11D2F] px-4 py-2 rounded-xl transition-colors">
                 <ArrowRight size={13} />{label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Alle 19 Bezirksseiten mit sprechendem Ankertext. Vorher standen hier
+              vier Bezirke mit nacktem Ortsnamen als Linktext. Der Ankertext ist
+              für Google das stärkste Signal, wofür die Zielseite steht, und die
+              übrigen 15 Seiten hingen ohne Einstieg von der Hauptseite. */}
+          <p className="text-[12px] font-semibold uppercase tracking-widest text-white/40 mt-10 mb-4">
+            Kfz Gutachter in Ihrem Bezirk
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {bezirkContent.map((b) => (
+              <Link
+                key={b.slug}
+                href={`/${b.slug}`}
+                className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-white/75 hover:text-[#E11D2F] bg-white/[0.03] border border-white/8 hover:border-[#E11D2F] px-4 py-2 rounded-xl transition-colors"
+              >
+                <ArrowRight size={13} className="text-white/30" />
+                Kfz Gutachter {b.h1Ort ?? b.nameShort}
               </Link>
             ))}
           </div>

@@ -9,7 +9,7 @@ import PageHero from "@/components/neu/page-hero";
 import JsonLd from "@/components/neu/json-ld";
 import { PHONE_HREF, WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
 import { pageMetadata, breadcrumbLd, aboutPageLd } from "@/lib/seo";
-import { FALLBACK_REVIEWS } from "@/components/google-reviews-section";
+import { REVIEWS } from "@/lib/reviews";
 
 const PATH = "/ueber-uns";
 
@@ -311,8 +311,10 @@ export default function UeberUnsNeu() {
             </span>
           </div>
 
+          {/* Bewusst die Bewertungen 7 bis 9: Die Startseite zeigt die ersten sechs.
+              So steht auf jeder Seite eigener Text statt derselben drei Zitate. */}
           <div className="grid md:grid-cols-3 gap-4">
-            {FALLBACK_REVIEWS.slice(0, 3).map(({ name, text }, i) => (
+            {REVIEWS.slice(6, 9).map(({ name, text, sterne, monat }, i) => (
               <figure
                 key={name}
                 className="bg-white/[0.03] border border-white/8 rounded-xl p-6 flex flex-col"
@@ -320,15 +322,18 @@ export default function UeberUnsNeu() {
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 <div className="flex gap-0.5 mb-4">
-                  {[...Array(5)].map((_, j) => (
+                  {[...Array(sterne)].map((_, j) => (
                     <Star key={j} size={13} className="fill-[#FBBC04] text-[#FBBC04]" />
                   ))}
                 </div>
-                <blockquote className="text-white/60 text-[13.5px] leading-relaxed mb-5 flex-1">
-                  „{text.length > 200 ? text.slice(0, 200).trimEnd() + " …" : text}“
+                <blockquote className="text-white/60 text-[13.5px] leading-relaxed mb-5 flex-1 whitespace-pre-line line-clamp-[9]">
+                  „{text}“
                 </blockquote>
                 <figcaption className="text-[12px] font-bold tracking-[0.15em] text-white/70 uppercase">
                   {name}
+                  <span className="block text-[11px] font-semibold tracking-normal normal-case text-white/35 mt-1">
+                    {monat} · Google
+                  </span>
                 </figcaption>
               </figure>
             ))}

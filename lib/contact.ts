@@ -12,10 +12,13 @@ export const WHATSAPP_URL = `https://wa.me/4915560003661?text=${encodeURICompone
   WHATSAPP_TEXT
 )}`;
 
-// Google-Bewertungen: Fallback, solange die Places API 403 liefert (Key/Abrechnung
-// prüfen). Sobald sie wieder antwortet, zieht google-reviews-section den Live-Wert.
+// Google-Bewertungen: Anzahl und Schnitt werden von Hand gepflegt. Die Places API
+// liefert beide Werte zwar live, das Projekt ruft sie aber nirgends mehr ab, weil sie
+// die Bewertungstexte nicht mitliefert (siehe Kopf von lib/reviews.ts).
 // Hier bei neuen Bewertungen von Hand hochsetzen. Auch public/llms.txt mitziehen.
 // Sichtbare Anzeige auf der Website. Stand 18.09.2026: 91 Google-Bewertungen.
-// Wird nur noch im Fließtext genutzt, nicht mehr im Schema (self-serving reviews).
+// Steht seit 20.09.2026 auch im JSON-LD (aggregateRating in app/layout.tsx), damit
+// KI-Suchmaschinen die Zahl belegt vorfinden. Deshalb gilt hier strenger als vorher:
+// nur echte Werte aus dem Google-Profil eintragen.
 export const REVIEW_COUNT = 91;
 export const REVIEW_RATING = 5.0;

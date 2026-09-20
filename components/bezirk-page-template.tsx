@@ -25,7 +25,19 @@ function Kapitel({ num, label }: { num: string; label: string }) {
 }
 
 export default function BezirkPageTemplate({ content }: Props) {
-  const { name, nameShort, intro, localText, subdistricts, hotspots, distanceMin, faqs, neighborSlugs, slug, deepDive } = content;
+  const { name, nameShort, intro, localText, subdistricts, hotspots, distanceMin, faqs, neighborSlugs, slug, deepDive, h1Ort, praxisfall } = content;
+
+  // "Kfz Gutachter <Ort>" statt "KFZ Sachverständiger <Ort>": Beide Begriffe
+  // meinen dasselbe, gesucht wird aber fast doppelt so oft nach "Gutachter".
+  const ort = h1Ort ?? nameShort;
+  const hauptkeyword = `Kfz Gutachter ${ort}`;
+
+  // Der Praxisfall steht nur auf Seiten, für die ein echter Fall hinterlegt ist.
+  // Damit die Kapitelnummern trotzdem lückenlos durchlaufen, werden die
+  // Abschnitte danach um eins verschoben statt fest verdrahtet.
+  // Argument ist die Nummer MIT Praxisfall. Fehlt der Fall, rutscht alles um
+  // eins hoch. nr(4) wird nur innerhalb des Praxisfall-Blocks aufgerufen.
+  const nr = (n: number) => String(praxisfall ? n : n - 1).padStart(2, "0");
 
   const neighbors = neighborSlugs
     .map((s) => bezirkContent.find((b) => b.slug === s))
@@ -47,7 +59,7 @@ export default function BezirkPageTemplate({ content }: Props) {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://gutachtenprenzl.de" },
       { "@type": "ListItem", position: 2, name: "KFZ Sachverständiger Berlin", item: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin" },
-      { "@type": "ListItem", position: 3, name: `KFZ Sachverständiger ${name}`, item: `https://gutachtenprenzl.de/${slug}` },
+      { "@type": "ListItem", position: 3, name: hauptkeyword, item: `https://gutachtenprenzl.de/${slug}` },
     ],
   };
 
@@ -68,7 +80,7 @@ export default function BezirkPageTemplate({ content }: Props) {
   const zahler = [
     {
       num: "01",
-      titel: "Unverschuldeter Unfall: Sie zahlen nichts",
+      titel: "Unverschuldeter Unfall: die Gegenseite zahlt",
       text: "Hat jemand anderes den Unfall verursacht, trägt dessen Haftpflichtversicherung die Kosten für das Gutachten. Das ist kein Entgegenkommen, sondern Teil Ihres Schadenersatzanspruchs. Sie dürfen Ihren Gutachter dabei frei wählen, die gegnerische Versicherung darf Ihnen keinen vorschreiben. Wir rechnen direkt mit ihr ab, Sie müssen nichts vorstrecken.",
     },
     {
@@ -174,8 +186,10 @@ export default function BezirkPageTemplate({ content }: Props) {
               className="font-display font-black tracking-tight leading-[1.05] text-[clamp(34px,6.4vw,62px)] mb-6 animate-fade-up"
               style={{ animationDelay: "70ms" }}
             >
-              KFZ Sachverständiger
-              <span className="block text-[#E11D2F]">{name}</span>
+              {hauptkeyword}
+              <span className="block text-[#E11D2F] font-extrabold text-[0.42em] leading-[1.3] mt-4">
+                Unabhängiger Unfallgutachter vor Ort
+              </span>
             </h1>
 
             <p
@@ -238,12 +252,12 @@ export default function BezirkPageTemplate({ content }: Props) {
           <div className="max-w-5xl mx-auto">
             <Kapitel num="01" label="Ihre Vorteile" />
             <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-14" data-reveal>
-              Ihr KFZ Gutachter in {name}
+              Ihr {hauptkeyword} im Überblick
             </h2>
 
             <div className="grid sm:grid-cols-2 gap-4">
               {[
-                { icon: Check, title: "Kostenlos bei Fremdverschulden", text: "Die gegnerische Versicherung trägt alle Kosten. Sie zahlen 0 €." },
+                { icon: Check, title: "Bei Fremdverschulden zahlt die Gegenseite", text: "Bei einem unverschuldeten Haftpflichtschaden übernimmt die gegnerische Versicherung die erforderlichen Gutachterkosten in aller Regel. Ausnahmen klären wir vorab am Telefon." },
                 { icon: Clock, title: "Gutachten in 24 Stunden", text: `Wir kommen direkt nach ${name}, nach Hause, in die Werkstatt oder zum Unfallort.` },
                 { icon: Shield, title: "TÜV Rheinland zertifiziert", text: "Unabhängig geprüfte Qualifikation. Von Versicherungen im Regelfall anerkannt." },
                 { icon: Star, title: "5,0 Sterne auf Google", text: `Über ${REVIEW_COUNT} echte Bewertungen von Berliner Kunden. Transparent und unabhängig.` },
@@ -302,7 +316,7 @@ export default function BezirkPageTemplate({ content }: Props) {
           <div className="max-w-3xl mx-auto">
             <Kapitel num="03" label="Der Bezirk" />
             <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-12" data-reveal>
-              KFZ Gutachter in {name}
+              {hauptkeyword}: der Bezirk aus Gutachtersicht
             </h2>
 
             <div data-reveal>
@@ -346,10 +360,85 @@ export default function BezirkPageTemplate({ content }: Props) {
           </div>
         </section>
 
+        {/* ============ PRAXISFALL ============
+            Erscheint nur, wenn in lib/bezirk-content.ts ein echter Fall
+            hinterlegt ist. Ohne Fall bleibt der Abschnitt weg — der Ablauf
+            weiter unten erklärt den Vorgang ohnehin. Lieber eine Seite ohne
+            Beispiel als mit einem erfundenen. */}
+        {praxisfall && (
+          <section className="px-5 py-20 md:py-24 border-t border-white/6">
+            <div className="max-w-3xl mx-auto">
+              <Kapitel num={nr(4)} label="Aus der Praxis" />
+              <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-4" data-reveal>
+                Ein Fall aus {nameShort}
+              </h2>
+              <p className="text-white/50 text-[16px] text-center max-w-xl mx-auto mb-12 leading-relaxed" data-reveal>
+                Ein echter, anonymisierter Schadenfall aus unserer Arbeit im Bezirk.
+              </p>
+
+              <div className="bg-white/[0.03] border border-white/8 rounded-2xl overflow-hidden" data-reveal>
+                {praxisfall.bild && (
+                  <div className="relative aspect-[16/9]">
+                    <Image
+                      src={praxisfall.bild.src}
+                      alt={praxisfall.bild.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 768px"
+                      className="object-cover"
+                    />
+                  </div>
+                )}
+
+                <div className="p-6 md:p-8">
+                  <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-7 pb-7 border-b border-white/8">
+                    {[
+                      ["Zeitraum", praxisfall.monat],
+                      ["Ort", praxisfall.ort],
+                      ["Fahrzeug", praxisfall.fahrzeug],
+                      ["Unfallart", praxisfall.unfallart],
+                    ].map(([label, wert]) => (
+                      <div key={label}>
+                        <dt className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/35 mb-1">{label}</dt>
+                        <dd className="text-white/75 text-[14.5px]">{wert}</dd>
+                      </div>
+                    ))}
+                  </dl>
+
+                  {praxisfall.schadenbild.map((para, i) => (
+                    <p key={i} className="text-white/55 text-[15px] leading-relaxed mb-4">{para}</p>
+                  ))}
+
+                  <div className="mt-7 pt-7 border-t border-white/8">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/35 mb-4">
+                      Ergebnis im Gutachten
+                    </p>
+                    <dl className="space-y-2.5">
+                      {praxisfall.ergebnis.map(({ label, wert }) => (
+                        <div key={label} className="flex items-baseline justify-between gap-4 border-b border-white/5 pb-2.5">
+                          <dt className="text-white/55 text-[14px]">{label}</dt>
+                          <dd className="font-display font-bold text-white text-[15px] whitespace-nowrap">{wert}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+
+                  {praxisfall.fazit && (
+                    <p className="text-white/50 text-[14px] leading-relaxed mt-6 italic">{praxisfall.fazit}</p>
+                  )}
+
+                  <p className="text-white/25 text-[12px] leading-relaxed mt-6">
+                    Anonymisiert. Kennzeichen, Name und Hausnummer sind bewusst nicht angegeben.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ============ 04 · ABLAUF ============ */}
         <section className="px-5 py-20 md:py-24 border-t border-white/6">
           <div className="max-w-4xl mx-auto">
-            <Kapitel num="04" label="Ablauf" />
+            <Kapitel num={nr(5)} label="Ablauf" />
             <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-4" data-reveal>
               So läuft es ab in {nameShort}
             </h2>
@@ -383,7 +472,7 @@ export default function BezirkPageTemplate({ content }: Props) {
         {/* ============ 05 · WER ZAHLT ============ */}
         <section className="px-5 py-20 md:py-24 border-t border-white/6">
           <div className="max-w-4xl mx-auto">
-            <Kapitel num="05" label="Kostenfrage" />
+            <Kapitel num={nr(6)} label="Kostenfrage" />
             <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-14" data-reveal>
               Wer zahlt Ihr Gutachten?
             </h2>
@@ -438,7 +527,7 @@ export default function BezirkPageTemplate({ content }: Props) {
         {/* ============ 06 · FAQ ============ */}
         <section className="px-5 py-20 md:py-24 border-t border-white/6">
           <div className="max-w-3xl mx-auto">
-            <Kapitel num="06" label="FAQ" />
+            <Kapitel num={nr(7)} label="FAQ" />
             <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-12" data-reveal>
               Häufige Fragen aus {nameShort}
             </h2>
@@ -451,7 +540,7 @@ export default function BezirkPageTemplate({ content }: Props) {
           <section className="px-5 py-14 border-t border-white/6">
             <div className="max-w-4xl mx-auto">
               <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/35 mb-6 text-center" data-reveal>
-                KFZ Sachverständiger in benachbarten Bezirken
+                Kfz Gutachter in benachbarten Bezirken
               </p>
               <div className="flex flex-wrap gap-2.5 justify-center" data-reveal>
                 {neighbors.map((n) => (

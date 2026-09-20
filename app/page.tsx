@@ -12,7 +12,7 @@ import FaqNeu from "@/components/neu/faq-neu";
 import JsonLd from "@/components/neu/json-ld";
 import DamageFormSection from "@/components/damage-form-section";
 import { PHONE_HREF, WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
-import { FALLBACK_REVIEWS } from "@/components/google-reviews-section";
+import { REVIEWS } from "@/lib/reviews";
 import { faqs } from "@/lib/faqs";
 import { pageMetadata, faqLd } from "@/lib/seo";
 
@@ -185,7 +185,7 @@ export default function NeuPage() {
           >
             Kfz Gutachten Berlin
             <span className="block text-[#E11D2F] font-extrabold text-[0.36em] leading-[1.35] mt-5">
-              Kostenloser Kfz-Sachverständiger in Berlin.
+              Wir kommen zu Ihnen und beraten Sie kostenlos.
             </span>
           </h1>
 
@@ -396,21 +396,28 @@ export default function NeuPage() {
             </div>
           </div>
 
+          {/* Sechs Bewertungen, Volltext. line-clamp kappt nur die Anzeige, der ganze
+              Text steht im HTML — Crawler und KI-Systeme lesen ihn vollständig. */}
           <div className="grid md:grid-cols-3 gap-4">
-            {FALLBACK_REVIEWS.slice(0, 3).map(({ name, text }, i) => (
+            {REVIEWS.slice(0, 6).map(({ name, text, sterne, monat }, i) => (
               <figure
                 key={name}
                 className="bg-white/[0.03] border border-white/8 rounded-xl p-6 flex flex-col"
                 data-reveal
-                style={{ transitionDelay: `${i * 80}ms` }}
+                style={{ transitionDelay: `${(i % 3) * 80}ms` }}
               >
                 <div className="flex gap-0.5 mb-4">
-                  {[...Array(5)].map((_, j) => <Star key={j} size={13} className="fill-[#FBBC04] text-[#FBBC04]" />)}
+                  {[...Array(sterne)].map((_, j) => <Star key={j} size={13} className="fill-[#FBBC04] text-[#FBBC04]" />)}
                 </div>
-                <blockquote className="text-white/60 text-[13.5px] leading-relaxed mb-5 flex-1">
-                  „{text.length > 220 ? text.slice(0, 220).trimEnd() + " …" : text}“
+                <blockquote className="text-white/60 text-[13.5px] leading-relaxed mb-5 flex-1 whitespace-pre-line line-clamp-[9]">
+                  „{text}“
                 </blockquote>
-                <figcaption className="text-[12px] font-bold tracking-[0.15em] text-white/70 uppercase">{name}</figcaption>
+                <figcaption className="text-[12px] font-bold tracking-[0.15em] text-white/70 uppercase">
+                  {name}
+                  <span className="block text-[11px] font-semibold tracking-normal normal-case text-white/35 mt-1">
+                    {monat} · Google
+                  </span>
+                </figcaption>
               </figure>
             ))}
           </div>
