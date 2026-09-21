@@ -65,6 +65,7 @@ const nav = [
   { href: "/flotten-partner", label: "Flotten & Gewerbe" },
   { href: "/partner-werden", label: "Partner werden" },
   { href: "/ratgeber", label: "Ratgeber" },
+  { href: "/faelle", label: "Fallarchiv" },
   { href: "/faq", label: "Häufige Fragen" },
   { href: "/ueber-uns", label: "Über uns" },
   { href: "/standorte", label: "Standorte" },

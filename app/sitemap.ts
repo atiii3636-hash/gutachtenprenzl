@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import lastmodMap from "@/lib/lastmod.json";
+import { faelleSortiert } from "@/lib/faelle";
 
 // lastmod kommt aus lib/lastmod.json: je Seite das Datum ihres letzten Commits,
 // erzeugt von scripts/gen-lastmod.mjs. Frueher stand hier `new Date()` zur
@@ -138,6 +139,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ...mod(path),
       changeFrequency: "monthly" as const,
       priority: 0.85,
+    })),
+    // Fallarchiv: waechst woechentlich, deshalb aus lib/faelle.ts statt von Hand.
+    // lastmod ist hier das Veroeffentlichungsdatum des Falls — ein echtes Datum,
+    // das sich nach dem Eintrag nicht mehr aendert, also kein erneutes Crawling
+    // ausloest (siehe Kommentar oben zu lastmod).
+    {
+      url: `${baseUrl}/faelle`,
+      ...(faelleSortiert[0] ? { lastModified: faelleSortiert[0].veroeffentlicht } : {}),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    ...faelleSortiert.map((f) => ({
+      url: `${baseUrl}/faelle/${f.slug}`,
+      lastModified: f.veroeffentlicht,
+      changeFrequency: "yearly" as const,
+      priority: 0.6,
     })),
     {
       url: `${baseUrl}/impressum`,
