@@ -271,9 +271,13 @@ Neu:        GA-2609-016 → /faelle/<slug>
 Altbestand: GA-2601-004 → /faelle/<slug>
 Übersprungen: GA-2609-012 (Personenschaden im Polizeibericht)
 
-Branch faelle-auto steht. Zum Freigeben:
-  git checkout main && git merge faelle-auto && npm run deploy
+Ansehen:    npm run dev, dann http://localhost:3001/faelle
+Freigeben:  ./freigeben.command
 ```
+
+`freigeben.command` zeigt erst, was ansteht, fragt nach, übernimmt den Branch
+nach `main`, deployt und setzt beide Domain-Aliase — der Schritt, der sonst
+vergessen wird. Diesen Befehl nicht selbst ausführen, er gehört Atakan.
 
 Wenn in einer Woche kein Fall die Prüfung besteht: das so berichten, nichts
 committen. Eine Woche ohne Eintrag ist ein gültiges Ergebnis.
