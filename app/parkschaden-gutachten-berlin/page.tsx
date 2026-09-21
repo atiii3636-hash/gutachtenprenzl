@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     title: "Parkschaden Gutachten Berlin – KFZ Gutachter 24h",
     description: "Parkschaden in Berlin? Kostenloser KFZ Gutachter kommt zu Ihnen. TÜV-zertifiziert, 24h Gutachten.",
     url: "https://gutachtenprenzl.de/parkschaden-gutachten-berlin",
+    images: ["/og-image.jpg"],
   },
 };
 

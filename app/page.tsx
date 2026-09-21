@@ -183,7 +183,7 @@ export default function NeuPage() {
           <h1
             className="font-display font-black tracking-tight leading-[1.03] text-[clamp(42px,7.6vw,78px)] mb-8 animate-fade-up"
           >
-            Kfz Gutachten Berlin
+            Kfz Gutachten Berlin{" "}
             <span className="block text-[#E11D2F] font-extrabold text-[0.36em] leading-[1.35] mt-5">
               Wir kommen zu Ihnen und beraten Sie kostenlos.
             </span>

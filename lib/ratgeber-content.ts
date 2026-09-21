@@ -138,7 +138,7 @@ export const ratgeberContent: RatgeberContent[] = [
       },
     ],
     verwandt: [
-      { href: "/faq", label: "Häufige Fragen", sub: "Alle Antworten" },
+      { href: "/werkstattbindung-versicherung", label: "Werkstattbindung", sub: "Wer die Werkstatt wählt" },
       { href: "/vorschaden-altschaden-gutachten", label: "Vorschaden & Altschaden", sub: "Häufigster Kürzungsgrund" },
       { href: "/wertminderung", label: "Wertminderung", sub: "Oft gestrichen" },
       { href: "/nutzungsausfall-tabelle-berlin", label: "Nutzungsausfall", sub: "Tagessätze A bis L" },
@@ -245,7 +245,7 @@ export const ratgeberContent: RatgeberContent[] = [
       { href: "/versicherung-kuerzt-gutachten", label: "Kürzung durch Versicherung", sub: "Was Sie dagegen tun" },
       { href: "/beweissicherungsgutachten-berlin", label: "Beweissicherung", sub: "Bei strittiger Schuldfrage" },
       { href: "/wertminderung", label: "Wertminderung", sub: "Verlust nach Reparatur" },
-      { href: "/faq", label: "Häufige Fragen", sub: "Alle Antworten" },
+      { href: "/fiktive-abrechnung", label: "Fiktive Abrechnung", sub: "Heikel bei Vorschaden" },
     ],
   },
 
@@ -341,7 +341,7 @@ export const ratgeberContent: RatgeberContent[] = [
       { href: "/versicherung-kuerzt-gutachten", label: "Kürzung durch Versicherung", sub: "Was Sie dagegen tun" },
       { href: "/fiktive-abrechnung", label: "Fiktive Abrechnung", sub: "Geld statt Reparatur" },
       { href: "/eigener-gutachter-oder-versicherungsgutachter", label: "Eigener Gutachter", sub: "Warum das zählt" },
-      { href: "/faq", label: "Häufige Fragen", sub: "Alle Antworten" },
+      { href: "/mietwagen-nach-unfall", label: "Mietwagen nach Unfall", sub: "Während der Reparatur" },
     ],
   },
 
@@ -437,7 +437,7 @@ export const ratgeberContent: RatgeberContent[] = [
       { href: "/nutzungsausfall-tabelle-berlin", label: "Nutzungsausfall-Tabelle", sub: "Tagessätze A bis L" },
       { href: "/unfallgutachten-berlin", label: "Unfallgutachten", sub: "Nach einem Unfall" },
       { href: "/versicherung-kuerzt-gutachten", label: "Kürzung durch Versicherung", sub: "Was Sie dagegen tun" },
-      { href: "/faq", label: "Häufige Fragen", sub: "Alle Antworten" },
+      { href: "/werkstattbindung-versicherung", label: "Werkstattbindung", sub: "Wer die Werkstatt wählt" },
     ],
   },
 
@@ -528,7 +528,7 @@ export const ratgeberContent: RatgeberContent[] = [
       { href: "/kurzgutachten-berlin", label: "Kurzgutachten", sub: "Für kleine Schäden" },
       { href: "/parkschaden-gutachten-berlin", label: "Parkschaden", sub: "Typischer Kleinschaden" },
       { href: "/kosten-kfz-gutachten-berlin", label: "Kosten & Honorar", sub: "Honorartabelle 2026" },
-      { href: "/faq", label: "Häufige Fragen", sub: "Alle Antworten" },
+      { href: "/kostenvoranschlag-oder-gutachten", label: "Kostenvoranschlag?", sub: "KV oder Gutachten" },
     ],
   },
 
@@ -724,7 +724,7 @@ export const ratgeberContent: RatgeberContent[] = [
       { href: "/kfz-gutachten-berlin", label: "Alle Gutachtenarten", sub: "Übersicht" },
       { href: "/bagatellschaden-grenze", label: "Bagatellschaden", sub: "Ab wann lohnt es sich" },
       { href: "/kosten-kfz-gutachten-berlin", label: "Kosten & Honorar", sub: "Honorartabelle 2026" },
-      { href: "/faq", label: "Häufige Fragen", sub: "Alle Antworten" },
+      { href: "/werkstattbindung-versicherung", label: "Werkstattbindung", sub: "Wer die Werkstatt wählt" },
     ],
   },
 ];

@@ -33,6 +33,7 @@ export const metadata: Metadata = {
     description:
       "Bei unverschuldetem Unfall zahlen Sie 0 €. Sonst ca. 250–1.250 € je nach Schadenhöhe. Komplette Honorar- und Nebenkostentabelle.",
     url: "https://gutachtenprenzl.de/kosten-kfz-gutachten-berlin",
+    images: ["/og-image.jpg"],
   },
 };
 

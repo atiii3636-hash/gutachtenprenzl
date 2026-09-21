@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     title: "Heckauffahrunfall Berlin – Gutachten & Schadensersatz",
     description: "Kostenloser KFZ Gutachter nach Heckauffahrunfall in Berlin. TÜV-zertifiziert, 24h Gutachten.",
     url: "https://gutachtenprenzl.de/heckauffahrunfall-berlin",
+    images: ["/og-image.jpg"],
   },
 };
 

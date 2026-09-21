@@ -36,7 +36,7 @@ export default function BezirkPageTemplate({ content }: Props) {
   // Damit die Kapitelnummern trotzdem lückenlos durchlaufen, werden die
   // Abschnitte danach um eins verschoben statt fest verdrahtet.
   // Argument ist die Nummer MIT Praxisfall. Fehlt der Fall, rutscht alles um
-  // eins hoch. nr(4) wird nur innerhalb des Praxisfall-Blocks aufgerufen.
+  // eins hoch. nr(3) wird nur innerhalb des Praxisfall-Blocks aufgerufen.
   const nr = (n: number) => String(praxisfall ? n : n - 1).padStart(2, "0");
 
   const neighbors = neighborSlugs
@@ -81,22 +81,22 @@ export default function BezirkPageTemplate({ content }: Props) {
     {
       num: "01",
       titel: "Unverschuldeter Unfall: die Gegenseite zahlt",
-      text: "Hat jemand anderes den Unfall verursacht, trägt dessen Haftpflichtversicherung die Kosten für das Gutachten. Das ist kein Entgegenkommen, sondern Teil Ihres Schadenersatzanspruchs. Sie dürfen Ihren Gutachter dabei frei wählen, die gegnerische Versicherung darf Ihnen keinen vorschreiben. Wir rechnen direkt mit ihr ab, Sie müssen nichts vorstrecken.",
+      text: "Hat jemand anderes den Unfall verursacht, trägt dessen Haftpflichtversicherung die Gutachterkosten. Sie dürfen Ihren Gutachter frei wählen und müssen nichts vorstrecken.",
     },
     {
       num: "02",
       titel: "Teilschuld: anteilig",
-      text: "Bei geteilter Schuld werden die Gutachterkosten in der gleichen Quote aufgeteilt wie der Schaden. Bei 50:50 zahlt die Gegenseite also die Hälfte. Auch dann lohnt sich ein eigenes Gutachten, weil es die Grundlage dafür ist, überhaupt über die Quote zu verhandeln.",
+      text: "Bei geteilter Schuld werden die Kosten in derselben Quote aufgeteilt wie der Schaden. Ein eigenes Gutachten ist die Grundlage, um über die Quote überhaupt zu verhandeln.",
     },
     {
       num: "03",
       titel: "Selbstverschuldet oder Kasko",
-      text: "Haben Sie den Schaden selbst verursacht, läuft es über Ihre Kaskoversicherung. Die schickt in der Regel einen eigenen Gutachter. Ein unabhängiges Gutachten kann sich trotzdem lohnen, wenn Sie mit der Einschätzung nicht einverstanden sind. Sprechen Sie uns vorher an, wir sagen Ihnen ehrlich, ob es sich in Ihrem Fall rechnet.",
+      text: "Selbst verursacht? Dann läuft es über Ihre Kasko, die meist einen eigenen Gutachter schickt. Ein unabhängiges Gutachten lohnt sich, wenn Sie mit deren Einschätzung nicht einverstanden sind.",
     },
     {
       num: "04",
       titel: "Bagatellschaden: unter etwa 750 Euro",
-      text: "Bei sehr kleinen Schäden muss die Versicherung die Gutachterkosten nicht zwingend übernehmen. Hier reicht oft ein Kostenvoranschlag. Wo genau die Grenze liegt, lässt sich am Telefon in zwei Minuten klären, bevor Ihnen Kosten entstehen.",
+      text: "Unter etwa 750 Euro muss die Versicherung die Gutachterkosten nicht zwingend übernehmen. Ob Ihr Schaden darunter fällt, klären wir vorab am Telefon.",
     },
   ];
 
@@ -186,7 +186,7 @@ export default function BezirkPageTemplate({ content }: Props) {
               className="font-display font-black tracking-tight leading-[1.05] text-[clamp(34px,6.4vw,62px)] mb-6 animate-fade-up"
               style={{ animationDelay: "70ms" }}
             >
-              {hauptkeyword}
+              {hauptkeyword}{" "}
               <span className="block text-[#E11D2F] font-extrabold text-[0.42em] leading-[1.3] mt-4">
                 Unabhängiger Unfallgutachter vor Ort
               </span>
@@ -311,10 +311,105 @@ export default function BezirkPageTemplate({ content }: Props) {
           </div>
         </section>
 
-        {/* ============ 03 · ÜBER DEN BEZIRK ============ */}
+        {/* ============ 03 · PRAXISFALL ============
+            Erscheint nur, wenn in lib/bezirk-content.ts ein echter Fall
+            hinterlegt ist. Ohne Fall bleibt der Abschnitt weg — der Ablauf
+            weiter unten erklärt den Vorgang ohnehin. Lieber eine Seite ohne
+            Beispiel als mit einem erfundenen. */}
+        {praxisfall && (
+          <section className="px-5 py-20 md:py-24 border-t border-white/6">
+            <div className="max-w-3xl mx-auto">
+              <Kapitel num={nr(3)} label="Aus der Praxis" />
+              <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-4" data-reveal>
+                Ein Fall aus {nameShort}
+              </h2>
+              <p className="text-white/50 text-[16px] text-center max-w-xl mx-auto mb-12 leading-relaxed" data-reveal>
+                Ein echter, anonymisierter Schadenfall aus unserer Arbeit im Bezirk.
+              </p>
+
+              <div className="bg-white/[0.03] border border-white/8 rounded-2xl overflow-hidden" data-reveal>
+                {/* Erstes Bild groß (die Totale), die Detailaufnahmen darunter als
+                    Reihe. So sieht man erst das Fahrzeug und dann den Schaden. */}
+                {praxisfall.bilder && praxisfall.bilder.length > 0 && (
+                  <div>
+                    <div className="relative aspect-[4/3] sm:aspect-[16/10]">
+                      <Image
+                        src={praxisfall.bilder[0].src}
+                        alt={praxisfall.bilder[0].alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 768px"
+                        className="object-cover"
+                      />
+                    </div>
+                    {praxisfall.bilder.length > 1 && (
+                      <div className="grid grid-cols-3 gap-px bg-white/8">
+                        {praxisfall.bilder.slice(1).map((b) => (
+                          <div key={b.src} className="relative aspect-[4/3] bg-[#080D14]">
+                            <Image
+                              src={b.src}
+                              alt={b.alt}
+                              fill
+                              sizes="(max-width: 768px) 33vw, 250px"
+                              className="object-cover"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                <div className="p-6 md:p-8">
+                  <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-7 pb-7 border-b border-white/8">
+                    {[
+                      ["Zeitraum", praxisfall.monat],
+                      ["Ort", praxisfall.ort],
+                      ["Fahrzeug", praxisfall.fahrzeug],
+                      ["Unfallart", praxisfall.unfallart],
+                    ].map(([label, wert]) => (
+                      <div key={label}>
+                        <dt className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/35 mb-1">{label}</dt>
+                        <dd className="text-white/75 text-[14.5px]">{wert}</dd>
+                      </div>
+                    ))}
+                  </dl>
+
+                  {praxisfall.schadenbild.map((para, i) => (
+                    <p key={i} className="text-white/55 text-[15px] leading-relaxed mb-4">{para}</p>
+                  ))}
+
+                  <div className="mt-7 pt-7 border-t border-white/8">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/35 mb-4">
+                      Ergebnis im Gutachten
+                    </p>
+                    <dl className="space-y-2.5">
+                      {praxisfall.ergebnis.map(({ label, wert }) => (
+                        <div key={label} className="flex items-baseline justify-between gap-4 border-b border-white/5 pb-2.5">
+                          <dt className="text-white/55 text-[14px]">{label}</dt>
+                          <dd className="font-display font-bold text-white text-[15px] whitespace-nowrap">{wert}</dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </div>
+
+                  {praxisfall.fazit && (
+                    <p className="text-white/50 text-[14px] leading-relaxed mt-6 italic">{praxisfall.fazit}</p>
+                  )}
+
+                  <p className="text-white/25 text-[12px] leading-relaxed mt-6">
+                    Eigene Aufnahmen aus dem Gutachten. Anonymisiert: Kennzeichen sind abgedeckt,
+                    Name und Hausnummer bewusst nicht angegeben.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ============ 04 · ÜBER DEN BEZIRK ============ */}
         <section className="px-5 py-20 md:py-24 border-t border-white/6">
           <div className="max-w-3xl mx-auto">
-            <Kapitel num="03" label="Der Bezirk" />
+            <Kapitel num={nr(4)} label="Der Bezirk" />
             <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-12" data-reveal>
               {hauptkeyword}: der Bezirk aus Gutachtersicht
             </h2>
@@ -360,82 +455,7 @@ export default function BezirkPageTemplate({ content }: Props) {
           </div>
         </section>
 
-        {/* ============ PRAXISFALL ============
-            Erscheint nur, wenn in lib/bezirk-content.ts ein echter Fall
-            hinterlegt ist. Ohne Fall bleibt der Abschnitt weg — der Ablauf
-            weiter unten erklärt den Vorgang ohnehin. Lieber eine Seite ohne
-            Beispiel als mit einem erfundenen. */}
-        {praxisfall && (
-          <section className="px-5 py-20 md:py-24 border-t border-white/6">
-            <div className="max-w-3xl mx-auto">
-              <Kapitel num={nr(4)} label="Aus der Praxis" />
-              <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-4" data-reveal>
-                Ein Fall aus {nameShort}
-              </h2>
-              <p className="text-white/50 text-[16px] text-center max-w-xl mx-auto mb-12 leading-relaxed" data-reveal>
-                Ein echter, anonymisierter Schadenfall aus unserer Arbeit im Bezirk.
-              </p>
-
-              <div className="bg-white/[0.03] border border-white/8 rounded-2xl overflow-hidden" data-reveal>
-                {praxisfall.bild && (
-                  <div className="relative aspect-[16/9]">
-                    <Image
-                      src={praxisfall.bild.src}
-                      alt={praxisfall.bild.alt}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 768px"
-                      className="object-cover"
-                    />
-                  </div>
-                )}
-
-                <div className="p-6 md:p-8">
-                  <dl className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-7 pb-7 border-b border-white/8">
-                    {[
-                      ["Zeitraum", praxisfall.monat],
-                      ["Ort", praxisfall.ort],
-                      ["Fahrzeug", praxisfall.fahrzeug],
-                      ["Unfallart", praxisfall.unfallart],
-                    ].map(([label, wert]) => (
-                      <div key={label}>
-                        <dt className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/35 mb-1">{label}</dt>
-                        <dd className="text-white/75 text-[14.5px]">{wert}</dd>
-                      </div>
-                    ))}
-                  </dl>
-
-                  {praxisfall.schadenbild.map((para, i) => (
-                    <p key={i} className="text-white/55 text-[15px] leading-relaxed mb-4">{para}</p>
-                  ))}
-
-                  <div className="mt-7 pt-7 border-t border-white/8">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/35 mb-4">
-                      Ergebnis im Gutachten
-                    </p>
-                    <dl className="space-y-2.5">
-                      {praxisfall.ergebnis.map(({ label, wert }) => (
-                        <div key={label} className="flex items-baseline justify-between gap-4 border-b border-white/5 pb-2.5">
-                          <dt className="text-white/55 text-[14px]">{label}</dt>
-                          <dd className="font-display font-bold text-white text-[15px] whitespace-nowrap">{wert}</dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </div>
-
-                  {praxisfall.fazit && (
-                    <p className="text-white/50 text-[14px] leading-relaxed mt-6 italic">{praxisfall.fazit}</p>
-                  )}
-
-                  <p className="text-white/25 text-[12px] leading-relaxed mt-6">
-                    Anonymisiert. Kennzeichen, Name und Hausnummer sind bewusst nicht angegeben.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* ============ 04 · ABLAUF ============ */}
+        {/* ============ 05 · ABLAUF ============ */}
         <section className="px-5 py-20 md:py-24 border-t border-white/6">
           <div className="max-w-4xl mx-auto">
             <Kapitel num={nr(5)} label="Ablauf" />
@@ -469,7 +489,7 @@ export default function BezirkPageTemplate({ content }: Props) {
           </div>
         </section>
 
-        {/* ============ 05 · WER ZAHLT ============ */}
+        {/* ============ 06 · WER ZAHLT ============ */}
         <section className="px-5 py-20 md:py-24 border-t border-white/6">
           <div className="max-w-4xl mx-auto">
             <Kapitel num={nr(6)} label="Kostenfrage" />
@@ -491,6 +511,22 @@ export default function BezirkPageTemplate({ content }: Props) {
                 </div>
               ))}
             </div>
+
+            <p className="text-center text-white/45 text-[14px] leading-relaxed mt-8" data-reveal>
+              Die vollständige{" "}
+              <Link href="/kosten-kfz-gutachten-berlin" className="text-[#E11D2F] hover:underline">
+                Honorartabelle 2026
+              </Link>{" "}
+              mit allen Ausnahmen finden Sie hier. Wo genau die{" "}
+              <Link href="/bagatellschaden-grenze" className="text-[#E11D2F] hover:underline">
+                Bagatellschaden-Grenze
+              </Link>{" "}
+              liegt und wann ein{" "}
+              <Link href="/kostenvoranschlag-oder-gutachten" className="text-[#E11D2F] hover:underline">
+                Kostenvoranschlag statt Gutachten
+              </Link>{" "}
+              reicht, steht dort ebenfalls.
+            </p>
           </div>
         </section>
 
@@ -524,7 +560,7 @@ export default function BezirkPageTemplate({ content }: Props) {
 
         <StandortKarte bezirk={nameShort} minuten={distanceMin} variant="dark" />
 
-        {/* ============ 06 · FAQ ============ */}
+        {/* ============ 07 · FAQ ============ */}
         <section className="px-5 py-20 md:py-24 border-t border-white/6">
           <div className="max-w-3xl mx-auto">
             <Kapitel num={nr(7)} label="FAQ" />

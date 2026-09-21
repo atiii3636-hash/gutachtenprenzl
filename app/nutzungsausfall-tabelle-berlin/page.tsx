@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     description:
       "Was Ihnen pro Tag ohne Auto zusteht: Tagessätze nach Fahrzeuggruppe, Abstufungsregeln und Rechenbeispiele.",
     url: "https://gutachtenprenzl.de/nutzungsausfall-tabelle-berlin",
+    images: ["/og-image.jpg"],
   },
 };
 

@@ -25,6 +25,24 @@ const bezirke = [
   { name: "Zehlendorf", href: "/kfz-sachverstaendiger-berlin-zehlendorf" },
 ];
 
+const themen = [
+  { name: "Was kostet ein Gutachten?", href: "/kosten-kfz-gutachten-berlin" },
+  { name: "Kostenvoranschlag oder Gutachten?", href: "/kostenvoranschlag-oder-gutachten" },
+  { name: "Bagatellschaden-Grenze", href: "/bagatellschaden-grenze" },
+  { name: "Versicherung kürzt", href: "/versicherung-kuerzt-gutachten" },
+  { name: "Werkstattbindung", href: "/werkstattbindung-versicherung" },
+  { name: "Eigener Gutachter?", href: "/eigener-gutachter-oder-versicherungsgutachter" },
+  { name: "Fiktive Abrechnung", href: "/fiktive-abrechnung" },
+  { name: "130-Prozent-Regel", href: "/130-prozent-regelung" },
+  { name: "Wiederbeschaffungswert", href: "/wiederbeschaffungswert-berechnen" },
+  { name: "Vorschaden & Altschaden", href: "/vorschaden-altschaden-gutachten" },
+  { name: "Mietwagen nach Unfall", href: "/mietwagen-nach-unfall" },
+  { name: "Nutzungsausfall-Tabelle", href: "/nutzungsausfall-tabelle-berlin" },
+  { name: "Heckauffahrunfall", href: "/heckauffahrunfall-berlin" },
+  { name: "Parkschaden", href: "/parkschaden-gutachten-berlin" },
+  { name: "Totalschaden", href: "/totalschaden-gutachten-berlin" },
+];
+
 const leistungen = [
   { href: "/schadengutachten", label: "Schadengutachten" },
   { href: "/wertgutachten", label: "Wertgutachten" },
@@ -135,6 +153,21 @@ export default function FooterNeu() {
               <li key={b.href}>
                 <Link href={b.href} className="text-[13px] text-white/45 hover:text-white transition-colors">
                   {b.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="pb-6 border-t border-white/6 pt-10">
+          <p className="text-[11px] font-semibold uppercase tracking-widest text-white/25 mb-5">
+            Ihre Rechte nach dem Unfall
+          </p>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2.5">
+            {themen.map((t) => (
+              <li key={t.href}>
+                <Link href={t.href} className="text-[13px] text-white/45 hover:text-white transition-colors">
+                  {t.name}
                 </Link>
               </li>
             ))}

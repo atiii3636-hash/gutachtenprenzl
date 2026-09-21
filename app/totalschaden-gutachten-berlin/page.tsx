@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     title: "Totalschaden Gutachten Berlin – Wiederbeschaffungswert ermitteln",
     description: "Totalschaden in Berlin? Holen Sie sich den vollen Wiederbeschaffungswert. TÜV-zertifiziert, kostenlos bei Fremdverschulden.",
     url: "https://gutachtenprenzl.de/totalschaden-gutachten-berlin",
+    images: ["/og-image.jpg"],
   },
 };
 

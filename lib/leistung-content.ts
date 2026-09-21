@@ -551,7 +551,7 @@ export const leistungContent: LeistungContent[] = [
       { href: "/schadengutachten", label: "Schadengutachten", sub: "Nach einem Unfall" },
       { href: "/totalschaden-gutachten-berlin", label: "Totalschaden", sub: "Wenn Reparatur sich nicht lohnt" },
       { href: "/restwertermittlung", label: "Restwertermittlung", sub: "Wiederbeschaffungs- & Restwert" },
-      { href: "/faq", label: "Häufige Fragen", sub: "Alle Antworten" },
+      { href: "/wiederbeschaffungswert-berechnen", label: "Wiederbeschaffungswert", sub: "Wenn Kasko zu wenig zahlt" },
     ],
   },
 
@@ -637,7 +637,7 @@ export const leistungContent: LeistungContent[] = [
       { href: "/unfallgutachten-berlin", label: "Unfallgutachten", sub: "Nach einem Unfall" },
       { href: "/heckauffahrunfall-berlin", label: "Heckauffahrunfall", sub: "Typischer Streitfall" },
       { href: "/vorschaden-altschaden-gutachten", label: "Vorschaden & Altschaden", sub: "Sauber abgrenzen" },
-      { href: "/faq", label: "Häufige Fragen", sub: "Alle Antworten" },
+      { href: "/kostenvoranschlag-oder-gutachten", label: "Kostenvoranschlag?", sub: "Warum der als Beweis nicht reicht" },
     ],
   },
 ];

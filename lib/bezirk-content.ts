@@ -13,8 +13,15 @@ export interface Praxisfall {
   ergebnis: { label: string; wert: string }[];
   /** Optional ein Satz dazu, was dieser Fall zeigt. Kein Werbesatz. */
   fazit?: string;
-  /** Eigenes Foto aus /public. Ohne Kennzeichen, ohne Personen. */
-  bild?: { src: string; alt: string };
+  /**
+   * Eigene Fotos aus /public/faelle. Reihenfolge: zuerst die Totale, damit man
+   * sieht, um welches Fahrzeug es geht, danach die Anstoßstelle im Detail.
+   *
+   * Pflicht: kein lesbares Kennzeichen, keine Personen, keine Dokumente im Bild.
+   * Auf den Totalen ist das Kennzeichen mit einem Balken abgedeckt, die
+   * Detailaufnahmen kommen ohne aus.
+   */
+  bilder?: { src: string; alt: string }[];
 }
 
 export interface BezirkContent {
@@ -110,6 +117,12 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Quote Reparatur zu Wert", wert: "143 %" },
       ],
       fazit: "Über der 130-Prozent-Grenze. Eine Reparatur auf Kosten der Gegenseite war damit nicht durchsetzbar, abgerechnet wurde über Wiederbeschaffungswert minus Restwert.",
+      bilder: [
+        { src: "/faelle/pankow-1.jpg", alt: "Grüner VW Polo auf einem Parkplatz in Karow, Kennzeichen abgedeckt" },
+        { src: "/faelle/pankow-2.jpg", alt: "Verformung der Fahrertür mit Einkerbung unterhalb der Zierleiste" },
+        { src: "/faelle/pankow-3.jpg", alt: "Fahrertür des VW Polo mit tiefer Einkerbung, Nahaufnahme" },
+        { src: "/faelle/pankow-4.jpg", alt: "Schadensbereich an der Fahrertür über die Zierleiste hinweg" },
+      ],
     },
     deepDive: [
       {
@@ -182,6 +195,12 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe H, 65,00 € pro Tag" },
       ],
       fazit: "Rund 37 Prozent des Fahrzeugwerts. Wirtschaftlich klar ein Reparaturfall, trotz der hohen Summe.",
+      bilder: [
+        { src: "/faelle/prenzlauer-berg-1.jpg", alt: "Weißer Tesla mit Heckschaden links, Kennzeichen abgedeckt" },
+        { src: "/faelle/prenzlauer-berg-2.jpg", alt: "Gerissene Stoßfängerverkleidung am Heck links" },
+        { src: "/faelle/prenzlauer-berg-3.jpg", alt: "Heckschürze von unten, Verformung im Anstoßbereich" },
+        { src: "/faelle/prenzlauer-berg-4.jpg", alt: "Heck ohne Stoßfänger, deformiertes Seitenteil hinten links" },
+      ],
     },
     deepDive: [
       {
@@ -256,6 +275,12 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe G, 59,00 € pro Tag" },
       ],
       fazit: "Ein Streifschaden, der nach wenig aussieht und knapp 9.250 Euro kostet, weil der Lackabtrag bis auf das Grundmaterial reicht.",
+      bilder: [
+        { src: "/faelle/mitte-1.jpg", alt: "Weißer VW Tiguan, Kennzeichen abgedeckt" },
+        { src: "/faelle/mitte-2.jpg", alt: "Streifschaden über Kotflügel und Fahrertür des VW Tiguan" },
+        { src: "/faelle/mitte-3.jpg", alt: "Schwarzer Fremdlack, der über den Türspalt hinweg verläuft" },
+        { src: "/faelle/mitte-4.jpg", alt: "Kratzer bis auf das Grundmaterial entlang der Türkante" },
+      ],
     },
     deepDive: [
       {
@@ -331,6 +356,12 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe F, 50,00 € pro Tag" },
       ],
       fazit: "Unter der 100-Prozent-Grenze, also Reparaturfall. Ohne die Feststellung am Querträger wäre die Kalkulation deutlich niedriger ausgefallen.",
+      bilder: [
+        { src: "/faelle/kreuzberg-1.jpg", alt: "Mercedes GLK mit Heckschaden links, Kennzeichen abgedeckt" },
+        { src: "/faelle/kreuzberg-2.jpg", alt: "Aufgerissene Stoßfängerverkleidung hinten links" },
+        { src: "/faelle/kreuzberg-3.jpg", alt: "Stoßfänger, durch das eigene Befestigungselement durchbohrt" },
+        { src: "/faelle/kreuzberg-4.jpg", alt: "Heckreflektor aus der verformten Verkleidung gedrückt" },
+      ],
     },
     deepDive: [
       {
@@ -406,6 +437,12 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe A, 23,00 € pro Tag" },
       ],
       fazit: "Über der Bagatellgrenze, damit voll erstattungsfähig. Bei Schäden in dieser Größenordnung lohnt der Anruf, bevor man auf einen Kostenvoranschlag ausweicht.",
+      bilder: [
+        { src: "/faelle/friedrichshain-1.jpg", alt: "Weißer Hyundai i10, Kennzeichen abgedeckt" },
+        { src: "/faelle/friedrichshain-2.jpg", alt: "Schwarze Anstoßspuren am vorderen Stoßfänger" },
+        { src: "/faelle/friedrichshain-3.jpg", alt: "Frontecke mit Nebelscheinwerfer und Lackabtrag" },
+        { src: "/faelle/friedrichshain-4.jpg", alt: "Materialabtrag bis auf das Grundmaterial am Stoßfänger" },
+      ],
     },
     deepDive: [
       {
@@ -481,6 +518,11 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe C, 35,00 € pro Tag" },
       ],
       fazit: "Totalschaden. Die Auszahlung ergibt sich aus 2.800 Euro minus 1.766 Euro Restwert, deshalb lohnt es sich, das Restwertangebot zu prüfen statt es hinzunehmen.",
+      bilder: [
+        { src: "/faelle/neukoelln-1.jpg", alt: "Skoda Fabia Combi mit Frontschaden, Kennzeichen abgedeckt" },
+        { src: "/faelle/neukoelln-2.jpg", alt: "Heckstoßfänger mit Knick, entstanden durch das Aufschieben" },
+        { src: "/faelle/neukoelln-3.jpg", alt: "Frontecke mit beschädigter Stoßfängerverkleidung" },
+      ],
     },
     deepDive: [
       {
@@ -632,6 +674,12 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe A, 23,00 € pro Tag" },
       ],
       fazit: "Wirtschaftlicher Totalschaden. Bei Kleinwagen reicht oft ein einziger Seitenanstoß, um über die Grenze zu kommen.",
+      bilder: [
+        { src: "/faelle/tempelhof-1.jpg", alt: "Weißer Hyundai i10 von der Seite, beide rechten Türen beschädigt" },
+        { src: "/faelle/tempelhof-2.jpg", alt: "Tiefe Einkerbung in der Tür vorne rechts" },
+        { src: "/faelle/tempelhof-3.jpg", alt: "Durchgehender Streifschaden über beide rechte Türen" },
+        { src: "/faelle/tempelhof-4.jpg", alt: "Schweller und Türunterkante mit Kratzern bis auf das Grundmaterial" },
+      ],
     },
     deepDive: [
       {
@@ -707,6 +755,12 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe B, 29,00 € pro Tag" },
       ],
       fazit: "Der Fremdlack im Anstoßbereich hat die Zuordnung getragen. Ohne ihn wäre die Haftungsfrage deutlich schwieriger gewesen.",
+      bilder: [
+        { src: "/faelle/charlottenburg-1.jpg", alt: "Weißes Smart Cabrio mit Schaden hinten links, Kennzeichen abgedeckt" },
+        { src: "/faelle/charlottenburg-2.jpg", alt: "Fremdlack als dunkler Abrieb auf der weißen Seitenwand" },
+        { src: "/faelle/charlottenburg-3.jpg", alt: "Versatz zwischen Stoßfänger und Seitenwand nach dem Anstoß" },
+        { src: "/faelle/charlottenburg-4.jpg", alt: "Radlauf hinten links mit Lackabtrag" },
+      ],
     },
     deepDive: [
       {
@@ -783,6 +837,12 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe A, 23,00 € pro Tag" },
       ],
       fazit: "Ein kleiner Schaden, bei dem der Unterschied zwischen Ausbessern und Ersetzen rund 1.000 Euro ausmacht.",
+      bilder: [
+        { src: "/faelle/steglitz-1.jpg", alt: "Silberner VW Polo in einer Wohnstraße, Kennzeichen abgedeckt" },
+        { src: "/faelle/steglitz-2.jpg", alt: "Vorderer Stoßfänger unten links mit Materialabtrag" },
+        { src: "/faelle/steglitz-3.jpg", alt: "Spoilerkante des Stoßfängers mit Kratzern" },
+        { src: "/faelle/steglitz-4.jpg", alt: "Stoßfängerunterkante mit abgetragenem Lack, Nahaufnahme" },
+      ],
     },
     deepDive: [
       {
@@ -858,6 +918,12 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe D, 38,00 € pro Tag" },
       ],
       fazit: "Knapp auf der Reparaturseite. Genau solche Fälle kippen, wenn ein verdeckter Schaden erst in der Werkstatt auffällt.",
+      bilder: [
+        { src: "/faelle/spandau-1.jpg", alt: "Schwarzer Mercedes C-Klasse mit Frontschaden links, Kennzeichen abgedeckt" },
+        { src: "/faelle/spandau-2.jpg", alt: "Scheinwerfer vorne links mit Kratzspuren und Stoßfänger dejustiert" },
+        { src: "/faelle/spandau-3.jpg", alt: "Motorhaube im Kantenbereich verformt" },
+        { src: "/faelle/spandau-4.jpg", alt: "Gebrochene Streuscheibe des linken Scheinwerfers" },
+      ],
     },
     deepDive: [
       {
@@ -934,6 +1000,11 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe E, 43,00 € pro Tag" },
       ],
       fazit: "Über 130 Prozent und damit klarer Totalschadenfall, obwohl das Fahrzeug nach dem Anstoß noch fahrbereit war.",
+      bilder: [
+        { src: "/faelle/reinickendorf-1.jpg", alt: "Dunkler Mercedes E-Klasse mit Frontschaden rechts, Kennzeichen abgedeckt" },
+        { src: "/faelle/reinickendorf-2.jpg", alt: "Stoßfänger vorne rechts aufgerissen, Scheinwerfer dejustiert" },
+        { src: "/faelle/reinickendorf-3.jpg", alt: "Kotflügel vorne rechts verformt" },
+      ],
     },
     deepDive: [
       {
@@ -1010,6 +1081,12 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe E, 43,00 € pro Tag" },
       ],
       fazit: "Wirtschaftlicher Totalschaden. Die 130-Prozent-Grenze war hier deutlich überschritten, eine Reparatur auf Kosten der Gegenseite war nicht durchsetzbar.",
+      bilder: [
+        { src: "/faelle/marzahn-1.jpg", alt: "Silberner Audi A6 mit zerstörter Front, Kennzeichen abgedeckt" },
+        { src: "/faelle/marzahn-2.jpg", alt: "Front ohne Stoßfängerverkleidung, Trägerstruktur freigelegt" },
+        { src: "/faelle/marzahn-3.jpg", alt: "Deformierter Querträger nach Demontage der Stoßfängerverkleidung" },
+        { src: "/faelle/marzahn-4.jpg", alt: "Querträger mit verformter Aufnahme, Detailaufnahme" },
+      ],
     },
     deepDive: [
       {
@@ -1083,6 +1160,11 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Abrechnung", wert: "über Wiederbeschaffungswert, nicht über Reparatur" },
       ],
       fazit: "Bei Fahrzeugen in dieser Wertklasse entscheidet sich schon beim Ortstermin, dass eine Reparaturkalkulation nicht weiterführt.",
+      bilder: [
+        { src: "/faelle/koepenick-1.jpg", alt: "Silberner Daewoo Kalos von der Seite" },
+        { src: "/faelle/koepenick-2.jpg", alt: "Front rechts mit beschädigtem Scheinwerfer und verformtem Kotflügel" },
+        { src: "/faelle/koepenick-3.jpg", alt: "Frontecke rechts, Verformung im Detail" },
+      ],
     },
     deepDive: [
       {
@@ -1159,6 +1241,10 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe J, 79,00 € pro Tag" },
       ],
       fazit: "Zehn Prozent des Fahrzeugwerts, und trotzdem ein Fall, bei dem ohne Demontage rund die Hälfte der Kosten nicht aufgetaucht wäre.",
+      bilder: [
+        { src: "/faelle/lichtenberg-1.jpg", alt: "Grauer Audi SUV in Alt-Hohenschönhausen, Kennzeichen abgedeckt" },
+        { src: "/faelle/lichtenberg-2.jpg", alt: "Frontbereich rechts mit Radlaufabdeckung und Lufteinlass" },
+      ],
     },
     deepDive: [
       {
@@ -1237,6 +1323,12 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Besonderheit", wert: "Altschaden am selben Bauteil offen ausgewiesen" },
       ],
       fazit: "Der dokumentierte Vorschaden hat die Regulierung nicht verhindert, sondern abgesichert. Das ist der Unterschied zwischen einem Abzug und einer Ablehnung.",
+      bilder: [
+        { src: "/faelle/weissensee-1.jpg", alt: "Brauner BMW X1 mit Heckschaden, Kennzeichen abgedeckt" },
+        { src: "/faelle/weissensee-2.jpg", alt: "Unterer Heckstoßfänger mit älterem, abblätterndem Schaden" },
+        { src: "/faelle/weissensee-3.jpg", alt: "Frischer Knick am oberen Heckstoßfänger neben dem Reflektor" },
+        { src: "/faelle/weissensee-4.jpg", alt: "Heckstoßfänger mit Schleifspuren aus dem Anstoß" },
+      ],
     },
     deepDive: [
       {
@@ -1368,6 +1460,12 @@ export const bezirkContent: BezirkContent[] = [
         { label: "Nutzungsausfall", wert: "Gruppe G, 59,00 € pro Tag" },
       ],
       fazit: "Knapp unter der 100-Prozent-Grenze. Zwei Prozentpunkte höher, und die Versicherung hätte auf Totalschadenabrechnung bestanden.",
+      bilder: [
+        { src: "/faelle/treptow-1.jpg", alt: "BMW 3er Cabrio mit Frontschaden links, Kennzeichen abgedeckt" },
+        { src: "/faelle/treptow-2.jpg", alt: "Front geöffnet, Trägerstruktur hinter dem Stoßfänger sichtbar" },
+        { src: "/faelle/treptow-3.jpg", alt: "Deformierte Aufnahme des vorderen Querträgers" },
+        { src: "/faelle/treptow-4.jpg", alt: "Gebrochene Halterung neben dem linken Scheinwerfer" },
+      ],
     },
     deepDive: [
       {

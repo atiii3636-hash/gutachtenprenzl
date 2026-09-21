@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     description:
       "Sie müssen den Gutachter der gegnerischen Versicherung nicht akzeptieren. Was die beiden Wege unterscheidet — und was das für Ihre Auszahlung bedeutet.",
     url: "https://gutachtenprenzl.de/eigener-gutachter-oder-versicherungsgutachter",
+    images: ["/og-image.jpg"],
   },
 };
 

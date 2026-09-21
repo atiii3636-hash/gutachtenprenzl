@@ -37,3 +37,4 @@ Thumbs.db
 # Personenbezogene Daten: gehören nicht ins Repository
 leads_output.csv
 tsconfig.tsbuildinfo
+.env*
