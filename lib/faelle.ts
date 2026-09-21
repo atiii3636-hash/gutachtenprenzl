@@ -33,6 +33,21 @@ export interface Fall extends Praxisfall {
   bezirkSlug?: string;
   /** Anzeigename des Bezirks, z. B. "Pankow". */
   bezirk?: string;
+  /**
+   * Die betroffenen Bauteile und die jeweilige Maßnahme, aus der Kalkulation
+   * des Gutachtens: "Fahrertür — Ersatz", "Abstandssensor — Ausbau und
+   * Kalibrierung".
+   *
+   * Steht hier als eigene Liste und nicht nur im Fließtext, weil genau diese
+   * Begriffe gesucht werden. Wer "Querträger verzogen Kosten" oder
+   * "Abstandssensor nach Unfall kalibrieren" eingibt, landet über solche
+   * Zeilen — der Fließtext allein deckt das nicht ab, weil er erzählt statt
+   * zu benennen. Für KI-Systeme ist eine Liste zudem leichter zitierbar.
+   *
+   * Nur Bauteile, die in der Kalkulation stehen. Nichts ergänzen, was
+   * plausibel klingt.
+   */
+  bauteile?: string[];
 }
 
 export const faelle: Fall[] = [
@@ -49,6 +64,12 @@ export const faelle: Fall[] = [
     ort: "Schwanebecker Chaussee, Karow",
     fahrzeug: "VW Polo, Erstzulassung 2002, rund 274.000 km",
     unfallart: "Anstoß an der Fahrertür",
+    // Nur, was im Text des Falls belegt ist. Eine Lackposition wäre plausibel,
+    // steht hier aber nicht, also kommt sie auch nicht rein.
+    bauteile: [
+      "Fahrertür — Ersatz statt Instandsetzung",
+      "Zierleiste Fahrertür — Ersatz",
+    ],
     schadenbild: [
       "Ein Fall aus dem Norden des Bezirks, dort wo die Schwanebecker Chaussee Richtung Brandenburg führt. Betroffen war die Fahrertür: stark verformt, mit einer tiefen Einkerbung. Ersatz statt Instandsetzung, weil eine Einkerbung dieser Tiefe sich nicht mehr fachgerecht ausbeulen lässt.",
       "Dazu die beschädigte Zierleiste. Unspektakulär, aber bei einem Fahrzeug dieses Alters ein Teil, das oft nicht mehr neu lieferbar ist und dann über Gebrauchtteile beschafft werden muss.",

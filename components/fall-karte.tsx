@@ -4,13 +4,19 @@ import type { Praxisfall } from "@/lib/bezirk-content";
 /**
  * Die Falldarstellung: Bilder oben, Eckdaten, Schadenbild, Zahlen, Fazit.
  *
- * Dasselbe Markup steht noch einmal inline in components/bezirk-page-template.tsx.
- * Bewusst nicht angefasst: die Bezirksseiten laufen und stehen im Index, ein
- * Umbau dort bringt heute nichts. Wenn sich das Layout hier das nächste Mal
- * ändert, den Block dort durch diese Komponente ersetzen.
+ * Die Abschnittstitel sind h2 und nicht wie im Bezirks-Template nur gestylte
+ * Absätze. Auf der Fallseite ist die Schadenbeschreibung der eigentliche
+ * Inhalt, nicht ein Einschub in einer Bezirksseite — sie soll auch in der
+ * Dokumentstruktur als Abschnitt auftauchen. Optisch ändert sich dadurch
+ * nichts, die Klassen bleiben dieselben.
+ *
+ * Ein nahezu gleiches Markup steht noch einmal inline in
+ * components/bezirk-page-template.tsx. Bewusst nicht angefasst: die
+ * Bezirksseiten laufen und stehen im Index. Wenn sich das Layout hier das
+ * nächste Mal ändert, den Block dort durch diese Komponente ersetzen.
  */
-export default function FallKarte({ fall }: { fall: Praxisfall }) {
-  const { bilder, monat, ort, fahrzeug, unfallart, schadenbild, ergebnis, fazit } = fall;
+export default function FallKarte({ fall }: { fall: Praxisfall & { bauteile?: string[] } }) {
+  const { bilder, monat, ort, fahrzeug, unfallart, schadenbild, ergebnis, fazit, bauteile } = fall;
 
   return (
     <div className="bg-white/[0.03] border border-white/8 rounded-2xl overflow-hidden">
@@ -61,14 +67,33 @@ export default function FallKarte({ fall }: { fall: Praxisfall }) {
           ))}
         </dl>
 
+        <h2 className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/35 mb-4">
+          Schadenbild
+        </h2>
         {schadenbild.map((para, i) => (
           <p key={i} className="text-white/55 text-[15px] leading-relaxed mb-4">{para}</p>
         ))}
 
+        {bauteile && bauteile.length > 0 && (
+          <div className="mt-7 pt-7 border-t border-white/8">
+            <h2 className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/35 mb-4">
+              Betroffene Bauteile und Maßnahmen
+            </h2>
+            <ul className="space-y-2">
+              {bauteile.map((b) => (
+                <li key={b} className="text-white/55 text-[14.5px] leading-relaxed pl-4 relative">
+                  <span className="absolute left-0 top-[9px] w-1.5 h-1.5 rounded-full bg-white/25" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <div className="mt-7 pt-7 border-t border-white/8">
-          <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/35 mb-4">
+          <h2 className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/35 mb-4">
             Ergebnis im Gutachten
-          </p>
+          </h2>
           <dl className="space-y-2.5">
             {ergebnis.map(({ label, wert }) => (
               <div key={label} className="flex items-baseline justify-between gap-4 border-b border-white/5 pb-2.5">

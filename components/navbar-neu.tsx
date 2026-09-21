@@ -11,6 +11,7 @@ const links = [
   { href: "/leistungen", label: "Leistungen" },
   { href: "/flotten-partner", label: "Flotten & Gewerbe" },
   { href: "/ratgeber", label: "Ratgeber" },
+  { href: "/faelle", label: "Fälle" },
   { href: "/faq", label: "FAQ" },
   { href: "/ueber-uns", label: "Über uns" },
   { href: "/standorte", label: "Standorte" },

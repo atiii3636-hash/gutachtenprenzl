@@ -400,6 +400,16 @@ export default function BezirkPageTemplate({ content }: Props) {
                     Eigene Aufnahmen aus dem Gutachten. Anonymisiert: Kennzeichen sind abgedeckt,
                     Name und Hausnummer bewusst nicht angegeben.
                   </p>
+
+                  {/* Verweis ins Fallarchiv. Steht hier und nicht nur im Footer,
+                      damit jede Bezirksseite auf /faelle zeigt — das Archiv
+                      waechst woechentlich und braucht interne Links. */}
+                  <p className="text-white/45 text-[14px] leading-relaxed mt-5 pt-5 border-t border-white/8">
+                    <Link href="/faelle" className="text-white/70 underline underline-offset-4 hover:text-white">
+                      Weitere Fälle aus unserer Arbeit
+                    </Link>{" "}
+                    — anonymisierte Schadenfälle aus ganz Berlin mit den Zahlen aus dem Gutachten.
+                  </p>
                 </div>
               </div>
             </div>

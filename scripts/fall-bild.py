@@ -8,12 +8,22 @@ anonymisiert sein soll. Dieses Skript schreibt nur die Bildpunkte neu, damit
 faellt jeder EXIF-Block weg.
 
 Aufruf:
-    python3 scripts/fall-bild.py QUELLE ZIEL [--balken x,y,b,h] [--breite 1600]
+    python3 scripts/fall-bild.py QUELLE ZIEL --balken x,y,b,h [--breite 1600]
+    python3 scripts/fall-bild.py QUELLE ZIEL --ohne-kennzeichen
 
 --balken deckt einen Bereich schwarz ab, Angaben als Anteil der Bildbreite bzw.
--hoehe zwischen 0 und 1 (z. B. 0.42,0.71,0.2,0.07 fuer ein Kennzeichen). Mehrfach
-angebbar. Ohne Angabe wird nichts abgedeckt — dann darf auf dem Bild auch kein
-Kennzeichen, kein Gesicht und kein Dokument zu sehen sein.
+-hoehe zwischen 0 und 1 (z. B. 0.42,0.71,0.2,0.07 fuer ein Kennzeichen).
+Mehrfach angebbar. Den Balken grosszuegig setzen, lieber 15 Prozent zu gross
+als einen Millimeter zu klein.
+
+--ohne-kennzeichen ist die Zusicherung, dass auf dieser Aufnahme ueberhaupt
+kein Kennzeichen, keine Person und kein Dokument zu sehen ist — typisch bei
+Detailaufnahmen der Schadenstelle.
+
+Eine der beiden Angaben ist Pflicht. Ohne sie bricht das Skript ab, und zwar
+mit Absicht: beim automatischen Veroeffentlichen darf es keinen Weg geben,
+auf dem ein Bild versehentlich unbesehen durchrutscht. Die Entscheidung muss
+fuer jede einzelne Aufnahme fallen.
 
 Selbsttest:  python3 scripts/fall-bild.py --test
 """
@@ -92,7 +102,12 @@ def test():
             r, g, bl = ergebnis.getpixel((1500, 1100))
             assert r > 150 and g < 80, "Balken deckt zu viel ab"
 
-    print("ok — EXIF entfernt, Groesse angepasst, Balken sitzt")
+        # Ohne Zusicherung kein Bild: das ist die Bremse vor dem Autodeploy.
+        assert main([quelle, ziel]) == 2, "Aufruf ohne Zusicherung haette abbrechen muessen"
+        assert main([quelle, ziel, "--ohne-kennzeichen"]) == 0
+        assert main([quelle, ziel, "--balken", "0,0,0.3,0.2"]) == 0
+
+    print("ok — EXIF entfernt, Groesse angepasst, Balken sitzt, Zusicherung erzwungen")
 
 
 def main(argv):
@@ -100,13 +115,11 @@ def main(argv):
         test()
         return 0
 
-    args = [a for a in argv if not a.startswith("--")]
-    if len(args) != 2:
-        print(__doc__)
-        return 1
-
     balken = []
     breite = MAX_BREITE
+    ohne_kennzeichen = False
+    pfade = []
+
     i = 0
     while i < len(argv):
         if argv[i] == "--balken":
@@ -115,11 +128,30 @@ def main(argv):
         elif argv[i] == "--breite":
             breite = int(argv[i + 1])
             i += 2
+        elif argv[i] == "--ohne-kennzeichen":
+            ohne_kennzeichen = True
+            i += 1
+        elif argv[i].startswith("--"):
+            print(f"Unbekannte Option: {argv[i]}")
+            return 2
         else:
+            pfade.append(argv[i])
             i += 1
 
-    b, h = aufbereiten(args[0], args[1], balken, breite)
-    print(f"{args[1]}  {b}x{h}  EXIF entfernt  Balken: {len(balken)}")
+    if len(pfade) != 2:
+        print(__doc__)
+        return 2
+
+    if not balken and not ohne_kennzeichen:
+        print(
+            "Abbruch: weder --balken noch --ohne-kennzeichen angegeben.\n"
+            "Fuer jede Aufnahme muss entschieden werden, ob ein Kennzeichen\n"
+            "abgedeckt werden muss. Ein stilles Durchreichen gibt es hier nicht."
+        )
+        return 2
+
+    b, h = aufbereiten(pfade[0], pfade[1], balken, breite)
+    print(f"{pfade[1]}  {b}x{h}  EXIF entfernt  Balken: {len(balken)}")
     return 0
 
 
