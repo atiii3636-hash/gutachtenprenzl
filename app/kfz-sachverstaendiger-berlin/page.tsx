@@ -6,12 +6,13 @@ import Link from "next/link";
 import { WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import VideoBlock from "@/components/video-block";
 import Breadcrumb from "@/components/neu/breadcrumb";
 import { bezirkContent } from "@/lib/bezirk-content";
 
 export const metadata: Metadata = {
-  title: { absolute: "Kfz-Sachverständiger Berlin – 24 Std., 0 € bei Fremdschuld" },
-  description: "Unfall in Berlin? Gutachten in 24h, 100% kostenlos bei Fremdverschulden. TÜV-zertifiziert. ☎ 0155 60003661",
+  title: { absolute: "Kfz-Sachverständiger Berlin – unabhängig & TÜV-zertifiziert" },
+  description: "Was ein unabhängiger Kfz-Sachverständiger prüft, woran Sie einen seriösen erkennen und warum Sie ihn frei wählen dürfen. TÜV-zertifiziert, in ganz Berlin.",
   keywords: [
     "kfz sachverständiger berlin",
     "kfz sachverständiger berlin unabhängig",
@@ -31,15 +32,15 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Was macht ein KFZ Sachverständiger?",
+          name: "Was macht ein Kfz Sachverständiger?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Ein KFZ Sachverständiger begutachtet neutral und unabhängig Fahrzeugschäden nach einem Unfall. Er dokumentiert alle Schäden, ermittelt die Reparaturkosten, den merkantilen Minderwert und gegebenenfalls den Wiederbeschaffungs- und Restwert. Das Ergebnis ist ein rechtssicheres Gutachten, das von Versicherungen und Gerichten anerkannt wird.",
+            text: "Ein Kfz Sachverständiger begutachtet neutral und unabhängig Fahrzeugschäden nach einem Unfall. Er dokumentiert alle Schäden, ermittelt die Reparaturkosten, den merkantilen Minderwert und gegebenenfalls den Wiederbeschaffungs- und Restwert. Das Ergebnis ist ein rechtssicheres Gutachten, das von Versicherungen und Gerichten anerkannt wird.",
           },
         },
         {
           "@type": "Question",
-          name: "Was ist der Unterschied zwischen KFZ Sachverständiger und KFZ Gutachter?",
+          name: "Was ist der Unterschied zwischen Kfz Sachverständiger und Kfz Gutachter?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "Im Alltag werden die Begriffe synonym verwendet — beide erstellen Kfz-Gutachten. Wichtig ist nicht die Bezeichnung, sondern die Unabhängigkeit: Ein eigener, unabhängiger Sachverständiger arbeitet für Sie als Geschädigten, während der Gutachter der gegnerischen Versicherung deren Interessen vertritt.",
@@ -47,7 +48,7 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "Wann sollte ich einen eigenen KFZ Sachverständigen in Berlin beauftragen?",
+          name: "Wann sollte ich einen eigenen Kfz Sachverständigen in Berlin beauftragen?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "Bei jedem unverschuldeten Unfall ab ca. 750 € Schaden haben Sie das Recht auf einen eigenen Sachverständigen. Beauftragen Sie ihn so früh wie möglich — vor der Reparatur und bevor Sie ein Regulierungsangebot der Versicherung annehmen.",
@@ -55,7 +56,7 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "Was kostet ein KFZ Sachverständiger in Berlin?",
+          name: "Was kostet ein Kfz Sachverständiger in Berlin?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "Bei einem unverschuldeten Unfall trägt die Haftpflichtversicherung des Verursachers die Kosten des Sachverständigen vollständig — für Sie ist das Gutachten dann kostenlos. Bei Kasko- oder Eigenschäden klären wir die Kostenübernahme vorab transparent mit Ihnen.",
@@ -63,7 +64,7 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "Ist der KFZ Sachverständige in ganz Berlin verfügbar?",
+          name: "Ist der Kfz Sachverständige in ganz Berlin verfügbar?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "Ja. Wir sind mobil in allen Berliner Bezirken unterwegs — von Prenzlauer Berg über Mitte, Pankow und Friedrichshain bis Spandau, Köpenick und Marzahn — sowie im Berliner Umland. Wir kommen zu Ihnen nach Hause, in die Werkstatt oder zum Unfallort.",
@@ -73,7 +74,7 @@ const jsonLd = {
     },
     {
       "@type": "LocalBusiness",
-      name: "Gutachten Prenzl – KFZ Sachverständiger Berlin",
+      name: "Gutachten Prenzl – Kfz Sachverständiger Berlin",
       url: "https://gutachtenprenzl.de",
       telephone: "+4915560003661",
       address: {
@@ -88,7 +89,7 @@ const jsonLd = {
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Startseite", item: "https://gutachtenprenzl.de" },
-        { "@type": "ListItem", position: 2, name: "KFZ Sachverständiger Berlin", item: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin" },
+        { "@type": "ListItem", position: 2, name: "Kfz Sachverständiger Berlin", item: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin" },
       ],
     },
   ],
@@ -98,14 +99,14 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#050507]">
       <NavbarNeu />
-      <Breadcrumb items={[{ name: "KFZ Sachverständiger Berlin", href: "/kfz-sachverstaendiger-berlin" }]} />
+      <Breadcrumb items={[{ name: "Kfz Sachverständiger Berlin", href: "/kfz-sachverstaendiger-berlin" }]} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* Hero */}
       <section className="relative px-5 pt-16 pb-14 overflow-hidden">
         <Image
           src="/hero-accident.jpg"
-          alt="KFZ Sachverständiger bei der Unfallbegutachtung in Berlin"
+          alt="Kfz Sachverständiger bei der Unfallbegutachtung in Berlin"
           fill
           priority
           sizes="100vw"
@@ -121,12 +122,12 @@ export default function LandingPage() {
           </div>
 
           <h1 className="font-display font-black text-4xl md:text-6xl text-white uppercase tracking-tight leading-tight mb-5">
-            KFZ Sachverständiger<br />
+            Kfz Sachverständiger<br />
             <span className="text-[#E11D2F]">Berlin</span>
           </h1>
 
           <p className="text-white/60 text-[16px] md:text-[18px] leading-relaxed max-w-xl mx-auto mb-8">
-            Unfall gehabt? Wir erstellen Ihr Gutachten in <strong className="text-white">24 Stunden</strong> — bei unverschuldetem Unfall für Sie <strong className="text-[#22c55e]">100% kostenlos</strong>.
+            Unfall gehabt? Wir erstellen Ihr Gutachten in <strong className="text-white">24 Stunden</strong> — bei unverschuldetem Unfall für Sie <strong className="text-[#22c55e]">in der Regel kostenlos</strong>.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
@@ -196,11 +197,11 @@ export default function LandingPage() {
       <section className="bg-[#050507] px-5 py-16 border-t border-white/8">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-6">
-            KFZ Sachverständiger in Berlin — neutral &amp; unabhängig
+            Kfz Sachverständiger in Berlin — neutral &amp; unabhängig
           </h2>
           <div className="text-white/55 text-[15px] leading-relaxed space-y-4">
             <p>
-              Als <strong className="text-white">unabhängiger KFZ Sachverständiger in Berlin</strong> erstellen
+              Als <strong className="text-white">unabhängiger Kfz Sachverständiger in Berlin</strong> erstellen
               wir nach einem Unfall ein neutrales Schadengutachten — beweissicher, von Versicherungen im
               Regelfall anerkannt und vor Gericht verwertbar. Im Gegensatz zum Gutachter der gegnerischen Versicherung
               arbeiten wir ausschließlich in Ihrem Interesse als Geschädigter und sorgen dafür, dass kein
@@ -308,14 +309,14 @@ export default function LandingPage() {
       <section className="bg-[#050507] px-5 py-16 border-t border-white/8">
         <div className="max-w-3xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase text-center mb-10">
-            Häufige Fragen zum KFZ Sachverständigen
+            Häufige Fragen zum Kfz Sachverständigen
           </h2>
           <div className="space-y-4">
             {[
-              { q: "Was macht ein KFZ Sachverständiger?", a: "Er begutachtet neutral Ihren Fahrzeugschaden, ermittelt Reparaturkosten, merkantilen Minderwert und ggf. Wiederbeschaffungs- und Restwert und erstellt ein rechtssicheres Gutachten, das Versicherungen und Gerichte anerkennen." },
+              { q: "Was macht ein Kfz Sachverständiger?", a: "Er begutachtet neutral Ihren Fahrzeugschaden, ermittelt Reparaturkosten, merkantilen Minderwert und ggf. Wiederbeschaffungs- und Restwert und erstellt ein rechtssicheres Gutachten, das Versicherungen und Gerichte anerkennen." },
               { q: "Was ist der Unterschied zwischen Sachverständiger und Gutachter?", a: "Im Alltag dasselbe — beide erstellen Kfz-Gutachten. Entscheidend ist die Unabhängigkeit: Ein eigener Sachverständiger arbeitet für Sie, der Versicherungsgutachter für die Gegenseite." },
               { q: "Wann sollte ich einen eigenen Sachverständigen beauftragen?", a: "Bei jedem unverschuldeten Unfall ab ca. 750 € Schaden — und zwar vor der Reparatur und bevor Sie ein Regulierungsangebot annehmen." },
-              { q: "Was kostet ein KFZ Sachverständiger in Berlin?", a: "Bei Fremdverschulden 0 € — die gegnerische Haftpflicht zahlt. Bei Kasko-/Eigenschäden klären wir die Kostenübernahme vorab transparent." },
+              { q: "Was kostet ein Kfz Sachverständiger in Berlin?", a: "Bei Fremdverschulden 0 € — die gegnerische Haftpflicht zahlt. Bei Kasko-/Eigenschäden klären wir die Kostenübernahme vorab transparent." },
               { q: "Ist der Sachverständige in ganz Berlin verfügbar?", a: "Ja, mobil in allen Bezirken und im Umland. Wir kommen zu Ihnen nach Hause, in die Werkstatt oder zum Unfallort." },
             ].map(({ q, a }) => (
               <div key={q} className="bg-white/[0.03] border border-white/8 rounded-2xl p-6">
@@ -396,6 +397,8 @@ export default function LandingPage() {
       </section>
 
       {/* Footer minimal */}
+      <VideoBlock slug="kfz-sachverstaendiger-berlin" />
+
       <FooterNeu />
 
     </div>

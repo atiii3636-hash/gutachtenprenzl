@@ -69,7 +69,7 @@ const steps = [
   {
     nr: "5",
     title: "Eigenen Gutachter rufen, nicht den der Versicherung",
-    text: "Bei Fremdverschulden haben Sie das gesetzliche Recht auf einen eigenen, unabhängigen KFZ Sachverständigen. Die gegnerische Versicherung zahlt für das Gutachten. Rufen Sie nicht den Gutachter der Versicherung an, dieser arbeitet für die Gegenseite und hat kein Interesse daran, Ihren Schaden vollständig zu dokumentieren.",
+    text: "Bei Fremdverschulden haben Sie das gesetzliche Recht auf einen eigenen, unabhängigen Kfz Sachverständigen. Die gegnerische Versicherung zahlt für das Gutachten. Rufen Sie nicht den Gutachter der Versicherung an, dieser arbeitet für die Gegenseite und hat kein Interesse daran, Ihren Schaden vollständig zu dokumentieren.",
     warning: true,
   },
   {

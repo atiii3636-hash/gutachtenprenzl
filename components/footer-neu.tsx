@@ -66,6 +66,7 @@ const nav = [
   { href: "/partner-werden", label: "Partner werden" },
   { href: "/ratgeber", label: "Ratgeber" },
   { href: "/faelle", label: "Fallarchiv" },
+  { href: "/videos", label: "Videos" },
   { href: "/faq", label: "Häufige Fragen" },
   { href: "/ueber-uns", label: "Über uns" },
   { href: "/standorte", label: "Standorte" },
@@ -81,14 +82,14 @@ export default function FooterNeu() {
             <div className="mb-5">
               <Image
                 src="/logos/logo-full.png"
-                alt="Gutachten Prenzl – KFZ Sachverständiger"
+                alt="Gutachten Prenzl – Kfz Sachverständiger"
                 width={473}
                 height={118}
                 className="h-12 w-auto object-contain"
               />
             </div>
             <p className="text-[15px] text-white/40 leading-relaxed max-w-xs mb-5">
-              Ihr unabhängiger TÜV-zertifizierter KFZ Sachverständiger in Berlin Prenzlauer Berg.
+              Ihr unabhängiger TÜV-zertifizierter Kfz Sachverständiger in Berlin Prenzlauer Berg.
               Schnell, seriös und auf Ihrer Seite.
             </p>
           </div>
@@ -147,7 +148,7 @@ export default function FooterNeu() {
 
         <div className="pb-6 border-t border-white/6 pt-10">
           <p className="text-[11px] font-semibold uppercase tracking-widest text-white/25 mb-5">
-            KFZ Sachverständiger in allen Berliner Bezirken
+            Kfz Sachverständiger in allen Berliner Bezirken
           </p>
           <ul className="flex flex-wrap gap-x-5 gap-y-2.5">
             {bezirke.map((b) => (

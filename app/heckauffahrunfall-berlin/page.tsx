@@ -9,7 +9,7 @@ import Breadcrumb from "@/components/neu/breadcrumb";
 
 export const metadata: Metadata = {
   title: { absolute: "Heckauffahrunfall Berlin – Gutachten & Schadensersatz" },
-  description: "Versicherung bewertet oft zu niedrig. Gutachten in 24h, 100% kostenlos bei Fremdverschulden. ☎ 0155 60003661",
+  description: "Versicherung bewertet oft zu niedrig. Gutachten in 24h, Kosten trägt meist die Gegenseite. ☎ 0155 60003661",
   keywords: [
     "heckauffahrunfall berlin",
     "auffahrunfall berlin gutachten",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://gutachtenprenzl.de/heckauffahrunfall-berlin" },
   openGraph: {
     title: "Heckauffahrunfall Berlin – Gutachten & Schadensersatz",
-    description: "Kostenloser KFZ Gutachter nach Heckauffahrunfall in Berlin. TÜV-zertifiziert, 24h Gutachten.",
+    description: "Kostenloser Kfz Gutachter nach Heckauffahrunfall in Berlin. TÜV-zertifiziert, 24h Gutachten.",
     url: "https://gutachtenprenzl.de/heckauffahrunfall-berlin",
     images: ["/og-image.jpg"],
   },
@@ -38,7 +38,7 @@ const jsonLd = {
           name: "Was tun nach einem Heckauffahrunfall in Berlin?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Nach einem Heckauffahrunfall in Berlin: Polizei rufen (wenn nötig), Fotos machen, Personalien des Unfallverursachers notieren und sofort einen eigenen unabhängigen KFZ Sachverständigen beauftragen. Keinen Gutachter der gegnerischen Versicherung akzeptieren. Bei Fremdverschulden zahlen Sie 0 €.",
+            text: "Nach einem Heckauffahrunfall in Berlin: Polizei rufen (wenn nötig), Fotos machen, Personalien des Unfallverursachers notieren und sofort einen eigenen unabhängigen Kfz Sachverständigen beauftragen. Keinen Gutachter der gegnerischen Versicherung akzeptieren. Bei Fremdverschulden zahlen Sie 0 €.",
           },
         },
         {
@@ -77,7 +77,7 @@ const jsonLd = {
     },
     {
       "@type": "LocalBusiness",
-      name: "Gutachten Prenzl – KFZ Sachverständiger Berlin",
+      name: "Gutachten Prenzl – Kfz Sachverständiger Berlin",
       url: "https://gutachtenprenzl.de",
       telephone: "+4915560003661",
       address: {
@@ -118,7 +118,7 @@ export default function HeckauffahrunfallBerlin() {
             <span className="text-[#E11D2F]">Berlin</span>
           </h1>
           <p className="text-white/60 text-[16px] md:text-[18px] leading-relaxed max-w-xl mx-auto mb-8">
-            Jemand ist Ihnen aufgefahren? Als TÜV-zertifizierter KFZ Sachverständiger in Berlin sichern wir Ihren <strong className="text-white">vollen Schadensersatz</strong> — inklusive Minderwert und Nutzungsausfall. Bei Fremdverschulden <strong className="text-[#22c55e]">kostenlos für Sie</strong>.
+            Jemand ist Ihnen aufgefahren? Als TÜV-zertifizierter Kfz Sachverständiger in Berlin sichern wir Ihren <strong className="text-white">vollen Schadensersatz</strong> — inklusive Minderwert und Nutzungsausfall. Bei Fremdverschulden <strong className="text-[#22c55e]">kostenlos für Sie</strong>.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
             <a href="tel:+4915560003661" className="inline-flex items-center justify-center gap-2.5 bg-[#E11D2F] hover:bg-[#B91C1C] text-white font-display font-black uppercase tracking-wide text-[15px] px-8 py-4 rounded-xl shadow-lg shadow-[#E11D2F]/30 transition-all">
@@ -152,7 +152,7 @@ export default function HeckauffahrunfallBerlin() {
             {[
               { step: "1", title: "Fahrzeug sichern & Polizei verständigen", text: "Warnblinkanlage an, Warndreieck aufstellen. Polizei rufen wenn Personenschäden vorliegen oder Unfallhergang unklar ist — Polizeiprotokoll ist wertvoll bei der Regulierung." },
               { step: "2", title: "Fotos machen & Daten notieren", text: "Fahrzeug des Verursachers, Kennzeichen, Führerschein, Versicherungsschein, Personalien. Fotos von beiden Fahrzeugen aus mehreren Winkeln, Straßensituation und Bremsspuren." },
-              { step: "3", title: "Eigenen KFZ Gutachter beauftragen — JETZT", text: "Beauftragen Sie sofort einen eigenen unabhängigen Gutachter. Keinen Gutachter der gegnerischen Versicherung annehmen — der arbeitet für die Versicherung, nicht für Sie." },
+              { step: "3", title: "Eigenen Kfz Gutachter beauftragen — JETZT", text: "Beauftragen Sie sofort einen eigenen unabhängigen Gutachter. Keinen Gutachter der gegnerischen Versicherung annehmen — der arbeitet für die Versicherung, nicht für Sie." },
               { step: "4", title: "Nicht unterschreiben ohne Gutachten", text: "Unterschreiben Sie keine Vergleichsangebote, Regulierungsvereinbarungen oder Reparaturaufträge, bevor ein unabhängiges Gutachten vorliegt." },
             ].map(({ step, title, text }) => (
               <div key={step} className="flex gap-4 p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
@@ -263,7 +263,7 @@ export default function HeckauffahrunfallBerlin() {
           </h2>
           <div className="space-y-4">
             {[
-              { q: "Was tun nach einem Heckauffahrunfall in Berlin?", a: "Fahrzeug sichern, Fotos machen, Personalien notieren — und sofort einen eigenen KFZ Gutachter beauftragen. Keinen Gutachter der gegnerischen Versicherung annehmen. Bei Fremdverschulden zahlen Sie 0 €." },
+              { q: "Was tun nach einem Heckauffahrunfall in Berlin?", a: "Fahrzeug sichern, Fotos machen, Personalien notieren — und sofort einen eigenen Kfz Gutachter beauftragen. Keinen Gutachter der gegnerischen Versicherung annehmen. Bei Fremdverschulden zahlen Sie 0 €." },
               { q: "Wer zahlt den Schaden beim Heckauffahrunfall?", a: "In der Regel der Auffahrende. Dessen Haftpflichtversicherung trägt alle Kosten: Gutachten, Reparatur, Mietwagen, Nutzungsausfall und Schmerzensgeld — solange Sie keinen Verursacheranteil haben." },
               { q: "Was ist der Minderwert nach einem Heckauffahrunfall?", a: "Auch ein vollständig repariertes Fahrzeug verliert nach einem Unfall an Marktwert. Dieser merkantile Minderwert muss von der Versicherung erstattet werden. Ein unabhängiger Gutachter berechnet ihn korrekt — bei jüngeren Fahrzeugen können das 500–3.000 € sein." },
               { q: "Wie lange dauert die Schadensregulierung nach einem Heckauffahrunfall?", a: "Mit einem vollständigen Gutachten und korrekter Schadensmeldung: 4–8 Wochen. Wir übernehmen die gesamte Kommunikation mit der gegnerischen Versicherung." },

@@ -5,10 +5,11 @@ import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import VideoBlock from "@/components/video-block";
 import Breadcrumb from "@/components/neu/breadcrumb";
 
 export const metadata: Metadata = {
-  title: { absolute: "Parkschaden Gutachten Berlin – KFZ Gutachter 24h" },
+  title: { absolute: "Parkschaden Gutachten Berlin – Kfz Gutachter 24h" },
   description: "Auch ohne bekannten Verursacher: Gutachten in 24h, Kasko übernimmt oft die Kosten. ☎ 0155 60003661",
   keywords: [
     "parkschaden gutachten berlin",
@@ -21,8 +22,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://gutachtenprenzl.de/parkschaden-gutachten-berlin" },
   openGraph: {
-    title: "Parkschaden Gutachten Berlin – KFZ Gutachter 24h",
-    description: "Parkschaden in Berlin? Kostenloser KFZ Gutachter kommt zu Ihnen. TÜV-zertifiziert, 24h Gutachten.",
+    title: "Parkschaden Gutachten Berlin – Kfz Gutachter 24h",
+    description: "Parkschaden in Berlin? Kostenloser Kfz Gutachter kommt zu Ihnen. TÜV-zertifiziert, 24h Gutachten.",
     url: "https://gutachtenprenzl.de/parkschaden-gutachten-berlin",
     images: ["/og-image.jpg"],
   },
@@ -39,7 +40,7 @@ const jsonLd = {
           name: "Was tun wenn man in Berlin einen Parkschaden am Auto entdeckt?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Fotos machen, Polizei informieren (wichtig für Versicherung), Zeugen ansprechen, Kaskoversicherung melden und sofort einen KFZ Sachverständigen beauftragen. Der Gutachter dokumentiert den Schaden rechtssicher. Falls kein Verursacher ermittelbar ist, übernimmt in der Regel Ihre Vollkaskoversicherung die Kosten — die Teilkasko schließt einfache Parkrempler durch unbekannte Fahrzeuge meist aus.",
+            text: "Fotos machen, Polizei informieren (wichtig für Versicherung), Zeugen ansprechen, Kaskoversicherung melden und sofort einen Kfz Sachverständigen beauftragen. Der Gutachter dokumentiert den Schaden rechtssicher. Falls kein Verursacher ermittelbar ist, übernimmt in der Regel Ihre Vollkaskoversicherung die Kosten — die Teilkasko schließt einfache Parkrempler durch unbekannte Fahrzeuge meist aus.",
           },
         },
         {
@@ -60,7 +61,7 @@ const jsonLd = {
         },
         {
           "@type": "Question",
-          name: "Wie schnell kommt ein KFZ Gutachter nach Berlin bei einem Parkschaden?",
+          name: "Wie schnell kommt ein Kfz Gutachter nach Berlin bei einem Parkschaden?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "In der Regel am selben oder nächsten Tag. Wir kommen zu Ihnen — zum Parkplatz, nach Hause oder in die Werkstatt in ganz Berlin. Das fertige Gutachten erhalten Sie innerhalb von 24 Stunden nach der Besichtigung.",
@@ -70,7 +71,7 @@ const jsonLd = {
     },
     {
       "@type": "LocalBusiness",
-      name: "Gutachten Prenzl – KFZ Sachverständiger Berlin",
+      name: "Gutachten Prenzl – Kfz Sachverständiger Berlin",
       url: "https://gutachtenprenzl.de",
       telephone: "+4915560003661",
       address: {
@@ -146,7 +147,7 @@ export default function ParkshadenBerlin() {
               { step: "1", title: "Sofort Fotos machen", text: "Dokumentieren Sie den Schaden aus verschiedenen Winkeln: Nahaufnahme, Übersicht, Straßensituation. Wenn vorhanden: andere Fahrzeuge in der Nähe, Kameras, Zeugen." },
               { step: "2", title: "Polizei benachrichtigen", text: "Bei Fahrerflucht (unbekannter Verursacher) unbedingt Anzeige erstatten. Das Protokoll ist wichtig für die Kaskoversicherung. Aktenzeichen notieren." },
               { step: "3", title: "Versicherung informieren", text: "Ihre Kaskoversicherung melden. Wenn der Verursacher bekannt ist: dessen Haftpflichtversicherung. Keinen Schuld eingestehen oder Vergleich akzeptieren." },
-              { step: "4", title: "KFZ Gutachter beauftragen", text: "Ein Gutachten sichert den vollen Schadensersatz. Ohne Gutachten zahlen Versicherungen oft pauschal zu wenig. Wir kommen direkt zu Ihnen in Berlin." },
+              { step: "4", title: "Kfz Gutachter beauftragen", text: "Ein Gutachten sichert den vollen Schadensersatz. Ohne Gutachten zahlen Versicherungen oft pauschal zu wenig. Wir kommen direkt zu Ihnen in Berlin." },
             ].map(({ step, title, text }) => (
               <div key={step} className="flex gap-4 p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
                 <div className="w-8 h-8 bg-[#E11D2F] rounded-lg flex items-center justify-center flex-shrink-0 font-display font-black text-white text-[14px]">{step}</div>
@@ -206,7 +207,7 @@ export default function ParkshadenBerlin() {
             Parkschadenhäufungen in Berlin
           </h2>
           <p className="text-white/50 text-[15px] leading-relaxed mb-8">
-            In Berlin entstehen Parkschäden besonders häufig in Bezirken mit hohem Parkdruck. Als lokaler KFZ Sachverständiger mit Sitz in <strong className="text-white">Prenzlauer Berg</strong> kennen wir die Hotspots und sind schnell vor Ort.
+            In Berlin entstehen Parkschäden besonders häufig in Bezirken mit hohem Parkdruck. Als lokaler Kfz Sachverständiger mit Sitz in <strong className="text-white">Prenzlauer Berg</strong> kennen wir die Hotspots und sind schnell vor Ort.
           </p>
           <div className="grid sm:grid-cols-2 gap-3">
             {[
@@ -263,10 +264,10 @@ export default function ParkshadenBerlin() {
           </h2>
           <div className="space-y-4">
             {[
-              { q: "Was tun wenn man in Berlin einen Parkschaden am Auto entdeckt?", a: "Sofort Fotos machen, Polizei informieren (Anzeige wegen Fahrerflucht falls nötig), Versicherung melden und einen KFZ Gutachter beauftragen. Das Gutachten ist die Grundlage für Ihren Schadensersatz." },
+              { q: "Was tun wenn man in Berlin einen Parkschaden am Auto entdeckt?", a: "Sofort Fotos machen, Polizei informieren (Anzeige wegen Fahrerflucht falls nötig), Versicherung melden und einen Kfz Gutachter beauftragen. Das Gutachten ist die Grundlage für Ihren Schadensersatz." },
               { q: "Zahlt die Versicherung bei einem Parkschaden ohne bekannten Verursacher?", a: "Ja — wenn vorhanden, übernimmt in der Regel Ihre Vollkaskoversicherung. Die Teilkasko deckt Parkrempler durch unbekannte Fahrzeuge meist nicht, sondern nur einen festen Schadenkatalog wie Diebstahl oder Wildschaden. Ein Polizeiprotokoll ist Voraussetzung." },
               { q: "Lohnt sich ein Gutachten bei einem kleinen Parkschaden in Berlin?", a: "Ab einem Schaden von ca. 750 € empfiehlt sich ein Gutachten. Bei Fremdverschulden trägt der Verursacher alle Kosten. Ohne Gutachten zahlen Versicherungen oft pauschale Schätzungen — zu Ihrem Nachteil." },
-              { q: "Wie schnell kommt ein KFZ Gutachter nach Berlin bei einem Parkschaden?", a: "In der Regel am selben oder nächsten Tag. Wir kommen zu Ihnen — zum Parkplatz, nach Hause oder in die Werkstatt in ganz Berlin. Das fertige Gutachten innerhalb von 24 Stunden." },
+              { q: "Wie schnell kommt ein Kfz Gutachter nach Berlin bei einem Parkschaden?", a: "In der Regel am selben oder nächsten Tag. Wir kommen zu Ihnen — zum Parkplatz, nach Hause oder in die Werkstatt in ganz Berlin. Das fertige Gutachten innerhalb von 24 Stunden." },
               { q: "Kann ich den Parkschaden selbst reparieren lassen bevor ich ein Gutachten mache?", a: "Nein — unbedingt erst das Gutachten abwarten. Wenn das Fahrzeug bereits repariert ist, kann der Schaden nicht mehr vollständig begutachtet werden und Sie verlieren möglicherweise Ansprüche." },
             ].map(({ q, a }) => (
               <div key={q} className="p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
@@ -300,6 +301,8 @@ export default function ParkshadenBerlin() {
           </div>
         </div>
       </section>
+
+      <VideoBlock slug="parkschaden-gutachten-berlin" />
 
       <FooterNeu />
     </div>

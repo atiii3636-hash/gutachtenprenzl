@@ -15,15 +15,21 @@ import { PHONE_HREF, WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
 import { REVIEWS } from "@/lib/reviews";
 import { faqs } from "@/lib/faqs";
 import { pageMetadata, faqLd } from "@/lib/seo";
+import { bezirkContent } from "@/lib/bezirk-content";
+
+// Heimatbezirk zuerst, der Rest in der Reihenfolge aus lib/bezirk-content.ts.
+const bezirkeHome = [...bezirkContent].sort(
+  (a, b) => Number(b.nameShort === "Prenzlauer Berg") - Number(a.nameShort === "Prenzlauer Berg")
+);
 
 export const metadata: Metadata = pageMetadata({
-  title: "Kfz-Gutachter Berlin: 24-Std.-Gutachten, 0 € bei Fremdschuld",
+  title: "Kfz-Gutachter Berlin: 24-Std.-Gutachten, meist 0 € für Sie",
   description:
     "Unabhängiger Kfz Sachverständiger in Berlin. Gutachten in 24 Stunden, bei unverschuldetem Unfall kostenlos. TÜV-zertifiziert, in allen Bezirken vor Ort.",
   path: "/",
   keywords: [
-    "KFZ Gutachter Berlin",
-    "KFZ Sachverständiger Berlin",
+    "Kfz Gutachter Berlin",
+    "Kfz Sachverständiger Berlin",
     "Unfallgutachten Berlin",
     "Kfz Gutachter Prenzlauer Berg",
     "Gutachten nach Unfall Berlin",
@@ -183,9 +189,9 @@ export default function NeuPage() {
           <h1
             className="font-display font-black tracking-tight leading-[1.03] text-[clamp(42px,7.6vw,78px)] mb-8 animate-fade-up"
           >
-            Kfz Gutachten Berlin{" "}
+            Kfz Gutachter Berlin{" "}
             <span className="block text-[#E11D2F] font-extrabold text-[0.36em] leading-[1.35] mt-5">
-              Wir kommen zu Ihnen und beraten Sie kostenlos.
+              Jetzt kostenlos beraten lassen.
             </span>
           </h1>
 
@@ -694,8 +700,15 @@ export default function NeuPage() {
             Sie finden uns in Prenzlauer Berg.
           </h2>
           <p className="text-white/45 text-[15.5px] leading-relaxed text-center max-w-xl mx-auto mb-8" data-reveal>
-            Prenzlauer Allee 88, 10405 Berlin — wenige Minuten vom S-Bahnhof Prenzlauer Allee. In den
-            meisten Fällen kommen aber wir zu Ihnen.
+            Prenzlauer Allee 88, 10405 Berlin — wenige Minuten vom S-Bahnhof Prenzlauer Allee. Mehr zu
+            Ihrem{" "}
+            <Link
+              href="/kfz-sachverstaendiger-berlin-prenzlauer-berg"
+              className="text-white/80 underline underline-offset-2 decoration-white/30 hover:decoration-white"
+            >
+              Kfz Gutachter in Prenzlauer Berg
+            </Link>
+            . In den meisten Fällen kommen aber wir zu Ihnen.
           </p>
           <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[4/3] sm:aspect-[16/9]" data-reveal>
             <iframe
@@ -709,6 +722,25 @@ export default function NeuPage() {
               referrerPolicy="strict-origin-when-cross-origin"
             />
           </div>
+
+          {/* Bis 28.09.2026 verlinkte die Startseite keinen Bezirk im Inhalt; Google zeigte
+              deshalb für "kfz gutachter prenzlauer berg" die Startseite statt der Bezirksseite. */}
+          <nav aria-label="Kfz Gutachter nach Bezirk" className="mt-10">
+            <p className="text-[11px] font-bold tracking-[0.2em] text-white/35 uppercase text-center mb-4">
+              Wir kommen in jeden Bezirk
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {bezirkeHome.map((b) => (
+                <Link
+                  key={b.slug}
+                  href={`/${b.slug}`}
+                  className="text-[13px] font-semibold text-white/70 hover:text-white bg-white/[0.03] border border-white/8 hover:border-white/25 px-3.5 py-1.5 rounded-lg transition-colors"
+                >
+                  Kfz Gutachter {b.h1Ort ?? b.nameShort}
+                </Link>
+              ))}
+            </div>
+          </nav>
         </div>
       </section>
 

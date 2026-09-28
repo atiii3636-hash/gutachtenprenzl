@@ -6,7 +6,7 @@ import FooterNeu from "@/components/footer-neu";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
-  description: "Datenschutzerklärung von Gutachten Prenzl – KFZ Sachverständiger Berlin.",
+  description: "Datenschutzerklärung von Gutachten Prenzl – Kfz Sachverständiger Berlin.",
   alternates: { canonical: "https://gutachtenprenzl.de/datenschutz" },
 };
 
@@ -39,7 +39,7 @@ export default function DatenschutzPage() {
           <p>Verantwortlicher im Sinne der DSGVO ist:</p>
           <div className="mt-3 p-4 bg-gray-50 rounded-xl text-[14px] space-y-1">
             <p className="font-bold text-[#080D14]">Atakan Arslan</p>
-            <p>KFZ Sachverständiger</p>
+            <p>Kfz Sachverständiger</p>
             <p>Prenzlauer Allee 88</p>
             <p>10405 Berlin, Deutschland</p>
             <p>Telefon: <a href="tel:+4915560003661" className="text-[#E11D2F] hover:underline">+49 155 60003661</a></p>

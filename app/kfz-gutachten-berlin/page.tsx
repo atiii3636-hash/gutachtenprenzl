@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Phone, MessageCircle, Check, FileText, Euro, Clock, Scale, Car, AlertTriangle } from "lucide-react";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import VideoBlock from "@/components/video-block";
 import Breadcrumb from "@/components/neu/breadcrumb";
 import PageHero from "@/components/neu/page-hero";
 import JsonLd from "@/components/neu/json-ld";
@@ -437,6 +438,8 @@ export default function KfzGutachtenBerlin() {
           </div>
         </div>
       </section>
+
+      <VideoBlock slug="kfz-gutachten-berlin" />
 
       <FooterNeu />
     </main>

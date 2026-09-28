@@ -9,7 +9,7 @@ import Breadcrumb from "@/components/neu/breadcrumb";
 
 export const metadata: Metadata = {
   title: { absolute: "Totalschaden Gutachten Berlin – Wiederbeschaffungswert" },
-  description: "Versicherung zahlt oft zu wenig. Wir ermitteln den vollen Wert, 100% kostenlos bei Fremdverschulden. ☎ 0155 60003661",
+  description: "Versicherung zahlt oft zu wenig. Wir ermitteln den vollen Wert, die Kosten trägt meist die Gegenseite. ☎ 0155 60003661",
   keywords: [
     "totalschaden gutachten berlin",
     "totalschaden berlin kfz gutachter",
@@ -36,7 +36,7 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "Was ist ein wirtschaftlicher Totalschaden beim KFZ?",
+          name: "Was ist ein wirtschaftlicher Totalschaden beim Kfz?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "Ein wirtschaftlicher Totalschaden liegt vor, wenn die Reparaturkosten den Wiederbeschaffungswert des Fahrzeugs übersteigen — oder wenn das Fahrzeug technisch nicht mehr reparierbar ist. In diesem Fall zahlt die Versicherung den Wiederbeschaffungswert abzüglich des Restwerts.",
@@ -78,7 +78,7 @@ const jsonLd = {
     },
     {
       "@type": "LocalBusiness",
-      name: "Gutachten Prenzl – KFZ Sachverständiger Berlin",
+      name: "Gutachten Prenzl – Kfz Sachverständiger Berlin",
       url: "https://gutachtenprenzl.de",
       telephone: "+4915560003661",
       address: {
@@ -118,7 +118,7 @@ export default function TotalschadenBerlin() {
             <span className="text-[#E11D2F]">Berlin</span>
           </h1>
           <p className="text-white/60 text-[16px] md:text-[18px] leading-relaxed max-w-xl mx-auto mb-8">
-            Totalschaden bedeutet nicht, dass Sie wenig bekommen. Als TÜV-zertifizierter KFZ Sachverständiger ermitteln wir Ihren korrekten <strong className="text-white">Wiederbeschaffungswert</strong> — und stellen sicher, dass die Versicherung <strong className="text-[#22c55e]">voll zahlt</strong>.
+            Totalschaden bedeutet nicht, dass Sie wenig bekommen. Als TÜV-zertifizierter Kfz Sachverständiger ermitteln wir Ihren korrekten <strong className="text-white">Wiederbeschaffungswert</strong> — und stellen sicher, dass die Versicherung <strong className="text-[#22c55e]">voll zahlt</strong>.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
             <a href="tel:+4915560003661" className="inline-flex items-center justify-center gap-2.5 bg-[#E11D2F] hover:bg-[#B91C1C] text-white font-display font-black uppercase tracking-wide text-[15px] px-8 py-4 rounded-xl shadow-lg shadow-[#E11D2F]/30 transition-all">
@@ -268,7 +268,7 @@ export default function TotalschadenBerlin() {
           </h2>
           <div className="space-y-4">
             {[
-              { q: "Was ist ein wirtschaftlicher Totalschaden beim KFZ?", a: "Wenn die Reparaturkosten den Wiederbeschaffungswert übersteigen (oder nahe dran sind). Die Versicherung zahlt dann Wiederbeschaffungswert abzüglich Restwert — statt der Reparatur." },
+              { q: "Was ist ein wirtschaftlicher Totalschaden beim Kfz?", a: "Wenn die Reparaturkosten den Wiederbeschaffungswert übersteigen (oder nahe dran sind). Die Versicherung zahlt dann Wiederbeschaffungswert abzüglich Restwert — statt der Reparatur." },
               { q: "Wie wird der Wiederbeschaffungswert beim Totalschaden berechnet?", a: "Anhand des aktuellen Marktpreises für ein gleichwertiges Fahrzeug: gleiche Marke, Modell, Kilometerstand, Ausstattung, Baujahr. Der eigene Gutachter berechnet anhand von Händlerpreisen — der Versicherungsgutachter nimmt oft Privatmarktpreise." },
               { q: "Kann ich mein Totalschadenfahrzeug behalten?", a: "Ja — Sie dürfen das Fahrzeug behalten und den Differenzbetrag (Wiederbeschaffungswert minus Restwert) kassieren. Wichtig: Lassen Sie den Restwert von einem eigenen Gutachter prüfen — die Versicherung verwendet oft Restwertbörsen mit überhöhten Angeboten." },
               { q: "Was ist der Unterschied zwischen Wiederbeschaffungswert und Zeitwert?", a: "Wiederbeschaffungswert = Händlerkaufpreis für gleichwertiges Fahrzeug. Zeitwert = technischer Wert ohne Marktpreisbezug. Bei Haftpflichtschäden steht Ihnen der Wiederbeschaffungswert zu — der liegt immer höher." },

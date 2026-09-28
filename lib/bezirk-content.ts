@@ -41,7 +41,7 @@ export interface BezirkContent {
   neighborSlugs: string[];
   /**
    * Ortsname für H1 und CTA, falls er vom nameShort abweicht.
-   * Hintergrund: Die H1 lautete früher "KFZ Sachverständiger Berlin <Name>".
+   * Hintergrund: Die H1 lautete früher "Kfz Sachverständiger Berlin <Name>".
    * Gesucht wird aber "Kfz Gutachter <Bezirk>": In der Search Console stehen
    * für Pankow 1.154 Impressionen auf "kfz gutachter pankow" gegenüber 546 auf
    * "kfz sachverständiger pankow". Nur Mitte braucht eine Abweichung, dort ist
@@ -82,7 +82,7 @@ export const bezirkContent: BezirkContent[] = [
     canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin-pankow",
     intro: "Pankow ist Berlins einwohnerreichster Bezirk — mit Prenzlauer Berg, Weißensee, Karow und Französisch Buchholz. Unfall auf der Berliner Allee, der Blankenburger Straße oder am S-Bahnhof Pankow? Wir sind in 15–20 Minuten bei Ihnen.",
     localText: [
-      "Der Bezirk Pankow erstreckt sich vom Prenzlauer Berg im Süden bis nach Buch im Norden — ein Gebiet mit stark unterschiedlichem Verkehrsaufkommen. Während die Schönhauser Allee und Berliner Straße täglich von Zehntausenden Fahrzeugen genutzt werden, sind Karow und Französisch Buchholz eher durch Pendlerverkehr geprägt. Als KFZ Sachverständiger kennen wir die lokalen Besonderheiten: enge Hinterhofzufahrten in Prenzlauer Berg, unübersichtliche Kreuzungen in Weißensee und den dichten Pendelverkehr auf der B2.",
+      "Der Bezirk Pankow erstreckt sich vom Prenzlauer Berg im Süden bis nach Buch im Norden — ein Gebiet mit stark unterschiedlichem Verkehrsaufkommen. Während die Schönhauser Allee und Berliner Straße täglich von Zehntausenden Fahrzeugen genutzt werden, sind Karow und Französisch Buchholz eher durch Pendlerverkehr geprägt. Als Kfz Sachverständiger kennen wir die lokalen Besonderheiten: enge Hinterhofzufahrten in Prenzlauer Berg, unübersichtliche Kreuzungen in Weißensee und den dichten Pendelverkehr auf der B2.",
       "Unser Büro an der Prenzlauer Allee 88 liegt nur wenige Fahrminuten vom Bezirkszentrum Pankow entfernt. Wir kommen zu Ihnen — ob in Buch, Heinersdorf, Blankenburg, Niederschönhausen oder direkt ins Zentrum von Pankow. Rufen Sie uns an, wir sind in 15 bis 25 Minuten vor Ort.",
     ],
     subdistricts: ["Prenzlauer Berg", "Weißensee", "Karow", "Heinersdorf", "Blankenburg", "Niederschönhausen", "Buch", "Französisch Buchholz", "Rosenthal"],
@@ -161,7 +161,7 @@ export const bezirkContent: BezirkContent[] = [
     canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin-prenzlauer-berg",
     intro: "Prenzlauer Berg ist unser Heimatbezirk — unser Büro steht direkt an der Prenzlauer Allee 88. Unfall am Kollwitzplatz, auf der Kastanienallee oder an der Schönhauser Allee? Wir sind in Minuten bei Ihnen.",
     localText: [
-      "Als KFZ Sachverständiger mit Standort in der Prenzlauer Allee 88 sind wir der einzige Gutachter, der buchstäblich im Bezirk sitzt. Prenzlauer Berg ist mit seiner hohen Fahraddichte, engen Altbaustraßen und stark frequentierten Magistralen wie der Schönhauser Allee, Greifswalder Straße und Danziger Straße unfallträchtig — besonders an Kreuzungen mit Straßenbahn-Vorrang und zugeparkten Einmündungen.",
+      "Mit unserem Büro in der Prenzlauer Allee 88 sitzen wir buchstäblich im Bezirk. Prenzlauer Berg ist mit seiner hohen Fahraddichte, engen Altbaustraßen und stark frequentierten Magistralen wie der Schönhauser Allee, Greifswalder Straße und Danziger Straße unfallträchtig — besonders an Kreuzungen mit Straßenbahn-Vorrang und zugeparkten Einmündungen.",
       "Wir kennen die lokalen Verhältnisse genau: die unübersichtliche Einmündung am Senefelderplatz, die staugefährdete Schönhauser Allee in Höhe des Mauerparks, den dichten Lieferverkehr rund um den Helmholtzplatz. Nach einem Unfall kommen wir sofort zu Ihnen — nach Hause, in die Werkstatt oder direkt zum Schadenort.",
     ],
     subdistricts: ["Kollwitzplatz", "Helmholtzplatz", "Kastanienallee", "Mauerpark", "Senefelderplatz", "Greifswalder Straße", "Danziger Straße", "Teutoburger Platz"],

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import VideoBlock from "@/components/video-block";
 import Breadcrumb from "@/components/neu/breadcrumb";
 
 /* Vergleichsseite. Vergleichsinhalte sind das mit Abstand am häufigsten zitierte
@@ -393,6 +394,8 @@ export default function GutachterVergleich() {
           </div>
         </div>
       </section>
+
+      <VideoBlock slug="eigener-gutachter-oder-versicherungsgutachter" />
 
       <FooterNeu />
     </div>

@@ -39,12 +39,12 @@ export default function AboutSection() {
 
             <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase tracking-tight mb-5 leading-tight">
               Ihr unabhängiger<br />
-              <span className="text-[#E11D2F]">KFZ Sachverständiger</span><br />
+              <span className="text-[#E11D2F]">Kfz Sachverständiger</span><br />
               in Berlin
             </h2>
 
             <p className="text-white/55 text-[15px] leading-relaxed mb-5">
-              Gutachten Prenzl ist ein TÜV Rheinland zertifizierter KFZ Sachverständiger
+              Gutachten Prenzl ist ein TÜV Rheinland zertifizierter Kfz Sachverständiger
               mit Büro in der{" "}
               <Link href="/kfz-sachverstaendiger-berlin-prenzlauer-berg" className="text-white font-bold hover:text-[#E11D2F] transition-colors underline underline-offset-2 decoration-white/30 hover:decoration-[#E11D2F]/50">
                 Prenzlauer Allee 88, 10405 Berlin

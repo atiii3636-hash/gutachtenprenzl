@@ -4,6 +4,7 @@ import { Phone, MessageCircle, Check, Clock, Shield, Star, AlertTriangle, Chevro
 import StandortKarte from "@/components/standort-karte";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import VideoBlock from "@/components/video-block";
 import FaqListe from "@/components/neu/faq-liste";
 import type { BezirkContent } from "@/lib/bezirk-content";
 import { bezirkContent } from "@/lib/bezirk-content";
@@ -27,7 +28,7 @@ function Kapitel({ num, label }: { num: string; label: string }) {
 export default function BezirkPageTemplate({ content }: Props) {
   const { name, nameShort, intro, localText, subdistricts, hotspots, distanceMin, faqs, neighborSlugs, slug, deepDive, h1Ort, praxisfall } = content;
 
-  // "Kfz Gutachter <Ort>" statt "KFZ Sachverständiger <Ort>": Beide Begriffe
+  // "Kfz Gutachter <Ort>" statt "Kfz Sachverständiger <Ort>": Beide Begriffe
   // meinen dasselbe, gesucht wird aber fast doppelt so oft nach "Gutachter".
   const ort = h1Ort ?? nameShort;
   const hauptkeyword = `Kfz Gutachter ${ort}`;
@@ -58,7 +59,7 @@ export default function BezirkPageTemplate({ content }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://gutachtenprenzl.de" },
-      { "@type": "ListItem", position: 2, name: "KFZ Sachverständiger Berlin", item: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin" },
+      { "@type": "ListItem", position: 2, name: "Kfz Sachverständiger Berlin", item: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin" },
       { "@type": "ListItem", position: 3, name: hauptkeyword, item: `https://gutachtenprenzl.de/${slug}` },
     ],
   };
@@ -142,7 +143,7 @@ export default function BezirkPageTemplate({ content }: Props) {
               </li>
               <li><ChevronRight size={10} className="mx-1 text-white/15" /></li>
               <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <Link href="/kfz-sachverstaendiger-berlin" className="hover:text-white/70 transition-colors" itemProp="item"><span itemProp="name">KFZ Sachverständiger Berlin</span></Link>
+                <Link href="/kfz-sachverstaendiger-berlin" className="hover:text-white/70 transition-colors" itemProp="item"><span itemProp="name">Kfz Sachverständiger Berlin</span></Link>
                 <meta itemProp="position" content="2" />
               </li>
               <li><ChevronRight size={10} className="mx-1 text-white/15" /></li>
@@ -631,6 +632,8 @@ export default function BezirkPageTemplate({ content }: Props) {
             </div>
           </div>
         </section>
+
+        <VideoBlock slug={slug} />
 
         <FooterNeu />
       </div>

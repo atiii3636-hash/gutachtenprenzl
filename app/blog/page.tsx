@@ -5,7 +5,7 @@ import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
 
 export const metadata: Metadata = {
-  title: { absolute: "Ratgeber: KFZ Gutachten & Unfallrecht Berlin" },
+  title: { absolute: "Ratgeber: Kfz Gutachten & Unfallrecht Berlin" },
   description:
     "Ratgeber vom Sachverständigenbüro Gutachten Prenzl, TÜV-zertifiziert in Berlin. Was tun nach einem Unfall? Welche Rechte haben Sie? Alle Antworten hier.",
   alternates: { canonical: "https://gutachtenprenzl.de/blog" },
@@ -56,7 +56,7 @@ export default function BlogIndex() {
             <span className="text-[#E11D2F]">Tipps nach dem Unfall</span>
           </h1>
           <p className="text-white/55 text-[16px] leading-relaxed max-w-xl mx-auto">
-            Als TÜV-zertifizierter KFZ Sachverständiger erkläre ich, welche Rechte Sie haben
+            Als TÜV-zertifizierter Kfz Sachverständiger erkläre ich, welche Rechte Sie haben
             und wie Sie Ihren Schadensersatz vollständig durchsetzen.
           </p>
         </div>

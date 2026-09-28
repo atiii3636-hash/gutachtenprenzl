@@ -12,6 +12,7 @@ const links = [
   { href: "/flotten-partner", label: "Flotten & Gewerbe" },
   { href: "/ratgeber", label: "Ratgeber" },
   { href: "/faelle", label: "Fälle" },
+  { href: "/videos", label: "Videos" },
   { href: "/faq", label: "FAQ" },
   { href: "/ueber-uns", label: "Über uns" },
   { href: "/standorte", label: "Standorte" },
@@ -44,7 +45,7 @@ export default function NavbarNeu() {
         <Link href="/" className="flex items-center flex-shrink-0">
           <Image
             src="/logos/logo-full.png"
-            alt="Gutachten Prenzl – KFZ Sachverständiger"
+            alt="Gutachten Prenzl – Kfz Sachverständiger"
             width={473}
             height={118}
             className="h-11 w-auto object-contain"

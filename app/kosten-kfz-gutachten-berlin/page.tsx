@@ -4,6 +4,7 @@ import Link from "next/link";
 import { WHATSAPP_URL } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import VideoBlock from "@/components/video-block";
 import Breadcrumb from "@/components/neu/breadcrumb";
 
 /* Preis-/Kostenseite. Wichtigste AEO-Seite der Site: "Was kostet ein Kfz-Gutachten"
@@ -427,6 +428,8 @@ export default function KostenKfzGutachtenBerlin() {
           </div>
         </div>
       </section>
+
+      <VideoBlock slug="kosten-kfz-gutachten-berlin" />
 
       <FooterNeu />
     </div>

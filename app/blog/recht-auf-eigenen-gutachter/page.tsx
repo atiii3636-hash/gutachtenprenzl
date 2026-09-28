@@ -6,7 +6,7 @@ import FooterNeu from "@/components/footer-neu";
 
 export const metadata: Metadata = {
   // absolute: ohne das Suffix aus dem Layout, sonst 82 Zeichen und in der Suche abgeschnitten.
-  title: { absolute: "Ihr Recht auf einen unabhängigen KFZ Gutachter in Berlin" },
+  title: { absolute: "Ihr Recht auf einen unabhängigen Kfz Gutachter in Berlin" },
   description:
     "Bei unverschuldetem Unfall haben Sie das gesetzliche Recht auf einen eigenen Gutachter, kostenlos. Was das bedeutet und wie Sie es durchsetzen.",
   alternates: { canonical: "https://gutachtenprenzl.de/blog/recht-auf-eigenen-gutachter" },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const articleJsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Ihr Recht auf einen unabhängigen KFZ Gutachter",
+  headline: "Ihr Recht auf einen unabhängigen Kfz Gutachter",
   description:
     "Bei Fremdverschulden haben Sie das gesetzliche Recht auf einen eigenen Sachverständigen, kostenlos. Was das bedeutet und wie Sie es durchsetzen.",
   url: "https://gutachtenprenzl.de/blog/recht-auf-eigenen-gutachter",
@@ -80,7 +80,7 @@ export default function RechtAufGutachter() {
           <p className="text-white/55 text-[16px] leading-relaxed">
             Die meisten Unfallgeschädigten ahnen es nicht: Nach einem unverschuldeten Unfall
             haben Sie ein gesetzlich verankertes Recht auf einen eigenen, unabhängigen
-            KFZ Sachverständigen, und die gegnerische Versicherung muss dafür zahlen.
+            Kfz Sachverständigen, und die gegnerische Versicherung muss dafür zahlen.
           </p>
 
           <div className="mt-6 flex items-center gap-2 text-white/30 text-[13px]">
@@ -290,7 +290,7 @@ export default function RechtAufGutachter() {
           </h2>
           <p className="text-white/80 text-[15px] mb-8">
             Ich komme zu Ihnen, dokumentiere alles und kümmere mich um die Versicherung.
-            Für Sie 100 % kostenlos bei Fremdverschulden.
+            Bei Fremdverschulden zahlt das in der Regel die gegnerische Versicherung.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a

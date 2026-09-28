@@ -1,6 +1,6 @@
 # Bewertungen systematisch sammeln
 
-Stand 21.08.2026: **84 Bewertungen, 5,0 Sterne.**
+Stand 28.09.2026: **91 Bewertungen, 5,0 Sterne** (21.08.: 84). Stärkster Berliner Wettbewerber laut SEO-Audit vom 28.09.: kfz-unfallgutachter.berlin mit 452.
 
 Zum Vergleich, aus derselben Berliner Suche gezogen:
 
@@ -17,10 +17,10 @@ Sie liegen bei der Bewertung ganz oben, bei der Menge im Mittelfeld. Für den Ka
 ## Ihr Bewertungslink
 
 ```
-https://g.page/r/CefSgT78ivVGEAE/review
+https://gutachtenprenzl.de/bewerten
 ```
 
-Der Link öffnet direkt das Bewertungsformular, ohne Umweg über die Profilseite. Im Google-Unternehmensprofil liegt unter „Mehr Rezensionen erhalten" auch ein QR-Code dazu, den Sie ausdrucken und ins Büro hängen können.
+Kurzlink auf der eigenen Domain, leitet weiter auf `https://g.page/r/CefSgT78ivVGEAE/review` (eingerichtet in `next.config.js`). Wirkt in WhatsApp vertrauenswürdiger als ein fremder Link und passt auf Rechnung und Visitenkarte. Der Link öffnet direkt das Bewertungsformular, ohne Umweg über die Profilseite. Im Google-Unternehmensprofil liegt unter „Mehr Rezensionen erhalten" auch ein QR-Code dazu, den Sie ausdrucken und ins Büro hängen können.
 
 ## Vorlage: E-Mail beim Versand des Gutachtens
 
@@ -30,7 +30,7 @@ Anhängen, wenn das fertige Gutachten rausgeht. Das ist der Moment mit der höch
 >
 > Falls Sie zufrieden waren: Eine kurze Bewertung bei Google hilft uns sehr. Zwei Sätze reichen völlig.
 >
-> https://g.page/r/CefSgT78ivVGEAE/review
+> https://gutachtenprenzl.de/bewerten
 >
 > Und falls etwas nicht rund lief, schreiben Sie mir das lieber direkt. Dann kümmere ich mich darum.
 
@@ -42,7 +42,7 @@ Kürzer halten als in der Mail, sonst wirkt es aufdringlich.
 
 > Hallo Herr/Frau [Name], ist bei der Regulierung alles durchgelaufen?
 >
-> Wenn Sie zufrieden waren, würde ich mich über eine kurze Google-Bewertung freuen: https://g.page/r/CefSgT78ivVGEAE/review
+> Wenn Sie zufrieden waren, würde ich mich über eine kurze Google-Bewertung freuen: https://gutachtenprenzl.de/bewerten
 
 ## Auf Bewertungen antworten
 
@@ -58,4 +58,4 @@ Keine Gegenleistung für Bewertungen, also kein Rabatt, kein Gutschein, keine Ve
 
 Keine Bewertungen im eigenen Namen oder über Bekannte, die nie Kunde waren. Google erkennt das inzwischen zuverlässig über Gerätemuster und Kontohistorie.
 
-Auf der Website dürfen die echten Google-Bewertungen sichtbar eingebunden werden, das ist bereits umgesetzt. Was nicht geht, ist `aggregateRating` im Schema der eigenen Domain: selbst ausgezeichnete Sterne spielt Google nicht aus und riskiert eine manuelle Maßnahme. Deshalb steht es bewusst nicht im Quelltext.
+Auf der Website dürfen die echten Google-Bewertungen sichtbar eingebunden werden, das ist bereits umgesetzt. Seit 20.09.2026 steht zusätzlich `aggregateRating` im JSON-LD (`app/layout.tsx`), damit KI-Suchmaschinen die Zahl belegt vorfinden. Sterne im Suchergebnis erzeugt das bei der eigenen Domain nicht, schadet laut SEO-Audit vom 28.09. aber auch nicht, solange die Zahlen echt sind. `REVIEW_COUNT` in `lib/contact.ts` deshalb nur mit echten Werten aus dem Google-Profil hochsetzen.

@@ -40,7 +40,7 @@ export default function ImpressumPage() {
           <div className="p-4 bg-gray-50 rounded-xl text-[14px] space-y-1">
             <p className="font-bold text-[#080D14]">Atakan Arslan</p>
             <p className="text-gray-500">handelnd unter der Bezeichnung „Gutachten Prenzl"</p>
-            <p>KFZ Sachverständiger</p>
+            <p>Kfz Sachverständiger</p>
             <p>Prenzlauer Allee 88</p>
             <p>10405 Berlin</p>
             <p>Deutschland</p>
@@ -67,7 +67,7 @@ export default function ImpressumPage() {
         <section>
           <h2 className="font-display font-black text-xl text-[#080D14] uppercase mb-3">Berufsbezeichnung</h2>
           <div className="text-[14px] space-y-1">
-            <p>Berufsbezeichnung: <strong>KFZ Sachverständiger</strong></p>
+            <p>Berufsbezeichnung: <strong>Kfz Sachverständiger</strong></p>
             <p>Zertifizierung: TÜV Rheinland (ID 0217466029, gültig bis 18.12.2028)</p>
             <p>Zuständige Aufsichtsbehörde: Industrie- und Handelskammer Berlin</p>
           </div>

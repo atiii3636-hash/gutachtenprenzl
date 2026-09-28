@@ -68,7 +68,7 @@ export function pageMetadata({
       type: "website",
       locale: "de_DE",
       url,
-      siteName: "Gutachten Prenzl – KFZ Sachverständiger Berlin",
+      siteName: "Gutachten Prenzl – Kfz Sachverständiger Berlin",
       title,
       description,
       images: [{ url: image, width: 1200, height: 630, alt: title }],

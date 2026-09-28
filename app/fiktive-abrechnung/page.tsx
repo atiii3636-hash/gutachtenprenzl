@@ -34,7 +34,7 @@ const posten = [
   { pos: "Reparaturkosten netto", zahlt: true, hinweis: "Nach der Kalkulation im Gutachten, ohne Mehrwertsteuer" },
   { pos: "Mehrwertsteuer", zahlt: false, hinweis: "Nur wenn sie tatsächlich anfällt, also bei echter Reparatur oder Ersatzkauf" },
   { pos: "Merkantile Wertminderung", zahlt: true, hinweis: "Bleibt unabhängig davon bestehen, ob Sie reparieren lassen" },
-  { pos: "Nutzungsausfall", zahlt: true, hinweis: "Für die kalkulierte Reparaturdauer, wenn Sie in dieser Zeit ohne Fahrzeug waren" },
+  { pos: "Nutzungsausfall", zahlt: true, hinweis: "Für die tatsächliche Ausfallzeit, höchstens die kalkulierte Reparaturdauer" },
   { pos: "Gutachterkosten", zahlt: true, hinweis: "Trägt bei Fremdverschulden die gegnerische Haftpflichtversicherung" },
   { pos: "Auslagenpauschale", zahlt: true, hinweis: "Übliche Pauschale für Telefon, Porto und Wege" },
   { pos: "Abschleppkosten", zahlt: true, hinweis: "Soweit tatsächlich angefallen und belegt" },
@@ -65,7 +65,7 @@ const faq = [
   },
   {
     q: "Steht mir auch bei fiktiver Abrechnung Nutzungsausfall zu?",
-    a: "Ja. Der Anspruch richtet sich nach der im Gutachten kalkulierten Reparaturdauer. Voraussetzung ist, dass Sie das Fahrzeug in dieser Zeit tatsächlich nicht nutzen konnten und nutzen wollten. Die Höhe ergibt sich aus der Fahrzeuggruppe.",
+    a: "Nur für die Zeit, in der Sie tatsächlich ohne Fahrzeug waren, höchstens für die im Gutachten kalkulierte Reparaturdauer. Fahren Sie unrepariert weiter, entfällt der Anspruch. Reparieren Sie selbst, weisen Sie die Standzeit mit einer Reparaturbestätigung nach. Die Höhe ergibt sich aus der Fahrzeuggruppe.",
   },
   {
     q: "Bekomme ich die Wertminderung trotzdem?",

@@ -43,8 +43,8 @@ export const faqKatalog: FaqBlock[] = [
     intro:
       "Die häufigste Frage nach einem Unfall ist die nach dem Geld. Kurz vorweg: Trifft Sie keine Schuld, zahlen Sie für das Gutachten nichts.",
     fragen: [
-      vonStartseite("Was kostet ein KFZ-Gutachten in Berlin?"),
-      vonStartseite("Wer trägt die Kosten für ein KFZ-Gutachten, ich oder die Versicherung?"),
+      vonStartseite("Was kostet ein Kfz-Gutachten in Berlin?"),
+      vonStartseite("Wer trägt die Kosten für ein Kfz-Gutachten, ich oder die Versicherung?"),
       {
         q: "Was kostet ein Gutachten, wenn ich den Unfall selbst verursacht habe?",
         a: "Dann tragen Sie das Honorar selbst, oder es läuft über Ihre Vollkaskoversicherung. Das Honorar richtet sich nach der Schadenhöhe: bei rund 1.000 € Schaden etwa 250–350 €, bei 5.000 € etwa 560–700 €, bei 15.000 € etwa 1.020–1.250 €. Die genauen Sätze und was jeweils enthalten ist, finden Sie auf unserer Kostenseite.",
@@ -78,10 +78,10 @@ export const faqKatalog: FaqBlock[] = [
     intro:
       "Vom Anruf bis zum fertigen Gutachten vergehen bei uns in der Regel 24 Stunden. So läuft es ab.",
     fragen: [
-      vonStartseite("Wie schnell bekomme ich einen Termin beim KFZ Sachverständiger in Berlin?"),
+      vonStartseite("Wie schnell bekomme ich einen Termin beim Kfz Sachverständiger in Berlin?"),
       vonStartseite("Erstellen Sie Unfallgutachten auch am Wochenende oder abends?"),
-      vonStartseite("Welche Unterlagen brauche ich für ein KFZ-Gutachten?"),
-      vonStartseite("Gibt es einen mobilen KFZ Gutachter in meiner Nähe in Berlin?"),
+      vonStartseite("Welche Unterlagen brauche ich für ein Kfz-Gutachten?"),
+      vonStartseite("Gibt es einen mobilen Kfz Gutachter in meiner Nähe in Berlin?"),
       {
         q: "Muss ich mein Auto in eine Werkstatt bringen?",
         a: "Nein. Wir kommen zu Ihnen — nach Hause, an den Arbeitsplatz, in die Werkstatt Ihrer Wahl oder direkt an den Unfallort. Für die Besichtigung brauchen wir nur Tageslicht oder eine ausreichend beleuchtete Fläche und Platz rund um das Fahrzeug.",
@@ -112,7 +112,7 @@ export const faqKatalog: FaqBlock[] = [
       "Hier entscheidet sich, ob Sie den vollen Schadenersatz bekommen oder nur einen Teil. Die meisten Geschädigten kennen diese Rechte nicht.",
     fragen: [
       vonStartseite("Brauche ich nach einem Unfall in Berlin einen eigenen Gutachter?"),
-      vonStartseite("Wie finde ich einen unabhängigen KFZ Gutachter in Berlin?"),
+      vonStartseite("Wie finde ich einen unabhängigen Kfz Gutachter in Berlin?"),
       {
         q: "Muss ich den Gutachter nehmen, den die Versicherung schickt?",
         a: "Nein. Bei einem unverschuldeten Unfall dürfen Sie den Sachverständigen frei wählen. Die gegnerische Versicherung darf Ihnen keinen vorschreiben, und sie darf die Regulierung nicht davon abhängig machen. Ein von der Versicherung beauftragter Gutachter arbeitet im Auftrag der Gegenseite, nicht in Ihrem.",
@@ -154,7 +154,7 @@ export const faqKatalog: FaqBlock[] = [
     intro:
       "Ein Gutachten ist mehr als eine Reparaturkostenschätzung. Diese Positionen entscheiden über die Höhe Ihrer Entschädigung.",
     fragen: [
-      vonStartseite("Was macht ein KFZ Sachverständiger genau?"),
+      vonStartseite("Was macht ein Kfz Sachverständiger genau?"),
       vonStartseite("Was ist der Unterschied zwischen Schadensgutachten und Wertgutachten?"),
       vonStartseite("Wie läuft die Bewertung bei einem Totalschaden ab?"),
       {
@@ -229,8 +229,8 @@ export const faqKatalog: FaqBlock[] = [
     intro: "Wer wir sind, wie wir arbeiten und wo Sie uns erreichen.",
     fragen: [
       vonStartseite("Was ist ein amtlich anerkannter Sachverständiger und brauche ich das?"),
-      vonStartseite("Wo finde ich einen KFZ Gutachter in Prenzlauer Berg?"),
-      vonStartseite("Sind Sie auch der KFZ Sachverständiger für Pankow und Weißensee?"),
+      vonStartseite("Wo finde ich einen Kfz Gutachter in Prenzlauer Berg?"),
+      vonStartseite("Sind Sie auch der Kfz Sachverständiger für Pankow und Weißensee?"),
       {
         q: "Arbeiten Sie unabhängig von Versicherungen?",
         a: "Ja. Wir haben keine Rahmenverträge mit Versicherern, keine Bindung an Werkstätten und keine Provisionsvereinbarungen. Unser Auftraggeber sind ausschließlich Sie. Das ist kein Versprechen, sondern die Voraussetzung dafür, dass ein Gutachten überhaupt etwas wert ist.",

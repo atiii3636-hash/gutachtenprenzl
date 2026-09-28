@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Phone, MessageCircle, Check, Scale, TrendingUp, ShieldAlert, MapPin, Calculator, FileText } from "lucide-react";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import VideoBlock from "@/components/video-block";
 import Breadcrumb from "@/components/neu/breadcrumb";
 import PageHero from "@/components/neu/page-hero";
 import JsonLd from "@/components/neu/json-ld";
@@ -324,6 +325,8 @@ export default function RestwertermittlungNeu() {
           </div>
         </div>
       </section>
+
+      <VideoBlock slug="restwertermittlung" />
 
       <FooterNeu />
     </main>

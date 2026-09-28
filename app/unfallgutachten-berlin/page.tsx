@@ -10,8 +10,8 @@ import Breadcrumb from "@/components/neu/breadcrumb";
 import { bezirkContent } from "@/lib/bezirk-content";
 
 export const metadata: Metadata = {
-  title: { absolute: "Unfallgutachten Berlin – in 24 Std., 0 € bei Fremdschuld" },
-  description: "Jetzt Gutachten sichern: TÜV-zertifiziert, in 24h fertig, bei Fremdverschulden 100% kostenlos. ☎ 0155 60003661",
+  title: { absolute: "Unfallgutachten Berlin – Ablauf, Ansprüche, Kosten" },
+  description: "Unfallgutachten in Berlin: So läuft es ab, was Ihnen nach einem unverschuldeten Unfall zusteht und wer zahlt. Gutachten in 24 Std., meist 0 € für Sie.",
   alternates: { canonical: "https://gutachtenprenzl.de/unfallgutachten-berlin" },
 };
 
@@ -150,7 +150,7 @@ export default function LandingPage() {
       <section className="relative px-5 pt-16 pb-14 overflow-hidden">
         <Image
           src="/hero-accident.jpg"
-          alt="Unfallgutachten in Berlin – KFZ Sachverständiger begutachtet Fahrzeugschaden"
+          alt="Unfallgutachten in Berlin – Kfz Sachverständiger begutachtet Fahrzeugschaden"
           fill
           priority
           sizes="100vw"
@@ -171,7 +171,7 @@ export default function LandingPage() {
           </h1>
 
           <p className="text-white/60 text-[16px] md:text-[18px] leading-relaxed max-w-xl mx-auto mb-8">
-            Unfall gehabt? Wir erstellen Ihr Unfallgutachten in Berlin innerhalb von <strong className="text-white">24 Stunden</strong> — bei unverschuldetem Unfall für Sie <strong className="text-[#22c55e]">100% kostenlos</strong>.
+            Unfall gehabt? Wir erstellen Ihr Unfallgutachten in Berlin innerhalb von <strong className="text-white">24 Stunden</strong> — bei unverschuldetem Unfall für Sie <strong className="text-[#22c55e]">in der Regel kostenlos</strong>.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">

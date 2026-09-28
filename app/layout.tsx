@@ -32,15 +32,15 @@ const siteUrl = "https://gutachtenprenzl.de";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Unfallgutachten Berlin – 100% kostenlos, in 24h",
+    default: "Unfallgutachten Berlin – in 24 Std., meist 0 € für Sie",
     template: "%s | Gutachten Prenzl",
   },
   description:
-    "Unfall gehabt? Gutachten in 24h – 100% kostenlos bei Fremdverschulden. TÜV-zertifiziert, alle Berliner Bezirke. ☎ 0155 60003661",
+    "Unfall gehabt? Gutachten in 24h, bei Fremdverschulden trägt meist die Gegenseite die Kosten. TÜV-zertifiziert, alle Berliner Bezirke. ☎ 0155 60003661",
   keywords: [
-    "KFZ Sachverständiger Berlin",
+    "Kfz Sachverständiger Berlin",
     "Unfallgutachten Berlin",
-    "KFZ Gutachter Berlin",
+    "Kfz Gutachter Berlin",
     "Kfz Sachverständiger Prenzlauer Berg",
     "Unfallgutachten kostenlos Berlin",
     "TÜV zertifizierter Sachverständiger Berlin",
@@ -71,24 +71,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "de_DE",
     url: siteUrl,
-    siteName: "Gutachten Prenzl – KFZ Sachverständiger Berlin",
-    title: "Unfallgutachten Berlin – 100% kostenlos, in 24h",
+    siteName: "Gutachten Prenzl – Kfz Sachverständiger Berlin",
+    title: "Unfallgutachten Berlin – in 24 Std., meist 0 € für Sie",
     description:
-      "Unfall gehabt? Gutachten in 24h – 100% kostenlos bei Fremdverschulden. TÜV-zertifiziert, alle Berliner Bezirke.",
+      "Unfall gehabt? Gutachten in 24h, bei Fremdverschulden trägt meist die Gegenseite die Kosten. TÜV-zertifiziert, alle Berliner Bezirke.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Gutachten Prenzl – KFZ Sachverständiger Berlin",
+        alt: "Gutachten Prenzl – Kfz Sachverständiger Berlin",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Unfallgutachten Berlin – 100% kostenlos, in 24h",
+    title: "Unfallgutachten Berlin – in 24 Std., meist 0 € für Sie",
     description:
-      "Unfall gehabt? Gutachten in 24h – 100% kostenlos bei Fremdverschulden. TÜV-zertifiziert.",
+      "Unfall gehabt? Gutachten in 24h, bei Fremdverschulden trägt meist die Gegenseite die Kosten. TÜV-zertifiziert.",
     images: ["/og-image.jpg"],
   },
 };
@@ -101,9 +101,9 @@ const jsonLd = {
       "@id": `${siteUrl}/#person`,
       name: "Atakan Arslan",
       alternateName: "Atakan Arslan – Gutachten Prenzl",
-      jobTitle: "TÜV Rheinland zertifizierter KFZ Sachverständiger",
+      jobTitle: "TÜV Rheinland zertifizierter Kfz Sachverständiger",
       description:
-        "TÜV Rheinland zertifizierter KFZ Sachverständiger in Berlin. Spezialisiert auf Unfallgutachten, Schadensregulierung und Fahrzeugbewertung. Tätig in allen Berliner Bezirken.",
+        "TÜV Rheinland zertifizierter Kfz Sachverständiger in Berlin. Spezialisiert auf Unfallgutachten, Schadensregulierung und Fahrzeugbewertung. Tätig in allen Berliner Bezirken.",
       url: `${siteUrl}/ueber-uns`,
       telephone: "+4915560003661",
       email: "info@gutachtenprenzl.de",
@@ -117,7 +117,7 @@ const jsonLd = {
       },
       hasCredential: {
         "@type": "EducationalOccupationalCredential",
-        name: "TÜV Rheinland Zertifikat KFZ Sachverständiger",
+        name: "TÜV Rheinland Zertifikat Kfz Sachverständiger",
         credentialCategory: "certification",
         recognizedBy: {
           "@type": "Organization",
@@ -150,11 +150,11 @@ const jsonLd = {
       name: "Kfz Gutachten Prenzl - Sachverständigenbüro",
       alternateName: [
         "Gutachten Prenzl",
-        "Gutachten Prenzl – KFZ Sachverständiger Berlin",
-        "GP KFZ Sachverständiger",
+        "Gutachten Prenzl – Kfz Sachverständiger Berlin",
+        "GP Kfz Sachverständiger",
       ],
       description:
-        "TÜV-zertifizierter KFZ Sachverständiger in Berlin. Unfallgutachten in 24 Stunden, kostenlos bei unverschuldetem Unfall. Alle Berliner Bezirke.",
+        "TÜV-zertifizierter Kfz Sachverständiger in Berlin. Unfallgutachten in 24 Stunden, kostenlos bei unverschuldetem Unfall. Alle Berliner Bezirke.",
       url: siteUrl,
       telephone: "+4915560003661",
       email: "info@gutachtenprenzl.de",
@@ -221,7 +221,7 @@ const jsonLd = {
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "KFZ Gutachten Leistungen Berlin",
+        name: "Kfz Gutachten Leistungen Berlin",
         itemListElement: [
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Unfallgutachten Berlin", url: `${siteUrl}/unfallgutachten-berlin` } },
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Heckauffahrunfall Gutachten Berlin", url: `${siteUrl}/heckauffahrunfall-berlin` } },

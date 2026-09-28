@@ -11,13 +11,14 @@ import Breadcrumb from "@/components/neu/breadcrumb";
    damit) — aber keiner davon mit Berlin-Bezug. Genau die Lücke.
    Aufbau maximal extraktionsfreundlich: Direktantwort, dann reine Tabellen. */
 
-const UPDATED = "2026-08-03";
-const UPDATED_LABEL = "3. August 2026";
+const PUBLISHED = "2026-08-03";
+const UPDATED = "2026-09-28";
+const UPDATED_LABEL = "28. September 2026";
 
 export const metadata: Metadata = {
-  title: { absolute: "Nutzungsausfall-Tabelle 2026 – Tagessätze Gruppe A bis L" },
+  title: { absolute: "Nutzungsausfall-Tabelle 2026 (Pkw) – Tagessätze A bis L" },
   description:
-    "Tagessätze von 23 € (Gruppe A) bis 175 € (Gruppe L), Abstufung ab 5/10 Jahren, mit Rechenbeispielen. ☎ 0155 60003661",
+    "Tagessätze von 23 € (Gruppe A) bis 175 € (Gruppe L), Abstufung nach Fahrzeugalter, Rechenbeispiele und was bei fiktiver Abrechnung gilt.",
   keywords: [
     "nutzungsausfall tabelle 2026",
     "nutzungsausfallentschädigung höhe",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://gutachtenprenzl.de/nutzungsausfall-tabelle-berlin" },
   openGraph: {
-    title: "Nutzungsausfall-Tabelle 2026 – Tagessätze Gruppe A bis L",
+    title: "Nutzungsausfall-Tabelle 2026 (Pkw) – Tagessätze A bis L",
     description:
       "Was Ihnen pro Tag ohne Auto zusteht: Tagessätze nach Fahrzeuggruppe, Abstufungsregeln und Rechenbeispiele.",
     url: "https://gutachtenprenzl.de/nutzungsausfall-tabelle-berlin",
@@ -61,7 +62,7 @@ const abstufung = [
 const dauer = [
   { fall: "Reparatur", zeitraum: "Reparaturdauer laut Gutachten", plus: "+ 1–2 Tage Werkstattorganisation" },
   { fall: "Totalschaden", zeitraum: "Wiederbeschaffungsdauer", plus: "üblich 10–15 Tage" },
-  { fall: "Fiktive Abrechnung", zeitraum: "kalkulierte Reparaturdauer", plus: "auch ohne tatsächliche Reparatur" },
+  { fall: "Fiktive Abrechnung", zeitraum: "tatsächliche Ausfallzeit, höchstens die kalkulierte Reparaturdauer", plus: "Nachweis per Reparaturbestätigung" },
   { fall: "Verzögerung durch Versicherung", zeitraum: "verlängert sich entsprechend", plus: "muss dokumentiert werden" },
 ];
 
@@ -88,7 +89,7 @@ const faq = [
   },
   {
     q: "Bekomme ich Nutzungsausfall, wenn ich gar nicht repariere?",
-    a: "Ja. Auch bei fiktiver Abrechnung steht Ihnen Nutzungsausfall für die im Gutachten kalkulierte Reparaturdauer zu. Voraussetzung ist, dass Sie das Fahrzeug in dieser Zeit tatsächlich nicht nutzen konnten und nutzen wollten.",
+    a: "Nur für die Zeit, in der Sie tatsächlich ohne Fahrzeug waren, höchstens für die im Gutachten kalkulierte Reparaturdauer. Fahren Sie das Auto unrepariert weiter, entfällt der Anspruch. Reparieren Sie selbst oder in einer freien Werkstatt, weisen Sie die Standzeit mit einer Reparaturbestätigung nach.",
   },
   {
     q: "Wer zahlt den Nutzungsausfall?",
@@ -113,7 +114,7 @@ const jsonLd = {
       description:
         "Tagessätze der Nutzungsausfallentschädigung nach Fahrzeuggruppe, Abstufung nach Fahrzeugalter und Berechnung der Ausfalldauer.",
       inLanguage: "de-DE",
-      datePublished: UPDATED,
+      datePublished: PUBLISHED,
       dateModified: UPDATED,
       isPartOf: { "@id": "https://gutachtenprenzl.de" },
       author: {
@@ -318,6 +319,47 @@ export default function NutzungsausfallTabelle() {
         </div>
       </section>
 
+      {/* Fiktive Abrechnung: Suchanfragen dazu liefen bisher auf Position 36–45 ins Leere */}
+      <section id="fiktive-abrechnung" className="bg-[#050507] px-5 py-16">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
+            Nutzungsausfall bei fiktiver Abrechnung
+          </h2>
+          <p className="text-white/50 text-[15px] leading-relaxed mb-6">
+            Bei der <Link href="/fiktive-abrechnung" className="text-white underline underline-offset-2 decoration-white/30 hover:decoration-white">fiktiven Abrechnung</Link> nehmen
+            Sie das Geld laut Gutachten und reparieren gar nicht oder selbst. Nutzungsausfall gibt es
+            dann nicht automatisch. Die Versicherung zahlt nur für die Tage, an denen Sie wirklich ohne
+            Auto waren, und höchstens für die Reparaturdauer, die im Gutachten steht.
+          </p>
+          <ul className="space-y-3 mb-6">
+            {[
+              "Fahren Sie das Auto unrepariert weiter, gibt es keinen Nutzungsausfall, weil Sie es ja nutzen konnten.",
+              "Reparieren Sie selbst oder in einer freien Werkstatt, zählen die Tage, an denen das Auto stand. Als Nachweis dient eine Reparaturbestätigung.",
+              "Ist das Auto nicht mehr verkehrssicher und bleibt stehen, bekommen Sie Nutzungsausfall für die Zeit, die eine Reparatur oder ein Ersatzkauf gedauert hätte.",
+            ].map((t) => (
+              <li key={t} className="flex gap-3 text-white/55 text-[14px] leading-relaxed">
+                <ArrowRight size={14} className="text-[#E11D2F] mt-1 flex-shrink-0" />
+                {t}
+              </li>
+            ))}
+          </ul>
+          <p className="text-white/50 text-[15px] leading-relaxed mb-6">
+            Für die Reparaturbestätigung sehen wir uns das reparierte Auto an und bestätigen, dass und
+            wann es instand gesetzt wurde. Die Versicherung hat damit einen Beleg für die Ausfallzeit.
+            Die Bestätigung kostet deutlich weniger als ein Gutachten.
+          </p>
+          <div className="p-5 rounded-2xl border border-white/8 bg-white/4">
+            <p className="font-bold text-white text-[14px] mb-2">Rechenbeispiel</p>
+            <p className="text-white/50 text-[13px] leading-relaxed">
+              VW Golf, vier Jahre alt, Gruppe E mit 43 € pro Tag. Das Gutachten kalkuliert 5 Tage
+              Reparatur. Sie lassen in einer freien Werkstatt reparieren, das Auto steht 4 Tage, die
+              Reparaturbestätigung liegt vor: <strong className="text-white">4 × 43 € = 172 €.</strong> Fahren
+              Sie unrepariert weiter, sind es 0 €.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
@@ -344,6 +386,8 @@ export default function NutzungsausfallTabelle() {
               { href: "/unfallgutachten-berlin", label: "Unfallgutachten Berlin" },
               { href: "/kosten-kfz-gutachten-berlin", label: "Was kostet ein Gutachten?" },
               { href: "/totalschaden-gutachten-berlin", label: "Totalschaden" },
+              { href: "/fiktive-abrechnung", label: "Fiktive Abrechnung" },
+              { href: "/mietwagen-nach-unfall", label: "Mietwagen nach Unfall" },
               { href: "/eigener-gutachter-oder-versicherungsgutachter", label: "Eigener Gutachter vs. Versicherung" },
               { href: "/blog/was-tun-nach-unfall-berlin", label: "Was tun nach einem Unfall?" },
             ].map(({ href, label }) => (

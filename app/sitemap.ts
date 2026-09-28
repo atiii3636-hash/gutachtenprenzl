@@ -76,6 +76,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kurzgutachten-berlin",
   ];
 
+  // Videoseite vom 25.09.2026: die YouTube-Shorts, eingebettet mit
+  // VideoObject-Auszeichnung. Steht auch in der Sitemap, damit Google die
+  // Sammlung findet und nicht nur die einzelnen Themenseiten.
+  const videoSeiten = ["/videos"];
+
   // Ausbau 18.09.2026: Landingpage, zentrale FAQ, Fahrzeugklassen- und
   // Spezialgutachten-Seiten sowie die neuen Ratgeber-Artikel.
   const ausbau2026 = [
@@ -135,6 +140,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     })),
     ...ausbau2026.map((path) => ({
+      url: `${baseUrl}${path}`,
+      ...mod(path),
+      changeFrequency: "monthly" as const,
+      priority: 0.85,
+    })),
+
+    ...videoSeiten.map((path) => ({
       url: `${baseUrl}${path}`,
       ...mod(path),
       changeFrequency: "monthly" as const,

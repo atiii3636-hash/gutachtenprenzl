@@ -42,6 +42,13 @@ const nextConfig = {
   // Next.js entfernt nachgestellte Slashes automatisch, daher genügt die Variante ohne Slash.
   async redirects() {
     return [
+      // Kurzlink für Bewertungsanfragen (WhatsApp, Rechnung, QR-Code). Temporär statt 301,
+      // damit Browser das Ziel nicht cachen, falls Google den Bewertungslink einmal ändert.
+      {
+        source: '/bewerten',
+        destination: 'https://g.page/r/CefSgT78ivVGEAE/review',
+        permanent: false,
+      },
       {
         source: '/kfz-gutachter-friedrichshain',
         destination: '/kfz-sachverstaendiger-berlin-friedrichshain',
