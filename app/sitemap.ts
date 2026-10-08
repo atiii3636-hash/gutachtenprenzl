@@ -57,6 +57,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/was-tun-nach-unfall-berlin",
     "/blog/recht-auf-eigenen-gutachter",
     "/blog/parkschaden-was-tun",
+    "/blog/achsvermessung-nach-unfall",
+    "/blog/elektroauto-unfall-hochvoltsystem",
   ];
 
   // Seiten aus dem Redesign vom 20.08.2026. Bestehende URLs bleiben unverändert,

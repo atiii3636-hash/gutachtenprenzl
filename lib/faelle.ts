@@ -52,6 +52,57 @@ export interface Fall extends Praxisfall {
 
 export const faelle: Fall[] = [
   {
+    slug: "achsschaden-tesla-model-y-mitte",
+    titel: "Ein Kratzer an der Tür, ein Schaden an der Hinterachse",
+    teaser:
+      "Tesla Model Y, hinten rechts angefahren. Außen Kratzer und eine Radlaufverbreiterung, innen Querlenker, Achsschenkel und Spurstangenstrebe. Die Achsvermessung brachte es ans Licht.",
+    veroeffentlicht: "2026-10-08",
+    quelle: "GA-2609-026",
+    bezirkSlug: "kfz-sachverstaendiger-berlin-mitte",
+    bezirk: "Mitte",
+    monat: "August 2026",
+    ort: "Spandauer Straße, Mitte",
+    fahrzeug: "Tesla Model Y, Erstzulassung 2023, rund 55.000 km",
+    unfallart: "Anstoß hinten rechts",
+    bauteile: [
+      "Tür hinten rechts — Instandsetzung",
+      "Seitenschwellerverkleidung rechts — Ersatz",
+      "Radlaufverbreiterung hinten rechts — Ersatz",
+      "Rad-Reifen-Kombination hinten rechts (Reifen und Felge) — Ersatz",
+      "Reifen hinten links — Ersatz, achsweise",
+      "Querlenker hinten unten rechts — Ersatz",
+      "Achsschenkel mit Radlagergehäuse hinten rechts — Ersatz",
+      "Spurstangenstrebe hinten rechts — Ersatz",
+      "Achsvermessung — durchgeführt",
+      "Hochvoltsystem — Prüfung auf verdeckte Schäden",
+    ],
+    schadenbild: [
+      "Von außen sieht der Wagen nach einem Kratzer aus. Die Tür hinten rechts ist verschrammt und an mehreren Stellen verformt, die Seitenschwellerverkleidung beschädigt, die Radlaufverbreiterung beschädigt. Wer nur hinsieht, rechnet mit Lack und ein paar Kunststoffteilen. Im Gutachten steht deshalb zuerst die Tür zur Instandsetzung, daneben Ersatz für Schwellerverkleidung und Radlaufverbreiterung.",
+      "Der eigentliche Befund kam aus der Achsvermessung. Wegen der Anstoßintensität in diesem Bereich wurde die Achse gemessen, und die Werte belegen eine beschädigte Achsgeometrie. Querlenker hinten unten, Achsschenkel mit Radlagergehäuse und Spurstangenstrebe auf der rechten Seite müssen deshalb erneuert werden. Es lässt sich nicht gewährleisten, dass diese Teile unbeschädigt sind, und an einer Achse nimmt man dieses Risiko nicht in Kauf. Reifen und Felge hinten rechts sind ebenfalls hin, der linke Reifen wird achsweise mitgetauscht.",
+      "Beim Tesla kommt noch das Hochvoltsystem dazu. Ein Anstoß in dieser Gegend kann verdeckte Schäden daran nicht ausschließen, also sieht das Gutachten eine Prüfung vor und kalkuliert die Vorbereitung des Hochvolt-Arbeitsplatzes mit. Trotzdem bleibt der Fall mit 23 Prozent des Wiederbeschaffungswerts klar im Bereich der Reparatur. Zur Schadenhöhe gehört hier zusätzlich ein merkantiler Minderwert von 486 Euro, den die Reparatur nicht beseitigt.",
+    ],
+    ergebnis: [
+      { label: "Reparaturkosten netto", wert: "6.040,34 €" },
+      { label: "Reparaturkosten brutto", wert: "7.188,00 €" },
+      { label: "Neu-für-alt-Abzug netto", wert: "−225,88 €" },
+      { label: "Merkantiler Minderwert", wert: "486,00 €" },
+      { label: "Schadenhöhe netto", wert: "6.300,46 €" },
+      { label: "Schadenhöhe brutto", wert: "7.405,20 €" },
+      { label: "Wiederbeschaffungswert", wert: "33.150,00 €" },
+      { label: "Wiederherstellungsaufwand zum Fahrzeugwert", wert: "23 %" },
+      { label: "Reparaturdauer", wert: "ca. 2 Arbeitstage" },
+      { label: "Nutzungsausfall pro Tag (Gruppe G)", wert: "59,00 €" },
+    ],
+    fazit:
+      "Ohne Achsvermessung wäre der Schaden bei Tür, Schwellerverkleidung und Radlauf stehen geblieben. Mit ihr kommen die Achsbauteile und die Wertminderung dazu, und der Schaden wird vollständig erfasst.",
+    bilder: [
+      { src: "/faelle/achsschaden-tesla-model-y-mitte-1.jpg", alt: "Beschädigte Seitenschwellerverkleidung und Radlaufverbreiterung hinten rechts am Tesla Model Y" },
+      { src: "/faelle/achsschaden-tesla-model-y-mitte-2.jpg", alt: "Kratzspuren an Radlaufverbreiterung und Seitenwand hinten rechts, Tesla Model Y" },
+      { src: "/faelle/achsschaden-tesla-model-y-mitte-3.jpg", alt: "Verformte Radlaufverbreiterung hinten rechts, Nahaufnahme" },
+      { src: "/faelle/achsschaden-tesla-model-y-mitte-4.jpg", alt: "Schleifspuren im Lack oberhalb der Radlaufverbreiterung am Tesla Model Y" },
+    ],
+  },
+  {
     slug: "totalschaden-vw-polo-karow",
     titel: "Eine Tür, die den Wagen zum Totalschaden macht",
     teaser:

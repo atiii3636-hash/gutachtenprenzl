@@ -13,6 +13,22 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    href: "/blog/achsvermessung-nach-unfall",
+    title: "Achsvermessung nach dem Unfall: wann sie nötig ist",
+    description:
+      "Nach einem Anstoß am Rad kann die Achse beschädigt sein, ohne dass man es sieht. Wann die Messung ins Gutachten gehört und wer sie zahlt.",
+    readTime: "4 Min.",
+    category: "Technik",
+  },
+  {
+    href: "/blog/elektroauto-unfall-hochvoltsystem",
+    title: "Elektroauto nach dem Unfall: Hochvoltsystem prüfen",
+    description:
+      "Beim E-Auto lassen sich verdeckte Schäden am Hochvoltsystem nicht immer ausschließen. Was das Gutachten vorsieht und warum die Reparatur mehr Posten hat.",
+    readTime: "4 Min.",
+    category: "Elektroauto",
+  },
+  {
     href: "/blog/was-tun-nach-unfall-berlin",
     title: "Was tun nach einem Unfall in Berlin?",
     description:
