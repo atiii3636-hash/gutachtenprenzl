@@ -36,10 +36,10 @@ export default function NavbarNeu() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
+      className={`fixed top-0 left-0 right-0 z-50 pt-[env(safe-area-inset-top)] transition-all duration-300 border-b ${
         scrolled
-          ? "bg-[#050507]/92 backdrop-blur-xl border-white/8 shadow-lg shadow-black/40"
-          : "bg-gradient-to-b from-[#050507]/80 to-transparent border-transparent"
+          ? "bg-[#050507]/95 backdrop-blur-xl border-white/8 shadow-lg shadow-black/40"
+          : "bg-[#050507]/95 border-transparent md:bg-transparent md:bg-gradient-to-b md:from-[#050507]/80 md:to-transparent"
       }`}
     >
       <div className="max-w-[1400px] mx-auto px-5 flex items-center justify-between h-[68px] gap-4">

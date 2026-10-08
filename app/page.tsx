@@ -284,10 +284,80 @@ export default function NeuPage() {
       {/* ============ SCHADEN MELDEN ============ */}
       <DamageFormSection />
 
-      {/* ============ 01 · ABLAUF ============ */}
+      {/* ============ 01 · BEWERTUNGEN ============ */}
+      <section className="px-5 py-20 md:py-24 border-t border-white/6">
+        <div className="max-w-5xl mx-auto">
+          <Kapitel num="01" label="Google Bewertungen" />
+          <h2
+            className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-10"
+            data-reveal
+          >
+            Berlin vertraut uns. <span className="text-[#E11D2F]">{REVIEW_COUNT} Mal belegt.</span>
+          </h2>
+
+          <div className="flex flex-col items-center mb-12" data-reveal>
+            <div className="flex items-end gap-2 mb-2">
+              <span className="font-display font-black text-[64px] leading-none">5,0</span>
+              <span className="text-white/40 text-[15px] mb-2">von 5,0</span>
+            </div>
+            <div className="flex gap-1 mb-3">
+              {[...Array(5)].map((_, i) => <Star key={i} size={20} className="fill-[#FBBC04] text-[#FBBC04]" />)}
+            </div>
+            <p className="text-[11px] font-bold tracking-[0.25em] text-white/35 uppercase mb-5">
+              Aus {REVIEW_COUNT} echten Google Bewertungen
+            </p>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {reviewChips.map((c) => (
+                <span key={c} className="text-[12px] font-semibold text-white/60 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-lg">
+                  „{c}“
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Sechs Bewertungen, Volltext. line-clamp kappt nur die Anzeige, der ganze
+              Text steht im HTML — Crawler und KI-Systeme lesen ihn vollständig. */}
+          <div className="grid md:grid-cols-3 gap-4">
+            {REVIEWS.slice(0, 6).map(({ name, text, sterne, monat }, i) => (
+              <figure
+                key={name}
+                className="bg-white/[0.03] border border-white/8 rounded-xl p-6 flex flex-col"
+                data-reveal
+                style={{ transitionDelay: `${(i % 3) * 80}ms` }}
+              >
+                <div className="flex gap-0.5 mb-4">
+                  {[...Array(sterne)].map((_, j) => <Star key={j} size={13} className="fill-[#FBBC04] text-[#FBBC04]" />)}
+                </div>
+                <blockquote className="text-white/60 text-[13.5px] leading-relaxed mb-5 flex-1 whitespace-pre-line line-clamp-[9]">
+                  „{text}“
+                </blockquote>
+                <figcaption className="text-[12px] font-bold tracking-[0.15em] text-white/70 uppercase">
+                  {name}
+                  <span className="block text-[11px] font-semibold tracking-normal normal-case text-white/35 mt-1">
+                    {monat} · Google
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+
+          <div className="text-center mt-8" data-reveal>
+            <a
+              href={GOOGLE_PROFILE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[13px] font-semibold text-white/40 hover:text-white transition-colors underline underline-offset-4"
+            >
+              Alle {REVIEW_COUNT} Bewertungen auf Google lesen →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ 02 · ABLAUF ============ */}
       <section id="vertrauen" className="px-5 py-20 md:py-24 border-t border-white/6">
         <div className="max-w-4xl mx-auto">
-          <Kapitel num="01" label="So läuft es ab" />
+          <Kapitel num="02" label="So läuft es ab" />
           <h2
             className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-4"
             data-reveal
@@ -366,76 +436,6 @@ export default function NeuPage() {
             >
               <Phone size={16} />
               Mit Schritt 1 anfangen
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ============ 02 · BEWERTUNGEN ============ */}
-      <section className="px-5 py-20 md:py-24 border-t border-white/6">
-        <div className="max-w-5xl mx-auto">
-          <Kapitel num="02" label="Google Bewertungen" />
-          <h2
-            className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-10"
-            data-reveal
-          >
-            Berlin vertraut uns. <span className="text-[#E11D2F]">{REVIEW_COUNT} Mal belegt.</span>
-          </h2>
-
-          <div className="flex flex-col items-center mb-12" data-reveal>
-            <div className="flex items-end gap-2 mb-2">
-              <span className="font-display font-black text-[64px] leading-none">5,0</span>
-              <span className="text-white/40 text-[15px] mb-2">von 5,0</span>
-            </div>
-            <div className="flex gap-1 mb-3">
-              {[...Array(5)].map((_, i) => <Star key={i} size={20} className="fill-[#FBBC04] text-[#FBBC04]" />)}
-            </div>
-            <p className="text-[11px] font-bold tracking-[0.25em] text-white/35 uppercase mb-5">
-              Aus {REVIEW_COUNT} echten Google Bewertungen
-            </p>
-            <div className="flex flex-wrap gap-2 justify-center">
-              {reviewChips.map((c) => (
-                <span key={c} className="text-[12px] font-semibold text-white/60 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-lg">
-                  „{c}“
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Sechs Bewertungen, Volltext. line-clamp kappt nur die Anzeige, der ganze
-              Text steht im HTML — Crawler und KI-Systeme lesen ihn vollständig. */}
-          <div className="grid md:grid-cols-3 gap-4">
-            {REVIEWS.slice(0, 6).map(({ name, text, sterne, monat }, i) => (
-              <figure
-                key={name}
-                className="bg-white/[0.03] border border-white/8 rounded-xl p-6 flex flex-col"
-                data-reveal
-                style={{ transitionDelay: `${(i % 3) * 80}ms` }}
-              >
-                <div className="flex gap-0.5 mb-4">
-                  {[...Array(sterne)].map((_, j) => <Star key={j} size={13} className="fill-[#FBBC04] text-[#FBBC04]" />)}
-                </div>
-                <blockquote className="text-white/60 text-[13.5px] leading-relaxed mb-5 flex-1 whitespace-pre-line line-clamp-[9]">
-                  „{text}“
-                </blockquote>
-                <figcaption className="text-[12px] font-bold tracking-[0.15em] text-white/70 uppercase">
-                  {name}
-                  <span className="block text-[11px] font-semibold tracking-normal normal-case text-white/35 mt-1">
-                    {monat} · Google
-                  </span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-
-          <div className="text-center mt-8" data-reveal>
-            <a
-              href={GOOGLE_PROFILE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[13px] font-semibold text-white/40 hover:text-white transition-colors underline underline-offset-4"
-            >
-              Alle {REVIEW_COUNT} Bewertungen auf Google lesen →
             </a>
           </div>
         </div>
@@ -600,8 +600,8 @@ export default function NeuPage() {
           </p>
 
           <div className="bg-white/[0.03] border border-white/8 rounded-xl p-7 md:p-9 grid md:grid-cols-[auto,1fr] gap-7 items-start" data-reveal>
-            <div className="relative w-[110px] h-[110px] rounded-xl overflow-hidden border border-white/10 mx-auto md:mx-0">
-              <Image src="/inhaber2.jpg" alt="Atakan Arslan bei der Fahrzeugbegutachtung" fill className="object-cover object-[center_20%]" sizes="110px" />
+            <div className="relative w-[200px] h-[250px] md:w-[240px] md:h-[300px] rounded-xl overflow-hidden border border-white/10 mx-auto md:mx-0">
+              <Image src="/inhaber2.jpg" alt="Atakan Arslan bei der Fahrzeugbegutachtung" fill className="object-cover object-[center_20%]" sizes="240px" />
             </div>
             <div>
               <h3 className="font-display font-bold text-[22px] mb-1">Atakan Arslan</h3>
