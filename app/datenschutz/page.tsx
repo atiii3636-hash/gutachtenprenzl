@@ -92,6 +92,12 @@ export default function DatenschutzPage() {
             <a href="https://elfsight.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-[#E11D2F] hover:underline">Datenschutzerklärung Elfsight</a>.
           </p>
 
+          <h3 className="font-bold text-[#080D14] mt-5 mb-2">Sprachauswahl (Google Übersetzer)</h3>
+          <p className="text-[14px]">
+            Wenn Sie über die Sprachauswahl in der Navigation Türkisch, Englisch oder Russisch wählen, laden wir den Website-Übersetzer von Google (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Dabei wird Ihre IP-Adresse an Google übertragen und die Seitentexte werden zur Übersetzung an Google gesendet. Ohne Ihre Auswahl wird nichts von Google geladen. Zusätzlich setzen wir ein Cookie (<code>googtrans</code>), das Ihre gewählte Sprache speichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Ihre aktive Auswahl). Die Übersetzung erfolgt maschinell und kann Fehler enthalten; maßgeblich ist die deutsche Fassung.{" "}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#E11D2F] hover:underline">Datenschutzerklärung Google</a>.
+          </p>
+
           <h3 className="font-bold text-[#080D14] mt-5 mb-2">WhatsApp</h3>
           <p className="text-[14px]">
             Auf unserer Website befindet sich ein Link zu WhatsApp (Meta Platforms Ireland Ltd., 4 Grand Canal Square, Dublin 2, Irland). Wenn Sie auf diesen Link klicken, wird die WhatsApp-App geöffnet und eine Verbindung zu den Servern von Meta hergestellt. Meta kann dabei Daten über Ihr Gerät und Ihr Nutzungsverhalten erfassen. Wir haben keinen Einfluss auf die Datenverarbeitung durch Meta.{" "}

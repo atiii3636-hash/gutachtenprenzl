@@ -4,6 +4,7 @@ import { Phone, MessageCircle, Menu, X, Star } from "lucide-react";
 import { PHONE_DISPLAY, PHONE_HREF, WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
 import Image from "next/image";
 import Link from "next/link";
+import LanguageSwitcher from "./language-switcher";
 
 // "Partner werden" steht bewusst nur im Footer – sechs Punkte sind das Maximum,
 // das neben Bewertung und Buttons in die Leiste passt.
@@ -85,6 +86,7 @@ export default function NavbarNeu() {
             </span>
           </a>
 
+          <LanguageSwitcher />
           <a
             href={PHONE_HREF}
             className="flex items-center gap-2 text-[13.5px] font-bold text-white bg-[#E11D2F] hover:bg-[#C11527] px-4 py-2.5 rounded-lg shadow-[0_4px_20px_rgba(225,29,47,0.3)] transition-all duration-200 hover:-translate-y-px whitespace-nowrap"
@@ -105,6 +107,7 @@ export default function NavbarNeu() {
 
         {/* Mobil */}
         <div className="xl:hidden flex items-center gap-1.5">
+          <LanguageSwitcher />
           <a
             href={PHONE_HREF}
             className={`flex items-center gap-1.5 text-[13.5px] font-bold text-white bg-[#E11D2F] px-4 py-2.5 rounded-lg active:scale-[0.98] transition-all duration-300 ${
