@@ -52,6 +52,55 @@ export interface Fall extends Praxisfall {
 
 export const faelle: Fall[] = [
   {
+    slug: "achsschaden-mercedes-c-300-t-a10",
+    titel: "Zwei Drittel der Kosten stecken nicht im Blech",
+    teaser:
+      "Mercedes C 300 T d, auf der A10 hinten links gerammt: 24.944,41 Euro Reparaturkosten, davon nur 7.331,91 Euro für Teile. Der Rest ist Arbeit und Lack.",
+    veroeffentlicht: "2026-10-14",
+    quelle: "GA-2603-004",
+    monat: "März 2026",
+    ort: "Autobahn A10",
+    fahrzeug: "Mercedes-Benz C 300 T d, Erstzulassung 2023, rund 81.000 km",
+    unfallart: "Spurwechsel-Kollision hinten links",
+    bauteile: [
+      "Seitenwand hinten links — Ersatz, geklebt",
+      "Tür hinten links mit Scharnieren und Halter — Ersatz",
+      "Stoßfängerverkleidung hinten mit PDC-Sensor — Ersatz",
+      "Radträger hinten links — Ersatz",
+      "Radlager mit Achsflansch hinten links — Ersatz",
+      "Spurstange, Federlenker, Sturz-, Zug- und Schubstrebe hinten links — Ersatz",
+      "Stoßdämpfer und Hinterfedern, beide Seiten — Ersatz",
+      "Felge hinten links — Ersatz",
+      "Reifen hinten, beide Seiten — Ersatz",
+      "Seitenschweller links — Ersatz",
+      "Achsvermessung vor und nach der Reparatur, Karosserievermessung",
+    ],
+    schadenbild: [
+      "Auf den Fotos sieht man eine tiefe Kratzspur über die hintere linke Tür, den Seitenschweller und die Seitenwand. Nach einem Spurwechsel auf der Autobahn ist das ein typisches Bild, und viele würden es für Lackarbeit halten. Tatsächlich ist die Seitenwand im Bereich des Kniestücks strukturell verformt, die Spaltmaße zu Tür und Stoßfänger stimmen nicht mehr, und die Tür ist verzogen, samt Scharnieren und Halterungen.",
+      "Weniger auffällig ist das Fahrwerk. Das Hinterrad steht sichtbar schief. Der Radträger besteht aus Grauguss, und bei dieser Anstoßenergie lassen sich Mikrorisse nicht ausschließen. Das Gutachten setzt ihn deshalb zusammen mit allen radgeometrierelevanten Teilen an: Radlager mit Achsflansch, Spurstange, Federlenker, Sturz-, Zug- und Schubstrebe. Feder und Stoßdämpfer werden aus Sicherheitsgründen auf beiden Seiten getauscht. Vor und nach der Reparatur ist eine Achsvermessung nötig, dazu eine Karosserievermessung und das Auslesen des Fehlerspeichers.",
+      "Wie sich die Kosten verteilen, zeigt die Kalkulation. Ersatzteile machen 7.331,91 Euro aus, Arbeitslöhne 12.882,10 Euro und die Lackierung 4.471,90 Euro. Die Karosseriearbeit allein summiert sich auf rund 30 Stunden. Mit 77 Prozent vom Wiederbeschaffungswert bleibt es ein Reparaturschaden. Wegen Vorschäden an der rechten Seitenwand und am vorderen Stoßfänger wurden vom Marktwert 700 Euro abgezogen, der Wiederbeschaffungswert liegt bei 36.200 Euro. Dazu kommt ein merkantiler Minderwert von 2.444,00 Euro. Das Gutachten empfiehlt eine Notreparatur, um die Fahrbereitschaft wiederherzustellen.",
+    ],
+    ergebnis: [
+      { label: "Reparaturkosten netto", wert: "24.944,41 €" },
+      { label: "Reparaturkosten brutto", wert: "29.683,85 €" },
+      { label: "Merkantiler Minderwert", wert: "2.444,00 €" },
+      { label: "Schadenhöhe netto", wert: "27.388,41 €" },
+      { label: "Schadenhöhe brutto", wert: "32.127,85 €" },
+      { label: "Wiederbeschaffungswert", wert: "36.200,00 €" },
+      { label: "Wiederherstellungsaufwand zum Fahrzeugwert", wert: "77 %" },
+      { label: "Restwert inkl. MwSt.", wert: "26.130,00 €" },
+      { label: "Reparaturdauer", wert: "ca. 9 Arbeitstage" },
+      { label: "Nutzungsausfall pro Tag (Gruppe J)", wert: "79,00 €" },
+    ],
+    fazit:
+      "Wer nur auf die Teilepreise schaut, unterschätzt diesen Schaden um mehr als die Hälfte. Arbeitszeit, Lack und Achsbauteile machen den Unterschied.",
+    bilder: [
+      { src: "/faelle/achsschaden-mercedes-c-300-t-a10-1.jpg", alt: "Tiefe Kratzer und Verformung an der Tür hinten links des Mercedes C 300 T d" },
+      { src: "/faelle/achsschaden-mercedes-c-300-t-a10-2.jpg", alt: "Eingedrückte Seitenwand am Radlauf hinten links mit Reifen, Mercedes C-Klasse T-Modell" },
+      { src: "/faelle/achsschaden-mercedes-c-300-t-a10-3.jpg", alt: "Kratzspuren an Tür und Seitenschweller links, Mercedes C 300 T d" },
+    ],
+  },
+  {
     slug: "totalschaden-audi-a3-prenzlauer-berg",
     titel: "Ein zehn Jahre alter A3 und 135 Prozent Reparaturkosten",
     teaser:
