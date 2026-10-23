@@ -8,7 +8,8 @@ import VideoBlock from "@/components/video-block";
 import FaqListe from "@/components/neu/faq-liste";
 import type { BezirkContent } from "@/lib/bezirk-content";
 import { bezirkContent } from "@/lib/bezirk-content";
-import { WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
+import { WHATSAPP_URL, REVIEW_COUNT, PHONE_DISPLAY } from "@/lib/contact";
+import DamageFormSection from "@/components/damage-form-section";
 import { serviceLd } from "@/lib/seo";
 
 interface Props {
@@ -156,7 +157,7 @@ export default function BezirkPageTemplate({ content }: Props) {
         </nav>
 
         {/* ============ HERO ============ */}
-        <section className="relative px-5 pt-10 pb-16 md:pt-14 md:pb-20 overflow-hidden">
+        <section className="relative px-5 pt-6 pb-12 md:pt-14 md:pb-20 overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
             <div className="absolute inset-0 hero-fade-bottom opacity-[0.5]">
               <Image
@@ -221,6 +222,15 @@ export default function BezirkPageTemplate({ content }: Props) {
                 Kostenlos beraten lassen
               </a>
             </div>
+
+            {/* Für Anzeigen-Klicks: Nummer und Adresse sichtbar, dritter Weg (Formular) auf derselben Seite */}
+            <p className="mt-5 text-[13px] leading-relaxed text-white/50 animate-fade-up" style={{ animationDelay: "280ms" }}>
+              {PHONE_DISPLAY} · Büro Prenzlauer Allee 88, 10405 Berlin
+              <br />
+              <a href="#schaden" className="text-white/70 underline underline-offset-4 hover:text-white">
+                oder Schaden online melden (2 Minuten)
+              </a>
+            </p>
           </div>
         </section>
 
@@ -624,7 +634,7 @@ export default function BezirkPageTemplate({ content }: Props) {
                 Jetzt anrufen
               </a>
               <Link
-                href="/#schaden"
+                href="#schaden"
                 className="inline-flex items-center justify-center gap-2.5 bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 text-white font-bold text-[16px] px-8 py-4 rounded-lg transition-all hover:-translate-y-0.5"
               >
                 Schaden online melden
@@ -632,6 +642,9 @@ export default function BezirkPageTemplate({ content }: Props) {
             </div>
           </div>
         </section>
+
+        {/* Das Meldeformular direkt auf der Seite: Anzeigen-Besucher müssen nicht zur Startseite wechseln */}
+        <DamageFormSection />
 
         <VideoBlock slug={slug} />
 
