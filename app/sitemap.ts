@@ -40,6 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Neu 21.08.2026: Bezirke mit Nachfrage in der Search Console, aber ohne Zielseite.
     "/kfz-sachverstaendiger-berlin-hellersdorf",
     "/kfz-sachverstaendiger-berlin-treptow",
+    "/kfz-sachverstaendiger-berlin-schoeneweide",
     "/kfz-sachverstaendiger-berlin-zehlendorf",
     "/kfz-sachverstaendiger-berlin-weissensee",
     "/kfz-sachverstaendiger-berlin",

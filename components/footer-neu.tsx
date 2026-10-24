@@ -22,6 +22,7 @@ const bezirke = [
   { name: "Hellersdorf", href: "/kfz-sachverstaendiger-berlin-hellersdorf" },
   { name: "Treptow", href: "/kfz-sachverstaendiger-berlin-treptow" },
   { name: "Köpenick", href: "/kfz-sachverstaendiger-berlin-koepenick" },
+  { name: "Schöneweide", href: "/kfz-sachverstaendiger-berlin-schoeneweide" },
   { name: "Zehlendorf", href: "/kfz-sachverstaendiger-berlin-zehlendorf" },
 ];
 

@@ -27,11 +27,13 @@ function Kapitel({ num, label }: { num: string; label: string }) {
 }
 
 export default function BezirkPageTemplate({ content }: Props) {
-  const { name, nameShort, intro, localText, subdistricts, hotspots, distanceMin, faqs, neighborSlugs, slug, deepDive, h1Ort, praxisfall } = content;
+  const { standort, name, nameShort, intro, localText, subdistricts, hotspots, distanceMin, faqs, neighborSlugs, slug, deepDive, h1Ort, praxisfall } = content;
 
   // "Kfz Gutachter <Ort>" statt "Kfz Sachverständiger <Ort>": Beide Begriffe
   // meinen dasselbe, gesucht wird aber fast doppelt so oft nach "Gutachter".
   const ort = h1Ort ?? nameShort;
+  const bueroKurz = standort?.kurz ?? "Prenzlauer Allee";
+  const bueroAdresse = standort?.adresse ?? "Prenzlauer Allee 88, 10405 Berlin";
   const hauptkeyword = `Kfz Gutachter ${ort}`;
 
   // Der Praxisfall steht nur auf Seiten, für die ein echter Fall hinterlegt ist.
@@ -109,7 +111,7 @@ export default function BezirkPageTemplate({ content }: Props) {
     },
     {
       t: `Wir kommen zu Ihnen nach ${nameShort}`,
-      d: `Aus unserem Büro an der Prenzlauer Allee sind wir in rund ${distanceMin} Minuten bei Ihnen, egal ob in ${subdistricts.slice(0, 3).join(", ")} oder einem anderen Ortsteil. Zu Hause, in der Werkstatt oder direkt am Unfallort.`,
+      d: `Aus unserem Büro an der ${bueroKurz} sind wir in rund ${distanceMin} Minuten bei Ihnen, egal ob in ${subdistricts.slice(0, 3).join(", ")} oder einem anderen Ortsteil. Zu Hause, in der Werkstatt oder direkt am Unfallort.`,
     },
     {
       t: "Wir nehmen den Schaden auf",
@@ -225,7 +227,7 @@ export default function BezirkPageTemplate({ content }: Props) {
 
             {/* Für Anzeigen-Klicks: Nummer und Adresse sichtbar, dritter Weg (Formular) auf derselben Seite */}
             <p className="mt-5 text-[13px] leading-relaxed text-white/50 animate-fade-up" style={{ animationDelay: "280ms" }}>
-              {PHONE_DISPLAY} · Büro Prenzlauer Allee 88, 10405 Berlin
+              {PHONE_DISPLAY} · Büro {bueroAdresse}
               <br />
               <a href="#schaden" className="text-white/70 underline underline-offset-4 hover:text-white">
                 oder Schaden online melden (2 Minuten)

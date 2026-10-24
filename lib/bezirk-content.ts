@@ -69,6 +69,12 @@ export interface BezirkContent {
    * Wörter übrig. Zu wenig, um gegen Wettbewerber auf Position 1 bis 3 zu bestehen.
    */
   deepDive?: { h: string; p: string[] }[];
+  /**
+   * Eigener Standort, falls die Seite nicht vom Büro an der Prenzlauer Allee
+   * aus bedient wird (z. B. Schöneweide, Brückenstraße 6). Steuert Anfahrts-
+   * text und Adresszeile im Template.
+   */
+  standort?: { kurz: string; adresse: string };
 }
 
 export const bezirkContent: BezirkContent[] = [
@@ -1576,6 +1582,36 @@ export const bezirkContent: BezirkContent[] = [
         ],
       },
     ],
+  },
+  {
+    slug: "kfz-sachverstaendiger-berlin-schoeneweide",
+    name: "Berlin Schöneweide",
+    nameShort: "Schöneweide",
+    title: "Kfz-Gutachter Schöneweide – Büro Brückenstraße, in 24 Std.",
+    metaDescription: "Unfall in Schöneweide, Johannisthal oder Adlershof? Unser Büro sitzt in der Brückenstraße. Gutachten in 24h, Kosten trägt meist die Gegenseite. ☎ 0155 60003661",
+    keywords: ["kfz gutachter schöneweide", "kfz sachverständiger schöneweide", "unfallgutachten schöneweide", "kfz gutachter oberschöneweide", "kfz gutachter niederschöneweide"],
+    canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin-schoeneweide",
+    standort: { kurz: "Brückenstraße", adresse: "Brückenstraße 6, 12439 Berlin" },
+    intro: "Wir haben ein Büro in Schöneweide, in der Brückenstraße 6. Wer in Nieder- oder Oberschöneweide, Johannisthal oder Adlershof einen Unfall hatte, muss also keinen Gutachter quer durch die Stadt holen. Wir kommen zu Ihrem Fahrzeug, zu Hause, in die Werkstatt oder an den Unfallort.",
+    localText: [
+      "Schöneweide ist ein Knotenpunkt: S-Bahn, Straßenbahn, Busse und mehrere Hauptstraßen laufen hier zusammen. Rund um den Bahnhof wird es morgens und abends eng, und dort passieren die typischen Stadtschäden: Auffahrunfälle im Stop-and-go, Abbiegekollisionen an Kreuzungen mit Straßenbahn und Rempler beim Einparken.",
+      "Entlang der Wilhelminenhofstraße und der Köpenicker Chaussee in Oberschöneweide kommen Lieferverkehr und Parkdruck hinzu. Der Alltag in den Gewerbehöfen am Spreeufer bringt viele Lkw- und Transporter-Bewegungen mit sich, und enge Ausfahrten sorgen für Streifschäden und Lackschäden.",
+      "In Johannisthal, Adlershof und Baumschulenweg überwiegen Wohngebietsschäden: Parkrempler, Rangierschäden und Kollisionen an unübersichtlichen Einmündungen. Sie sind oft kleiner, als sie aussehen. Gerade bei Schäden an Stoßfänger und Seitenwand lohnt sich ein Gutachten, weil verdeckte Schäden sonst übersehen werden.",
+    ],
+    subdistricts: ["Niederschöneweide", "Oberschöneweide", "Johannisthal", "Adlershof", "Baumschulenweg", "Plänterwald", "Altglienicke", "Köpenick", "Treptow"],
+    hotspots: [
+      { location: "Bahnhof Schöneweide und Umfeld", desc: "Straßenbahn, Bus und Berufsverkehr, viele Auffahr- und Abbiegeunfälle" },
+      { location: "Wilhelminenhofstraße / Edisonstraße", desc: "Parkdruck und Querverkehr im Zentrum von Oberschöneweide" },
+      { location: "Köpenicker Chaussee am Spreeufer", desc: "Lieferverkehr und enge Ausfahrten der Gewerbehöfe" },
+    ],
+    distanceMin: 10,
+    faqs: [
+      { q: "Haben Sie wirklich ein Büro in Schöneweide?", a: "Ja. Unser Büro für Schöneweide ist in der Brückenstraße 6, 12439 Berlin. Daneben haben wir unser Hauptbüro in der Prenzlauer Allee 88. Je nachdem, wo Ihr Fahrzeug steht, fährt der Gutachter vom näheren Standort los." },
+      { q: "Wie schnell sind Sie in Adlershof oder Johannisthal?", a: "Von der Brückenstraße meist in 10 bis 15 Minuten. Wenn Ihr Fahrzeug nicht mehr fahrbereit ist, kommen wir zum Standort. Sie müssen nichts organisieren." },
+      { q: "Was kostet mich das Gutachten?", a: "Bei einem unverschuldeten Unfall nichts. Die Haftpflichtversicherung des Verursachers trägt die Kosten, wir rechnen direkt mit ihr ab. Bei Teilschuld wird anteilig nach der Haftungsquote abgerechnet. Das klären wir vorher am Telefon." },
+      { q: "Muss ich zu Ihnen ins Büro kommen?", a: "Nein. Wir nehmen den Schaden dort auf, wo das Fahrzeug steht: vor der Haustür, in der Werkstatt oder am Unfallort. Ins Büro müssen Sie nicht, Sie können aber vorbeikommen, wenn Sie lieber persönlich sprechen." },
+    ],
+    neighborSlugs: ["kfz-sachverstaendiger-berlin-treptow", "kfz-sachverstaendiger-berlin-koepenick", "kfz-sachverstaendiger-berlin-neukoelln"],
   },
 ];
 
