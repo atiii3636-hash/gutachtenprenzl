@@ -105,6 +105,14 @@ const faq = [
     a: "Ja, solange das Fahrzeug noch unrepariert ist. Deshalb gilt: nicht reparieren und nichts unterschreiben, bevor der eigene Sachverständige das Fahrzeug gesehen hat. Ist das Auto bereits instandgesetzt, lässt sich der Vorzustand nur noch eingeschränkt rekonstruieren.",
   },
   {
+    q: "Wer zahlt das Gutachten bei Fremdverschulden (Haftpflichtschaden)?",
+    a: "Bei einem unverschuldeten Unfall trägt in der Regel die Haftpflichtversicherung des Unfallverursachers die Gutachterkosten. Voraussetzung ist, dass der Schaden nicht nur geringfügig ist. Für Sie als Geschädigten ist das Gutachten dann kostenlos, wir rechnen direkt mit der Versicherung ab.",
+  },
+  {
+    q: "Darf ich bei einem Vollkasko- oder Teilkaskoschaden einen eigenen Gutachter wählen?",
+    a: "Die Wahl bleibt Ihnen, ob Ihre Kaskoversicherung die Kosten übernimmt, hängt aber von Ihren Vertragsbedingungen ab. Manche Versicherer schreiben einen eigenen Gutachter oder eine Werkstatt vor. Klären Sie das vor dem Auftrag, wir sagen Ihnen, worauf Sie im Vertrag achten müssen.",
+  },
+  {
     q: "Wann lohnt sich der eigene Gutachter nicht?",
     a: "Bei einem echten Bagatellschaden unter rund 750 € erstattet die Versicherung die Gutachterkosten meist nicht — dort reicht ein Kostenvoranschlag. Und bei einem reinen Kaskoschaden beauftragt in der Regel Ihre eigene Versicherung den Sachverständigen.",
   },

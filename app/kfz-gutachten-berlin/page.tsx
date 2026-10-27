@@ -140,6 +140,14 @@ const faqs = [
     a: "Ja. Unsere Gutachten sind TÜV Rheinland zertifiziert erstellt (Zertifikat-ID 0217466029) und werden von deutschen Versicherungen im Regelfall anerkannt. Kürzt eine Versicherung trotzdem einzelne Positionen, schreiben wir eine fachliche Stellungnahme dazu.",
   },
   {
+    q: "Kommt der Gutachter zu mir? Gibt es einen Vor-Ort-Service in Berlin?",
+    a: "Ja. Wir kommen zu Ihnen, egal ob nach Hause, zur Arbeit, in die Werkstatt oder zum Unfallort, in ganz Berlin. Ein Anruf oder eine WhatsApp-Nachricht genügt, den Termin stimmen wir direkt mit Ihnen ab. Das fertige Gutachten liegt in der Regel innerhalb von 24 Stunden vor.",
+  },
+  {
+    q: "Woran erkenne ich einen zuverlässigen Kfz-Gutachter?",
+    a: "An einer nachprüfbaren Zertifizierung, an der Unabhängigkeit von Werkstatt und Versicherung, an einem nachvollziehbar kalkulierten Gutachten und daran, dass Sie die Kosten vorher klar genannt bekommen. Bei unverschuldetem Unfall sollte das Honorar gar nicht erst bei Ihnen landen.",
+  },
+  {
     q: "Kann ich das Gutachten auch bei einem Kaskoschaden nutzen?",
     a: "Ja, allerdings gelten dann die Bedingungen Ihres Versicherungsvertrags. Manche Versicherer übernehmen die Gutachterkosten vollständig, andere nur anteilig. Klären Sie das vorab — wir sagen Ihnen, worauf Sie im Vertrag achten müssen.",
   },

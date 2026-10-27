@@ -182,7 +182,7 @@ export default function BezirkPageTemplate({ content }: Props) {
             <div className="inline-flex items-center gap-2.5 mb-6 animate-fade-up">
               <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" />
               <span className="text-[10px] tracking-[0.2em] sm:text-[11px] sm:tracking-[0.3em] font-bold text-white/55 uppercase">
-                TÜV zertifiziert · Antwort in 30 Minuten
+                Antwort in 30 Minuten
               </span>
             </div>
 
@@ -242,7 +242,7 @@ export default function BezirkPageTemplate({ content }: Props) {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6">
               {[
                 ["24 h", "bis zum Gutachten"],
-                ["0 €", "bei Fremdverschulden"],
+                ["0 €", "i. d. R. bei Fremdverschulden"],
                 ["TÜV", "zertifiziert"],
                 ["5,0 ★", "Google Bewertung"],
               ].map(([val, label], i) => (
@@ -553,31 +553,67 @@ export default function BezirkPageTemplate({ content }: Props) {
           </div>
         </section>
 
-        {/* Weiterführende Seiten zu Kosten und Ansprüchen */}
+        {/* Weiterführende Seiten: Themen, nach denen in der Search Console tatsächlich gesucht wird */}
         <section className="px-5 py-14 border-t border-white/6">
-          <div className="max-w-4xl mx-auto">
-            <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/35 mb-6 text-center" data-reveal>
-              Mehr zu Kosten und Ansprüchen
-            </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3" data-reveal>
-              {[
-                { href: "/kosten-kfz-gutachten-berlin", label: "Was kostet ein Gutachten?", icon: Euro },
-                { href: "/totalschaden-gutachten-berlin", label: "Totalschaden Gutachten", icon: Car },
-                { href: "/nutzungsausfall-tabelle-berlin", label: "Nutzungsausfall Tabelle", icon: Gauge },
-                { href: "/unfallgutachten-berlin", label: "Unfallgutachten Berlin", icon: FileText },
-              ].map(({ href, label, icon: Icon }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="group flex items-center gap-3 bg-white/[0.03] border border-white/8 hover:border-[#E11D2F]/40 hover:bg-white/[0.05] rounded-xl px-4 py-4 transition-all hover:-translate-y-0.5"
-                >
-                  <Icon size={16} className="text-[#E11D2F] flex-shrink-0" />
-                  <span className="text-[13.5px] font-semibold text-white/75 group-hover:text-white transition-colors leading-snug">
-                    {label}
-                  </span>
-                </Link>
-              ))}
-            </div>
+          <div className="max-w-4xl mx-auto space-y-10">
+            {[
+              {
+                titel: "Mehr zu Kosten und Ansprüchen",
+                links: [
+                  { href: "/kosten-kfz-gutachten-berlin", label: "Was kostet ein Gutachten?", icon: Euro },
+                  { href: "/nutzungsausfall-tabelle-berlin", label: "Nutzungsausfall Tabelle 2026", icon: Gauge },
+                  { href: "/fiktive-abrechnung", label: "Fiktive Abrechnung: Geld statt Reparatur", icon: Euro },
+                  { href: "/versicherung-kuerzt-gutachten", label: "Versicherung kürzt das Gutachten", icon: AlertTriangle },
+                  { href: "/eigener-gutachter-oder-versicherungsgutachter", label: "Eigener Gutachter oder Versicherung?", icon: Shield },
+                  { href: "/mietwagen-nach-unfall", label: "Mietwagen nach Unfall", icon: Car },
+                  { href: "/wertminderung", label: "Wertminderung nach Unfall", icon: Gauge },
+                  { href: "/130-prozent-regelung", label: "130-Prozent-Regelung", icon: FileText },
+                ],
+              },
+              {
+                titel: "Welches Gutachten brauchen Sie?",
+                links: [
+                  { href: "/unfallgutachten-berlin", label: "Unfallgutachten Berlin", icon: FileText },
+                  { href: "/schadengutachten", label: "Schadengutachten", icon: FileText },
+                  { href: "/totalschaden-gutachten-berlin", label: "Totalschaden Gutachten", icon: Car },
+                  { href: "/beweissicherungsgutachten-berlin", label: "Beweissicherung", icon: Shield },
+                  { href: "/kaskogutachten-berlin", label: "Kaskogutachten", icon: FileText },
+                  { href: "/wertgutachten", label: "Wertgutachten Auto", icon: Gauge },
+                  { href: "/kostenvoranschlag-oder-gutachten", label: "Kostenvoranschlag oder Gutachten?", icon: FileText },
+                  { href: "/vorschaden-altschaden-gutachten", label: "Vorschaden und Altschaden", icon: FileText },
+                ],
+              },
+              {
+                titel: "Auch für Ihr Fahrzeug",
+                links: [
+                  { href: "/lkw-gutachten-berlin", label: "LKW Sachverständiger", icon: Car },
+                  { href: "/wohnmobil-gutachten-berlin", label: "Wohnmobil und Wohnwagen", icon: Car },
+                  { href: "/motorradgutachten-berlin", label: "Motorrad Sachverständiger", icon: Car },
+                  { href: "/leasinggutachten-berlin", label: "Leasinggutachten", icon: FileText },
+                  { href: "/blog/zuverlaessigen-kfz-gutachter-finden", label: "Zuverlässigen Gutachter finden", icon: Check },
+                ],
+              },
+            ].map(({ titel, links }) => (
+              <div key={titel}>
+                <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/35 mb-6 text-center" data-reveal>
+                  {titel}
+                </p>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3" data-reveal>
+                  {links.map(({ href, label, icon: Icon }) => (
+                    <Link
+                      key={href}
+                      href={href}
+                      className="group flex items-center gap-3 bg-white/[0.03] border border-white/8 hover:border-[#E11D2F]/40 hover:bg-white/[0.05] rounded-xl px-4 py-4 transition-all hover:-translate-y-0.5"
+                    >
+                      <Icon size={16} className="text-[#E11D2F] flex-shrink-0" />
+                      <span className="text-[13.5px] font-semibold text-white/75 group-hover:text-white transition-colors leading-snug">
+                        {label}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 

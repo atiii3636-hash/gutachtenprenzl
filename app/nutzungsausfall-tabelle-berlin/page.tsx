@@ -96,6 +96,14 @@ const faq = [
     a: "Bei unverschuldetem Unfall die Haftpflichtversicherung des Unfallverursachers. Voraussetzung ist, dass die Position im Gutachten ausgewiesen und gegenüber der Versicherung geltend gemacht wird. Steht sie nicht drin, wird sie in aller Regel auch nicht gezahlt.",
   },
   {
+    q: "Wie finde ich die Gruppe meines Autos in der Sanden/Danner/Küppersbusch-Tabelle?",
+    a: "Die Tabelle ordnet Hersteller, Modell und Motorisierung einer der Gruppen A bis L zu. Als Orientierung hilft die Übersicht auf dieser Seite. Verbindlich ist die Gruppe, die im Gutachten ausgewiesen ist. Sie steht dort mit dem Tagessatz, den die Versicherung zahlen muss.",
+  },
+  {
+    q: "Bekomme ich Nutzungsausfall bei fiktiver Abrechnung?",
+    a: "Nicht automatisch. Bei der fiktiven Abrechnung zahlt die Versicherung nur für die Tage, an denen Sie wirklich ohne Auto waren, höchstens für die im Gutachten kalkulierte Reparaturdauer. Wer das Auto unrepariert weiterfährt, bekommt keinen Nutzungsausfall.",
+  },
+  {
     q: "Gilt die Tabelle auch für Motorräder und Wohnmobile?",
     a: "Für Motorräder gibt es eigene Sätze, die deutlich niedriger liegen. Wohnmobile und Nutzfahrzeuge werden gesondert bewertet, dort wird häufig auf Vorhaltekosten oder entgangenen Gewinn abgestellt statt auf die Pkw-Tabelle.",
   },

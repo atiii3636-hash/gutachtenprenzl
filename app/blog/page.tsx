@@ -37,6 +37,14 @@ const articles = [
     category: "Nach dem Unfall",
   },
   {
+    href: "/blog/zuverlaessigen-kfz-gutachter-finden",
+    title: "Zuverlässigen Kfz-Gutachter finden: 7 Prüfpunkte",
+    description:
+      "Woran Sie einen seriösen Kfz-Gutachter in Berlin erkennen: Zertifizierung, Unabhängigkeit, Kosten, Tempo und Warnzeichen, dazu Fragen fürs erste Telefonat.",
+    readTime: "4 Min.",
+    category: "Gutachter wählen",
+  },
+  {
     href: "/blog/recht-auf-eigenen-gutachter",
     title: "Ihr Recht auf einen unabhängigen Gutachter",
     description:

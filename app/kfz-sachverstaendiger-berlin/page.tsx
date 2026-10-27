@@ -351,6 +351,13 @@ export default function LandingPage() {
               vier Bezirke mit nacktem Ortsnamen als Linktext. Der Ankertext ist
               für Google das stärkste Signal, wofür die Zielseite steht, und die
               übrigen 15 Seiten hingen ohne Einstieg von der Hauptseite. */}
+          <p className="text-white/50 text-[14px] leading-relaxed mt-10">
+            Noch auf der Suche? Unser Ratgeber zeigt in{" "}
+            <Link href="/blog/zuverlaessigen-kfz-gutachter-finden" className="text-[#E11D2F] hover:underline font-semibold">
+              7 Prüfpunkten, wie Sie einen zuverlässigen Kfz-Gutachter in Berlin finden
+            </Link>
+            , samt Fragen fürs erste Telefonat.
+          </p>
           <p className="text-[12px] font-semibold uppercase tracking-widest text-white/40 mt-10 mb-4">
             Kfz Gutachter in Ihrem Bezirk
           </p>
