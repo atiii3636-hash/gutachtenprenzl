@@ -27,7 +27,7 @@ export default function DatenschutzPage() {
           <h1 className="font-display font-black text-3xl md:text-4xl text-white uppercase tracking-tight">
             Datenschutzerklärung
           </h1>
-          <p className="text-white/40 text-[14px] mt-2">Stand: Juni 2026</p>
+          <p className="text-white/40 text-[14px] mt-2">Stand: Oktober 2026</p>
         </div>
       </div>
 
@@ -86,10 +86,16 @@ export default function DatenschutzPage() {
             <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-[#E11D2F] hover:underline">Datenschutzerklärung Vercel</a>.
           </p>
 
-          <h3 className="font-bold text-[#080D14] mt-5 mb-2">Google-Bewertungen (Elfsight)</h3>
+          <h3 className="font-bold text-[#080D14] mt-5 mb-2">Google Maps</h3>
           <p className="text-[14px]">
-            Auf unserer Website binden wir Google-Kundenbewertungen über den Dienst <strong>Elfsight</strong> (Elfsight Apps Limited, Florinis 7, Greg Tower, 2nd Floor, 1065, Nicosia, Zypern) ein. Beim Laden des Widgets wird eine Verbindung zu den Servern von Elfsight hergestellt, dabei wird Ihre IP-Adresse übertragen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Darstellung authentischer Kundenbewertungen).{" "}
-            <a href="https://elfsight.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-[#E11D2F] hover:underline">Datenschutzerklärung Elfsight</a>.
+            Auf der Startseite und der Kontaktseite können Sie einen Kartenausschnitt von Google Maps (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) anzeigen. Die Karte wird erst nach Ihrem Klick auf „Karte laden“ eingebunden. Dabei wird Ihre IP-Adresse an Google übertragen, und Google kann Cookies setzen. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Ihr Klick). Mehr in der{" "}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#E11D2F] hover:underline">Datenschutzerklärung von Google</a>.
+          </p>
+
+          <h3 className="font-bold text-[#080D14] mt-5 mb-2">YouTube-Videos</h3>
+          <p className="text-[14px]">
+            Einzelne Seiten zeigen Videos von YouTube im erweiterten Datenschutzmodus (youtube-nocookie.com; Google Ireland Limited, Dublin, Irland). Ein Video wird erst nach Ihrem Klick auf „Abspielen“ geladen. Dabei wird Ihre IP-Adresse an YouTube übertragen. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Ihr Klick). Mehr in der{" "}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#E11D2F] hover:underline">Datenschutzerklärung von Google</a>.
           </p>
 
           <h3 className="font-bold text-[#080D14] mt-5 mb-2">Sprachauswahl (Google Übersetzer)</h3>

@@ -12,13 +12,12 @@ import { bezirkContent } from "@/lib/bezirk-content";
 
 export const metadata: Metadata = {
   title: { absolute: "Kfz-Sachverständiger Berlin – unabhängig & TÜV-zertifiziert" },
-  description: "Was ein unabhängiger Kfz-Sachverständiger prüft, woran Sie einen seriösen erkennen und warum Sie ihn frei wählen dürfen. TÜV-zertifiziert, in ganz Berlin.",
+  description: "Was ein unabhängiger Kfz-Sachverständiger prüft, woran Sie einen seriösen erkennen und warum Sie ihn frei wählen dürfen. Sachverständiger TÜV-zertifiziert, in ganz Berlin.",
   keywords: [
     "kfz sachverständiger berlin",
     "kfz sachverständiger berlin unabhängig",
     "kfz sachverständiger berlin unfall",
     "unabhängiger kfz sachverständiger berlin",
-    "kfz sachverständiger berlin kostenlos",
     "kfz sachverständiger in meiner nähe berlin",
   ],
   alternates: { canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin" },
@@ -35,7 +34,7 @@ const jsonLd = {
           name: "Was macht ein Kfz Sachverständiger?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Ein Kfz Sachverständiger begutachtet neutral und unabhängig Fahrzeugschäden nach einem Unfall. Er dokumentiert alle Schäden, ermittelt die Reparaturkosten, den merkantilen Minderwert und gegebenenfalls den Wiederbeschaffungs- und Restwert. Das Ergebnis ist ein rechtssicheres Gutachten, das von Versicherungen und Gerichten anerkannt wird.",
+            text: "Ein Kfz Sachverständiger begutachtet neutral und unabhängig Fahrzeugschäden nach einem Unfall. Er dokumentiert alle Schäden, ermittelt die Reparaturkosten, den merkantilen Minderwert und gegebenenfalls den Wiederbeschaffungs- und Restwert. Das Ergebnis ist ein belastbares Gutachten, das von Versicherungen und Gerichten anerkannt wird.",
           },
         },
         {
@@ -59,7 +58,7 @@ const jsonLd = {
           name: "Was kostet ein Kfz Sachverständiger in Berlin?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Bei einem unverschuldeten Unfall trägt die Haftpflichtversicherung des Verursachers die Kosten des Sachverständigen vollständig — für Sie ist das Gutachten dann kostenlos. Bei Kasko- oder Eigenschäden klären wir die Kostenübernahme vorab transparent mit Ihnen.",
+            text: "Bei einem unverschuldeten Unfall trägt die Haftpflichtversicherung des Verursachers die Kosten des Sachverständigen vollständig — für Sie ist das Gutachten dann in der Regel kostenlos. Bei Kasko- oder Eigenschäden klären wir die Kostenübernahme vorab transparent mit Ihnen.",
           },
         },
         {
@@ -118,7 +117,7 @@ export default function LandingPage() {
         <div className="relative max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
-            TÜV-Zertifiziert · Antwort in 30 Minuten
+            Antwort in 30 Minuten
           </div>
 
           <h1 className="font-display font-black text-4xl md:text-6xl text-white uppercase tracking-tight leading-tight mb-5">
@@ -153,7 +152,7 @@ export default function LandingPage() {
           <div className="flex flex-wrap justify-center gap-8">
             {[
               { val: "24h", label: "Gutachten" },
-              { val: "0 €", label: "Bei Fremdverschulden" },
+              { val: "0 €", label: "Bei Fremdverschulden, i. d. R." },
               { val: "TÜV", label: "Zertifiziert" },
               { val: "5,0★", label: "Google Bewertung" },
             ].map(({ val, label }) => (
@@ -174,7 +173,7 @@ export default function LandingPage() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { icon: CheckCircle, title: "Kostenlos bei Fremdverschulden", text: "Die gegnerische Versicherung trägt alle Kosten. Sie zahlen 0 €." },
+              { icon: CheckCircle, title: "In der Regel kostenlos bei Fremdverschulden", text: "Die gegnerische Versicherung übernimmt in der Regel das Honorar, wenn der Gegner voll haftet." },
               { icon: Clock, title: "Gutachten in 24 Stunden", text: "Wir kommen zu Ihnen — nach Hause, in die Werkstatt oder zum Unfallort." },
               { icon: Shield, title: "TÜV Rheinland zertifiziert", text: "Zertifikat-ID 0217466029, gültig bis 18.12.2028. Von Versicherungen im Regelfall anerkannt." },
               { icon: Star, title: "5,0 Sterne auf Google", text: `Über ${REVIEW_COUNT} echte Bewertungen von Berliner Kunden. Transparent und unabhängig.` },
@@ -216,7 +215,7 @@ export default function LandingPage() {
             <p>
               Bei einem <strong className="text-white">unverschuldeten Unfall</strong> haben Sie das Recht,
               Ihren eigenen Sachverständigen frei zu wählen. Die Kosten trägt die Haftpflichtversicherung des
-              Verursachers — für Sie ist das Gutachten dann kostenlos. Wir sind mobil in ganz Berlin unterwegs:
+              Verursachers — für Sie ist das Gutachten dann in der Regel kostenlos. Wir sind mobil in ganz Berlin unterwegs:
               von Prenzlauer Berg über Mitte, Pankow und Friedrichshain bis Spandau, Köpenick und Marzahn.
             </p>
           </div>
@@ -238,7 +237,7 @@ export default function LandingPage() {
             {[
               {
                 t: "Haftpflichtgutachten",
-                d: "Der Standardfall nach einem unverschuldeten Unfall. Erfasst den kompletten Schaden und dient als Grundlage gegenüber der gegnerischen Versicherung. Für Sie kostenlos.",
+                d: "Der Standardfall nach einem unverschuldeten Unfall. Erfasst den kompletten Schaden und dient als Grundlage gegenüber der gegnerischen Versicherung. Für Sie in der Regel kostenlos.",
               },
               {
                 t: "Kaskogutachten",
@@ -313,10 +312,10 @@ export default function LandingPage() {
           </h2>
           <div className="space-y-4">
             {[
-              { q: "Was macht ein Kfz Sachverständiger?", a: "Er begutachtet neutral Ihren Fahrzeugschaden, ermittelt Reparaturkosten, merkantilen Minderwert und ggf. Wiederbeschaffungs- und Restwert und erstellt ein rechtssicheres Gutachten, das Versicherungen und Gerichte anerkennen." },
+              { q: "Was macht ein Kfz Sachverständiger?", a: "Er begutachtet neutral Ihren Fahrzeugschaden, ermittelt Reparaturkosten, merkantilen Minderwert und ggf. Wiederbeschaffungs- und Restwert und erstellt ein belastbares Gutachten, das Versicherungen und Gerichte anerkennen." },
               { q: "Was ist der Unterschied zwischen Sachverständiger und Gutachter?", a: "Im Alltag dasselbe — beide erstellen Kfz-Gutachten. Entscheidend ist die Unabhängigkeit: Ein eigener Sachverständiger arbeitet für Sie, der Versicherungsgutachter für die Gegenseite." },
               { q: "Wann sollte ich einen eigenen Sachverständigen beauftragen?", a: "Bei jedem unverschuldeten Unfall ab ca. 750 € Schaden — und zwar vor der Reparatur und bevor Sie ein Regulierungsangebot annehmen." },
-              { q: "Was kostet ein Kfz Sachverständiger in Berlin?", a: "Bei Fremdverschulden 0 € — die gegnerische Haftpflicht zahlt. Bei Kasko-/Eigenschäden klären wir die Kostenübernahme vorab transparent." },
+              { q: "Was kostet ein Kfz Sachverständiger in Berlin?", a: "Bei Fremdverschulden in der Regel 0 € — die gegnerische Haftpflicht zahlt. Bei Kasko-/Eigenschäden klären wir die Kostenübernahme vorab transparent." },
               { q: "Ist der Sachverständige in ganz Berlin verfügbar?", a: "Ja, mobil in allen Bezirken und im Umland. Wir kommen zu Ihnen nach Hause, in die Werkstatt oder zum Unfallort." },
             ].map(({ q, a }) => (
               <div key={q} className="bg-white/[0.03] border border-white/8 rounded-2xl p-6">
@@ -380,7 +379,7 @@ export default function LandingPage() {
       <section className="bg-[#E11D2F] px-5 py-14 text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
-            Jetzt kostenlos anfragen
+            Jetzt unverbindlich anfragen
           </h2>
           <p className="text-white/80 text-[15px] mb-8">
             Schaden melden, Foto hochladen — wir melden uns in 30 Minuten.

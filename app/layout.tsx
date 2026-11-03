@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Karla, Plus_Jakarta_Sans } from "next/font/google";
-import Script from "next/script";
+import GoogleTags from "@/components/google-tags";
 import "./globals.css";
 import CookieBanner from "@/components/cookie-banner";
 import FloatingWhatsApp from "@/components/floating-whatsapp";
@@ -33,17 +33,16 @@ const siteUrl = "https://gutachtenprenzl.de";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Unfallgutachten Berlin – in 24 Std., meist 0 € für Sie",
+    default: "Unfallgutachten Berlin – in 24 Std., bei Fremdverschulden meist 0 €",
     template: "%s | Gutachten Prenzl",
   },
   description:
-    "Unfall gehabt? Gutachten in 24h, bei Fremdverschulden trägt meist die Gegenseite die Kosten. TÜV-zertifiziert, alle Berliner Bezirke. ☎ 0155 60003661",
+    "Unfall gehabt? Gutachten in 24h, bei Fremdverschulden trägt meist die Gegenseite die Kosten. Sachverständiger TÜV-zertifiziert, alle Berliner Bezirke. ☎ 0155 60003661",
   keywords: [
     "Kfz Sachverständiger Berlin",
     "Unfallgutachten Berlin",
     "Kfz Gutachter Berlin",
     "Kfz Sachverständiger Prenzlauer Berg",
-    "Unfallgutachten kostenlos Berlin",
     "TÜV zertifizierter Sachverständiger Berlin",
     "Gutachter nach Unfall Berlin",
     "Schadengutachten Berlin",
@@ -73,9 +72,9 @@ export const metadata: Metadata = {
     locale: "de_DE",
     url: siteUrl,
     siteName: "Gutachten Prenzl – Kfz Sachverständiger Berlin",
-    title: "Unfallgutachten Berlin – in 24 Std., meist 0 € für Sie",
+    title: "Unfallgutachten Berlin – in 24 Std., bei Fremdverschulden meist 0 €",
     description:
-      "Unfall gehabt? Gutachten in 24h, bei Fremdverschulden trägt meist die Gegenseite die Kosten. TÜV-zertifiziert, alle Berliner Bezirke.",
+      "Unfall gehabt? Gutachten in 24h, bei Fremdverschulden trägt meist die Gegenseite die Kosten. Sachverständiger TÜV-zertifiziert, alle Berliner Bezirke.",
     images: [
       {
         url: "/og-image.jpg",
@@ -87,9 +86,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Unfallgutachten Berlin – in 24 Std., meist 0 € für Sie",
+    title: "Unfallgutachten Berlin – in 24 Std., bei Fremdverschulden meist 0 €",
     description:
-      "Unfall gehabt? Gutachten in 24h, bei Fremdverschulden trägt meist die Gegenseite die Kosten. TÜV-zertifiziert.",
+      "Unfall gehabt? Gutachten in 24h, bei Fremdverschulden trägt meist die Gegenseite die Kosten. Sachverständiger TÜV-zertifiziert.",
     images: ["/og-image.jpg"],
   },
 };
@@ -155,7 +154,7 @@ const jsonLd = {
         "GP Kfz Sachverständiger",
       ],
       description:
-        "TÜV-zertifizierter Kfz Sachverständiger in Berlin. Unfallgutachten in 24 Stunden, kostenlos bei unverschuldetem Unfall. Alle Berliner Bezirke.",
+        "TÜV-zertifizierter Kfz Sachverständiger in Berlin. Unfallgutachten in 24 Stunden, in der Regel kostenlos bei unverschuldetem Unfall. Alle Berliner Bezirke.",
       url: siteUrl,
       telephone: "+4915560003661",
       email: "info@gutachtenprenzl.de",
@@ -208,7 +207,7 @@ const jsonLd = {
         opens: "00:00",
         closes: "23:59",
       },
-      priceRange: "Kostenlos bei Fremdverschulden",
+      priceRange: "In der Regel kostenlos bei Fremdverschulden",
       currenciesAccepted: "EUR",
       paymentAccepted: "Rechnung, Überweisung",
       areaServed: [
@@ -272,43 +271,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
-              try{if(localStorage.getItem('cookie-consent')==='accepted'){gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});}}catch(e){}
             `,
           }}
         />
-        {/* Preconnect zu Google-Domains für schnelleres Laden */}
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Google Tag Manager */}
-        <Script id="gtm-head" strategy="afterInteractive">{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-N5CCZ6MN');`}</Script>
-        {/* End Google Tag Manager */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className={`${karla.variable} ${jakarta.variable} font-sans antialiased noise`}>
-        {/* Google Tag Manager (noscript) */}
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N5CCZ6MN" height="0" width="0" style={{display:"none",visibility:"hidden"}}></iframe></noscript>
-        {/* End Google Tag Manager (noscript) */}
         {children}
         <FloatingWhatsApp />
         <ConversionTracking />
         <CookieBanner />
-        {/* Google tag (gtag.js) – Conversion-ID: 18025620294 | Label: frZvCLbrpJAcEMbGpJND */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-18025620294"
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-18025620294');
-          `}
-        </Script>
+        <GoogleTags />
         {/* Einblenden der [data-reveal]-Elemente. Als Client-Komponente, weil sie
             bei jedem Seitenwechsel neu greifen muss: Next.js wechselt Seiten ohne
             Neuladen, ein einmalig laufendes Skript würde Folgeseiten unsichtbar lassen. */}

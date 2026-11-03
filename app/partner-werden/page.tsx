@@ -14,7 +14,7 @@ const PATH = "/partner-werden";
 export const metadata: Metadata = pageMetadata({
   title: "Partner werden – für Werkstätten, Kanzleien & Autohäuser",
   description:
-    "Kooperation mit einem unabhängigen Kfz-Sachverständigen in Berlin: schnelle Termine, rechtssichere Gutachten, ein fester Ansprechpartner statt Hotline.",
+    "Kooperation mit einem unabhängigen Kfz-Sachverständigen in Berlin: schnelle Termine, belastbare Gutachten, ein fester Ansprechpartner statt Hotline.",
   path: PATH,
   keywords: [
     "Kfz Gutachter Partner Werkstatt Berlin",
@@ -41,7 +41,7 @@ const zielgruppen = [
     title: "Anwaltskanzleien",
     lead: "Für Ihre Mandanten erstellen wir Gutachten, die als Grundlage der Anspruchsdurchsetzung tragen.",
     checks: [
-      "Rechtssicher und gerichtsverwertbar aufgebaut",
+      "Gerichtsverwertbar aufgebaut",
       "Jede Position nachvollziehbar hergeleitet",
       "Rückfragen direkt beim Sachverständigen, ohne Umweg",
     ],

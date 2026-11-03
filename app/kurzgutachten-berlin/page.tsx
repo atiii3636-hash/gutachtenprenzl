@@ -15,7 +15,7 @@ const PATH = "/kurzgutachten-berlin";
 export const metadata: Metadata = pageMetadata({
   title: "Kurzgutachten Berlin, für kleine Schäden",
   description:
-    "Kurzgutachten für Bagatellschäden bis rund 750 Euro. Wir sagen Ihnen vorher, ob es reicht oder ob Ihnen ein volles Gutachten zusteht, das 0 € kostet.",
+    "Kurzgutachten für Bagatellschäden bis rund 750 Euro. Wir sagen Ihnen vorher, ob es reicht oder ob Ihnen ein volles Gutachten zusteht, das bei voller Fremdschuld in der Regel 0 € kostet.",
   path: PATH,
   keywords: [
     "Kurzgutachten Berlin",
@@ -51,7 +51,7 @@ const wannSinnvoll = [
 ];
 
 const wannNicht = [
-  "Der Unfall war unverschuldet, dann steht Ihnen das volle Gutachten kostenlos zu",
+  "Der Unfall war unverschuldet, dann steht Ihnen das volle Gutachten zu, dessen Honorar in der Regel die gegnerische Versicherung trägt",
   "Der Schaden liegt erkennbar über der Bagatellgrenze von rund 750 Euro",
   "Es sind Airbags, Sensorik oder tragende Teile betroffen",
   "Sie wollen Nutzungsausfall oder Wertminderung geltend machen",

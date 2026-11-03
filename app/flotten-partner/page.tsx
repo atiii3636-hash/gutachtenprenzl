@@ -85,8 +85,8 @@ const vorteile = [
   },
   {
     icon: FileCheck,
-    title: "Rechtssicher dokumentiert",
-    text: "TÜV-zertifizierte Gutachten, die deutsche Versicherungen im Regelfall anerkennen — und die auch vor Gericht standhalten.",
+    title: "Belastbar dokumentiert",
+    text: "Gutachten, die deutsche Versicherungen im Regelfall anerkennen — und die auch vor Gericht standhalten.",
   },
   {
     icon: MapPin,

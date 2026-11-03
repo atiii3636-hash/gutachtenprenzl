@@ -7,7 +7,7 @@ import FooterNeu from "@/components/footer-neu";
 export const metadata: Metadata = {
   title: "Impressum",
   description:
-    "Impressum von Gutachten Prenzl, Kfz-Sachverständigenbüro in Berlin Prenzlauer Berg. Anbieterkennzeichnung nach § 5 TMG mit Anschrift und Kontaktdaten.",
+    "Impressum von Gutachten Prenzl, Kfz-Sachverständigenbüro in Berlin Prenzlauer Berg. Anbieterkennzeichnung nach § 5 DDG mit Anschrift und Kontaktdaten.",
   alternates: { canonical: "https://gutachtenprenzl.de/impressum" },
 };
 
@@ -28,7 +28,7 @@ export default function ImpressumPage() {
           <h1 className="font-display font-black text-3xl md:text-4xl text-white uppercase tracking-tight">
             Impressum
           </h1>
-          <p className="text-white/40 text-[14px] mt-2">Angaben gemäß § 5 TMG</p>
+          <p className="text-white/40 text-[14px] mt-2">Angaben gemäß § 5 DDG</p>
         </div>
       </div>
 
@@ -69,7 +69,6 @@ export default function ImpressumPage() {
           <div className="text-[14px] space-y-1">
             <p>Berufsbezeichnung: <strong>Kfz Sachverständiger</strong></p>
             <p>Zertifizierung: TÜV Rheinland (ID 0217466029, gültig bis 18.12.2028)</p>
-            <p>Zuständige Aufsichtsbehörde: Industrie- und Handelskammer Berlin</p>
           </div>
         </section>
 
@@ -84,12 +83,6 @@ export default function ImpressumPage() {
         <section>
           <h2 className="font-display font-black text-xl text-[#080D14] uppercase mb-3">Streitschlichtung</h2>
           <p className="text-[14px]">
-            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
-            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-[#E11D2F] hover:underline">
-              ec.europa.eu/consumers/odr
-            </a>
-          </p>
-          <p className="text-[14px] mt-3">
             Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
           </p>
         </section>
@@ -98,7 +91,7 @@ export default function ImpressumPage() {
           <h2 className="font-display font-black text-xl text-[#080D14] uppercase mb-3">Haftungsausschluss</h2>
           <h3 className="font-bold text-[#080D14] text-[14px] mb-2">Haftung für Inhalte</h3>
           <p className="text-[14px]">
-            Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
+            Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
           </p>
           <h3 className="font-bold text-[#080D14] text-[14px] mt-4 mb-2">Haftung für Links</h3>
           <p className="text-[14px]">

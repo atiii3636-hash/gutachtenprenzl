@@ -110,7 +110,7 @@ export default function Page() {
           <div className="mt-6 flex items-center gap-2 text-white/30 text-[13px]">
             <span>Von</span>
             <span className="text-white/60 font-semibold">Gutachten Prenzl</span>
-            <span>· TÜV-zertifiziertes Sachverständigenbüro Berlin · Oktober 2026</span>
+            <span>· Sachverständigenbüro Berlin · Oktober 2026</span>
           </div>
         </div>
       </section>

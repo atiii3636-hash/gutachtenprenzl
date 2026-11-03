@@ -14,6 +14,7 @@ import DamageFormSection from "@/components/damage-form-section";
 import { PHONE_HREF, WHATSAPP_URL, REVIEW_COUNT } from "@/lib/contact";
 import { REVIEWS } from "@/lib/reviews";
 import { faqs } from "@/lib/faqs";
+import ConsentMap from "@/components/consent-map";
 import { pageMetadata, faqLd } from "@/lib/seo";
 import { bezirkContent } from "@/lib/bezirk-content";
 
@@ -23,9 +24,9 @@ const bezirkeHome = [...bezirkContent].sort(
 );
 
 export const metadata: Metadata = pageMetadata({
-  title: "Kfz-Gutachter Berlin: 24-Std.-Gutachten, meist 0 € für Sie",
+  title: "Kfz-Gutachter Berlin: 24-Std.-Gutachten, bei Fremdverschulden meist 0 €",
   description:
-    "Unabhängiger Kfz Sachverständiger in Berlin. Gutachten in 24 Stunden, bei unverschuldetem Unfall kostenlos. TÜV-zertifiziert, in allen Bezirken vor Ort.",
+    "Unabhängiger Kfz Sachverständiger in Berlin. Gutachten in 24 Stunden, bei unverschuldetem Unfall in der Regel kostenlos. Sachverständiger TÜV-zertifiziert, in allen Bezirken vor Ort.",
   path: "/",
   keywords: [
     "Kfz Gutachter Berlin",
@@ -39,7 +40,7 @@ export const metadata: Metadata = pageMetadata({
 /* ---------- Inhalte ---------- */
 
 const heroChecks = [
-  "Kostenlos bei unverschuldetem Unfall",
+  "In der Regel kostenlos bei unverschuldetem Unfall",
   "Schnell und unkompliziert",
   "Besichtigung vor Ort",
   "Jetzt ohne Termin",
@@ -79,7 +80,7 @@ const schritte = [
     icon: FileText,
     title: "Sie bekommen Ihr Gutachten",
     zeit: "In der Regel in 24 Stunden",
-    text: "Reparaturkosten, Wertminderung und Nutzungsausfall werden einzeln berechnet und belegt. Das Ergebnis ist rechtssicher, wird von Versicherungen im Regelfall anerkannt und ist vor Gericht verwertbar.",
+    text: "Reparaturkosten, Wertminderung und Nutzungsausfall werden einzeln berechnet und belegt. Das Ergebnis ist belastbar, wird von Versicherungen im Regelfall anerkannt und ist vor Gericht verwertbar.",
     chips: ["Digital und per Post"],
   },
   {
@@ -103,10 +104,10 @@ const galerie = [
 ];
 
 const leistungen = [
-  { icon: Search, badge: "Häufigster Fall", tag: "TOP 1", title: "Unfallgutachten", desc: "Unverschuldet erwischt? Die gegnerische Versicherung trägt alle Kosten. Wir sichern jeden Posten, der Ihnen zusteht.", href: "/unfallgutachten-berlin" },
-  { icon: Banknote, badge: "Für Geschädigte", tag: "0 €", title: "Kostenfrei für Sie", desc: "Bei Fremdverschulden zahlen Sie nichts. Die Gutachterkosten übernimmt die Haftpflicht des Verursachers.", href: null },
+  { icon: Search, badge: "Häufigster Fall", tag: "TOP 1", title: "Unfallgutachten", desc: "Unverschuldet erwischt? Die gegnerische Versicherung übernimmt in der Regel das Honorar. Wir sichern jeden Posten, der Ihnen zusteht.", href: "/unfallgutachten-berlin" },
+  { icon: Banknote, badge: "Für Geschädigte", tag: "0 €", title: "Meist kostenfrei für Sie", desc: "Bei Fremdverschulden zahlen Sie in der Regel nichts. Die Gutachterkosten übernimmt die Haftpflicht des Verursachers.", href: null },
   { icon: Zap, badge: "Auffahrunfall", tag: "Express", title: "Heckaufprall", desc: "Jemand ist Ihnen hinten aufgefahren? Wir sichern den vollen Anspruch inklusive Wertminderung und Nutzungsausfall.", href: "/heckauffahrunfall-berlin" },
-  { icon: MapPin, badge: "Parkplatz und Fahrerflucht", tag: "Doku", title: "Parkschaden", desc: "Auto beschädigt vorgefunden? Wir dokumentieren rechtssicher, auch wenn der Verursacher unbekannt bleibt.", href: "/parkschaden-gutachten-berlin" },
+  { icon: MapPin, badge: "Parkplatz und Fahrerflucht", tag: "Doku", title: "Parkschaden", desc: "Auto beschädigt vorgefunden? Wir dokumentieren belastbar, auch wenn der Verursacher unbekannt bleibt.", href: "/parkschaden-gutachten-berlin" },
   { icon: CarFront, badge: "Wirtschaftlicher Totalschaden", tag: "Markt", title: "Totalschaden", desc: "Wir ermitteln den echten Wiederbeschaffungswert. Der liegt oft deutlich über dem ersten Angebot der Versicherung.", href: "/totalschaden-gutachten-berlin" },
   { icon: Scale, badge: "Rundum betreut", tag: "Inklusive", title: "Schadensregulierung", desc: "Wir übernehmen die Kommunikation mit der Versicherung, bis alles ausgezahlt ist.", href: null },
 ];
@@ -611,7 +612,7 @@ export default function NeuPage() {
               <ul className="space-y-3">
                 {[
                   ["TÜV Rheinland zertifiziert", "Unabhängig geprüfte Qualifikation, gültig bis 18.12.2028"],
-                  ["Rechtssichere Gutachten", "Von deutschen Versicherungen im Regelfall anerkannt und vor Gericht verwertbar"],
+                  ["Belastbare Gutachten", "Von deutschen Versicherungen im Regelfall anerkannt und vor Gericht verwertbar"],
                   ["Beratung in drei Sprachen", "Deutsch, Türkisch und Englisch"],
                 ].map(([t, sub]) => (
                   <li key={t} className="flex items-start gap-3">
@@ -711,15 +712,10 @@ export default function NeuPage() {
             . In den meisten Fällen kommen aber wir zu Ihnen.
           </p>
           <div className="rounded-2xl overflow-hidden border border-white/10 aspect-[4/3] sm:aspect-[16/9]" data-reveal>
-            <iframe
+            <ConsentMap
               title="Standort von Kfz Gutachten Prenzl, Prenzlauer Allee 88, 10405 Berlin"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2641112.8513557096!2d12.453535365793078!3d49.725639543119954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x24ffc02e346f60e9%3A0x46f58afc3e81d2e7!2sKfz%20Gutachten%20Prenzl%20-%20Sachverst%C3%A4ndigenb%C3%BCro!5e0!3m2!1sde!2sde!4v1789750190659!5m2!1sde!2sde"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
+              className="h-full w-full"
             />
           </div>
 

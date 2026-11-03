@@ -9,7 +9,7 @@ import { pageMetadata, breadcrumbLd, SITE_URL } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Fallarchiv: echte Gutachten aus Berlin",
   description:
-    "Anonymisierte Schadenfälle aus der täglichen Arbeit: Fahrzeug, Schadenbild und die Zahlen aus dem Gutachten. Von Gutachten Prenzl, TÜV-zertifiziert in Berlin.",
+    "Anonymisierte Schadenfälle aus der täglichen Arbeit: Fahrzeug, Schadenbild und die Zahlen aus dem Gutachten. Von Gutachten Prenzl, TÜV-zertifizierter Sachverständiger in Berlin.",
   path: "/faelle",
 });
 

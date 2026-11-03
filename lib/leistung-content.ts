@@ -184,7 +184,7 @@ export const leistungContent: LeistungContent[] = [
     faqs: [
       {
         q: "Was kostet ein Wohnmobil-Gutachten?",
-        a: "Bei unverschuldetem Unfall zahlen Sie nichts, die gegnerische Haftpflichtversicherung trägt das Honorar. Ansonsten richtet es sich nach der Schadenhöhe. Weil beim Reisemobil Fahrzeug und Aufbau getrennt zu bewerten sind, ist der Aufwand höher als bei einem Pkw gleicher Schadenhöhe.",
+        a: "Bei unverschuldetem Unfall zahlen Sie in der Regel nichts, die gegnerische Haftpflichtversicherung trägt das Honorar. Ansonsten richtet es sich nach der Schadenhöhe. Weil beim Reisemobil Fahrzeug und Aufbau getrennt zu bewerten sind, ist der Aufwand höher als bei einem Pkw gleicher Schadenhöhe.",
       },
       {
         q: "Wird der Innenausbau im Gutachten berücksichtigt?",
@@ -223,7 +223,7 @@ export const leistungContent: LeistungContent[] = [
     serviceType: "Nutzfahrzeuggutachten",
     metaTitle: "Lkw- & Transporter-Gutachten Berlin – Nutzfahrzeuge",
     metaDescription:
-      "Gutachten für Transporter, Lkw und Anhänger in Berlin. Mit Ausfallschaden, Aufbauten und Ladung. Für Fuhrparks und Einzelfahrzeuge, bei Fremdschuld 0 €.",
+      "Gutachten für Transporter, Lkw und Anhänger in Berlin. Mit Ausfallschaden, Aufbauten und Ladung. Für Fuhrparks und Einzelfahrzeuge, bei Fremdschuld in der Regel 0 €.",
     keywords: [
       "lkw gutachten berlin",
       "transporter gutachten berlin",

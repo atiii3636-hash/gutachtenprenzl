@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://gutachtenprenzl.de/parkschaden-gutachten-berlin" },
   openGraph: {
     title: "Parkschaden Gutachten Berlin – Kfz Gutachter 24h",
-    description: "Parkschaden in Berlin? Kostenloser Kfz Gutachter kommt zu Ihnen. TÜV-zertifiziert, 24h Gutachten.",
+    description: "Parkschaden in Berlin? Kfz Gutachter kommt zu Ihnen. Sachverständiger TÜV-zertifiziert, 24h Gutachten.",
     url: "https://gutachtenprenzl.de/parkschaden-gutachten-berlin",
     images: ["/og-image.jpg"],
   },
@@ -40,7 +40,7 @@ const jsonLd = {
           name: "Was tun wenn man in Berlin einen Parkschaden am Auto entdeckt?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Fotos machen, Polizei informieren (wichtig für Versicherung), Zeugen ansprechen, Kaskoversicherung melden und sofort einen Kfz Sachverständigen beauftragen. Der Gutachter dokumentiert den Schaden rechtssicher. Falls kein Verursacher ermittelbar ist, übernimmt in der Regel Ihre Vollkaskoversicherung die Kosten — die Teilkasko schließt einfache Parkrempler durch unbekannte Fahrzeuge meist aus.",
+            text: "Fotos machen, Polizei informieren (wichtig für Versicherung), Zeugen ansprechen, Kaskoversicherung melden und sofort einen Kfz Sachverständigen beauftragen. Der Gutachter dokumentiert den Schaden belastbar. Falls kein Verursacher ermittelbar ist, übernimmt in der Regel Ihre Vollkaskoversicherung die Kosten — die Teilkasko schließt einfache Parkrempler durch unbekannte Fahrzeuge meist aus.",
           },
         },
         {
@@ -105,14 +105,14 @@ export default function ParkshadenBerlin() {
         <div className="relative max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
-            TÜV-Zertifiziert · Gutachten in 24h
+            Gutachten in 24h
           </div>
           <h1 className="font-display font-black text-4xl md:text-6xl text-white uppercase tracking-tight leading-tight mb-5">
             Parkschaden Gutachten<br />
             <span className="text-[#E11D2F]">Berlin</span>
           </h1>
           <p className="text-white/60 text-[16px] md:text-[18px] leading-relaxed max-w-xl mx-auto mb-8">
-            Schaden am geparkten Auto entdeckt? Wir kommen zu Ihnen — <strong className="text-white">auch ohne bekannten Verursacher</strong>. TÜV-zertifiziertes Gutachten in 24 Stunden. Bei Fremdverschulden <strong className="text-[#22c55e]">kostenlos</strong>.
+            Schaden am geparkten Auto entdeckt? Wir kommen zu Ihnen — <strong className="text-white">auch ohne bekannten Verursacher</strong>. Gutachten in 24 Stunden. Bei Fremdverschulden <strong className="text-[#22c55e]">in der Regel kostenlos</strong>.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
             <a href="tel:+4915560003661" className="inline-flex items-center justify-center gap-2.5 bg-[#E11D2F] hover:bg-[#B91C1C] text-white font-display font-black uppercase tracking-wide text-[15px] px-8 py-4 rounded-xl shadow-lg shadow-[#E11D2F]/30 transition-all">
@@ -123,7 +123,7 @@ export default function ParkshadenBerlin() {
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-8">
-            {[{ val: "24h", label: "Gutachten" }, { val: "0 €", label: "Bei Fremdverschulden" }, { val: "TÜV", label: "Zertifiziert" }, { val: "5,0★", label: "Google" }].map(({ val, label }) => (
+            {[{ val: "24h", label: "Gutachten" }, { val: "0 €", label: "Bei Fremdverschulden, i. d. R." }, { val: "TÜV", label: "Zertifiziert" }, { val: "5,0★", label: "Google" }].map(({ val, label }) => (
               <div key={val} className="text-center">
                 <p className="font-display font-black text-white text-[28px] leading-none">{val}</p>
                 <p className="text-white/35 text-[11px] mt-1">{label}</p>
@@ -173,13 +173,13 @@ export default function ParkshadenBerlin() {
                 title: "Verursacher bekannt und gesteht",
                 badge: "Haftpflicht des Verursachers",
                 badgeColor: "bg-[#22c55e]/10 text-[#22c55e] border-[#22c55e]/20",
-                text: "Perfekter Fall: Die Haftpflichtversicherung des Verursachers zahlt alles — Gutachten, Reparatur, Minderwert, Nutzungsausfall. Für Sie 0 €. Wir übernehmen die Kommunikation.",
+                text: "Perfekter Fall: Die Haftpflichtversicherung des Verursachers zahlt in der Regel — Gutachten, Reparatur, Minderwert, Nutzungsausfall. Für Sie in der Regel 0 €. Wir übernehmen die Kommunikation.",
               },
               {
                 title: "Verursacher bekannt, bestreitet Schuld",
                 badge: "Haftpflicht + ggf. Anwalt",
                 badgeColor: "bg-amber-500/10 text-amber-400 border-amber-500/20",
-                text: "Mit einem Gutachten haben Sie ein rechtssicheres Dokument. Versicherungen und Gerichte akzeptieren unser TÜV-zertifiziertes Gutachten. Ein Anwalt kann zusätzlich helfen — wir vernetzen Sie gern.",
+                text: "Mit einem Gutachten haben Sie ein belastbares Dokument. Versicherungen und Gerichte akzeptieren unser Gutachten. Ein Anwalt kann zusätzlich helfen — wir vernetzen Sie gern.",
               },
               {
                 title: "Fahrerflucht — Verursacher unbekannt",
@@ -237,9 +237,9 @@ export default function ParkshadenBerlin() {
           <h2 className="font-display font-black text-3xl text-white uppercase text-center mb-10">Warum Gutachten Prenzl?</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { icon: CheckCircle, title: "Kostenlos bei bekanntem Verursacher", text: "Die Haftpflichtversicherung des Verursachers trägt alle Gutachterkosten." },
+              { icon: CheckCircle, title: "Meist kostenlos bei bekanntem Verursacher", text: "Die Haftpflichtversicherung des Verursachers übernimmt in der Regel die Gutachterkosten." },
               { icon: Clock, title: "Same-Day Termin in Berlin", text: "Wir kommen direkt zu Ihrem Auto — Parkplatz, Werkstatt oder Wohnadresse." },
-              { icon: Shield, title: "TÜV Rheinland zertifiziert", text: "Rechtssichere Gutachten, von Gerichten und Versicherungen im Regelfall anerkannt." },
+              { icon: Shield, title: "TÜV Rheinland zertifiziert", text: "Belastbare Gutachten, von Gerichten und Versicherungen im Regelfall anerkannt." },
               { icon: Camera, title: "Vollständige Fotodokumentation", text: "Alle Schäden werden exakt dokumentiert — nichts wird für spätere Ansprüche vergessen." },
             ].map(({ icon: Icon, title, text }) => (
               <div key={title} className="flex gap-4 p-5 rounded-2xl border border-white/8 bg-white/4">

@@ -55,8 +55,8 @@ export default function AboutSection() {
 
             <p className="text-white/55 text-[15px] leading-relaxed mb-8">
               Nach einem Unfall haben Sie das <strong className="text-white">gesetzliche Recht auf einen eigenen, unabhängigen Gutachter</strong> —
-              und bei unverschuldetem Unfall zahlen Sie dafür <strong className="text-white">0 €</strong>.
-              Die Haftpflichtversicherung des Verursachers trägt alle Kosten. Viele Fahrer wissen das nicht —
+              und bei unverschuldetem Unfall zahlen Sie dafür in der Regel <strong className="text-white">0 €</strong>.
+              Die Haftpflichtversicherung des Verursachers übernimmt in der Regel das Honorar. Viele Fahrer wissen das nicht —
               und verlieren dadurch Tausende Euro Schadensersatz.
             </p>
 

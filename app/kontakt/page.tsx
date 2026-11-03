@@ -5,6 +5,7 @@ import FooterNeu from "@/components/footer-neu";
 import Breadcrumb from "@/components/neu/breadcrumb";
 import PageHero from "@/components/neu/page-hero";
 import JsonLd from "@/components/neu/json-ld";
+import ConsentMap from "@/components/consent-map";
 import DamageFormSection from "@/components/damage-form-section";
 import { PHONE_DISPLAY, PHONE_HREF, WHATSAPP_URL } from "@/lib/contact";
 import { pageMetadata, breadcrumbLd, contactPageLd } from "@/lib/seo";
@@ -192,14 +193,10 @@ export default function KontaktNeu() {
           </div>
 
           <div className="rounded-xl overflow-hidden border border-white/10" data-reveal>
-            <iframe
+            <ConsentMap
               title="Standort Gutachten Prenzl, Prenzlauer Allee 88, 10405 Berlin"
               src="https://www.google.com/maps?q=Prenzlauer%20Allee%2088,%2010405%20Berlin&output=embed"
-              width="100%"
-              height="380"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              style={{ border: 0 }}
+              className="h-[380px] w-full"
             />
           </div>
         </div>

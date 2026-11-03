@@ -14,7 +14,7 @@ const PATH = "/leistungen";
 export const metadata: Metadata = pageMetadata({
   title: "Leistungen – Kfz-Gutachten für Berlin",
   description:
-    "Unfallgutachten, Kaskogutachten, Totalschaden- und Parkschadenbewertung in Berlin. TÜV-zertifiziert, bei unverschuldetem Unfall kostenlos.",
+    "Unfallgutachten, Kaskogutachten, Totalschaden- und Parkschadenbewertung in Berlin. Sachverständiger TÜV-zertifiziert, bei unverschuldetem Unfall in der Regel kostenlos.",
   path: PATH,
   keywords: [
     "Unfallgutachten Berlin",
@@ -34,7 +34,7 @@ const detailseiten = [
     num: "01",
     href: "/schadengutachten",
     title: "Schadengutachten",
-    text: "Nach einem Unfall: Reparaturkosten, Wertminderung und Nutzungsausfall vollständig erfasst. Bei fremdem Verschulden für Sie kostenfrei.",
+    text: "Nach einem Unfall: Reparaturkosten, Wertminderung und Nutzungsausfall vollständig erfasst. Bei fremdem Verschulden für Sie in der Regel kostenfrei.",
   },
   {
     num: "02",
@@ -112,7 +112,7 @@ const saeulen = [
     kicker: "Häufigster Fall",
     lead: "Unverschuldet in einen Unfall geraten? Dann trägt die Haftpflichtversicherung des Verursachers alle Kosten — und Sie haben das Recht auf einen eigenen, unabhängigen Gutachter.",
     stats: [
-      { val: "0 €", label: "Kosten für Sie" },
+      { val: "0 €", label: "Kosten für Sie, i. d. R. bei Fremdverschulden" },
       { val: "24 h", label: "Gutachten fertig" },
       { val: "Berlin", label: "Vor Ort bei Ihnen" },
     ],
@@ -120,7 +120,7 @@ const saeulen = [
       "Lückenlose Foto- und Schadendokumentation",
       "Reparaturkosten, Wertminderung und Nutzungsausfall",
       "Direkte Abrechnung mit der gegnerischen Versicherung",
-      "Rechtssicher und gerichtsverwertbar",
+      "Gerichtsverwertbar",
     ],
     href: "/schadengutachten",
     faqs: [
@@ -166,7 +166,7 @@ const saeulen = [
     stats: [
       { val: "Markt", label: "Reale Preisbasis" },
       { val: "24 h", label: "Bewertung fertig" },
-      { val: "0 €", label: "Bei Fremdverschulden" },
+      { val: "0 €", label: "Bei Fremdverschulden, i. d. R." },
     ],
     checks: [
       "Wiederbeschaffungswert nach echten Marktpreisen",
@@ -238,7 +238,7 @@ const qualitaeten = [
 const ablauf = [
   { num: "01", title: "Anruf oder WhatsApp", text: "Schaden in zwei Minuten schildern. Wir sagen sofort, welche Ansprüche Sie haben." },
   { num: "02", title: "Termin vor Ort", text: "Wir kommen zu Ihnen — nach Hause, in die Werkstatt oder an den Unfallort." },
-  { num: "03", title: "Gutachten in 24 Stunden", text: "Vollständig, rechtssicher, von Versicherungen im Regelfall anerkannt." },
+  { num: "03", title: "Gutachten in 24 Stunden", text: "Vollständig, belastbar, von Versicherungen im Regelfall anerkannt." },
   { num: "04", title: "Regulierung", text: "Das Gutachten geht an die Versicherung. Wir begleiten Sie bis zur Auszahlung." },
 ];
 
@@ -253,7 +253,7 @@ export default function LeistungenNeu() {
           serviceLd({
             name: "Kfz-Schadengutachten Berlin",
             description:
-              "Unabhängige Kfz-Gutachten nach Unfall, Kaskoschaden, Totalschaden und Parkschaden in Berlin. TÜV Rheinland zertifiziert.",
+              "Unabhängige Kfz-Gutachten nach Unfall, Kaskoschaden, Totalschaden und Parkschaden in Berlin. Sachverständiger TÜV Rheinland zertifiziert.",
             path: PATH,
             serviceType: "Kfz-Schadengutachten",
           }),
@@ -268,7 +268,7 @@ export default function LeistungenNeu() {
         kicker="Leistungen"
         title="Gutachten, die"
         titleAccent="standhalten."
-        lead="Vier Kernleistungen, ein Ziel: dass Sie am Ende bekommen, was Ihnen zusteht. Unabhängig, schnell und bei unverschuldetem Unfall für Sie kostenfrei."
+        lead="Vier Kernleistungen, ein Ziel: dass Sie am Ende bekommen, was Ihnen zusteht. Unabhängig, schnell und bei unverschuldetem Unfall für Sie in der Regel kostenfrei."
         image="/foto3.jpg"
         ctaLabel="Jetzt anrufen"
       />

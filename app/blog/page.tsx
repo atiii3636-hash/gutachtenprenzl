@@ -7,7 +7,7 @@ import FooterNeu from "@/components/footer-neu";
 export const metadata: Metadata = {
   title: { absolute: "Ratgeber: Kfz Gutachten & Unfallrecht Berlin" },
   description:
-    "Ratgeber vom Sachverständigenbüro Gutachten Prenzl, TÜV-zertifiziert in Berlin. Was tun nach einem Unfall? Welche Rechte haben Sie? Alle Antworten hier.",
+    "Ratgeber vom Sachverständigenbüro Gutachten Prenzl, TÜV-zertifizierter Sachverständiger in Berlin. Was tun nach einem Unfall? Welche Rechte haben Sie? Alle Antworten hier.",
   alternates: { canonical: "https://gutachtenprenzl.de/blog" },
 };
 
@@ -48,7 +48,7 @@ const articles = [
     href: "/blog/recht-auf-eigenen-gutachter",
     title: "Ihr Recht auf einen unabhängigen Gutachter",
     description:
-      "Die meisten Unfallgeschädigten wissen es nicht: Bei Fremdverschulden haben Sie das gesetzliche Recht auf einen eigenen Sachverständigen, kostenlos.",
+      "Die meisten Unfallgeschädigten wissen es nicht: Bei Fremdverschulden haben Sie das gesetzliche Recht auf einen eigenen Sachverständigen. Das Honorar trägt in der Regel die gegnerische Versicherung.",
     readTime: "3 Min.",
     category: "Ihre Rechte",
   },

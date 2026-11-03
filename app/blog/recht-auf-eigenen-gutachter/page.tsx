@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   // absolute: ohne das Suffix aus dem Layout, sonst 82 Zeichen und in der Suche abgeschnitten.
   title: { absolute: "Ihr Recht auf einen unabhängigen Kfz Gutachter in Berlin" },
   description:
-    "Bei unverschuldetem Unfall haben Sie das gesetzliche Recht auf einen eigenen Gutachter, kostenlos. Was das bedeutet und wie Sie es durchsetzen.",
+    "Bei unverschuldetem Unfall haben Sie das gesetzliche Recht auf einen eigenen Gutachter. Das Honorar trägt in der Regel die gegnerische Versicherung. Was das bedeutet und wie Sie es durchsetzen.",
   alternates: { canonical: "https://gutachtenprenzl.de/blog/recht-auf-eigenen-gutachter" },
 };
 
@@ -17,7 +17,7 @@ const articleJsonLd = {
   "@type": "Article",
   headline: "Ihr Recht auf einen unabhängigen Kfz Gutachter",
   description:
-    "Bei Fremdverschulden haben Sie das gesetzliche Recht auf einen eigenen Sachverständigen, kostenlos. Was das bedeutet und wie Sie es durchsetzen.",
+    "Bei Fremdverschulden haben Sie das gesetzliche Recht auf einen eigenen Sachverständigen. Das Honorar trägt in der Regel die gegnerische Versicherung. Was das bedeutet und wie Sie es durchsetzen.",
   url: "https://gutachtenprenzl.de/blog/recht-auf-eigenen-gutachter",
   datePublished: "2026-04-10",
   dateModified: "2026-06-01",
@@ -88,7 +88,7 @@ export default function RechtAufGutachter() {
             <Link href="/ueber-uns" className="text-white/60 hover:text-white transition-colors font-semibold">
               Gutachten Prenzl
             </Link>
-            <span>· TÜV-zertifiziertes Sachverständigenbüro Berlin</span>
+            <span>· Sachverständigenbüro Berlin</span>
           </div>
         </div>
       </section>
@@ -143,7 +143,7 @@ export default function RechtAufGutachter() {
                   <li>Arbeitet ausschließlich für Sie</li>
                   <li>Dokumentiert alle Schäden vollständig</li>
                   <li>Berücksichtigt Minderwert & Nutzungsausfall</li>
-                  <li>Rechtssicher und gerichtsverwertbar</li>
+                  <li>Gerichtsverwertbar</li>
                 </ul>
               </div>
             </div>
@@ -185,7 +185,7 @@ export default function RechtAufGutachter() {
               Es kommt vor, dass die gegnerische Versicherung versucht, das Gutachten abzulehnen
               oder die Kosten zu kürzen. Das ist rechtlich in der Regel nicht zulässig, solange
               Sie einen qualifizierten, zertifizierten Gutachter gewählt haben. Ein TÜV Rheinland
-              zertifiziertes Gutachten wird von deutschen Kfz-Versicherungen im Regelfall anerkannt
+              Gutachten wird von deutschen Kfz-Versicherungen im Regelfall anerkannt
               und ist vor Gericht verwertbar.
             </p>
             <p className="mt-3">

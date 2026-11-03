@@ -23,7 +23,7 @@ const PATH = "/kfz-gutachten-berlin";
 export const metadata: Metadata = pageMetadata({
   title: "Kfz-Gutachten Berlin – Arten, Inhalt und Kosten",
   description:
-    "Welches Kfz-Gutachten Sie brauchen, was darin steht und was es kostet. Bei unverschuldetem Unfall zahlen Sie 0 €. TÜV-zertifiziert, fertig in 24 Stunden.",
+    "Welches Kfz-Gutachten Sie brauchen, was darin steht und was es kostet. Bei unverschuldetem Unfall zahlen Sie in der Regel 0 €. Sachverständiger TÜV-zertifiziert, fertig in 24 Stunden.",
   path: PATH,
   keywords: [
     "kfz gutachten berlin",
@@ -125,7 +125,7 @@ const faqs = [
   },
   {
     q: "Was kostet ein Kfz-Gutachten in Berlin?",
-    a: "Bei einem unverschuldeten Unfall zahlen Sie nichts — die gegnerische Haftpflichtversicherung trägt das Honorar, und wir rechnen direkt mit ihr ab. Tragen Sie die Schuld selbst, richtet sich das Honorar nach der Schadenhöhe: etwa 250–350 € bei 1.000 €, 560–700 € bei 5.000 € und 1.020–1.250 € bei 15.000 € Schaden.",
+    a: "Bei einem unverschuldeten Unfall zahlen Sie in der Regel nichts — die gegnerische Haftpflichtversicherung trägt das Honorar, und wir rechnen direkt mit ihr ab. Tragen Sie die Schuld selbst, richtet sich das Honorar nach der Schadenhöhe: etwa 250–350 € bei 1.000 €, 560–700 € bei 5.000 € und 1.020–1.250 € bei 15.000 € Schaden.",
   },
   {
     q: "Wie lange dauert ein Kfz-Gutachten?",
@@ -137,7 +137,7 @@ const faqs = [
   },
   {
     q: "Erkennt die Versicherung Ihr Gutachten an?",
-    a: "Ja. Unsere Gutachten sind TÜV Rheinland zertifiziert erstellt (Zertifikat-ID 0217466029) und werden von deutschen Versicherungen im Regelfall anerkannt. Kürzt eine Versicherung trotzdem einzelne Positionen, schreiben wir eine fachliche Stellungnahme dazu.",
+    a: "Ja. Unsere Gutachten erstellt ein TÜV Rheinland zertifizierter Sachverständiger (Zertifikat-ID 0217466029) und werden von deutschen Versicherungen im Regelfall anerkannt. Kürzt eine Versicherung trotzdem einzelne Positionen, schreiben wir eine fachliche Stellungnahme dazu.",
   },
   {
     q: "Kommt der Gutachter zu mir? Gibt es einen Vor-Ort-Service in Berlin?",
@@ -177,7 +177,7 @@ export default function KfzGutachtenBerlin() {
         kicker="Kfz-Gutachten Berlin"
         title="Das Dokument, das über"
         titleAccent="Ihre Auszahlung entscheidet."
-        lead="Welches Gutachten Sie brauchen, was darin steht und was es kostet. Bei unverschuldetem Unfall zahlen Sie nichts — das Honorar trägt die gegnerische Versicherung."
+        lead="Welches Gutachten Sie brauchen, was darin steht und was es kostet. Bei unverschuldetem Unfall zahlen Sie in der Regel nichts — das Honorar trägt die gegnerische Versicherung."
         image="/foto2.jpg"
         ctaLabel="Jetzt anrufen"
       />
@@ -190,7 +190,7 @@ export default function KfzGutachtenBerlin() {
               <strong className="text-white">Ein Kfz-Gutachten</strong> ist die unabhängige, schriftliche
               Feststellung eines Fahrzeugschadens durch einen Sachverständigen. Es beziffert nicht nur die
               Reparaturkosten, sondern auch Wertminderung, Nutzungsausfall, Wiederbeschaffungs- und Restwert.
-              Bei einem unverschuldeten Unfall in Berlin kostet es Sie <strong className="text-white">0 €</strong>,
+              Bei einem unverschuldeten Unfall in Berlin kostet es Sie in der Regel <strong className="text-white">0 €</strong>,
               weil die Haftpflichtversicherung des Verursachers dafür aufkommt. Das fertige Gutachten liegt in
               der Regel <strong className="text-white">innerhalb von 24 Stunden</strong> vor.
             </p>
@@ -424,7 +424,7 @@ export default function KfzGutachtenBerlin() {
             Ihr Gutachten in 24 Stunden.
           </h2>
           <p className="text-white/50 text-[16px] mb-8 leading-relaxed">
-            Bei unverschuldetem Unfall kostenlos. Ein Anruf reicht, den Rest übernehmen wir.
+            Bei unverschuldetem Unfall in der Regel kostenlos. Ein Anruf reicht, den Rest übernehmen wir.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a

@@ -11,7 +11,7 @@ import { bezirkContent } from "@/lib/bezirk-content";
 
 export const metadata: Metadata = {
   title: { absolute: "Unfallgutachten Berlin – Ablauf, Ansprüche, Kosten" },
-  description: "Unfallgutachten in Berlin: So läuft es ab, was Ihnen nach einem unverschuldeten Unfall zusteht und wer zahlt. Gutachten in 24 Std., meist 0 € für Sie.",
+  description: "Unfallgutachten in Berlin: So läuft es ab, was Ihnen nach einem unverschuldeten Unfall zusteht und wer zahlt. Gutachten in 24 Std., bei Fremdverschulden meist 0 €.",
   alternates: { canonical: "https://gutachtenprenzl.de/unfallgutachten-berlin" },
 };
 
@@ -82,7 +82,7 @@ const jsonLd = {
       "@type": "WebPage",
       "@id": "https://gutachtenprenzl.de/unfallgutachten-berlin#webpage",
       url: "https://gutachtenprenzl.de/unfallgutachten-berlin",
-      name: "Unfallgutachten Berlin – in 24 Stunden, bei Fremdverschulden kostenlos",
+      name: "Unfallgutachten Berlin – in 24 Stunden, bei Fremdverschulden in der Regel kostenlos",
       description:
         "Unfallgutachten in Berlin vom TÜV-zertifizierten Kfz-Sachverständigen. Ablauf, Ansprüche und Kosten – bei unverschuldetem Unfall zahlt die gegnerische Haftpflicht.",
       inLanguage: "de-DE",
@@ -126,7 +126,7 @@ const jsonLd = {
         "@type": "Offer",
         priceCurrency: "EUR",
         price: "0",
-        description: "Bei unverschuldetem Unfall kostenlos – das Honorar trägt die Haftpflicht des Unfallverursachers.",
+        description: "Bei unverschuldetem Unfall in der Regel kostenlos – das Honorar trägt die Haftpflicht des Unfallverursachers.",
       },
     },
     {
@@ -162,7 +162,7 @@ export default function LandingPage() {
         <div className="relative max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-[11px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e] animate-pulse" />
-            TÜV-Zertifiziert · Antwort in 30 Minuten
+            Antwort in 30 Minuten
           </div>
 
           <h1 className="font-display font-black text-4xl md:text-6xl text-white uppercase tracking-tight leading-tight mb-5">
@@ -196,7 +196,7 @@ export default function LandingPage() {
           <div className="flex flex-wrap justify-center gap-8">
             {[
               { val: "24h", label: "Gutachten" },
-              { val: "0 €", label: "Bei Fremdverschulden" },
+              { val: "0 €", label: "Bei Fremdverschulden, i. d. R." },
               { val: "TÜV", label: "Zertifiziert" },
               { val: "5,0★", label: "Google Bewertung" },
             ].map(({ val, label }) => (
@@ -241,7 +241,7 @@ export default function LandingPage() {
             {[
               { icon: Car, title: "Schadenserfassung", text: "Vollständige Dokumentation aller Schäden am Fahrzeug mit Fotos und technischer Bewertung." },
               { icon: Euro, title: "Kostenberechnung", text: "Exakte Reparaturkostenermittlung auf Basis aktueller Marktpreise — gerichtsfest." },
-              { icon: FileText, title: "Rechtssicheres Gutachten", text: "Von deutschen Kfz-Versicherungen im Regelfall anerkanntes, TÜV-zertifiziertes Dokument." },
+              { icon: FileText, title: "Belastbares Gutachten", text: "Von deutschen Kfz-Versicherungen im Regelfall anerkanntes, Dokument." },
             ].map(({ icon: Icon, title, text }) => (
               <div key={title} className="flex flex-col items-center text-center p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
                 <div className="w-12 h-12 bg-[#E11D2F]/10 rounded-xl flex items-center justify-center mb-3">
@@ -338,7 +338,7 @@ export default function LandingPage() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { icon: CheckCircle, title: "Kostenlos bei Fremdverschulden", text: "Die gegnerische Versicherung trägt alle Kosten. Sie zahlen 0 €." },
+              { icon: CheckCircle, title: "In der Regel kostenlos bei Fremdverschulden", text: "Die gegnerische Versicherung übernimmt in der Regel das Honorar, wenn der Gegner voll haftet." },
               { icon: Clock, title: "Gutachten in 24 Stunden", text: "Wir kommen zu Ihnen — nach Hause, in die Werkstatt oder zum Unfallort in ganz Berlin." },
               { icon: Shield, title: "TÜV Rheinland zertifiziert", text: "Zertifikat-ID 0217466029, gültig bis 18.12.2028. Von Versicherungen im Regelfall anerkannt." },
               { icon: Star, title: "5,0 Sterne auf Google", text: `Über ${REVIEW_COUNT} echte Bewertungen von Berliner Kunden. Transparent und unabhängig.` },

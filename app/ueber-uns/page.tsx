@@ -16,7 +16,7 @@ const PATH = "/ueber-uns";
 export const metadata: Metadata = pageMetadata({
   title: "Über uns – Ihr Sachverständiger in Prenzlauer Berg",
   description:
-    "TÜV Rheinland zertifiziertes Kfz-Sachverständigenbüro in Berlin Prenzlauer Berg. Inhaber Atakan Arslan — persönlich, unabhängig, in 24 Stunden vor Ort.",
+    "Kfz-Sachverständigenbüro in Berlin Prenzlauer Berg. Inhaber Atakan Arslan — persönlich, unabhängig, in 24 Stunden vor Ort.",
   path: PATH,
   keywords: [
     "Kfz Sachverständiger Prenzlauer Berg",

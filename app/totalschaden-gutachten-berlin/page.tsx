@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://gutachtenprenzl.de/totalschaden-gutachten-berlin" },
   openGraph: {
     title: "Totalschaden Gutachten Berlin – Wiederbeschaffungswert ermitteln",
-    description: "Totalschaden in Berlin? Holen Sie sich den vollen Wiederbeschaffungswert. TÜV-zertifiziert, kostenlos bei Fremdverschulden.",
+    description: "Totalschaden in Berlin? Holen Sie sich den vollen Wiederbeschaffungswert. Sachverständiger TÜV-zertifiziert, in der Regel kostenlos bei Fremdverschulden.",
     url: "https://gutachtenprenzl.de/totalschaden-gutachten-berlin",
     images: ["/og-image.jpg"],
   },
@@ -129,7 +129,7 @@ export default function TotalschadenBerlin() {
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-8">
-            {[{ val: "24h", label: "Gutachten" }, { val: "0 €", label: "Bei Fremdverschulden" }, { val: "TÜV", label: "Zertifiziert" }, { val: "5,0★", label: "Google" }].map(({ val, label }) => (
+            {[{ val: "24h", label: "Gutachten" }, { val: "0 €", label: "Bei Fremdverschulden, i. d. R." }, { val: "TÜV", label: "Zertifiziert" }, { val: "5,0★", label: "Google" }].map(({ val, label }) => (
               <div key={val} className="text-center">
                 <p className="font-display font-black text-white text-[28px] leading-none">{val}</p>
                 <p className="text-white/35 text-[11px] mt-1">{label}</p>
@@ -241,7 +241,7 @@ export default function TotalschadenBerlin() {
           <h2 className="font-display font-black text-3xl text-white uppercase text-center mb-10">Warum Gutachten Prenzl?</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { icon: CheckCircle, title: "Kostenlos bei Fremdverschulden", text: "Die gegnerische Haftpflicht trägt alle Gutachterkosten — 0 € für Sie." },
+              { icon: CheckCircle, title: "In der Regel kostenlos bei Fremdverschulden", text: "Die gegnerische Haftpflicht übernimmt in der Regel die Gutachterkosten, wenn der Gegner voll haftet." },
               { icon: Euro, title: "Korrekte Wiederbeschaffungswert-Ermittlung", text: "Wir berechnen anhand des aktuellen Berliner Markts — nicht zu Gunsten der Versicherung." },
               { icon: Shield, title: "TÜV Rheinland zertifiziert", text: "ID 0217466029, gültig bis 18.12.2028. Gerichtsverwertbar, von Versicherungen im Regelfall anerkannt." },
               { icon: Clock, title: "Gutachten in 24 Stunden", text: "Schnelle Bearbeitung damit Sie schnell wieder mobil sind oder das Fahrzeug abgeben können." },
@@ -317,7 +317,7 @@ export default function TotalschadenBerlin() {
             Totalschaden? Jetzt Gutachten anfragen.
           </h2>
           <p className="text-white/80 text-[15px] mb-8">
-            Nicht zu wenig akzeptieren. Wir ermitteln Ihren vollen Anspruch — kostenlos bei Fremdverschulden.
+            Nicht zu wenig akzeptieren. Wir ermitteln Ihren vollen Anspruch — in der Regel kostenlos bei Fremdverschulden.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="tel:+4915560003661" className="inline-flex items-center justify-center gap-2.5 bg-white text-[#E11D2F] font-display font-black uppercase tracking-wide text-[15px] px-8 py-4 rounded-xl shadow-lg transition-all">

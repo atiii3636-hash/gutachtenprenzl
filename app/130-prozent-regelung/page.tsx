@@ -348,7 +348,7 @@ export default function DreissigProzentRegel() {
           </h2>
           <p className="text-white/50 text-[16px] mb-8 leading-relaxed">
             Dann kommt es auf jeden Euro in der Kalkulation an. Wir rechnen es für Sie durch,
-            bei unverschuldetem Unfall kostenlos.
+            bei unverschuldetem Unfall in der Regel kostenlos.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a

@@ -18,7 +18,7 @@ const UPDATED_LABEL = "2. August 2026";
 export const metadata: Metadata = {
   title: { absolute: "Was kostet ein Kfz-Gutachten in Berlin? Honorartabelle 2026" },
   description:
-    "Bei unverschuldetem Unfall 0 € für Sie. Sonst 250–1.250 € je nach Schadenhöhe. ☎ 0155 60003661",
+    "Bei unverschuldetem Unfall in der Regel 0 € für Sie. Sonst 250–1.250 € je nach Schadenhöhe. ☎ 0155 60003661",
   keywords: [
     "was kostet ein kfz gutachten berlin",
     "kfz gutachter kosten berlin",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Was kostet ein Kfz-Gutachten in Berlin? Honorartabelle 2026",
     description:
-      "Bei unverschuldetem Unfall zahlen Sie 0 €. Sonst ca. 250–1.250 € je nach Schadenhöhe. Komplette Honorar- und Nebenkostentabelle.",
+      "Bei unverschuldetem Unfall zahlen Sie in der Regel 0 €. Sonst ca. 250–1.250 € je nach Schadenhöhe. Komplette Honorar- und Nebenkostentabelle.",
     url: "https://gutachtenprenzl.de/kosten-kfz-gutachten-berlin",
     images: ["/og-image.jpg"],
   },
@@ -65,9 +65,9 @@ const nebenkosten = [
 const werZahlt = [
   {
     fall: "Unverschuldeter Unfall (Haftpflichtschaden)",
-    kosten: "0 €",
+    kosten: "i. d. R. 0 €",
     gut: true,
-    text: "Die Haftpflichtversicherung des Unfallverursachers trägt das komplette Sachverständigenhonorar. Das folgt aus § 249 BGB: Sie sind so zu stellen, wie Sie ohne den Unfall stünden. Wir rechnen direkt mit der gegnerischen Versicherung ab, Sie bekommen keine Rechnung.",
+    text: "Die Haftpflichtversicherung des Unfallverursachers trägt bei voller Haftung des Gegners in der Regel das Sachverständigenhonorar. Das folgt aus § 249 BGB: Sie sind so zu stellen, wie Sie ohne den Unfall stünden. Wir rechnen direkt mit der gegnerischen Versicherung ab. Zahlt sie nicht oder nur teilweise (zum Beispiel bei Mithaftung oder gekürztem Honorar), kann ein Restbetrag bei Ihnen verbleiben.",
   },
   {
     fall: "Teilschuld",
@@ -92,7 +92,7 @@ const werZahlt = [
 const faq = [
   {
     q: "Was kostet ein Kfz-Gutachten in Berlin?",
-    a: "Nach einem unverschuldeten Unfall kostet Sie das Gutachten 0 €, weil die Haftpflichtversicherung des Verursachers zahlt. Zahlen Sie selbst, richtet sich das Honorar nach der Schadenhöhe: rund 250–350 € bei 1.000 € Schaden, rund 560–700 € bei 5.000 € Schaden, rund 1.020–1.250 € bei 15.000 € Schaden.",
+    a: "Nach einem unverschuldeten Unfall kostet Sie das Gutachten in der Regel 0 €, weil die Haftpflichtversicherung des Verursachers zahlt. Zahlen Sie selbst, richtet sich das Honorar nach der Schadenhöhe: rund 250–350 € bei 1.000 € Schaden, rund 560–700 € bei 5.000 € Schaden, rund 1.020–1.250 € bei 15.000 € Schaden.",
   },
   {
     q: "Wer zahlt den Kfz-Gutachter nach einem Unfall?",
@@ -135,7 +135,7 @@ const jsonLd = {
       mainEntityOfPage: { "@type": "WebPage", "@id": "https://gutachtenprenzl.de/kosten-kfz-gutachten-berlin" },
       name: "Was kostet ein Kfz-Gutachten in Berlin? Honorartabelle 2026",
       description:
-        "Kosten eines Kfz-Gutachtens in Berlin: bei unverschuldetem Unfall 0 €, sonst ca. 250–1.250 € je nach Schadenhöhe. Mit Honorar- und Nebenkostentabelle.",
+        "Kosten eines Kfz-Gutachtens in Berlin: bei unverschuldetem Unfall in der Regel 0 €, sonst ca. 250–1.250 € je nach Schadenhöhe. Mit Honorar- und Nebenkostentabelle.",
       inLanguage: "de-DE",
       datePublished: UPDATED,
       dateModified: UPDATED,
@@ -172,7 +172,7 @@ const jsonLd = {
         priceCurrency: "EUR",
         price: "0",
         description:
-          "Kostenlos für den Geschädigten bei unverschuldetem Unfall — das Honorar trägt die Haftpflichtversicherung des Unfallverursachers.",
+          "In der Regel kostenlos für den Geschädigten bei unverschuldetem Unfall — das Honorar trägt die Haftpflichtversicherung des Unfallverursachers.",
         availability: "https://schema.org/InStock",
       },
     },
@@ -207,7 +207,7 @@ export default function KostenKfzGutachtenBerlin() {
           {/* 40–60-Wort-Direktantwort: der Block, den ChatGPT & AI Overviews zitieren */}
           <div className="rounded-2xl border border-[#22c55e]/25 bg-[#22c55e]/[0.06] p-5 md:p-6 mb-8">
             <p className="text-white text-[16px] md:text-[17px] leading-relaxed">
-              <strong>Nach einem unverschuldeten Unfall in Berlin kostet Sie das Kfz-Gutachten 0 €</strong> — das
+              <strong>Nach einem unverschuldeten Unfall in Berlin kostet Sie das Kfz-Gutachten in der Regel 0 €</strong> — das
               Honorar zahlt die Haftpflichtversicherung des Unfallverursachers. Zahlen Sie selbst, richtet sich das
               Honorar nach der Schadenhöhe: etwa <strong>250–350 €</strong> bei 1.000 € Schaden,
               <strong> 560–700 €</strong> bei 5.000 € und <strong>1.020–1.250 €</strong> bei 15.000 €.
@@ -413,7 +413,7 @@ export default function KostenKfzGutachtenBerlin() {
       <section className="bg-[#E11D2F] px-5 py-14 text-center">
         <div className="max-w-2xl mx-auto">
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
-            Unverschuldeter Unfall? Dann zahlen Sie nichts.
+            Unverschuldeter Unfall? Dann zahlen Sie in der Regel nichts.
           </h2>
           <p className="text-white/80 text-[15px] mb-8">
             Rufen Sie an, wir klären in zwei Minuten, wer in Ihrem Fall das Honorar trägt.

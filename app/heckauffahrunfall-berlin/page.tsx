@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://gutachtenprenzl.de/heckauffahrunfall-berlin" },
   openGraph: {
     title: "Heckauffahrunfall Berlin – Gutachten & Schadensersatz",
-    description: "Kostenloser Kfz Gutachter nach Heckauffahrunfall in Berlin. TÜV-zertifiziert, 24h Gutachten.",
+    description: "Kfz Gutachter nach Heckauffahrunfall in Berlin. Sachverständiger TÜV-zertifiziert, 24h Gutachten.",
     url: "https://gutachtenprenzl.de/heckauffahrunfall-berlin",
     images: ["/og-image.jpg"],
   },
@@ -38,7 +38,7 @@ const jsonLd = {
           name: "Was tun nach einem Heckauffahrunfall in Berlin?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Nach einem Heckauffahrunfall in Berlin: Polizei rufen (wenn nötig), Fotos machen, Personalien des Unfallverursachers notieren und sofort einen eigenen unabhängigen Kfz Sachverständigen beauftragen. Keinen Gutachter der gegnerischen Versicherung akzeptieren. Bei Fremdverschulden zahlen Sie 0 €.",
+            text: "Nach einem Heckauffahrunfall in Berlin: Polizei rufen (wenn nötig), Fotos machen, Personalien des Unfallverursachers notieren und sofort einen eigenen unabhängigen Kfz Sachverständigen beauftragen. Keinen Gutachter der gegnerischen Versicherung akzeptieren. Bei Fremdverschulden zahlen Sie in der Regel 0 €.",
           },
         },
         {
@@ -118,7 +118,7 @@ export default function HeckauffahrunfallBerlin() {
             <span className="text-[#E11D2F]">Berlin</span>
           </h1>
           <p className="text-white/60 text-[16px] md:text-[18px] leading-relaxed max-w-xl mx-auto mb-8">
-            Jemand ist Ihnen aufgefahren? Als TÜV-zertifizierter Kfz Sachverständiger in Berlin sichern wir Ihren <strong className="text-white">vollen Schadensersatz</strong> — inklusive Minderwert und Nutzungsausfall. Bei Fremdverschulden <strong className="text-[#22c55e]">kostenlos für Sie</strong>.
+            Jemand ist Ihnen aufgefahren? Als TÜV-zertifizierter Kfz Sachverständiger in Berlin sichern wir Ihren <strong className="text-white">vollen Schadensersatz</strong> — inklusive Minderwert und Nutzungsausfall. Bei Fremdverschulden <strong className="text-[#22c55e]">in der Regel kostenlos für Sie</strong>.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
             <a href="tel:+4915560003661" className="inline-flex items-center justify-center gap-2.5 bg-[#E11D2F] hover:bg-[#B91C1C] text-white font-display font-black uppercase tracking-wide text-[15px] px-8 py-4 rounded-xl shadow-lg shadow-[#E11D2F]/30 transition-all">
@@ -129,7 +129,7 @@ export default function HeckauffahrunfallBerlin() {
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-8">
-            {[{ val: "24h", label: "Gutachten" }, { val: "0 €", label: "Bei Fremdverschulden" }, { val: "TÜV", label: "Zertifiziert" }, { val: "5,0★", label: "Google" }].map(({ val, label }) => (
+            {[{ val: "24h", label: "Gutachten" }, { val: "0 €", label: "Bei Fremdverschulden, i. d. R." }, { val: "TÜV", label: "Zertifiziert" }, { val: "5,0★", label: "Google" }].map(({ val, label }) => (
               <div key={val} className="text-center">
                 <p className="font-display font-black text-white text-[28px] leading-none">{val}</p>
                 <p className="text-white/35 text-[11px] mt-1">{label}</p>
@@ -236,7 +236,7 @@ export default function HeckauffahrunfallBerlin() {
           <h2 className="font-display font-black text-3xl text-white uppercase text-center mb-10">Warum Gutachten Prenzl?</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { icon: CheckCircle, title: "Kostenlos bei Fremdverschulden", text: "Die gegnerische Haftpflicht trägt alle Kosten. Sie zahlen 0 €." },
+              { icon: CheckCircle, title: "In der Regel kostenlos bei Fremdverschulden", text: "Die gegnerische Haftpflicht übernimmt in der Regel das Honorar, wenn der Gegner voll haftet." },
               { icon: Clock, title: "Gutachten in 24 Stunden", text: "Wir kommen zu Ihnen — nach Hause, Werkstatt oder Unfallort in ganz Berlin." },
               { icon: Shield, title: "TÜV Rheinland zertifiziert", text: "ID 0217466029, gültig bis 18.12.2028. Von Versicherungen im Regelfall anerkannt." },
               { icon: FileText, title: "Vollständige Schadenserfassung", text: "Reparaturkosten, Minderwert, Nutzungsausfall — nichts wird vergessen." },
@@ -263,7 +263,7 @@ export default function HeckauffahrunfallBerlin() {
           </h2>
           <div className="space-y-4">
             {[
-              { q: "Was tun nach einem Heckauffahrunfall in Berlin?", a: "Fahrzeug sichern, Fotos machen, Personalien notieren — und sofort einen eigenen Kfz Gutachter beauftragen. Keinen Gutachter der gegnerischen Versicherung annehmen. Bei Fremdverschulden zahlen Sie 0 €." },
+              { q: "Was tun nach einem Heckauffahrunfall in Berlin?", a: "Fahrzeug sichern, Fotos machen, Personalien notieren — und sofort einen eigenen Kfz Gutachter beauftragen. Keinen Gutachter der gegnerischen Versicherung annehmen. Bei Fremdverschulden zahlen Sie in der Regel 0 €." },
               { q: "Wer zahlt den Schaden beim Heckauffahrunfall?", a: "In der Regel der Auffahrende. Dessen Haftpflichtversicherung trägt alle Kosten: Gutachten, Reparatur, Mietwagen, Nutzungsausfall und Schmerzensgeld — solange Sie keinen Verursacheranteil haben." },
               { q: "Was ist der Minderwert nach einem Heckauffahrunfall?", a: "Auch ein vollständig repariertes Fahrzeug verliert nach einem Unfall an Marktwert. Dieser merkantile Minderwert muss von der Versicherung erstattet werden. Ein unabhängiger Gutachter berechnet ihn korrekt — bei jüngeren Fahrzeugen können das 500–3.000 € sein." },
               { q: "Wie lange dauert die Schadensregulierung nach einem Heckauffahrunfall?", a: "Mit einem vollständigen Gutachten und korrekter Schadensmeldung: 4–8 Wochen. Wir übernehmen die gesamte Kommunikation mit der gegnerischen Versicherung." },

@@ -15,11 +15,11 @@ export type Faq = {
 export const faqs: Faq[] = [
   {
     q: "Was macht ein Kfz Sachverständiger genau?",
-    a: "Ein Kfz Sachverständiger in Berlin bewertet den Schaden an Ihrem Fahrzeug unabhängig und objektiv. Er dokumentiert den Unfallschaden, berechnet die Reparaturkosten, den Wiederbeschaffungswert und den Minderwert. Als TÜV Rheinland zertifizierter Gutachter erstellen wir rechtssichere Gutachten, die deutsche Versicherungen im Regelfall anerkennen.",
+    a: "Ein Kfz Sachverständiger in Berlin bewertet den Schaden an Ihrem Fahrzeug unabhängig und objektiv. Er dokumentiert den Unfallschaden, berechnet die Reparaturkosten, den Wiederbeschaffungswert und den Minderwert. Als TÜV Rheinland zertifizierter Gutachter erstellen wir belastbare Gutachten, die deutsche Versicherungen im Regelfall anerkennen.",
   },
   {
     q: "Was kostet ein Kfz-Gutachten in Berlin?",
-    a: "Bei einem unverschuldeten Unfall zahlen Sie 0 €. Die Haftpflichtversicherung des Unfallverursachers trägt alle Kosten für den Kfz Sachverständigen, das ist gesetzlich geregelt. Nur bei selbstverschuldetem Unfall werden die Kosten über Ihre Kaskoversicherung abgerechnet.",
+    a: "Bei einem unverschuldeten Unfall zahlen Sie in der Regel 0 €. Die Haftpflichtversicherung des Unfallverursachers übernimmt bei voller Haftung in der Regel das Honorar des Kfz Sachverständigen (§ 249 BGB). Kürzt sie es oder haften Sie teilweise mit, kann ein Restbetrag bei Ihnen verbleiben. Nur bei selbstverschuldetem Unfall werden die Kosten über Ihre Kaskoversicherung abgerechnet.",
   },
   {
     q: "Wann ist ein Gutachten nach einem Unfall Pflicht?",

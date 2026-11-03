@@ -59,7 +59,7 @@ const steps = [
   {
     nr: "4",
     title: "Gutachter beauftragen statt direkt zur Werkstatt",
-    text: "Fahren Sie nicht direkt zur Werkstatt. Ein unabhängiger Gutachter dokumentiert den Schaden rechtssicher, berechnet alle Positionen inklusive Minderwert und stellt sicher, dass Sie Ihren vollen Anspruch geltend machen können. Der Gutachter kommt direkt zu Ihrem Fahrzeug.",
+    text: "Fahren Sie nicht direkt zur Werkstatt. Ein unabhängiger Gutachter dokumentiert den Schaden belastbar, berechnet alle Positionen inklusive Minderwert und stellt sicher, dass Sie Ihren vollen Anspruch geltend machen können. Der Gutachter kommt direkt zu Ihrem Fahrzeug.",
   },
   {
     nr: "5",
@@ -115,7 +115,7 @@ export default function ParkschadenWasTun() {
             <Link href="/ueber-uns" className="text-white/60 hover:text-white transition-colors font-semibold">
               Gutachten Prenzl
             </Link>
-            <span>· TÜV-zertifiziertes Sachverständigenbüro Berlin</span>
+            <span>· Sachverständigenbüro Berlin</span>
           </div>
         </div>
       </section>
@@ -160,7 +160,7 @@ export default function ParkschadenWasTun() {
                 den Schaden (sofern vorhanden). Ohne Vollkasko bleibt der Schaden an Ihnen hängen.
               </p>
               <p>
-                Trotzdem lohnt sich ein Gutachten: Es dokumentiert den Schaden rechtssicher,
+                Trotzdem lohnt sich ein Gutachten: Es dokumentiert den Schaden belastbar,
                 damit Sie nicht bei einem späteren Schaden in Verdacht geraten, diesen selbst
                 verursacht zu haben.
               </p>
@@ -289,7 +289,7 @@ export default function ParkschadenWasTun() {
             Parkschaden entdeckt?
           </h2>
           <p className="text-white/80 text-[15px] mb-8">
-            Ich komme direkt zu Ihrem Fahrzeug und dokumentiere alles rechtssicher,
+            Ich komme direkt zu Ihrem Fahrzeug und dokumentiere alles belastbar,
             auch am Abend und am Wochenende.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

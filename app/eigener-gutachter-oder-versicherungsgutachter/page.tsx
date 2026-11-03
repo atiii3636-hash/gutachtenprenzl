@@ -48,7 +48,7 @@ const vergleich = [
   },
   {
     kriterium: "Kosten für Sie",
-    eigen: "0 € bei Fremdverschulden (§ 249 BGB)",
+    eigen: "In der Regel 0 € bei Fremdverschulden (§ 249 BGB)",
     versicherung: "0 €",
   },
   {
@@ -90,7 +90,7 @@ const faq = [
   },
   {
     q: "Kostet mich der eigene Gutachter mehr als der der Versicherung?",
-    a: "Nein. Bei Fremdverschulden trägt die Haftpflichtversicherung des Unfallverursachers das Honorar Ihres eigenen Sachverständigen. Für Sie kostet beides 0 €. Der Unterschied liegt nicht im Preis, sondern darin, in wessen Auftrag das Gutachten entsteht.",
+    a: "Nein. Bei Fremdverschulden trägt die Haftpflichtversicherung des Unfallverursachers das Honorar Ihres eigenen Sachverständigen. Für Sie kostet beides in der Regel 0 €. Der Unterschied liegt nicht im Preis, sondern darin, in wessen Auftrag das Gutachten entsteht.",
   },
   {
     q: "Warum fällt das Gutachten der Versicherung oft niedriger aus?",
@@ -192,7 +192,7 @@ export default function GutachterVergleich() {
             <p className="text-white text-[16px] md:text-[17px] leading-relaxed">
               <strong>Nach einem unverschuldeten Unfall dürfen Sie Ihren Sachverständigen frei wählen</strong> und
               müssen den Gutachter der gegnerischen Versicherung nicht akzeptieren (BGH VI ZR 67/06). Beide Wege kosten
-              Sie 0 €. Der Unterschied liegt darin, wer den Auftrag erteilt — und damit, wessen Interessen das
+              Sie in der Regel 0 €. Der Unterschied liegt darin, wer den Auftrag erteilt — und damit, wessen Interessen das
               Gutachten abbildet.
             </p>
           </div>
@@ -390,7 +390,7 @@ export default function GutachterVergleich() {
             Unfall gehabt? Erst anrufen, dann unterschreiben.
           </h2>
           <p className="text-white/80 text-[15px] mb-8">
-            Wir sehen uns Ihr Fahrzeug in ganz Berlin vor Ort an — bei Fremdverschulden für Sie kostenlos.
+            Wir sehen uns Ihr Fahrzeug in ganz Berlin vor Ort an — bei Fremdverschulden für Sie in der Regel kostenlos.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="tel:+4915560003661" className="inline-flex items-center justify-center gap-2.5 bg-white text-[#E11D2F] font-display font-black uppercase tracking-wide text-[15px] px-8 py-4 rounded-xl shadow-lg transition-all">

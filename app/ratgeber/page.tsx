@@ -57,7 +57,7 @@ const artikel = [
     icon: Euro,
     kategorie: "Kosten",
     title: "Was kostet ein Kfz-Gutachten in Berlin?",
-    text: "Bei unverschuldetem Unfall zahlen Sie nichts. In allen anderen Fällen richtet sich das Honorar nach der Schadenhöhe — mit Übersicht der Spannen.",
+    text: "Bei unverschuldetem Unfall zahlen Sie in der Regel nichts. In allen anderen Fällen richtet sich das Honorar nach der Schadenhöhe — mit Übersicht der Spannen.",
     href: "/kosten-kfz-gutachten-berlin",
     dauer: "5 Min. Lesezeit",
   },

@@ -177,6 +177,10 @@ export default function FooterNeu() {
           </ul>
         </div>
 
+        <p className="text-[12px] leading-relaxed text-white/30 pb-6">
+          Hinweis zu den Kosten: Bei unverschuldetem Unfall übernimmt in der Regel die Haftpflichtversicherung des Unfallverursachers das Gutachterhonorar, sofern dieser voll haftet. Bei Mithaftung, gekürztem Honorar oder ausbleibender Zahlung kann ein Restbetrag beim Auftraggeber verbleiben. Bei Bagatellschäden und selbstverschuldeten Schäden trägt der Auftraggeber das Honorar. Die Informationen auf dieser Website ersetzen keine Rechtsberatung.
+        </p>
+
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 border-t border-white/6">
           <p className="text-[14px] text-white/25">© 2026 Gutachten Prenzl. Alle Rechte vorbehalten.</p>
           <div className="flex gap-5">

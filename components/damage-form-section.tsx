@@ -136,7 +136,7 @@ export default function DamageFormSection() {
                 }`}
               >
                 {typ === "haftpflicht" ? (
-                  <>Haftpflicht <span className="text-[#22c55e]">(0 €)</span></>
+                  <>Haftpflicht <span className="text-[#22c55e]">(i. d. R. 0 €)</span></>
                 ) : (
                   "Kasko"
                 )}

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   // absolute: ohne das Suffix aus dem Layout, sonst 76 Zeichen und in der Suche abgeschnitten.
   title: { absolute: "Was tun nach einem Unfall in Berlin? Schritt für Schritt" },
   description:
-    "Was nach einem Unfall in Berlin zu tun ist: Polizei, Fotos, eigener Gutachter. Ratgeber vom TÜV-zertifizierten Büro in Prenzlauer Berg.",
+    "Was nach einem Unfall in Berlin zu tun ist: Polizei, Fotos, eigener Gutachter. Ratgeber vom Büro in Prenzlauer Berg.",
   alternates: { canonical: "https://gutachtenprenzl.de/blog/was-tun-nach-unfall-berlin" },
 };
 
@@ -127,7 +127,7 @@ export default function WasTunNachUnfall() {
             <Link href="/ueber-uns" className="text-white/60 hover:text-white transition-colors font-semibold">
               Gutachten Prenzl
             </Link>
-            <span>· TÜV-zertifiziertes Sachverständigenbüro Berlin</span>
+            <span>· Sachverständigenbüro Berlin</span>
           </div>
         </div>
       </section>
@@ -254,7 +254,7 @@ export default function WasTunNachUnfall() {
                 "Polizei rufen und Daten austauschen",
                 "Nichts unterschreiben am Unfallort",
                 "Eigenen, unabhängigen Gutachter rufen, nicht den der Versicherung",
-                "Bei Fremdverschulden zahlen Sie für den Gutachter 0 €",
+                "Bei Fremdverschulden zahlen Sie für den Gutachter in der Regel 0 €",
               ].map((p) => (
                 <li key={p} className="flex items-start gap-2.5 text-white/70 text-[14px]">
                   <CheckCircle size={15} className="text-[#22c55e] mt-0.5 flex-shrink-0" />

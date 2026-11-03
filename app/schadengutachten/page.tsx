@@ -14,14 +14,13 @@ import { pageMetadata, breadcrumbLd, serviceLd, faqLd } from "@/lib/seo";
 const PATH = "/schadengutachten";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Schadengutachten Berlin, kostenlos bei fremdem Verschulden",
+  title: "Schadengutachten Berlin, in der Regel kostenlos bei fremdem Verschulden",
   description:
     "Unabhängiges Schadengutachten nach Unfall in Berlin. Reparaturkosten, Wertminderung und Nutzungsausfall vollständig erfasst, fertig in 24 Stunden.",
   path: PATH,
   keywords: [
     "Schadengutachten Berlin",
     "Unfallgutachten Berlin",
-    "Kfz Schadengutachten kostenlos",
     "Gutachten nach Unfall Berlin",
     "Schadensgutachten Sachverständiger Berlin",
   ],
@@ -57,7 +56,7 @@ const inhalte = [
 const ablauf = [
   { num: "01", icon: Phone, title: "Sie melden sich", zeit: "Sofort, rund um die Uhr", text: "Sie schildern kurz den Unfall. Wir sagen Ihnen direkt, ob ein Gutachten sinnvoll ist und wer es bezahlt." },
   { num: "02", icon: Camera, title: "Besichtigung vor Ort", zeit: "Etwa 30 bis 60 Minuten", text: "Wir kommen dorthin, wo Ihr Fahrzeug steht, und dokumentieren jeden sichtbaren und verdeckten Schaden." },
-  { num: "03", icon: FileText, title: "Gutachten erstellen", zeit: "In der Regel in 24 Stunden", text: "Alle Positionen werden berechnet und belegt. Das Ergebnis ist rechtssicher und vor Gericht verwertbar." },
+  { num: "03", icon: FileText, title: "Gutachten erstellen", zeit: "In der Regel in 24 Stunden", text: "Alle Positionen werden berechnet und belegt. Das Ergebnis ist belastbar und vor Gericht verwertbar." },
   { num: "04", icon: Send, title: "Regulierung", zeit: "Bis Ihr Geld da ist", text: "Das Gutachten geht an die Versicherung. Bei Rückfragen und Kürzungen bleiben wir für Sie dran." },
 ];
 
@@ -73,7 +72,7 @@ const wannSinnvoll = [
 const faqs = [
   {
     q: "Was kostet ein Schadengutachten in Berlin?",
-    a: "Bei einem unverschuldeten Unfall zahlen Sie nichts. Die Haftpflichtversicherung des Verursachers trägt die Gutachterkosten, das ist gesetzlich geregelt. Bei eigenem Verschulden läuft es über Ihre Kaskoversicherung, hier klären wir vorab, ob sich das Gutachten für Sie rechnet.",
+    a: "Bei einem unverschuldeten Unfall zahlen Sie in der Regel nichts. Die Haftpflichtversicherung des Verursachers trägt die Gutachterkosten, das ist gesetzlich geregelt. Bei eigenem Verschulden läuft es über Ihre Kaskoversicherung, hier klären wir vorab, ob sich das Gutachten für Sie rechnet.",
   },
   {
     q: "Darf ich den Sachverständigen selbst aussuchen?",
@@ -139,7 +138,7 @@ export default function SchadengutachtenNeu() {
         <div className="max-w-5xl mx-auto px-5 py-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6">
             {[
-              ["0 €", "bei fremdem Verschulden"],
+              ["0 €", "i. d. R. bei fremdem Verschulden"],
               ["24 h", "bis zum Gutachten"],
               ["TÜV", "zertifiziert"],
               ["Berlin", "vor Ort bei Ihnen"],

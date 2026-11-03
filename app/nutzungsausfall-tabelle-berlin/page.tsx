@@ -415,7 +415,7 @@ export default function NutzungsausfallTabelle() {
           </h2>
           <p className="text-white/80 text-[15px] mb-8">
             Fehlt die Position, zahlt die Versicherung sie nicht. Wir prüfen Ihr Gutachten – bei
-            Fremdverschulden kostenlos.
+            Fremdverschulden in der Regel kostenlos.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="tel:+4915560003661" className="inline-flex items-center justify-center gap-2.5 bg-white text-[#E11D2F] font-display font-black uppercase tracking-wide text-[15px] px-8 py-4 rounded-xl shadow-lg transition-all">

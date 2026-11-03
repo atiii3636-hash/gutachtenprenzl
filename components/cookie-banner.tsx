@@ -19,6 +19,7 @@ export default function CookieBanner() {
         analytics_storage: "granted",
       });
     }
+    window.dispatchEvent(new Event("consent-accepted"));
     setVisible(false);
   };
 
