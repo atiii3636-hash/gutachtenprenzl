@@ -1,4 +1,5 @@
 import { ShieldCheck, Award, User, Phone } from "lucide-react";
+import { REVIEW_COUNT } from "@/lib/contact";
 import Link from "next/link";
 
 const credentials = [
@@ -9,7 +10,7 @@ const credentials = [
   },
   {
     icon: Award,
-    title: "5,0 Sterne · 47 Google-Bewertungen",
+    title: `5,0 Sterne · ${REVIEW_COUNT} Google-Bewertungen`,
     text: "Unabhängige Bewertungen von Berliner Kunden — keine gekauften Rezensionen.",
   },
   {
