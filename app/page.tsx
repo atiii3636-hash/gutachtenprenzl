@@ -455,8 +455,8 @@ export default function NeuPage() {
             Kein anonymes Großbüro.
           </h2>
           <p className="text-white/50 text-[16px] text-center max-w-xl mx-auto mb-14 leading-relaxed" data-reveal>
-            Ein eigenes Büro an der Prenzlauer Allee und ein Sachverständiger, der jeden Schaden selbst
-            in Augenschein nimmt.
+            Zwei eigene Büros, an der Prenzlauer Allee und in Schöneweide, und ein Sachverständiger, der
+            jeden Schaden selbst in Augenschein nimmt.
           </p>
 
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
@@ -678,7 +678,7 @@ export default function NeuPage() {
           </div>
           <div className="flex items-center justify-center gap-6 text-[12px] text-white/35" data-reveal>
             <span className="flex items-center gap-1.5"><Clock size={12} /> Rund um die Uhr erreichbar</span>
-            <span className="flex items-center gap-1.5"><MapPin size={12} /> Prenzlauer Allee 88</span>
+            <span className="flex items-center gap-1.5"><MapPin size={12} /> Prenzlauer Allee 88 · Brückenstraße 6</span>
           </div>
         </div>
       </section>
@@ -733,10 +733,10 @@ export default function NeuPage() {
             className="font-display font-black tracking-tight text-center text-[clamp(24px,4vw,38px)] leading-[1.1] mb-3"
             data-reveal
           >
-            Sie finden uns in Prenzlauer Berg.
+            Sie finden uns in Prenzlauer Berg und Schöneweide.
           </h2>
           <p className="text-white/45 text-[15.5px] leading-relaxed text-center max-w-xl mx-auto mb-8" data-reveal>
-            Prenzlauer Allee 88, 10405 Berlin — wenige Minuten vom S-Bahnhof Prenzlauer Allee. Mehr zu
+            Prenzlauer Allee 88, 10405 Berlin — wenige Minuten vom S-Bahnhof Prenzlauer Allee. Zweites Büro: Brückenstraße 6, 12439 Berlin (Schöneweide). Mehr zu
             Ihrem{" "}
             <Link
               href="/kfz-sachverstaendiger-berlin-prenzlauer-berg"

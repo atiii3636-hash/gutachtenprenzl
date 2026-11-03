@@ -49,7 +49,8 @@ export default function AboutSection() {
               mit Büro in der{" "}
               <Link href="/kfz-sachverstaendiger-berlin-prenzlauer-berg" className="text-white font-bold hover:text-[#E11D2F] transition-colors underline underline-offset-2 decoration-white/30 hover:decoration-[#E11D2F]/50">
                 Prenzlauer Allee 88, 10405 Berlin
-              </Link>.
+              </Link>{" "}
+              und in der Brückenstraße 6, 12439 Berlin (Schöneweide).
               Als unabhängiger Einzelgutachter stehen wir persönlich bei jedem Auftrag zur Verfügung —
               kein anonymes Büro, kein Callcenter.
             </p>

@@ -16,10 +16,10 @@ export const WHATSAPP_URL = `https://wa.me/4915560003661?text=${encodeURICompone
 // liefert beide Werte zwar live, das Projekt ruft sie aber nirgends mehr ab, weil sie
 // die Bewertungstexte nicht mitliefert (siehe Kopf von lib/reviews.ts).
 // Hier bei neuen Bewertungen von Hand hochsetzen. Auch public/llms.txt mitziehen.
-// Sichtbare Anzeige auf der Website. Stand 18.09.2026: 91 Google-Bewertungen.
+// Sichtbare Anzeige auf der Website. Stand 03.11.2026: 104 Google-Bewertungen (Angabe von Atakan).
 // Steht seit 03.11.2026 nicht mehr im JSON-LD (aggregateRating entfernt, SEO A8).
 // Weiterhin nur echte Werte aus dem Google-Profil eintragen.
-export const REVIEW_COUNT = 91;
+export const REVIEW_COUNT = 104;
 export const REVIEW_RATING = 5.0;
 
 // Zweites Büro (Google-Profil "KFZ Gutachten Schöneweide"). Anzeige auf /kontakt,

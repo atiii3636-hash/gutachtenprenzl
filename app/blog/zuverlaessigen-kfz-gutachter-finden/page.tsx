@@ -209,7 +209,7 @@ export default function ZuverlaessigenGutachterFinden() {
           <div>
             <h2 className="font-display font-black text-white text-xl uppercase mb-3">Gutachter in Ihrem Bezirk</h2>
             <p className="mb-4">
-              Wir sitzen an der Prenzlauer Allee 88 und kommen in alle Berliner Bezirke. Die Anfahrt und die
+              Wir haben Büros an der Prenzlauer Allee 88 und in der Brückenstraße 6 in Schöneweide und kommen in alle Berliner Bezirke. Die Anfahrt und die
               Besonderheiten vor Ort finden Sie auf den Bezirksseiten:
             </p>
             <div className="flex flex-wrap gap-2">

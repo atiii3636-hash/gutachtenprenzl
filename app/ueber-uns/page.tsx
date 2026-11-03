@@ -40,7 +40,7 @@ const weg = [
   {
     num: "03",
     title: "Das eigene Büro",
-    text: "Prenzlauer Allee 88, mitten im Bezirk Pankow. Kurze Wege in den gesamten Nordosten Berlins — und ein fester Anlaufpunkt statt einer Postadresse.",
+    text: "Zwei Büros: Prenzlauer Allee 88 im Bezirk Pankow und Brückenstraße 6 in Schöneweide. Kurze Wege in den Nordosten und Südosten Berlins, und feste Anlaufpunkte statt einer Postadresse.",
   },
   {
     num: "04",

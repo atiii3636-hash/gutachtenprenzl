@@ -32,7 +32,8 @@ export default function StandortKarte({ bezirk, minuten, variant = "dark" }: Pro
           }`}
         >
           Sie finden uns an der Prenzlauer Allee 88 in 10405 Berlin, wenige Minuten vom
-          S-Bahnhof Prenzlauer Allee.{" "}
+          S-Bahnhof Prenzlauer Allee. Unser zweites Büro finden Sie in der Brückenstraße 6 in
+          12439 Berlin (Schöneweide).{" "}
           {bezirk && minuten
             ? `Nach ${bezirk} sind wir in etwa ${minuten} Minuten unterwegs.`
             : "In den meisten Fällen kommen wir aber zu Ihnen, nicht umgekehrt."}
