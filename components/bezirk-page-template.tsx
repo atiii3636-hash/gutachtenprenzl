@@ -22,7 +22,7 @@ function Kapitel({ num, label }: { num: string; label: string }) {
   return (
     <div className="flex items-center justify-center gap-3 mb-4" data-reveal>
       <span className="font-display font-black text-[#E11D2F] text-[15px]">{num}</span>
-      <span className="text-[11px] font-bold tracking-[0.3em] text-white/40 uppercase">{label}</span>
+      <span className="text-[11px] font-bold tracking-[0.3em] text-white/65 uppercase">{label}</span>
     </div>
   );
 }
@@ -146,18 +146,18 @@ export default function BezirkPageTemplate({ content }: Props) {
         {/* Breadcrumb – pt-24 schafft Platz unter der festen Navigationsleiste */}
         <nav className="px-5 pt-24 pb-2" aria-label="Breadcrumb">
           <div className="max-w-6xl mx-auto">
-            <ol className="flex items-center flex-wrap gap-1 text-[12px] text-white/30" itemScope itemType="https://schema.org/BreadcrumbList">
+            <ol className="flex items-center flex-wrap gap-1 text-[12px] text-white/55" itemScope itemType="https://schema.org/BreadcrumbList">
               <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <Link href="/" className="hover:text-white/70 transition-colors" itemProp="item"><span itemProp="name">Startseite</span></Link>
+                <Link href="/" className="hover:text-white/90 transition-colors" itemProp="item"><span itemProp="name">Startseite</span></Link>
                 <meta itemProp="position" content="1" />
               </li>
               <li><ChevronRight size={10} className="mx-1 text-white/15" /></li>
               <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <Link href="/standorte" className="hover:text-white/70 transition-colors" itemProp="item"><span itemProp="name">Standorte</span></Link>
+                <Link href="/standorte" className="hover:text-white/90 transition-colors" itemProp="item"><span itemProp="name">Standorte</span></Link>
                 <meta itemProp="position" content="2" />
               </li>
               <li><ChevronRight size={10} className="mx-1 text-white/15" /></li>
-              <li className="text-white/55" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+              <li className="text-white/80" itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
                 <span itemProp="name">{name}</span>
                 <meta itemProp="position" content="3" />
               </li>
@@ -188,7 +188,7 @@ export default function BezirkPageTemplate({ content }: Props) {
           <div className="relative w-full max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2.5 mb-6 animate-fade-up">
               <span className="w-1.5 h-1.5 rounded-full bg-[#22c55e]" />
-              <span className="text-[10px] tracking-[0.2em] sm:text-[11px] sm:tracking-[0.3em] font-bold text-white/55 uppercase">
+              <span className="text-[10px] tracking-[0.2em] sm:text-[11px] sm:tracking-[0.3em] font-bold text-white/80 uppercase">
                 Antwort in 30 Minuten
               </span>
             </div>
@@ -204,7 +204,7 @@ export default function BezirkPageTemplate({ content }: Props) {
             </h1>
 
             <p
-              className="text-white/55 text-[16px] md:text-[17px] leading-relaxed max-w-xl mx-auto mb-8 animate-fade-up"
+              className="text-white/80 text-[16px] md:text-[17px] leading-relaxed max-w-xl mx-auto mb-8 animate-fade-up"
               style={{ animationDelay: "140ms" }}
             >
               {intro}
@@ -233,10 +233,10 @@ export default function BezirkPageTemplate({ content }: Props) {
             </div>
 
             {/* Für Anzeigen-Klicks: Nummer und Adresse sichtbar, dritter Weg (Formular) auf derselben Seite */}
-            <p className="mt-5 text-[13px] leading-relaxed text-white/50 animate-fade-up" style={{ animationDelay: "280ms" }}>
+            <p className="mt-5 text-[14.5px] leading-relaxed text-white/75 animate-fade-up" style={{ animationDelay: "280ms" }}>
               {PHONE_DISPLAY} · Büro {bueroAdresse}
               <br />
-              <a href="#schaden" className="text-white/70 underline underline-offset-4 hover:text-white">
+              <a href="#schaden" className="text-white/90 underline underline-offset-4 hover:text-white">
                 oder Schaden online melden (2 Minuten)
               </a>
             </p>
@@ -260,7 +260,7 @@ export default function BezirkPageTemplate({ content }: Props) {
                   className="text-center md:border-l md:border-white/8 md:first:border-l-0 md:px-6"
                 >
                   <div className="font-display font-black text-white text-[clamp(26px,4vw,38px)] leading-none mb-1.5">{val}</div>
-                  <div className="text-[13px] text-white/40 font-medium">{label}</div>
+                  <div className="text-[14.5px] text-white/65 font-medium">{label}</div>
                 </div>
               ))}
             </div>
@@ -284,7 +284,7 @@ export default function BezirkPageTemplate({ content }: Props) {
               ].map(({ icon: Icon, title, text }, i) => (
                 <div
                   key={title}
-                  className="flex gap-4 bg-white/[0.03] border border-white/8 rounded-xl p-6 hover:border-[#E11D2F]/30 transition-colors"
+                  className="flex gap-4 bg-white/[0.05] border border-white/12 rounded-xl p-6 hover:border-[#E11D2F]/30 transition-colors"
                   data-reveal
                   style={{ transitionDelay: `${(i % 2) * 80}ms` }}
                 >
@@ -293,8 +293,20 @@ export default function BezirkPageTemplate({ content }: Props) {
                   </div>
                   <div>
                     <h3 className="font-display font-bold text-[16px] mb-2">{title}</h3>
-                    <p className="text-white/50 text-[13.5px] leading-relaxed">{text}</p>
+                    <p className="text-white/75 text-[15px] leading-relaxed">{text}</p>
                   </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-3 gap-3 mt-8" data-reveal>
+              {[
+                { src: "/Lackmessung.JPG", alt: "Lackschichtdickenmessung an einer Fahrzeugtür mit dem Messgerät" },
+                { src: "/foto10.jpg", alt: "Fahrzeug mit geöffneter Motorhaube und Frontschaden in der Werkstatt" },
+                { src: "/foto5.jpg", alt: "Messkoffer von Gutachten Prenzl neben einem Fahrzeugrad" },
+              ].map((b) => (
+                <div key={b.src} className="relative aspect-[4/5] sm:aspect-[4/3] rounded-xl overflow-hidden border border-white/12">
+                  <Image src={b.src} alt={b.alt} fill sizes="(max-width: 768px) 33vw, 330px" quality={70} className="object-cover" />
                 </div>
               ))}
             </div>
@@ -302,13 +314,13 @@ export default function BezirkPageTemplate({ content }: Props) {
         </section>
 
         {/* ============ 02 · UNFALLSCHWERPUNKTE ============ */}
-        <section className="px-5 py-20 md:py-24 border-t border-white/6">
+        <section className="px-5 py-20 md:py-24 border-t border-white/10">
           <div className="max-w-5xl mx-auto">
             <Kapitel num="02" label="Vor Ort" />
             <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-4" data-reveal>
               Unfallschwerpunkte in {name}
             </h2>
-            <p className="text-white/50 text-[16px] text-center max-w-xl mx-auto mb-14 leading-relaxed" data-reveal>
+            <p className="text-white/75 text-[16px] text-center max-w-xl mx-auto mb-14 leading-relaxed" data-reveal>
               Orte mit erhöhtem Unfallrisiko. Wir kennen sie alle.
             </p>
 
@@ -316,7 +328,7 @@ export default function BezirkPageTemplate({ content }: Props) {
               {hotspots.map((h, i) => (
                 <div
                   key={h.location}
-                  className="bg-white/[0.03] border border-white/8 rounded-xl p-6 hover:border-[#E11D2F]/30 transition-colors"
+                  className="bg-white/[0.05] border border-white/12 rounded-xl p-6 hover:border-[#E11D2F]/30 transition-colors"
                   data-reveal
                   style={{ transitionDelay: `${(i % 3) * 80}ms` }}
                 >
@@ -324,7 +336,7 @@ export default function BezirkPageTemplate({ content }: Props) {
                     <AlertTriangle size={18} className="text-[#E11D2F]" />
                   </div>
                   <h3 className="font-display font-bold text-[15.5px] leading-snug mb-2">{h.location}</h3>
-                  <p className="text-white/50 text-[13px] leading-relaxed">{h.desc}</p>
+                  <p className="text-white/75 text-[14.5px] leading-relaxed">{h.desc}</p>
                 </div>
               ))}
             </div>
@@ -337,17 +349,17 @@ export default function BezirkPageTemplate({ content }: Props) {
             weiter unten erklärt den Vorgang ohnehin. Lieber eine Seite ohne
             Beispiel als mit einem erfundenen. */}
         {praxisfall && (
-          <section className="px-5 py-20 md:py-24 border-t border-white/6">
+          <section className="px-5 py-20 md:py-24 border-t border-white/10">
             <div className="max-w-3xl mx-auto">
               <Kapitel num={nr(3)} label="Aus der Praxis" />
               <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-4" data-reveal>
                 Ein Fall aus {nameShort}
               </h2>
-              <p className="text-white/50 text-[16px] text-center max-w-xl mx-auto mb-12 leading-relaxed" data-reveal>
+              <p className="text-white/75 text-[16px] text-center max-w-xl mx-auto mb-12 leading-relaxed" data-reveal>
                 Ein echter, anonymisierter Schadenfall aus unserer Arbeit im Bezirk.
               </p>
 
-              <div className="bg-white/[0.03] border border-white/8 rounded-2xl overflow-hidden" data-reveal>
+              <div className="bg-white/[0.05] border border-white/12 rounded-2xl overflow-hidden" data-reveal>
                 {/* Erstes Bild groß (die Totale), die Detailaufnahmen darunter als
                     Reihe. So sieht man erst das Fahrzeug und dann den Schaden. */}
                 {praxisfall.bilder && praxisfall.bilder.length > 0 && (
@@ -388,24 +400,24 @@ export default function BezirkPageTemplate({ content }: Props) {
                       ["Unfallart", praxisfall.unfallart],
                     ].map(([label, wert]) => (
                       <div key={label}>
-                        <dt className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/35 mb-1">{label}</dt>
-                        <dd className="text-white/75 text-[14.5px]">{wert}</dd>
+                        <dt className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/60 mb-1">{label}</dt>
+                        <dd className="text-white/90 text-[15.5px]">{wert}</dd>
                       </div>
                     ))}
                   </dl>
 
                   {praxisfall.schadenbild.map((para, i) => (
-                    <p key={i} className="text-white/55 text-[15px] leading-relaxed mb-4">{para}</p>
+                    <p key={i} className="text-white/80 text-[15px] leading-relaxed mb-4">{para}</p>
                   ))}
 
                   <div className="mt-7 pt-7 border-t border-white/8">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/35 mb-4">
+                    <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/60 mb-4">
                       Ergebnis im Gutachten
                     </p>
                     <dl className="space-y-2.5">
                       {praxisfall.ergebnis.map(({ label, wert }) => (
                         <div key={label} className="flex items-baseline justify-between gap-4 border-b border-white/5 pb-2.5">
-                          <dt className="text-white/55 text-[14px]">{label}</dt>
+                          <dt className="text-white/80 text-[15px]">{label}</dt>
                           <dd className="font-display font-bold text-white text-[15px] whitespace-nowrap">{wert}</dd>
                         </div>
                       ))}
@@ -413,10 +425,10 @@ export default function BezirkPageTemplate({ content }: Props) {
                   </div>
 
                   {praxisfall.fazit && (
-                    <p className="text-white/50 text-[14px] leading-relaxed mt-6 italic">{praxisfall.fazit}</p>
+                    <p className="text-white/75 text-[15px] leading-relaxed mt-6 italic">{praxisfall.fazit}</p>
                   )}
 
-                  <p className="text-white/25 text-[12px] leading-relaxed mt-6">
+                  <p className="text-white/50 text-[12px] leading-relaxed mt-6">
                     Eigene Aufnahmen aus dem Gutachten. Anonymisiert: Kennzeichen sind abgedeckt,
                     Name und Hausnummer bewusst nicht angegeben.
                   </p>
@@ -424,8 +436,8 @@ export default function BezirkPageTemplate({ content }: Props) {
                   {/* Verweis ins Fallarchiv. Steht hier und nicht nur im Footer,
                       damit jede Bezirksseite auf /faelle zeigt — das Archiv
                       waechst woechentlich und braucht interne Links. */}
-                  <p className="text-white/45 text-[14px] leading-relaxed mt-5 pt-5 border-t border-white/8">
-                    <Link href="/faelle" className="text-white/70 underline underline-offset-4 hover:text-white">
+                  <p className="text-white/70 text-[15px] leading-relaxed mt-5 pt-5 border-t border-white/8">
+                    <Link href="/faelle" className="text-white/90 underline underline-offset-4 hover:text-white">
                       Weitere Fälle aus unserer Arbeit
                     </Link>{" "}
                     — anonymisierte Schadenfälle aus ganz Berlin mit den Zahlen aus dem Gutachten.
@@ -437,7 +449,7 @@ export default function BezirkPageTemplate({ content }: Props) {
         )}
 
         {/* ============ 04 · ÜBER DEN BEZIRK ============ */}
-        <section className="px-5 py-20 md:py-24 border-t border-white/6">
+        <section className="px-5 py-20 md:py-24 border-t border-white/10">
           <div className="max-w-3xl mx-auto">
             <Kapitel num={nr(4)} label="Der Bezirk" />
             <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-12" data-reveal>
@@ -446,12 +458,12 @@ export default function BezirkPageTemplate({ content }: Props) {
 
             <div data-reveal>
               {localText.map((para, i) => (
-                <p key={i} className="text-white/55 text-[15.5px] leading-relaxed mb-4">{para}</p>
+                <p key={i} className="text-white/80 text-[15.5px] leading-relaxed mb-4">{para}</p>
               ))}
               {verweise?.map((v) => (
-                <p key={v.href} className="text-white/55 text-[15.5px] leading-relaxed mb-4">
+                <p key={v.href} className="text-white/80 text-[15.5px] leading-relaxed mb-4">
                   {v.text}{" "}
-                  <Link href={v.href} className="text-white underline underline-offset-4 hover:text-white/70">
+                  <Link href={v.href} className="text-white underline underline-offset-4 hover:text-white/90">
                     {v.linkLabel}
                   </Link>
                   {v.nach}
@@ -460,7 +472,7 @@ export default function BezirkPageTemplate({ content }: Props) {
             </div>
 
             <div className="mt-10 pt-8 border-t border-white/8" data-reveal>
-              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/35 mb-4 flex items-center gap-2">
+              <p className="text-[11px] font-bold uppercase tracking-[0.25em] text-white/60 mb-4 flex items-center gap-2">
                 <MapPin size={12} className="text-[#E11D2F]" />
                 Auch in diesen Ortsteilen vor Ort
               </p>
@@ -468,7 +480,7 @@ export default function BezirkPageTemplate({ content }: Props) {
                 {subdistricts.map((sub) => (
                   <span
                     key={sub}
-                    className="text-[13px] font-medium text-white/60 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-lg"
+                    className="text-[14.5px] font-medium text-white/85 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-lg"
                   >
                     {sub}
                   </span>
@@ -490,7 +502,7 @@ export default function BezirkPageTemplate({ content }: Props) {
                       {block.h}
                     </h3>
                     {block.p.map((para, i) => (
-                      <p key={i} className="text-white/55 text-[15.5px] leading-relaxed mb-4">{para}</p>
+                      <p key={i} className="text-white/80 text-[15.5px] leading-relaxed mb-4">{para}</p>
                     ))}
                   </div>
                 ))}
@@ -504,19 +516,19 @@ export default function BezirkPageTemplate({ content }: Props) {
                   {a.h2}
                 </h2>
                 {a.p?.map((para, i) => (
-                  <p key={i} className="text-white/55 text-[15.5px] leading-relaxed mb-4">{para}</p>
+                  <p key={i} className="text-white/80 text-[15.5px] leading-relaxed mb-4">{para}</p>
                 ))}
                 {a.items && (
                   <div className="space-y-7 mt-6">
                     {a.items.map((it) => (
                       <div key={it.h}>
                         <h3 className="font-display font-bold text-[19px] leading-snug mb-2">{it.h}</h3>
-                        <p className="text-white/55 text-[15.5px] leading-relaxed">
+                        <p className="text-white/80 text-[15.5px] leading-relaxed">
                           {it.p}
                           {it.link && (
                             <>
                               {" "}{it.linkVor}
-                              <Link href={it.link.href} className="text-white underline underline-offset-4 hover:text-white/70">
+                              <Link href={it.link.href} className="text-white underline underline-offset-4 hover:text-white/90">
                                 {it.link.label}
                               </Link>
                               .
@@ -534,7 +546,7 @@ export default function BezirkPageTemplate({ content }: Props) {
 
         {/* Fälle aus dem Fallarchiv zu diesem Bezirk */}
         {bezirkFaelle.length > 0 && (
-          <section className="px-5 py-14 border-t border-white/6">
+          <section className="px-5 py-14 border-t border-white/10">
             <div className="max-w-3xl mx-auto">
               <h2 className="font-display font-black tracking-tight text-[clamp(22px,3.4vw,32px)] leading-[1.15] mb-6" data-reveal>
                 Aus der Praxis: Fall aus {nameShort}
@@ -544,11 +556,11 @@ export default function BezirkPageTemplate({ content }: Props) {
                   <Link
                     key={f.slug}
                     href={`/faelle/${f.slug}`}
-                    className="block bg-white/[0.03] border border-white/8 rounded-xl px-5 py-4 hover:border-white/20 transition-colors"
+                    className="block bg-white/[0.05] border border-white/12 rounded-xl px-5 py-4 hover:border-white/20 transition-colors"
                   >
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-white/30 mb-1.5">{f.monat} · {f.ort}</p>
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-white/55 mb-1.5">{f.monat} · {f.ort}</p>
                     <p className="font-display font-bold text-white text-[16px] leading-snug mb-1.5">{f.titel}</p>
-                    <p className="text-white/50 text-[14px] leading-relaxed">{f.teaser}</p>
+                    <p className="text-white/75 text-[15px] leading-relaxed">{f.teaser}</p>
                   </Link>
                 ))}
               </div>
@@ -557,13 +569,23 @@ export default function BezirkPageTemplate({ content }: Props) {
         )}
 
         {/* ============ 05 · ABLAUF ============ */}
-        <section className="px-5 py-20 md:py-24 border-t border-white/6">
+        <section className="px-5 py-20 md:py-24 border-t border-white/10">
           <div className="max-w-4xl mx-auto">
             <Kapitel num={nr(5)} label="Ablauf" />
             <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-4" data-reveal>
               So läuft es ab in {nameShort}
             </h2>
-            <p className="text-white/50 text-[16px] text-center max-w-xl mx-auto mb-14 leading-relaxed" data-reveal>
+            <div className="relative aspect-[16/9] max-w-2xl mx-auto mb-8 rounded-2xl overflow-hidden border border-white/12" data-reveal>
+              <Image
+                src={standort ? "/inhaber2.jpg" : "/foto6.jpg"}
+                alt={standort ? "Kfz-Sachverständiger von Gutachten Prenzl fotografiert einen Fahrzeugschaden" : "Büro von Gutachten Prenzl an der Prenzlauer Allee in Berlin"}
+                fill
+                sizes="(max-width: 768px) 100vw, 672px"
+                quality={70}
+                className="object-cover object-center"
+              />
+            </div>
+            <p className="text-white/75 text-[16px] text-center max-w-xl mx-auto mb-14 leading-relaxed" data-reveal>
               Von Ihrem Anruf bis zum fertigen Gutachten vergehen in der Regel keine 24 Stunden.
               Sie müssen dafür nichts vorbereiten und nichts vorstrecken.
             </p>
@@ -576,12 +598,12 @@ export default function BezirkPageTemplate({ content }: Props) {
                     <div className="hidden sm:flex w-14 h-14 rounded-full bg-[#0A0A0D] border border-[#E11D2F]/30 items-center justify-center flex-shrink-0 relative z-10">
                       <span className="font-display font-black text-[#E11D2F] text-[16px]">{i + 1}</span>
                     </div>
-                    <div className="flex-1 bg-white/[0.03] border border-white/8 rounded-xl p-6 md:p-7 hover:border-white/20 transition-colors">
+                    <div className="flex-1 bg-white/[0.05] border border-white/12 rounded-xl p-6 md:p-7 hover:border-white/20 transition-colors">
                       <h3 className="font-display font-bold text-[18px] mb-2.5 flex items-center gap-3">
                         <span className="sm:hidden font-display font-black text-[#E11D2F] text-[18px]">{i + 1}</span>
                         {s.t}
                       </h3>
-                      <p className="text-white/55 text-[14.5px] leading-relaxed">{s.d}</p>
+                      <p className="text-white/80 text-[15.5px] leading-relaxed">{s.d}</p>
                     </div>
                   </li>
                 ))}
@@ -591,7 +613,7 @@ export default function BezirkPageTemplate({ content }: Props) {
         </section>
 
         {/* ============ 06 · WER ZAHLT ============ */}
-        <section className="px-5 py-20 md:py-24 border-t border-white/6">
+        <section className="px-5 py-20 md:py-24 border-t border-white/10">
           <div className="max-w-4xl mx-auto">
             <Kapitel num={nr(6)} label="Kostenfrage" />
             <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-14" data-reveal>
@@ -602,18 +624,18 @@ export default function BezirkPageTemplate({ content }: Props) {
               {zahler.map(({ num, titel, text }, i) => (
                 <div
                   key={num}
-                  className="bg-white/[0.03] border border-white/8 rounded-xl p-6 md:p-7 hover:border-[#E11D2F]/30 transition-colors"
+                  className="bg-white/[0.05] border border-white/12 rounded-xl p-6 md:p-7 hover:border-[#E11D2F]/30 transition-colors"
                   data-reveal
                   style={{ transitionDelay: `${(i % 2) * 80}ms` }}
                 >
                   <span className="block font-display font-black text-[#E11D2F]/40 text-[24px] mb-3">{num}</span>
                   <h3 className="font-display font-bold text-[17px] mb-3 leading-snug">{titel}</h3>
-                  <p className="text-white/50 text-[13.5px] leading-relaxed">{text}</p>
+                  <p className="text-white/75 text-[15px] leading-relaxed">{text}</p>
                 </div>
               ))}
             </div>
 
-            <p className="text-center text-white/45 text-[14px] leading-relaxed mt-8" data-reveal>
+            <p className="text-center text-white/70 text-[15px] leading-relaxed mt-8" data-reveal>
               Die vollständige{" "}
               <Link href="/kosten-kfz-gutachten-berlin" className="text-[#E11D2F] hover:underline">
                 Honorartabelle 2026
@@ -632,7 +654,7 @@ export default function BezirkPageTemplate({ content }: Props) {
         </section>
 
         {/* Weiterführende Seiten: Themen, nach denen in der Search Console tatsächlich gesucht wird */}
-        <section className="px-5 py-14 border-t border-white/6">
+        <section className="px-5 py-14 border-t border-white/10">
           <div className="max-w-4xl mx-auto space-y-10">
             {[
               {
@@ -673,7 +695,7 @@ export default function BezirkPageTemplate({ content }: Props) {
               },
             ].map(({ titel, links }) => (
               <div key={titel}>
-                <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/35 mb-6 text-center" data-reveal>
+                <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/60 mb-6 text-center" data-reveal>
                   {titel}
                 </p>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3" data-reveal>
@@ -681,10 +703,10 @@ export default function BezirkPageTemplate({ content }: Props) {
                     <Link
                       key={href}
                       href={href}
-                      className="group flex items-center gap-3 bg-white/[0.03] border border-white/8 hover:border-[#E11D2F]/40 hover:bg-white/[0.05] rounded-xl px-4 py-4 transition-all hover:-translate-y-0.5"
+                      className="group flex items-center gap-3 bg-white/[0.05] border border-white/12 hover:border-[#E11D2F]/40 hover:bg-white/[0.05] rounded-xl px-4 py-4 transition-all hover:-translate-y-0.5"
                     >
                       <Icon size={16} className="text-[#E11D2F] flex-shrink-0" />
-                      <span className="text-[13.5px] font-semibold text-white/75 group-hover:text-white transition-colors leading-snug">
+                      <span className="text-[15px] font-semibold text-white/90 group-hover:text-white transition-colors leading-snug">
                         {label}
                       </span>
                     </Link>
@@ -698,7 +720,7 @@ export default function BezirkPageTemplate({ content }: Props) {
         <StandortKarte bezirk={nameShort} minuten={distanceMin} variant="dark" />
 
         {/* ============ 07 · FAQ ============ */}
-        <section className="px-5 py-20 md:py-24 border-t border-white/6">
+        <section className="px-5 py-20 md:py-24 border-t border-white/10">
           <div className="max-w-3xl mx-auto">
             <Kapitel num={nr(7)} label="FAQ" />
             <h2 className="font-display font-black tracking-tight text-center text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-12" data-reveal>
@@ -710,9 +732,9 @@ export default function BezirkPageTemplate({ content }: Props) {
 
         {/* Nachbarbezirke – interne Verlinkung */}
         {neighbors.length > 0 && (
-          <section className="px-5 py-14 border-t border-white/6">
+          <section className="px-5 py-14 border-t border-white/10">
             <div className="max-w-4xl mx-auto">
-              <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/35 mb-6 text-center" data-reveal>
+              <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-white/60 mb-6 text-center" data-reveal>
                 Kfz Gutachter in benachbarten Bezirken
               </p>
               <div className="flex flex-wrap gap-2.5 justify-center" data-reveal>
@@ -720,9 +742,9 @@ export default function BezirkPageTemplate({ content }: Props) {
                   <Link
                     key={n.slug}
                     href={`/${n.slug}`}
-                    className="group inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-white/70 hover:text-white bg-white/[0.03] border border-white/8 hover:border-[#E11D2F]/40 px-4 py-2.5 rounded-lg transition-all"
+                    className="group inline-flex items-center gap-1.5 text-[15px] font-semibold text-white/90 hover:text-white bg-white/[0.05] border border-white/12 hover:border-[#E11D2F]/40 px-4 py-2.5 rounded-lg transition-all"
                   >
-                    <MapPin size={12} className="text-white/25 group-hover:text-[#E11D2F] transition-colors" />
+                    <MapPin size={12} className="text-white/50 group-hover:text-[#E11D2F] transition-colors" />
                     {n.nameShort}
                   </Link>
                 ))}
@@ -732,13 +754,13 @@ export default function BezirkPageTemplate({ content }: Props) {
         )}
 
         {/* ============ ABSCHLUSS ============ */}
-        <section className="relative px-5 py-20 md:py-24 border-t border-white/6 overflow-hidden">
+        <section className="relative px-5 py-20 md:py-24 border-t border-white/10 overflow-hidden">
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#E11D2F]/10 rounded-full blur-[150px] pointer-events-none" />
           <div className="relative max-w-2xl mx-auto text-center" data-reveal>
             <h2 className="font-display font-black tracking-tight text-[clamp(26px,4.5vw,44px)] leading-[1.08] mb-4">
               Unfall in {nameShort}? Melden Sie sich.
             </h2>
-            <p className="text-white/50 text-[16px] mb-8 leading-relaxed">
+            <p className="text-white/75 text-[16px] mb-8 leading-relaxed">
               Ein Anruf kostet nichts und verpflichtet zu nichts. Wir sind in rund {distanceMin} Minuten bei Ihnen.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
