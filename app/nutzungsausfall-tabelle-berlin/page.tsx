@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Phone, MessageCircle, Info, ArrowRight, Calendar } from "lucide-react";
 import Link from "next/link";
-import { WHATSAPP_URL } from "@/lib/contact";
+import { WHATSAPP_URL, PHONE_HREF } from "@/lib/contact";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
 import Breadcrumb from "@/components/neu/breadcrumb";
@@ -151,6 +151,27 @@ const jsonLd = {
   ],
 };
 
+/* Hinweisbox mit Anruf- und WhatsApp-Link (SEO A3). Steht zweimal auf der Seite:
+   unter der Einleitung und nach der Tabelle. */
+function AnfrageBox() {
+  return (
+    <div className="rounded-2xl border border-[#E11D2F]/30 bg-[#E11D2F]/[0.06] p-5 md:p-6 my-8">
+      <p className="text-white text-[15px] md:text-[16px] leading-relaxed mb-4">
+        <strong>Unfall gehabt?</strong> Der Nutzungsausfall wird im Gutachten für Ihr Fahrzeug berechnet. Bei
+        unverschuldetem Unfall zahlt die gegnerische Versicherung das Gutachten.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-3">
+        <a href={PHONE_HREF} className="inline-flex items-center justify-center gap-2.5 bg-[#E11D2F] hover:bg-[#B91C1C] text-white font-display font-black uppercase tracking-wide text-[14px] px-6 py-3.5 rounded-xl transition-all">
+          <Phone size={16} />Jetzt anrufen
+        </a>
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 bg-[#128C7E]/15 border border-[#25D366]/30 text-[#4ade80] font-semibold text-[14px] px-6 py-3.5 rounded-xl transition-all">
+          <MessageCircle size={16} />WhatsApp schreiben
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export default function NutzungsausfallTabelle() {
   return (
     <div className="min-h-screen bg-[#050507]">
@@ -198,6 +219,7 @@ export default function NutzungsausfallTabelle() {
       {/* Haupttabelle */}
       <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-4xl mx-auto">
+        <AnfrageBox />
           <h2 className="font-display font-black text-3xl md:text-4xl text-white uppercase mb-4">
             Tagessätze nach Fahrzeuggruppe
           </h2>
@@ -241,6 +263,7 @@ export default function NutzungsausfallTabelle() {
               Einstufung Ihres Fahrzeugs steht im Gutachten.
             </p>
           </div>
+          <AnfrageBox />
         </div>
       </section>
 

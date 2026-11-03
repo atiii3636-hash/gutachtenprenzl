@@ -42,7 +42,7 @@ export default function VideoGitter({ videos }: { videos: Video[] }) {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`}
-                  alt=""
+                  alt={v.titel}
                   loading="lazy"
                   className="absolute inset-0 w-full h-full object-cover opacity-80 transition group-hover:opacity-100"
                 />

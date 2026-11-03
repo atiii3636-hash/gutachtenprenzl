@@ -56,9 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogPages = [
     "/blog",
     "/blog/was-tun-nach-unfall-berlin",
-    "/blog/recht-auf-eigenen-gutachter",
     "/blog/zuverlaessigen-kfz-gutachter-finden",
-    "/blog/parkschaden-was-tun",
     "/blog/achsvermessung-nach-unfall",
     "/blog/elektroauto-unfall-hochvoltsystem",
   ];

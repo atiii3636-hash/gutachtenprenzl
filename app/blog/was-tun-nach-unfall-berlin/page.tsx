@@ -268,11 +268,11 @@ export default function WasTunNachUnfall() {
           <div className="mt-8 pt-8 border-t border-white/8">
             <h3 className="font-semibold text-white text-[14px] mb-4">Weiterführende Artikel</h3>
             <div className="space-y-2">
-              <Link href="/blog/recht-auf-eigenen-gutachter" className="flex items-center gap-2 text-[#E11D2F] text-[14px] hover:underline">
+              <Link href="/eigener-gutachter-oder-versicherungsgutachter" className="flex items-center gap-2 text-[#E11D2F] text-[14px] hover:underline">
                 <ArrowLeft size={14} className="rotate-180" />
-                Ihr Recht auf einen unabhängigen Gutachter
+                Eigener Gutachter oder Versicherungsgutachter?
               </Link>
-              <Link href="/blog/parkschaden-was-tun" className="flex items-center gap-2 text-[#E11D2F] text-[14px] hover:underline">
+              <Link href="/parkschaden-gutachten-berlin" className="flex items-center gap-2 text-[#E11D2F] text-[14px] hover:underline">
                 <ArrowLeft size={14} className="rotate-180" />
                 Parkschaden: was jetzt?
               </Link>

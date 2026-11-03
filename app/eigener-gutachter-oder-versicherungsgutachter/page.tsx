@@ -11,8 +11,9 @@ import Breadcrumb from "@/components/neu/breadcrumb";
    Format in KI-Antworten — deshalb bewusst als echte Vergleichstabelle mit
    neutraler, belegter Argumentation statt als Werbetext. */
 
-const UPDATED = "2026-08-02";
-const UPDATED_LABEL = "2. August 2026";
+const PUBLISHED = "2026-08-02";
+const UPDATED = "2026-11-03";
+const UPDATED_LABEL = "3. November 2026";
 
 export const metadata: Metadata = {
   title: { absolute: "Eigener Gutachter oder Versicherungsgutachter? Vergleich" },
@@ -114,7 +115,7 @@ const faq = [
   },
   {
     q: "Wann lohnt sich der eigene Gutachter nicht?",
-    a: "Bei einem echten Bagatellschaden unter rund 750 € erstattet die Versicherung die Gutachterkosten meist nicht — dort reicht ein Kostenvoranschlag. Und bei einem reinen Kaskoschaden beauftragt in der Regel Ihre eigene Versicherung den Sachverständigen.",
+    a: "Bei einem echten Bagatellschaden unter rund 750 € erstattet die Versicherung die Gutachterkosten meist nicht — dort reicht ein Kostenvoranschlag. Bei einem reinen Kaskoschaden beauftragt in der Regel Ihre eigene Versicherung den Sachverständigen. Und bei Teilschuld wird auch das Honorar nur anteilig erstattet, in derselben Quote wie der Schaden.",
   },
 ];
 
@@ -128,7 +129,7 @@ const jsonLd = {
       description:
         "Vergleich zwischen einem selbst beauftragten Kfz-Sachverständigen und dem Gutachter der gegnerischen Haftpflichtversicherung nach einem unverschuldeten Unfall.",
       inLanguage: "de-DE",
-      datePublished: UPDATED,
+      datePublished: PUBLISHED,
       dateModified: UPDATED,
       mainEntityOfPage: "https://gutachtenprenzl.de/eigener-gutachter-oder-versicherungsgutachter",
       author: {
@@ -304,6 +305,90 @@ export default function GutachterVergleich() {
         </div>
       </section>
 
+      {/* Schadensersatzpositionen (aus dem früheren Blogartikel "Recht auf eigenen Gutachter") */}
+      <section className="bg-[#050507] px-5 py-16">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display font-black text-3xl text-white uppercase mb-4">
+            Was Ihr Schadensersatz umfasst
+          </h2>
+          <p className="text-white/50 text-[14px] leading-relaxed mb-8">
+            Das Gutachten ist die Grundlage für alle Positionen, die Ihnen nach einem unverschuldeten Unfall zustehen
+            können. Wer sie nicht kennt, lässt schnell Geld liegen:
+          </p>
+          <div className="space-y-2">
+            {[
+              ["Reparaturkosten", "Instandsetzung zu aktuellen Marktpreisen, Position für Position kalkuliert"],
+              ["Wiederbeschaffungswert", "Bei Totalschaden: was Ihr Fahrzeug unmittelbar vor dem Unfall wert war"],
+              ["Merkantile Wertminderung", "Der Wertverlust, der auch nach einer fachgerechten Reparatur bleibt"],
+              ["Nutzungsausfall oder Mietwagen", "Entschädigung für jeden Tag ohne Fahrzeug oder die Kosten eines Ersatzwagens"],
+              ["Gutachterkosten", "Trägt bei Fremdverschulden in der Regel die gegnerische Versicherung"],
+            ].map(([title, desc]) => (
+              <div key={title} className="flex gap-3 p-4 rounded-xl border border-white/8 bg-white/[0.03]">
+                <Check size={15} className="text-[#E11D2F] mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="font-bold text-white text-[14px]">{title}</p>
+                  <p className="text-white/50 text-[13px] mt-0.5">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Rechtsgrundlage */}
+      <section className="bg-[#050507] px-5 py-16">
+        <div className="max-w-3xl mx-auto text-white/55 text-[15px] leading-relaxed">
+          <h2 className="font-display font-black text-3xl text-white uppercase mb-4">
+            Worauf sich das Recht stützt
+          </h2>
+          <p className="mb-4">
+            Grundlage ist § 249 BGB: Der Schädiger muss den Zustand herstellen, der ohne den Unfall bestehen würde.
+            Dazu zählen auch die Kosten, die nötig sind, um den Schaden überhaupt zu beziffern. Genau das leistet ein
+            Gutachten.
+          </p>
+          <p>
+            Daraus folgt zweierlei. Sie wählen den Sachverständigen selbst aus, und Sie müssen die Gegenseite dafür
+            nicht um Erlaubnis bitten. Bei Schäden im Bagatellbereich gilt das nur eingeschränkt (siehe unten).
+          </p>
+        </div>
+      </section>
+
+      {/* Typische Sätze der Gegenseite */}
+      <section className="bg-[#050507] px-5 py-16">
+        <div className="max-w-3xl mx-auto text-white/55 text-[15px] leading-relaxed">
+          <h2 className="font-display font-black text-3xl text-white uppercase mb-4">
+            Was Versicherungen am Telefon vorschlagen
+          </h2>
+          <p className="mb-6">Typische Sätze, die Geschädigte von der Gegenseite hören, und was dahintersteckt:</p>
+          <ul className="space-y-4 mb-6">
+            {[
+              ["„Wir schicken Ihnen einen Gutachter, das geht schneller.“", "Das mag schneller gehen. Der Gutachter arbeitet aber im Auftrag der Versicherung, und Sie dürfen das ablehnen."],
+              ["„Bei dem Schaden lohnt sich ein Gutachten nicht.“", "Maßgeblich ist die Schadenhöhe, nicht die Einschätzung der Versicherung. Unter etwa 750 Euro stimmt der Satz oft, darüber selten."],
+              ["„Wir zahlen nur, wenn Sie unseren Gutachter nehmen.“", "Bei einem unverschuldeten Unfall erstattet die Versicherung in der Regel auch die Kosten Ihres eigenen Sachverständigen."],
+              ["„Das regeln wir unkompliziert per Pauschale.“", "Eine Pauschale ohne Gutachten enthält häufig weder Wertminderung noch einen angemessenen Nutzungsausfall."],
+            ].map(([satz, antwort]) => (
+              <li key={satz} className="flex gap-3">
+                <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#E11D2F] mt-2.5" />
+                <span>
+                  <strong className="text-white">{satz}</strong>
+                  <br />
+                  {antwort}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <p>
+            Sie müssen dabei nicht diskutieren. Der Hinweis, dass Sie bereits einen eigenen Sachverständigen beauftragt
+            haben, beendet das Gespräch in aller Regel. Kürzt die Versicherung später trotzdem, übernehmen wir auf Wunsch
+            die Kommunikation. Wie das abläuft, steht unter{" "}
+            <Link href="/versicherung-kuerzt-gutachten" className="text-[#E11D2F] hover:underline">
+              Versicherung kürzt das Gutachten
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
       {/* Wann welcher Weg */}
       <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
@@ -372,7 +457,7 @@ export default function GutachterVergleich() {
               { href: "/kosten-kfz-gutachten-berlin", label: "Was kostet ein Gutachten?" },
               { href: "/unfallgutachten-berlin", label: "Unfallgutachten Berlin" },
               { href: "/totalschaden-gutachten-berlin", label: "Totalschaden" },
-              { href: "/blog/recht-auf-eigenen-gutachter", label: "Recht auf eigenen Gutachter" },
+              { href: "/versicherung-kuerzt-gutachten", label: "Versicherung kürzt das Gutachten" },
               { href: "/blog/was-tun-nach-unfall-berlin", label: "Was tun nach einem Unfall?" },
               { href: "/ueber-uns", label: "Über den Sachverständigen" },
             ].map(({ href, label }) => (

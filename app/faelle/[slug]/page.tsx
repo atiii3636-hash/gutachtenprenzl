@@ -15,7 +15,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   const fall = fallBySlug(params.slug);
   if (!fall) return {};
   return pageMetadata({
-    title: fall.titel,
+    title: fall.seoTitel ?? fall.titel,
     description: fall.teaser,
     path: `/faelle/${fall.slug}`,
     image: fall.bilder?.[0]?.src ?? "/og-image.jpg",
@@ -90,6 +90,21 @@ export default function FallSeite({ params }: { params: { slug: string } }) {
               <Link href={`/${fall.bezirkSlug}`} className="text-white underline underline-offset-4 hover:text-white/70">
                 Kfz-Gutachter {fall.bezirk}
               </Link>
+              .
+            </p>
+          )}
+
+          {fall.weiterfuehrend && fall.weiterfuehrend.length > 0 && (
+            <p className="text-white/45 text-[15px] leading-relaxed mt-4">
+              Passend dazu:{" "}
+              {fall.weiterfuehrend.map((l, i) => (
+                <span key={l.href}>
+                  {i > 0 && ", "}
+                  <Link href={l.href} className="text-white underline underline-offset-4 hover:text-white/70">
+                    {l.label}
+                  </Link>
+                </span>
+              ))}
               .
             </p>
           )}

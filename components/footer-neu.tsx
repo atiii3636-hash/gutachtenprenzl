@@ -1,7 +1,13 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/contact";
+import {
+  PHONE_DISPLAY,
+  PHONE_HREF,
+  SCHONEWEIDE_STRASSE,
+  SCHONEWEIDE_ORT,
+  SCHONEWEIDE_MAP_URL,
+} from "@/lib/contact";
 
 const bezirke = [
   { name: "Pankow", href: "/kfz-sachverstaendiger-berlin-pankow" },
@@ -142,6 +148,18 @@ export default function FooterNeu() {
                   <span>Prenzlauer Allee 88<br />
                   <span className="text-[13px] text-white/25">10405 Berlin, Deutschland</span></span>
                 </span>
+              </li>
+              <li>
+                <a
+                  href={SCHONEWEIDE_MAP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-[15px] text-white/45 hover:text-white transition-colors"
+                >
+                  <MapPin size={13} className="text-[#E11D2F] mt-1 flex-shrink-0" />
+                  <span>{SCHONEWEIDE_STRASSE}<br />
+                  <span className="text-[13px] text-white/25">{SCHONEWEIDE_ORT} · Büro Schöneweide</span></span>
+                </a>
               </li>
             </ul>
           </div>

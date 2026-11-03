@@ -91,6 +91,7 @@ export default function UeberUnsNeu() {
         titleAccent="dem Gutachten."
         lead="Gutachten Prenzl ist ein unabhängiges Sachverständigenbüro in Berlin Prenzlauer Berg — geführt von einem, der jeden Schaden selbst begutachtet."
         image="/inhaber.jpg"
+        imageAlt="Kfz-Sachverständiger von Gutachten Prenzl fotografiert einen Frontschaden an einem Pkw"
         ctaLabel="Jetzt anrufen"
       />
 

@@ -7,10 +7,11 @@ import FooterNeu from "@/components/footer-neu";
 import VideoBlock from "@/components/video-block";
 import FaqListe from "@/components/neu/faq-liste";
 import type { BezirkContent } from "@/lib/bezirk-content";
+import { faelle } from "@/lib/faelle";
 import { bezirkContent } from "@/lib/bezirk-content";
 import { WHATSAPP_URL, REVIEW_COUNT, PHONE_DISPLAY } from "@/lib/contact";
 import DamageFormSection from "@/components/damage-form-section";
-import { serviceLd } from "@/lib/seo";
+import { serviceLd, SCHONEWEIDE_ID } from "@/lib/seo";
 
 interface Props {
   content: BezirkContent;
@@ -27,7 +28,7 @@ function Kapitel({ num, label }: { num: string; label: string }) {
 }
 
 export default function BezirkPageTemplate({ content }: Props) {
-  const { standort, name, nameShort, intro, localText, subdistricts, hotspots, distanceMin, faqs, neighborSlugs, slug, deepDive, h1Ort, praxisfall } = content;
+  const { standort, name, nameShort, intro, localText, subdistricts, hotspots, distanceMin, faqs, neighborSlugs, slug, deepDive, h1Ort, praxisfall, deepDiveH2, abschnitte, verweise } = content;
 
   // "Kfz Gutachter <Ort>" statt "Kfz Sachverständiger <Ort>": Beide Begriffe
   // meinen dasselbe, gesucht wird aber fast doppelt so oft nach "Gutachter".
@@ -42,6 +43,10 @@ export default function BezirkPageTemplate({ content }: Props) {
   // Argument ist die Nummer MIT Praxisfall. Fehlt der Fall, rutscht alles um
   // eins hoch. nr(3) wird nur innerhalb des Praxisfall-Blocks aufgerufen.
   const nr = (n: number) => String(praxisfall ? n : n - 1).padStart(2, "0");
+
+  // Fälle aus dem Fallarchiv, die zu diesem Bezirk gehören (SEO A10: Fall und
+  // Bezirksseite verlinken sich gegenseitig, der Rückweg steht auf der Fallseite).
+  const bezirkFaelle = faelle.filter((f) => f.bezirkSlug === slug);
 
   const neighbors = neighborSlugs
     .map((s) => bezirkContent.find((b) => b.slug === s))
@@ -75,6 +80,8 @@ export default function BezirkPageTemplate({ content }: Props) {
     description: `Unabhängiger Kfz-Sachverständiger für ${name}: Unfallgutachten, Wertgutachten und Schadensbewertung vor Ort.`,
     path: `/${slug}`,
     serviceType: "Kfz-Schadengutachten",
+    // Bezirke mit eigenem Büro (Schöneweide) nennen dieses als Anbieter.
+    providerId: standort ? SCHONEWEIDE_ID : undefined,
     areaServed: [
       { "@type": "AdministrativeArea", name },
       ...subdistricts.map((o) => ({ "@type": "AdministrativeArea", name: o })),
@@ -164,7 +171,7 @@ export default function BezirkPageTemplate({ content }: Props) {
             <div className="absolute inset-0 hero-fade-bottom opacity-[0.5]">
               <Image
                 src="/hero-accident.jpg"
-                alt=""
+                alt={`Unfallschaden an einem Fahrzeug, Kfz-Gutachter ${ort}`}
                 fill
                 priority
                 sizes="100vw"
@@ -441,6 +448,15 @@ export default function BezirkPageTemplate({ content }: Props) {
               {localText.map((para, i) => (
                 <p key={i} className="text-white/55 text-[15.5px] leading-relaxed mb-4">{para}</p>
               ))}
+              {verweise?.map((v) => (
+                <p key={v.href} className="text-white/55 text-[15.5px] leading-relaxed mb-4">
+                  {v.text}{" "}
+                  <Link href={v.href} className="text-white underline underline-offset-4 hover:text-white/70">
+                    {v.linkLabel}
+                  </Link>
+                  {v.nach}
+                </p>
+              ))}
             </div>
 
             <div className="mt-10 pt-8 border-t border-white/8" data-reveal>
@@ -463,6 +479,11 @@ export default function BezirkPageTemplate({ content }: Props) {
             {/* Vertiefung: nur auf den Bezirken gepflegt, auf denen wir um die Top 3 spielen. */}
             {deepDive && deepDive.length > 0 && (
               <div className="mt-14 pt-10 border-t border-white/8 space-y-12">
+                {deepDiveH2 && (
+                  <h2 className="font-display font-black tracking-tight text-[clamp(22px,3.4vw,32px)] leading-[1.15]" data-reveal>
+                    {deepDiveH2}
+                  </h2>
+                )}
                 {deepDive.map((block) => (
                   <div key={block.h} data-reveal>
                     <h3 className="font-display font-black tracking-tight text-[clamp(19px,2.6vw,26px)] leading-[1.2] mb-4">
@@ -475,8 +496,65 @@ export default function BezirkPageTemplate({ content }: Props) {
                 ))}
               </div>
             )}
+
+            {/* Zusätzliche Abschnitte je Bezirk (z. B. Ortsteile, Wedding/Gesundbrunnen) */}
+            {abschnitte?.map((a) => (
+              <div key={a.h2} className="mt-14 pt-10 border-t border-white/8" data-reveal>
+                <h2 className="font-display font-black tracking-tight text-[clamp(22px,3.4vw,32px)] leading-[1.15] mb-5">
+                  {a.h2}
+                </h2>
+                {a.p?.map((para, i) => (
+                  <p key={i} className="text-white/55 text-[15.5px] leading-relaxed mb-4">{para}</p>
+                ))}
+                {a.items && (
+                  <div className="space-y-7 mt-6">
+                    {a.items.map((it) => (
+                      <div key={it.h}>
+                        <h3 className="font-display font-bold text-[19px] leading-snug mb-2">{it.h}</h3>
+                        <p className="text-white/55 text-[15.5px] leading-relaxed">
+                          {it.p}
+                          {it.link && (
+                            <>
+                              {" "}{it.linkVor}
+                              <Link href={it.link.href} className="text-white underline underline-offset-4 hover:text-white/70">
+                                {it.link.label}
+                              </Link>
+                              .
+                            </>
+                          )}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </section>
+
+        {/* Fälle aus dem Fallarchiv zu diesem Bezirk */}
+        {bezirkFaelle.length > 0 && (
+          <section className="px-5 py-14 border-t border-white/6">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-display font-black tracking-tight text-[clamp(22px,3.4vw,32px)] leading-[1.15] mb-6" data-reveal>
+                Aus der Praxis: Fall aus {nameShort}
+              </h2>
+              <div className="space-y-3" data-reveal>
+                {bezirkFaelle.map((f) => (
+                  <Link
+                    key={f.slug}
+                    href={`/faelle/${f.slug}`}
+                    className="block bg-white/[0.03] border border-white/8 rounded-xl px-5 py-4 hover:border-white/20 transition-colors"
+                  >
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-white/30 mb-1.5">{f.monat} · {f.ort}</p>
+                    <p className="font-display font-bold text-white text-[16px] leading-snug mb-1.5">{f.titel}</p>
+                    <p className="text-white/50 text-[14px] leading-relaxed">{f.teaser}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ============ 05 · ABLAUF ============ */}
         <section className="px-5 py-20 md:py-24 border-t border-white/6">

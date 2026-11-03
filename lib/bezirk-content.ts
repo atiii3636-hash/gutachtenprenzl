@@ -75,6 +75,23 @@ export interface BezirkContent {
    * text und Adresszeile im Template.
    */
   standort?: { kurz: string; adresse: string };
+  /**
+   * Überschrift (H2) über den deepDive-Blöcken, die dort als H3 stehen. Nur
+   * sinnvoll zusammen mit deepDive.
+   */
+  deepDiveH2?: string;
+  /**
+   * Zusätzliche Abschnitte mit eigener H2, unter dem Fließtext des Bezirks.
+   * Jeder Abschnitt hat optional Absätze (`p`) und Unterpunkte (`items`, je mit
+   * H3 und optionalem Link).
+   */
+  abschnitte?: {
+    h2: string;
+    p?: string[];
+    items?: { h: string; p: string; linkVor?: string; link?: { href: string; label: string } }[];
+  }[];
+  /** Einzelne Hinweisabsätze mit Link unter dem Fließtext. Text, Link, optional Nachsatz. */
+  verweise?: { text: string; linkLabel: string; href: string; nach?: string }[];
 }
 
 export const bezirkContent: BezirkContent[] = [
@@ -104,6 +121,40 @@ export const bezirkContent: BezirkContent[] = [
       { q: "Gilt das Gutachten auch für Unfälle in Weißensee?", a: "Ja. Unser Gutachten gilt für den gesamten Bezirk Pankow inklusive Weißensee, Heinersdorf und Niederschönhausen — und wird von deutschen Versicherungen im Regelfall anerkannt." },
     ],
     neighborSlugs: ["kfz-sachverstaendiger-berlin-prenzlauer-berg", "kfz-sachverstaendiger-berlin-weissensee", "kfz-sachverstaendiger-berlin-mitte", "kfz-sachverstaendiger-berlin-reinickendorf"],
+    abschnitte: [
+      {
+        h2: "Kfz-Gutachter in allen Ortsteilen des Bezirks Pankow",
+        p: [
+          "Unser Büro an der Prenzlauer Allee 88 liegt selbst im Bezirk Pankow. Von dort fahren wir in jeden Ortsteil. Die Besichtigung findet dort statt, wo Ihr Fahrzeug steht, und die Bedingungen sind überall dieselben: Bei einem unverschuldeten Unfall trägt in der Regel die gegnerische Versicherung die Kosten des Gutachtens.",
+        ],
+        items: [
+          {
+            h: "Niederschönhausen",
+            p: "Von Prenzlauer Berg aus erreichen wir Niederschönhausen in rund 15 bis 20 Minuten. Wir begutachten Ihr Fahrzeug an der Einfahrt, auf dem Stellplatz oder in der Werkstatt. Sie müssen es vorher nirgendwohin bringen.",
+          },
+          {
+            h: "Heinersdorf",
+            p: "Heinersdorf liegt zwischen dem Zentrum von Pankow und Weißensee. Die Anfahrt dauert in der Regel 15 bis 20 Minuten. Das gilt für Schäden an der Prenzlauer Promenade ebenso wie für Parkschäden in den Wohnstraßen.",
+          },
+          {
+            h: "Karow",
+            p: "Nach Karow rechnen wir mit 20 bis 25 Minuten Anfahrt. Wir kommen zum Fahrzeug, auch wenn es nicht mehr fahrbereit ist.",
+            linkVor: "Ein Beispiel von der Schwanebecker Chaussee: ",
+            link: { href: "/faelle/totalschaden-vw-polo-karow", label: "Totalschaden am VW Polo in Karow" },
+          },
+          {
+            h: "Blankenburg",
+            p: "Blankenburg liegt zwischen Heinersdorf und Karow, die Anfahrt dauert etwa 20 bis 25 Minuten. Ablauf wie im übrigen Bezirk: Besichtigung vor Ort, das Gutachten in der Regel am nächsten Werktag.",
+          },
+          {
+            h: "Weißensee",
+            p: "Weißensee gehört ebenfalls zum Bezirk Pankow. Von unserem Büro sind es dorthin rund zehn Minuten.",
+            linkVor: "Mehr dazu auf der Seite ",
+            link: { href: "/kfz-sachverstaendiger-berlin-weissensee", label: "Kfz-Gutachter Weißensee" },
+          },
+        ],
+      },
+    ],
     // Quelle: eigenes Gutachten, Unfall 18.06.2026. Anonymisiert.
     praxisfall: {
       monat: "Juni 2026",
@@ -161,7 +212,7 @@ export const bezirkContent: BezirkContent[] = [
     slug: "kfz-sachverstaendiger-berlin-prenzlauer-berg",
     name: "Berlin Prenzlauer Berg",
     nameShort: "Prenzlauer Berg",
-    title: "Kfz-Gutachter Prenzlauer Berg – Büro im Kiez, in 24 Std.",
+    title: "Unfallgutachter & Kfz-Gutachter Prenzlauer Berg | Im Kiez",
     metaDescription: "Unfall in Prenzlauer Berg? Wir sitzen direkt im Kiez, Gutachten in 24h, Kosten trägt meist die Gegenseite. ☎ 0155 60003661",
     keywords: ["kfz sachverständiger prenzlauer berg", "kfz gutachter prenzlauer berg", "unfallgutachten prenzlauer berg", "gutachter schönhauser allee", "kfz gutachten kollwitzplatz"],
     canonical: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin-prenzlauer-berg",
@@ -183,6 +234,15 @@ export const bezirkContent: BezirkContent[] = [
       { q: "Kann ich das Gutachten auch für die gegnerische Versicherung nutzen?", a: "Ja. Unser TÜV Rheinland-Gutachten wird von deutschen Versicherungen im Regelfall anerkannt und ist gerichtsverwertbar. Die Gegenseite kann es nicht pauschal ablehnen." },
     ],
     neighborSlugs: ["kfz-sachverstaendiger-berlin-pankow", "kfz-sachverstaendiger-berlin-mitte", "kfz-sachverstaendiger-berlin-friedrichshain"],
+    deepDiveH2: "Unfallgutachter in Prenzlauer Berg",
+    verweise: [
+      {
+        text: "Prenzlauer Berg ist ein Ortsteil des Bezirks Pankow, und unser Büro an der Prenzlauer Allee 88 liegt in diesem Bezirk. Für die übrigen Ortsteile finden Sie hier die Seite",
+        linkLabel: "Kfz-Gutachter in Pankow",
+        href: "/kfz-sachverstaendiger-berlin-pankow",
+        nach: ".",
+      },
+    ],
     // Quelle: eigenes Gutachten, Unfall 26.01.2026. Anonymisiert.
     praxisfall: {
       monat: "Januar 2026",
@@ -265,6 +325,22 @@ export const bezirkContent: BezirkContent[] = [
       { q: "Ich parkte in einer Tiefgarage am Alexanderplatz und jemand hat mein Auto gerammt. Hilft ein Gutachten?", a: "Ja. Wir dokumentieren Parkschadensfälle vollständig — inklusive Kostenvoranschlag und Minderwert. Das Gutachten ist die Grundlage für Ihre Schadensforderung gegenüber dem Verursacher oder seiner Versicherung." },
     ],
     neighborSlugs: ["kfz-sachverstaendiger-berlin-prenzlauer-berg", "kfz-sachverstaendiger-berlin-friedrichshain", "kfz-sachverstaendiger-berlin-kreuzberg"],
+    abschnitte: [
+      {
+        h2: "Kfz-Gutachter in Wedding und Gesundbrunnen",
+        p: [
+          "Wedding und Gesundbrunnen gehören zum Bezirk Mitte, Gesundbrunnen grenzt direkt an Prenzlauer Berg. Aus unserem Büro an der Prenzlauer Allee 88 sind wir in der Regel in rund 20 Minuten bei Ihnen. Wir kommen zu Ihrem Fahrzeug, ob es am Straßenrand, in einer Tiefgarage oder in der Werkstatt steht. Bei einem unverschuldeten Unfall trägt in der Regel die gegnerische Versicherung die Kosten des Gutachtens.",
+        ],
+      },
+    ],
+    verweise: [
+      {
+        text: "Hat die Versicherung Ihr Gutachten gekürzt? Dann hilft eine fachliche Stellungnahme zum Prüfbericht der Versicherung. Mehr dazu:",
+        linkLabel: "Gegengutachten nach Kürzung durch die Versicherung",
+        href: "/versicherung-kuerzt-gutachten",
+        nach: ".",
+      },
+    ],
     // Quelle: eigenes Gutachten, Unfall 10.07.2026. Anonymisiert.
     praxisfall: {
       monat: "Juli 2026",
@@ -758,6 +834,14 @@ export const bezirkContent: BezirkContent[] = [
       { q: "Fahren Sie auch nach Wilmersdorf und Halensee?", a: "Ja, wir decken Charlottenburg-Wilmersdorf vollständig ab — vom Ku'damm über Halensee bis nach Schmargendorf und Westend." },
     ],
     neighborSlugs: ["kfz-sachverstaendiger-berlin-schoeneberg", "kfz-sachverstaendiger-berlin-spandau", "kfz-sachverstaendiger-berlin-steglitz"],
+    verweise: [
+      {
+        text: "Hat die Versicherung Ihr Gutachten gekürzt? Dann hilft eine fachliche Stellungnahme zum Prüfbericht der Versicherung. Mehr dazu:",
+        linkLabel: "Gegengutachten nach Kürzung durch die Versicherung",
+        href: "/versicherung-kuerzt-gutachten",
+        nach: ".",
+      },
+    ],
     // Quelle: eigenes Gutachten, Unfall 15.06.2026. Anonymisiert.
     praxisfall: {
       monat: "Juni 2026",

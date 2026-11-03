@@ -82,7 +82,7 @@ const artikel = [
     kategorie: "Parkschaden",
     title: "Parkschaden — was jetzt zu tun ist",
     text: "Jemand hat Ihr geparktes Auto beschädigt? Was Sie dokumentieren sollten und was gilt, wenn der Verursacher weg ist.",
-    href: "/blog/parkschaden-was-tun",
+    href: "/parkschaden-gutachten-berlin",
     dauer: "5 Min. Lesezeit",
   },
   {

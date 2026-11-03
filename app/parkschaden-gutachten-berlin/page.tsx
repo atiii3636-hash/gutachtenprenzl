@@ -29,9 +29,28 @@ export const metadata: Metadata = {
   },
 };
 
+// Aus dem früheren Blogartikel "Parkschaden: was jetzt?" übernommen (SEO A2).
+// Steht sichtbar und im FAQPage-Schema, beides aus derselben Quelle.
+const faqNeu = [
+  {
+    q: "Soll ich eine Barzahlung des Verursachers annehmen?",
+    a: "Besser nicht. Was ein Parkschaden tatsächlich kostet, zeigt sich oft erst, wenn die Verkleidung ab ist: Hinter einer unscheinbaren Delle im Stoßfänger kann ein verzogener Querträger stecken. Wer vorher Geld angenommen und quittiert hat, bleibt auf dem Rest sitzen.",
+  },
+  {
+    q: "Lohnt sich bei einem Parkschaden ohne Verursacher die Kasko, oder zahle ich besser selbst?",
+    a: "Das hängt von der Schadenhöhe ab. Die Vollkasko kostet Sie die Selbstbeteiligung und kann zu einer Rückstufung im Schadenfreiheitsrabatt führen. Bei kleinen Schäden kann es günstiger sein, selbst zu zahlen, bei größeren eher nicht. Ein Gutachten vor der Meldung zeigt, worüber Sie überhaupt reden.",
+  },
+];
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://gutachtenprenzl.de/parkschaden-gutachten-berlin#webpage",
+      url: "https://gutachtenprenzl.de/parkschaden-gutachten-berlin",
+      dateModified: "2026-11-03",
+    },
     {
       "@type": "FAQPage",
       mainEntity: [
@@ -67,6 +86,11 @@ const jsonLd = {
             text: "In der Regel am selben oder nächsten Tag. Wir kommen zu Ihnen — zum Parkplatz, nach Hause oder in die Werkstatt in ganz Berlin. Das fertige Gutachten erhalten Sie innerhalb von 24 Stunden nach der Besichtigung.",
           },
         },
+        ...faqNeu.map(({ q, a }) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a },
+        })),
       ],
     },
     {
@@ -200,6 +224,87 @@ export default function ParkshadenBerlin() {
         </div>
       </section>
 
+      {/* Aus dem früheren Blogartikel "Parkschaden: was jetzt?" (SEO A2) */}
+      <section className="bg-[#050507] px-5 py-16">
+        <div className="max-w-3xl mx-auto space-y-12 text-white/55 text-[15px] leading-relaxed">
+          <div>
+            <h2 className="font-display font-black text-3xl text-white uppercase mb-4">
+              Wenn der Verursacher weg ist: Beweise sichern
+            </h2>
+            <p className="mb-4">
+              Rechtlich ist auch ein Kratzer mit anschließendem Wegfahren Fahrerflucht. Für Sie heißt das zuerst:
+              Anzeige bei der Polizei. Ohne sie übernimmt die Kaskoversicherung den Schaden in der Regel nicht.
+            </p>
+            <p className="mb-4">
+              Schauen Sie sich vor dem Wegfahren um. An Hausfassaden, Tankstellen und Supermärkten hängen oft Kameras,
+              die den Parkplatz erfassen. Aufnahmen werden häufig nur wenige Tage gespeichert, fragen Sie also noch am
+              selben Tag nach. Notieren Sie außerdem, welche Fahrzeuge daneben standen, deren Halter haben den Vorgang
+              womöglich gesehen.
+            </p>
+            <p className="mb-4">
+              Fahren Sie das Auto nicht gleich in die Waschanlage. Lackspuren des anderen Fahrzeugs sind ein
+              Beweismittel, aus dem sich später Farbe und manchmal das Modell ableiten lassen.
+            </p>
+            <p>
+              Ein Gutachten dokumentiert den Zustand belastbar. Das schützt Sie auch davor, bei einem späteren Schaden in
+              Verdacht zu geraten, ihn selbst verursacht zu haben.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display font-black text-3xl text-white uppercase mb-4">
+              Kasko oder selbst zahlen?
+            </h2>
+            <p className="mb-4">
+              Bei unbekanntem Verursacher greift die Teilkasko meist nicht, weil sie einfache Parkrempler in der Regel
+              ausschließt. In Frage kommt die Vollkasko, und die kostet Sie die Selbstbeteiligung und kann zu einer
+              Rückstufung im Schadenfreiheitsrabatt führen.
+            </p>
+            <p>
+              Bei einem kleinen Schaden kann es deshalb günstiger sein, selbst zu zahlen, bei einem größeren eher nicht.
+              Ein Gutachten vor der Meldung bei der Versicherung zeigt, worüber Sie überhaupt reden. Rufen Sie uns vorher
+              an, wir sagen Ihnen, ob sich das in Ihrem Fall rechnet.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display font-black text-3xl text-white uppercase mb-4">
+              Wenn der Verursacher bekannt ist
+            </h2>
+            <p className="mb-4">
+              Steckt ein Zettel hinter dem Scheibenwischer oder hat jemand gewartet, ist die Lage deutlich besser. Dann
+              zahlt dessen Haftpflichtversicherung in der Regel Gutachten, Reparatur, Wertminderung und Nutzungsausfall.
+            </p>
+            <p>
+              Lassen Sie sich in diesem Fall nicht auf eine Barzahlung ein, auch wenn sie bequem klingt. Was der Schaden
+              wirklich kostet, sehen Sie erst, wenn die Verkleidung ab ist.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="font-display font-black text-3xl text-white uppercase mb-4">
+              Was Ihnen bei einem Parkschaden zusteht
+            </h2>
+            <div className="space-y-2">
+              {[
+                ["Reparaturkosten", "Instandsetzung des Schadens"],
+                ["Merkantile Wertminderung", "Der Wertverlust, der nach der Reparatur bleibt und oft unterschätzt wird"],
+                ["Gutachterkosten", "Bei identifiziertem Verursacher in der Regel erstattungsfähig"],
+                ["Mietwagen oder Nutzungsausfall", "Wenn Sie während der Reparatur ein Fahrzeug brauchen"],
+              ].map(([title, desc]) => (
+                <div key={title} className="flex gap-3 p-4 rounded-xl border border-white/8 bg-white/[0.03]">
+                  <CheckCircle size={15} className="text-[#E11D2F] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-bold text-white text-[14px]">{title}</p>
+                    <p className="text-white/50 text-[13px] mt-0.5">{desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Berliner Hotspots */}
       <section className="bg-[#050507] px-5 py-16">
         <div className="max-w-3xl mx-auto">
@@ -269,7 +374,7 @@ export default function ParkshadenBerlin() {
               { q: "Lohnt sich ein Gutachten bei einem kleinen Parkschaden in Berlin?", a: "Ab einem Schaden von ca. 750 € empfiehlt sich ein Gutachten. Bei Fremdverschulden trägt der Verursacher alle Kosten. Ohne Gutachten zahlen Versicherungen oft pauschale Schätzungen — zu Ihrem Nachteil." },
               { q: "Wie schnell kommt ein Kfz Gutachter nach Berlin bei einem Parkschaden?", a: "In der Regel am selben oder nächsten Tag. Wir kommen zu Ihnen — zum Parkplatz, nach Hause oder in die Werkstatt in ganz Berlin. Das fertige Gutachten innerhalb von 24 Stunden." },
               { q: "Kann ich den Parkschaden selbst reparieren lassen bevor ich ein Gutachten mache?", a: "Nein — unbedingt erst das Gutachten abwarten. Wenn das Fahrzeug bereits repariert ist, kann der Schaden nicht mehr vollständig begutachtet werden und Sie verlieren möglicherweise Ansprüche." },
-            ].map(({ q, a }) => (
+            ].concat(faqNeu).map(({ q, a }) => (
               <div key={q} className="p-5 rounded-2xl border border-white/8 bg-white/[0.03]">
                 <p className="font-bold text-white text-[14px] mb-2">{q}</p>
                 <p className="text-white/50 text-[13px] leading-relaxed">{a}</p>

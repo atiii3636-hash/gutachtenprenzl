@@ -7,7 +7,16 @@ import FooterNeu from "@/components/footer-neu";
 import Breadcrumb from "@/components/neu/breadcrumb";
 import PageHero from "@/components/neu/page-hero";
 import JsonLd from "@/components/neu/json-ld";
-import { PHONE_DISPLAY, PHONE_HREF, WHATSAPP_URL } from "@/lib/contact";
+import {
+  PHONE_DISPLAY,
+  PHONE_HREF,
+  WHATSAPP_URL,
+  SCHONEWEIDE_STRASSE,
+  SCHONEWEIDE_ORT,
+  SCHONEWEIDE_HINWEIS,
+  SCHONEWEIDE_MAP_URL,
+  SCHONEWEIDE_PATH,
+} from "@/lib/contact";
 import { pageMetadata, breadcrumbLd, SITE_URL } from "@/lib/seo";
 
 const PATH = "/standorte";
@@ -45,6 +54,7 @@ const bezirke = [
   { name: "Hellersdorf", href: "/kfz-sachverstaendiger-berlin-hellersdorf", orte: "Kaulsdorf, Mahlsdorf, Helle Mitte" },
   { name: "Treptow", href: "/kfz-sachverstaendiger-berlin-treptow", orte: "Adlershof, Baumschulenweg, Johannisthal" },
   { name: "Köpenick", href: "/kfz-sachverstaendiger-berlin-koepenick", orte: "Altstadt Köpenick, Grünau, Schmöckwitz" },
+  { name: "Schöneweide", href: "/kfz-sachverstaendiger-berlin-schoeneweide", orte: "Oberschöneweide, Johannisthal, Adlershof" },
   { name: "Zehlendorf", href: "/kfz-sachverstaendiger-berlin-zehlendorf", orte: "Dahlem, Wannsee, Nikolassee" },
 ];
 
@@ -118,6 +128,7 @@ export default function StandorteNeu() {
         titleAccent="Ganz Berlin."
         lead="Fester Sitz in Prenzlauer Berg, unterwegs in allen zwölf Bezirken. In den meisten Fällen kommen wir zu Ihnen — nicht umgekehrt."
         image="/buero.jpg"
+        imageAlt="Sachverständigenbüro Gutachten Prenzl, Prenzlauer Allee 88 in Berlin Prenzlauer Berg"
         ctaLabel="Jetzt anrufen"
       />
 
@@ -196,6 +207,58 @@ export default function StandorteNeu() {
               >
                 In Google Maps öffnen →
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ ZWEITES BÜRO ============ */}
+      <section className="px-5 pb-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-white/[0.03] border border-white/8 rounded-xl p-7 md:p-8" data-reveal>
+            <span className="inline-flex items-center gap-2 bg-white/10 text-white text-[10px] font-bold tracking-[0.2em] px-2.5 py-1 rounded mb-4">
+              ZWEITES BÜRO
+            </span>
+            <h3 className="font-display font-bold text-[20px] mb-3">Berlin · Schöneweide</h3>
+            <p className="text-white/55 text-[14.5px] leading-relaxed mb-6 max-w-3xl">
+              {SCHONEWEIDE_HINWEIS}. Je nachdem, wo Ihr Fahrzeug steht, fährt der Gutachter vom näheren
+              Standort los.
+            </p>
+            <ul className="grid sm:grid-cols-2 gap-5 mb-6">
+              <li className="flex items-start gap-3">
+                <MapPin size={17} className="text-[#E11D2F] mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-[14px] font-semibold text-white">Adresse</p>
+                  <p className="text-[13.5px] text-white/50">
+                    {SCHONEWEIDE_STRASSE}, {SCHONEWEIDE_ORT}
+                  </p>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <Phone size={17} className="text-[#E11D2F] mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-[14px] font-semibold text-white">Telefon</p>
+                  <a href={PHONE_HREF} className="text-[13.5px] text-white/50 hover:text-[#E11D2F] transition-colors">
+                    {PHONE_DISPLAY}
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              <a
+                href={SCHONEWEIDE_MAP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[13px] font-bold text-[#E11D2F] hover:text-white transition-colors"
+              >
+                In Google Maps öffnen →
+              </a>
+              <Link
+                href={SCHONEWEIDE_PATH}
+                className="inline-flex items-center gap-2 text-[13px] font-bold text-[#E11D2F] hover:text-white transition-colors"
+              >
+                Kfz-Gutachter Schöneweide →
+              </Link>
             </div>
           </div>
         </div>

@@ -7,7 +7,17 @@ import PageHero from "@/components/neu/page-hero";
 import JsonLd from "@/components/neu/json-ld";
 import ConsentMap from "@/components/consent-map";
 import DamageFormSection from "@/components/damage-form-section";
-import { PHONE_DISPLAY, PHONE_HREF, WHATSAPP_URL } from "@/lib/contact";
+import Link from "next/link";
+import {
+  PHONE_DISPLAY,
+  PHONE_HREF,
+  WHATSAPP_URL,
+  SCHONEWEIDE_STRASSE,
+  SCHONEWEIDE_ORT,
+  SCHONEWEIDE_HINWEIS,
+  SCHONEWEIDE_MAP_URL,
+  SCHONEWEIDE_PATH,
+} from "@/lib/contact";
 import { pageMetadata, breadcrumbLd, contactPageLd } from "@/lib/seo";
 
 const PATH = "/kontakt";
@@ -198,6 +208,51 @@ export default function KontaktNeu() {
               src="https://www.google.com/maps?q=Prenzlauer%20Allee%2088,%2010405%20Berlin&output=embed"
               className="h-[380px] w-full"
             />
+          </div>
+
+          {/* Zweites Büro. Gleiche Telefonnummer, eigene Adresse und eigener Kartenlink. */}
+          <div className="mt-10 bg-white/[0.03] border border-white/8 rounded-xl p-6 md:p-8" data-reveal>
+            <h3 className="font-display font-bold text-[20px] mb-5">Zweites Büro: Schöneweide</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <ul className="space-y-5">
+                <li className="flex items-start gap-3.5">
+                  <MapPin size={18} className="text-[#E11D2F] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-white text-[15px]">Adresse</p>
+                    <p className="text-white/50 text-[14.5px]">
+                      {SCHONEWEIDE_STRASSE}
+                      <br />
+                      {SCHONEWEIDE_ORT}
+                    </p>
+                    <a
+                      href={SCHONEWEIDE_MAP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-1 text-[13px] font-bold text-[#E11D2F] hover:text-white transition-colors"
+                    >
+                      In Google Maps öffnen →
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3.5">
+                  <Phone size={18} className="text-[#E11D2F] mt-0.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-white text-[15px]">Telefon</p>
+                    <a href={PHONE_HREF} className="text-white/50 hover:text-[#E11D2F] transition-colors text-[14.5px]">
+                      {PHONE_DISPLAY}
+                    </a>
+                  </div>
+                </li>
+              </ul>
+              <p className="text-white/55 text-[14.5px] leading-relaxed">
+                {SCHONEWEIDE_HINWEIS}. Je nachdem, wo Ihr Fahrzeug steht, fährt der Gutachter vom näheren
+                Standort los. Mehr dazu auf der Seite{" "}
+                <Link href={SCHONEWEIDE_PATH} className="text-[#E11D2F] hover:underline">
+                  Kfz-Gutachter Schöneweide
+                </Link>
+                .
+              </p>
+            </div>
           </div>
         </div>
       </section>

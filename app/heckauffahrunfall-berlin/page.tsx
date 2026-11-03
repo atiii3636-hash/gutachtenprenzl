@@ -9,7 +9,7 @@ import Breadcrumb from "@/components/neu/breadcrumb";
 
 export const metadata: Metadata = {
   title: { absolute: "Heckauffahrunfall Berlin – Gutachten & Schadensersatz" },
-  description: "Versicherung bewertet oft zu niedrig. Gutachten in 24h, Kosten trägt meist die Gegenseite. ☎ 0155 60003661",
+  description: "Heckauffahrunfall in Berlin? Die Versicherung bewertet oft zu niedrig. Gutachten in 24h, Kosten trägt meist die Gegenseite. Jetzt anrufen: 0155 60003661",
   keywords: [
     "heckauffahrunfall berlin",
     "auffahrunfall berlin gutachten",

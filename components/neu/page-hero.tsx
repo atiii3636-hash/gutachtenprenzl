@@ -12,6 +12,8 @@ type Props = {
   lead: string;
   /** Hintergrundfoto, unscharf und ausgeblendet wie auf der Startseite. */
   image?: string;
+  /** Alt-Text des Hintergrundfotos. Ohne Angabe gilt es als dekorativ (alt=""). */
+  imageAlt?: string;
   /** Beschriftung des Haupt-Buttons. Standard: die Telefonnummer. */
   ctaLabel?: string;
 };
@@ -22,6 +24,7 @@ export default function PageHero({
   titleAccent,
   lead,
   image,
+  imageAlt = "",
   ctaLabel,
 }: Props) {
   return (
@@ -32,7 +35,7 @@ export default function PageHero({
           <div className="absolute inset-0 hero-fade-bottom opacity-[0.55]">
             <Image
               src={image}
-              alt=""
+              alt={imageAlt}
               fill
               priority
               /* scale-110 kaschiert den transparenten Saum, den der Blur an den Kanten erzeugt */

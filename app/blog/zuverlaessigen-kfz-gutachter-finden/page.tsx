@@ -126,9 +126,9 @@ export default function ZuverlaessigenGutachterFinden() {
             <h2 className="font-display font-black text-white text-xl uppercase mb-3">Wer wählt den Gutachter aus?</h2>
             <p>
               Sie. Bei einem unverschuldeten Unfall dürfen Sie den Sachverständigen frei wählen, die
-              gegnerische Versicherung kann Ihnen keinen vorschreiben. Warum das so ist, steht im Beitrag{" "}
-              <Link href="/blog/recht-auf-eigenen-gutachter" className="text-[#E11D2F] hover:underline">
-                Ihr Recht auf einen unabhängigen Gutachter
+              gegnerische Versicherung kann Ihnen keinen vorschreiben. Warum das so ist, steht im Vergleich{" "}
+              <Link href="/eigener-gutachter-oder-versicherungsgutachter" className="text-[#E11D2F] hover:underline">
+                Eigener Gutachter oder Versicherungsgutachter
               </Link>
               . Wichtig ist deshalb, dass Sie wissen, worauf Sie bei der Auswahl achten.
             </p>
@@ -244,7 +244,6 @@ export default function ZuverlaessigenGutachterFinden() {
             <h3 className="font-semibold text-white text-[14px] mb-4">Weiterführende Artikel</h3>
             <div className="space-y-2">
               {[
-                ["/blog/recht-auf-eigenen-gutachter", "Ihr Recht auf einen unabhängigen Gutachter"],
                 ["/blog/was-tun-nach-unfall-berlin", "Was tun nach einem Unfall in Berlin?"],
                 ["/eigener-gutachter-oder-versicherungsgutachter", "Eigener Gutachter oder Versicherungsgutachter?"],
               ].map(([href, label]) => (

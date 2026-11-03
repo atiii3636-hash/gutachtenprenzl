@@ -17,6 +17,7 @@ import { faqs } from "@/lib/faqs";
 import ConsentMap from "@/components/consent-map";
 import { pageMetadata, faqLd } from "@/lib/seo";
 import { bezirkContent } from "@/lib/bezirk-content";
+import { faelleSortiert } from "@/lib/faelle";
 
 // Heimatbezirk zuerst, der Rest in der Reihenfolge aus lib/bezirk-content.ts.
 const bezirkeHome = [...bezirkContent].sort(
@@ -158,24 +159,25 @@ export default function NeuPage() {
           <div className="hidden lg:block absolute left-0 top-0 h-full w-[46%] hero-fade-left opacity-[0.72]">
             <Image
               src="/Lackmessung.JPG"
-              alt=""
+              alt="Lackschichtmessung an einem Unfallfahrzeug bei der Begutachtung"
               fill
-              priority
+              /* Ohne priority: Das Bild ist auf dem Handy per hidden ausgeblendet, priority
+                 würde es dort trotzdem vorladen und der Hauptgrafik Bandbreite wegnehmen. */
               /* scale-110 kaschiert den transparenten Saum, den der Blur an den Kanten erzeugt */
               className="object-cover object-[60%_center] blur-[3px] scale-110"
               sizes="46vw"
-              quality={75}
+              quality={60}
             />
           </div>
           <div className="absolute inset-y-0 right-0 w-full lg:w-[46%] opacity-[0.6] lg:opacity-[0.72] hero-fade-bottom lg:hero-fade-right">
             <Image
               src="/inhaber2.jpg"
-              alt=""
+              alt="Atakan Arslan, Kfz-Sachverständiger bei Gutachten Prenzl"
               fill
               priority
               className="object-cover object-[center_22%] blur-[3px] scale-110"
               sizes="(max-width: 1024px) 100vw, 46vw"
-              quality={75}
+              quality={60}
             />
           </div>
           <div className="absolute inset-0 bg-[#050507]/35" />
@@ -682,6 +684,39 @@ export default function NeuPage() {
       </section>
 
       {/* ============ STANDORTKARTE ============ */}
+      {/* ============ AKTUELLE FÄLLE ============
+          Die drei neuesten Fälle aus dem Fallarchiv (lib/faelle.ts, SEO A10). */}
+      {faelleSortiert.length > 0 && (
+        <section className="px-5 py-16 border-t border-white/6">
+          <div className="max-w-4xl mx-auto">
+            <h2
+              className="font-display font-black tracking-tight text-center text-[clamp(24px,4vw,38px)] leading-[1.1] mb-8"
+              data-reveal
+            >
+              Aktuelle Fälle
+            </h2>
+            <div className="grid md:grid-cols-3 gap-3" data-reveal>
+              {faelleSortiert.slice(0, 3).map((f) => (
+                <Link
+                  key={f.slug}
+                  href={`/faelle/${f.slug}`}
+                  className="block bg-white/[0.03] border border-white/8 rounded-xl px-5 py-5 hover:border-white/20 transition-colors"
+                >
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-white/30 mb-2">{f.monat}</p>
+                  <p className="font-display font-bold text-white text-[16px] leading-snug mb-2">{f.titel}</p>
+                  <p className="text-white/50 text-[13.5px] leading-relaxed">{f.teaser}</p>
+                </Link>
+              ))}
+            </div>
+            <p className="text-center mt-6" data-reveal>
+              <Link href="/faelle" className="text-[14px] font-semibold text-white/70 underline underline-offset-4 hover:text-white">
+                Alle Fälle im Fallarchiv
+              </Link>
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* Google-Maps-Einbettung des Unternehmenseintrags (nicht nur der Adresse):
           verknüpft die Seite mit dem Profil, auf das auch sameAs im Schema zeigt.
 
@@ -708,6 +743,13 @@ export default function NeuPage() {
               className="text-white/80 underline underline-offset-2 decoration-white/30 hover:decoration-white"
             >
               Kfz Gutachter in Prenzlauer Berg
+            </Link>
+            . Das Büro liegt im Bezirk Pankow, hier finden Sie die Seite{" "}
+            <Link
+              href="/kfz-sachverstaendiger-berlin-pankow"
+              className="text-white/80 underline underline-offset-2 decoration-white/30 hover:decoration-white"
+            >
+              Kfz-Gutachter in Pankow
             </Link>
             . In den meisten Fällen kommen aber wir zu Ihnen.
           </p>

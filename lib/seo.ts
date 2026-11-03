@@ -108,10 +108,15 @@ type ServiceInput = {
   serviceType?: string;
   /** Engeres Einsatzgebiet, z. B. ein Bezirk. Ohne Angabe: Berlin + Brandenburg. */
   areaServed?: { "@type": string; name: string }[];
+  /** @id eines anderen Standorts als Anbieter, z. B. SCHONEWEIDE_ID. Ohne Angabe: Hauptbüro. */
+  providerId?: string;
 };
 
+/** @id des zweiten LocalBusiness (Büro Schöneweide) aus app/layout.tsx. */
+export const SCHONEWEIDE_ID = `${SITE_URL}/#standort-schoeneweide`;
+
 /** Service-Schema, das den bestehenden LocalBusiness als Anbieter referenziert. */
-export function serviceLd({ name, description, path, serviceType, areaServed }: ServiceInput) {
+export function serviceLd({ name, description, path, serviceType, areaServed, providerId }: ServiceInput) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -119,7 +124,7 @@ export function serviceLd({ name, description, path, serviceType, areaServed }: 
     description,
     url: `${SITE_URL}${path}`,
     ...(serviceType ? { serviceType } : {}),
-    provider: { "@id": BUSINESS_ID },
+    provider: { "@id": providerId ?? BUSINESS_ID },
     areaServed: areaServed ?? [
       { "@type": "City", name: "Berlin" },
       { "@type": "AdministrativeArea", name: "Brandenburg" },

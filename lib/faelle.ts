@@ -16,6 +16,12 @@ export interface Fall extends Praxisfall {
   slug: string;
   /** H1 und Linktext. Beschreibt den Fall, nicht die Leistung. */
   titel: string;
+  /**
+   * Title-Tag, Muster "<Schaden> am <Modell> in <Ortsteil> – Gutachten-Fall",
+   * höchstens 60 Zeichen. Ortsteil nur, wenn er im Falltext steht. Ohne Angabe
+   * gilt `titel`. Die H1 bleibt immer `titel`.
+   */
+  seoTitel?: string;
   /** Ein bis zwei Sätze für Übersicht und Meta-Description. */
   teaser: string;
   /**
@@ -48,11 +54,14 @@ export interface Fall extends Praxisfall {
    * plausibel klingt.
    */
   bauteile?: string[];
+  /** Weiterführende Links auf der Fallseite, z. B. ein passender Ratgeberartikel. */
+  weiterfuehrend?: { href: string; label: string }[];
 }
 
 export const faelle: Fall[] = [
   {
     slug: "achsschaden-mercedes-c-300-t-a10",
+    seoTitel: "Achsschaden am Mercedes C 300 T – Gutachten-Fall",
     titel: "Zwei Drittel der Kosten stecken nicht im Blech",
     teaser:
       "Mercedes C 300 T d, auf der A10 hinten links gerammt: 24.944,41 Euro Reparaturkosten, davon nur 7.331,91 Euro für Teile. Der Rest ist Arbeit und Lack.",
@@ -102,6 +111,7 @@ export const faelle: Fall[] = [
   },
   {
     slug: "totalschaden-audi-a3-prenzlauer-berg",
+    seoTitel: "Totalschaden am Audi A3 in Prenzlauer Berg – Gutachten-Fall",
     titel: "Ein zehn Jahre alter A3 und 135 Prozent Reparaturkosten",
     teaser:
       "Audi A3 Limousine, rechte Seite aufgerissen: 15.257,94 Euro Reparaturkosten gegen 11.302,52 Euro Wiederbeschaffungswert. Warum aus 135 Prozent ein Totalschaden wird.",
@@ -150,6 +160,7 @@ export const faelle: Fall[] = [
   },
   {
     slug: "seitenwand-audi-s6-avant-kreuzberg",
+    seoTitel: "Seitenwandschaden am Audi S6 in Kreuzberg – Gutachten-Fall",
     titel: "Eine Seitenwand, die alle vier Reifen kostet",
     teaser:
       "Audi S6 Avant, hinten rechts gerammt: 19.255,44 Euro netto Reparaturkosten, 1.157 Euro Wertminderung. Warum bei Allradantrieb auch die Reifen vorn mit auf die Rechnung kommen.",
@@ -201,6 +212,10 @@ export const faelle: Fall[] = [
   },
   {
     slug: "achsschaden-tesla-model-y-mitte",
+    weiterfuehrend: [
+      { href: "/blog/elektroauto-unfall-hochvoltsystem", label: "Elektroauto nach dem Unfall: Hochvoltsystem prüfen" },
+    ],
+    seoTitel: "Achsschaden am Tesla Model Y in Mitte – Gutachten-Fall",
     titel: "Ein Kratzer an der Tür, ein Schaden an der Hinterachse",
     teaser:
       "Tesla Model Y, hinten rechts angefahren. Außen Kratzer und eine Radlaufverbreiterung, innen Querlenker, Achsschenkel und Spurstangenstrebe. Die Achsvermessung brachte es ans Licht.",
@@ -252,6 +267,7 @@ export const faelle: Fall[] = [
   },
   {
     slug: "totalschaden-vw-polo-karow",
+    seoTitel: "Totalschaden am VW Polo in Karow – Gutachten-Fall",
     titel: "Eine Tür, die den Wagen zum Totalschaden macht",
     teaser:
       "Ein 24 Jahre alter VW Polo in Karow, angestoßen an der Fahrertür. 2.557 Euro Reparaturkosten gegen 1.700 Euro Fahrzeugwert — warum daraus ein wirtschaftlicher Totalschaden wird.",

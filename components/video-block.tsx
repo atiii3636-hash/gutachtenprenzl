@@ -40,7 +40,7 @@ function Einbettung({ video }: { video: Video }) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
-            alt=""
+            alt={video.titel}
             loading="lazy"
             className="absolute inset-0 w-full h-full object-cover opacity-80 transition group-hover:opacity-100 group-hover:scale-[1.02]"
           />

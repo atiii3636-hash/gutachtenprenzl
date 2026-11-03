@@ -56,8 +56,8 @@ export const ratgeberContent: RatgeberContent[] = [
       "prüfbericht versicherung",
       "stellungnahme sachverständiger",
     ],
-    stand: "2026-09-18",
-    standLabel: "18. September 2026",
+    stand: "2026-11-03",
+    standLabel: "3. November 2026",
     direktantwort:
       "Kürzt die Versicherung Positionen aus Ihrem Gutachten, ist das kein endgültiger Bescheid, sondern eine Verhandlungsposition. Typisch gekürzt werden Stundenverrechnungssätze, Verbringungskosten, Ersatzteilaufschläge, Wertminderung und Nutzungsausfall. Eine fachliche Stellungnahme des Sachverständigen zu jeder einzelnen Position führt in vielen Fällen zur Nachzahlung.",
     abschnitte: [
@@ -106,6 +106,21 @@ export const ratgeberContent: RatgeberContent[] = [
           "Diese Stellungnahme geht an die Versicherung, in der Regel über Ihren Anwalt für Verkehrsrecht.",
           "Bei unverschuldetem Unfall trägt die gegnerische Versicherung auch die Kosten des Anwalts. Sie gehen damit kein zusätzliches Risiko ein.",
         ],
+      },
+      {
+        h2: "Gegengutachten und Stellungnahme nach einer Kürzung",
+        absaetze: [
+          "Wer nach einer Kürzung nach einem „Gegengutachten“ sucht, meint meist dasselbe: eine fachliche Antwort auf den Prüfbericht der Versicherung, zum Beispiel von ControlExpert oder DEKRA. In vielen Fällen genügt dafür eine schriftliche Stellungnahme zu den gekürzten Positionen. Ob darüber hinaus ein weiteres Gutachten sinnvoll ist, etwa weil sich der Schaden verändert hat, klären wir im Einzelfall mit Ihnen.",
+          "Wir prüfen jede Kürzungsposition einzeln gegen das ursprüngliche Gutachten und die Fotodokumentation und nehmen dazu fachlich Stellung: Warum wurde ein Bauteil ersetzt statt instand gesetzt, warum gelten bestimmte Stundenverrechnungssätze, warum steht die Wertminderung im Gutachten. Das Ergebnis ist ein Schreiben, das Sie oder Ihr Anwalt der Versicherung vorlegen können.",
+          "Damit wir damit beginnen können, brauchen wir von Ihnen:",
+        ],
+        liste: [
+          "das Kürzungsschreiben der Versicherung",
+          "den Prüfbericht, falls er beiliegt",
+          "Ihr Gutachten",
+        ],
+        hinweis:
+          "Bei rechtlichen Streitfragen, etwa zur Haftung oder zu einer Abfindungserklärung, empfehlen wir bei Bedarf einen Fachanwalt für Verkehrsrecht. Sie erreichen uns telefonisch unter +49 155 60003661, per WhatsApp oder per E-Mail an info@gutachtenprenzl.de.",
       },
       {
         h2: "Wie lange Sie Zeit haben",

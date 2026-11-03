@@ -49,36 +49,35 @@ const nextConfig = {
         destination: 'https://g.page/r/CefSgT78ivVGEAE/review',
         permanent: false,
       },
+      // --- SEO-Auftrag 03.11.2026, A9: altes URL-Muster /kfz-gutachter-<bezirk> ---
+      // Eine Regel für alle Bezirke, für die es eine Seite gibt. Next.js entfernt
+      // nachgestellte Slashes selbst, ein Slash am Ende landet also auf derselben
+      // Regel. Unbekannte Slugs (z. B. /kfz-gutachter-berlin, /kfz-gutachter-xyz)
+      // greifen hier nicht und liefern weiter 404 bzw. ihre eigene Regel unten.
+      // Neuer Bezirk in lib/bezirk-content.ts: Slug hier ergänzen.
       {
-        source: '/kfz-gutachter-friedrichshain',
-        destination: '/kfz-sachverstaendiger-berlin-friedrichshain',
+        source:
+          '/kfz-gutachter-:bezirk(mitte|charlottenburg|friedrichshain|kreuzberg|neukoelln|schoeneberg|tempelhof|steglitz|spandau|reinickendorf|marzahn|koepenick|pankow|prenzlauer-berg|lichtenberg|hellersdorf|treptow|schoeneweide|zehlendorf|weissensee)',
+        destination: '/kfz-sachverstaendiger-berlin-:bezirk',
         permanent: true,
       },
-      {
-        source: '/kfz-gutachter-kreuzberg',
-        destination: '/kfz-sachverstaendiger-berlin-kreuzberg',
-        permanent: true,
-      },
-      {
-        source: '/kfz-gutachter-pankow',
-        destination: '/kfz-sachverstaendiger-berlin-pankow',
-        permanent: true,
-      },
-      // Beide URLs sind noch in Googles Index, lieferten aber 404 (geprüft 02.08.2026).
+      // Sonderfall: Treptow-Köpenick hat keine eigene Seite, die Nachfrage liegt
+      // bei Köpenick (beide URLs waren am 02.08.2026 noch im Index und lieferten 404).
       {
         source: '/kfz-gutachter-treptow-koepenick',
         destination: '/kfz-sachverstaendiger-berlin-koepenick',
         permanent: true,
       },
+      // --- SEO-Auftrag 03.11.2026, A2: doppelte Themen zusammengelegt ---
+      // Inhalte sind in die Zielseiten eingearbeitet, die Blog-Seiten entfallen.
       {
-        source: '/kfz-gutachter-prenzlauer-berg',
-        destination: '/kfz-sachverstaendiger-berlin-prenzlauer-berg',
+        source: '/blog/recht-auf-eigenen-gutachter',
+        destination: '/eigener-gutachter-oder-versicherungsgutachter',
         permanent: true,
       },
-      // Aus der Search Console am 21.08.2026: lieferten weiterhin 404.
       {
-        source: '/kfz-gutachter-weissensee',
-        destination: '/kfz-sachverstaendiger-berlin-weissensee',
+        source: '/blog/parkschaden-was-tun',
+        destination: '/parkschaden-gutachten-berlin',
         permanent: true,
       },
       {
@@ -97,13 +96,6 @@ const nextConfig = {
       {
         source: '/kfz-gutachter-berlin',
         destination: '/kfz-gutachten-berlin',
-        permanent: true,
-      },
-      // Lichtenberg lief als einziger Bezirk auf dem alten URL-Muster und rankte
-      // mit Ø-Position 20,2 deutlich schlechter als vergleichbare Bezirke.
-      {
-        source: '/kfz-gutachter-lichtenberg',
-        destination: '/kfz-sachverstaendiger-berlin-lichtenberg',
         permanent: true,
       },
 

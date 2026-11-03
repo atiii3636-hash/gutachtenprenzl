@@ -6,8 +6,6 @@ import CookieBanner from "@/components/cookie-banner";
 import FloatingWhatsApp from "@/components/floating-whatsapp";
 import ConversionTracking from "@/components/conversion-tracking";
 import ScrollReveal from "@/components/scroll-reveal";
-import { REVIEW_COUNT, REVIEW_RATING } from "@/lib/contact";
-import { reviewsLd } from "@/lib/reviews";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -230,30 +228,44 @@ const jsonLd = {
           { "@type": "Offer", itemOffered: { "@type": "Service", name: "Schadensregulierung Berlin" } },
         ],
       },
-      // Bewertungen aus dem Google-Unternehmensprofil, maschinenlesbar.
-      //
-      // Bis 20.09.2026 stand hier bewusst nichts, mit der Begründung "self-serving
-      // reviews". Der Teil stimmt weiterhin für Google: Bewertungen, die ein Betrieb
-      // über sich selbst auf der eigenen Domain auszeichnet, sind für Review-Rich-
-      // Results nicht zulässig, Sterne werden in der Suche nicht ausgespielt.
-      //
-      // Trotzdem steht der Block jetzt hier, weil er für KI-Suchmaschinen zählt:
-      // Perplexity, ChatGPT Search und AI Overviews lesen JSON-LD direkt und sind an
-      // Googles Rich-Result-Regeln nicht gebunden. Dort ist der Unterschied
-      // "5,0 aus 91 Bewertungen" gegen gar keine belegte Aussage.
-      //
-      // Bedingung, an der alles hängt: Die Zahlen müssen stimmen. Wahrheitsgemäße
-      // Auszeichnung wird von Google ignoriert, erfundene wäre Spam. REVIEW_COUNT und
-      // REVIEW_RATING in lib/contact.ts deshalb bei jeder Änderung mitziehen, und die
-      // Bewertungstexte nur aus lib/reviews.ts, nie frei formuliert.
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: REVIEW_RATING,
-        reviewCount: REVIEW_COUNT,
-        bestRating: 5,
-        worstRating: 1,
+      // Bewusst kein aggregateRating und kein review: Google spielt für selbst
+      // ausgezeichnete LocalBusiness-Bewertungen keine Sterne aus, und Bewertungen
+      // von Google ins eigene Markup zu übernehmen widerspricht den Richtlinien.
+      // Die fest eingetragene Bewertungszahl veraltet außerdem. (SEO-Auftrag
+      // 03.11.2026, A8; der Block vom 20.09.2026 ist damit zurückgenommen.)
+      // Die sichtbaren Bewertungsabschnitte auf den Seiten bleiben unverändert.
+    },
+    // Zweites Büro. Eigener Knoten mit eigener @id, der Hauptknoten bleibt
+    // unverändert. Daten wie im Google-Profil "KFZ Gutachten Schöneweide".
+    // Bewusst ohne geo (Koordinaten liegen nicht belegt vor), ohne
+    // openingHoursSpecification (für dieses Büro nirgends belegt), ohne
+    // aggregateRating und review.
+    {
+      "@type": ["LocalBusiness", "ProfessionalService"],
+      "@id": `${siteUrl}/#standort-schoeneweide`,
+      name: "Gutachten Prenzl – Kfz-Sachverständigenbüro Schöneweide",
+      url: `${siteUrl}/kfz-sachverstaendiger-berlin-schoeneweide`,
+      telephone: "+4915560003661",
+      email: "info@gutachtenprenzl.de",
+      image: `${siteUrl}/logos/logo-full.png`,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Brückenstraße 6",
+        addressLocality: "Berlin",
+        addressRegion: "Berlin",
+        postalCode: "12439",
+        addressCountry: "DE",
       },
-      review: reviewsLd(),
+      hasMap:
+        "https://www.google.com/maps/search/?api=1&query=Br%C3%BCckenstra%C3%9Fe%206%2C%2012439%20Berlin",
+      branchOf: { "@id": siteUrl },
+      parentOrganization: { "@id": siteUrl },
+      areaServed: [
+        "Niederschöneweide",
+        "Oberschöneweide",
+        "Johannisthal",
+        "Adlershof",
+      ].map((name) => ({ "@type": "AdministrativeArea", name })),
     },
   ],
 };

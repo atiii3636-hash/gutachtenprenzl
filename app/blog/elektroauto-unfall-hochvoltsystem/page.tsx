@@ -63,6 +63,10 @@ const sections: { h: string; p: string[] }[] = [
 
 const links = [
   {
+    "href": "/faelle/achsschaden-tesla-model-y-mitte",
+    "label": "Fallbeispiel: Achsschaden am Tesla Model Y in Mitte"
+  },
+  {
     "href": "/faelle",
     "label": "Alle Fälle aus der Praxis"
   },
@@ -71,8 +75,8 @@ const links = [
     "label": "Achsvermessung nach dem Unfall"
   },
   {
-    "href": "/blog/recht-auf-eigenen-gutachter",
-    "label": "Ihr Recht auf einen unabhängigen Gutachter"
+    "href": "/eigener-gutachter-oder-versicherungsgutachter",
+    "label": "Eigener Gutachter oder Versicherungsgutachter?"
   },
   {
     "href": "/kfz-gutachten-berlin",

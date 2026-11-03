@@ -398,7 +398,7 @@ export default function KostenKfzGutachtenBerlin() {
               { href: "/unfallgutachten-berlin", label: "Unfallgutachten Berlin" },
               { href: "/totalschaden-gutachten-berlin", label: "Totalschaden" },
               { href: "/parkschaden-gutachten-berlin", label: "Parkschaden" },
-              { href: "/blog/recht-auf-eigenen-gutachter", label: "Recht auf eigenen Gutachter" },
+              { href: "/versicherung-kuerzt-gutachten", label: "Versicherung kürzt das Gutachten" },
               { href: "/ueber-uns", label: "Über den Sachverständigen" },
             ].map(({ href, label }) => (
               <Link key={href} href={href} className="flex items-center gap-1 text-[12px] text-white/40 hover:text-white/70 transition-colors border border-white/8 hover:border-white/20 rounded-full px-3 py-1.5">

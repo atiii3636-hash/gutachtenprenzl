@@ -44,22 +44,6 @@ const articles = [
     readTime: "4 Min.",
     category: "Gutachter wählen",
   },
-  {
-    href: "/blog/recht-auf-eigenen-gutachter",
-    title: "Ihr Recht auf einen unabhängigen Gutachter",
-    description:
-      "Die meisten Unfallgeschädigten wissen es nicht: Bei Fremdverschulden haben Sie das gesetzliche Recht auf einen eigenen Sachverständigen. Das Honorar trägt in der Regel die gegnerische Versicherung.",
-    readTime: "3 Min.",
-    category: "Ihre Rechte",
-  },
-  {
-    href: "/blog/parkschaden-was-tun",
-    title: "Parkschaden: was jetzt?",
-    description:
-      "Jemand hat Ihr geparktes Auto beschädigt? Was Sie jetzt tun sollten, um den Schaden vollständig ersetzt zu bekommen, auch bei Fahrerflucht.",
-    readTime: "3 Min.",
-    category: "Parkschaden",
-  },
 ];
 
 export default function BlogIndex() {
