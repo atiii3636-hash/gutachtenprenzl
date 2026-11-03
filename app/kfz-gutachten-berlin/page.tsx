@@ -356,8 +356,8 @@ export default function KfzGutachtenBerlin() {
           <p className="text-white/45 text-[14.5px] leading-relaxed mt-7 text-center" data-reveal>
             Wer hinter dem Gutachten steht, welche Zertifizierung dahintersteckt und wie wir arbeiten, lesen Sie
             auf der Seite{" "}
-            <Link href="/kfz-sachverstaendiger-berlin" className="text-[#E11D2F] hover:underline font-semibold">
-              Kfz-Sachverständiger Berlin
+            <Link href="/ueber-uns" className="text-[#E11D2F] hover:underline font-semibold">
+              Über uns
             </Link>
             .
           </p>

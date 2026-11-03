@@ -44,6 +44,8 @@ const nextConfig = {
     return [
       // Kurzlink für Bewertungsanfragen (WhatsApp, Rechnung, QR-Code). Temporär statt 301,
       // damit Browser das Ziel nicht cachen, falls Google den Bewertungslink einmal ändert.
+      // Seite zusammengelegt: Inhalt lebt auf der Startseite und /ueber-uns.
+      { source: '/kfz-sachverstaendiger-berlin', destination: '/', permanent: true },
       {
         source: '/bewerten',
         destination: 'https://g.page/r/CefSgT78ivVGEAE/review',

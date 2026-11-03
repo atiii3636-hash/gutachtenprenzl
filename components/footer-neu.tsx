@@ -68,7 +68,6 @@ const leistungen = [
 const nav = [
   { href: "/leistungen", label: "Leistungen" },
   { href: "/kfz-gutachten-berlin", label: "Kfz-Gutachten Berlin" },
-  { href: "/kfz-sachverstaendiger-berlin", label: "Sachverständiger Berlin" },
   { href: "/flotten-partner", label: "Flotten & Gewerbe" },
   { href: "/partner-werden", label: "Partner werden" },
   { href: "/ratgeber", label: "Ratgeber" },

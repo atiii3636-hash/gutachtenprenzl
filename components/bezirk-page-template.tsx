@@ -67,7 +67,7 @@ export default function BezirkPageTemplate({ content }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://gutachtenprenzl.de" },
-      { "@type": "ListItem", position: 2, name: "Kfz Sachverständiger Berlin", item: "https://gutachtenprenzl.de/kfz-sachverstaendiger-berlin" },
+      { "@type": "ListItem", position: 2, name: "Standorte", item: "https://gutachtenprenzl.de/standorte" },
       { "@type": "ListItem", position: 3, name: hauptkeyword, item: `https://gutachtenprenzl.de/${slug}` },
     ],
   };
@@ -153,7 +153,7 @@ export default function BezirkPageTemplate({ content }: Props) {
               </li>
               <li><ChevronRight size={10} className="mx-1 text-white/15" /></li>
               <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                <Link href="/kfz-sachverstaendiger-berlin" className="hover:text-white/70 transition-colors" itemProp="item"><span itemProp="name">Kfz Sachverständiger Berlin</span></Link>
+                <Link href="/standorte" className="hover:text-white/70 transition-colors" itemProp="item"><span itemProp="name">Standorte</span></Link>
                 <meta itemProp="position" content="2" />
               </li>
               <li><ChevronRight size={10} className="mx-1 text-white/15" /></li>

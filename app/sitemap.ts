@@ -43,7 +43,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kfz-sachverstaendiger-berlin-schoeneweide",
     "/kfz-sachverstaendiger-berlin-zehlendorf",
     "/kfz-sachverstaendiger-berlin-weissensee",
-    "/kfz-sachverstaendiger-berlin",
     "/unfallgutachten-berlin",
     "/heckauffahrunfall-berlin",
     "/parkschaden-gutachten-berlin",

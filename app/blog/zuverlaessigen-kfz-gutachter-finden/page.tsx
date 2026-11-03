@@ -149,8 +149,8 @@ export default function ZuverlaessigenGutachterFinden() {
             </div>
             <p className="mt-4">
               Was ein unabhängiger Sachverständiger im Einzelnen prüft, steht auf der Seite{" "}
-              <Link href="/kfz-sachverstaendiger-berlin" className="text-[#E11D2F] hover:underline">
-                Kfz-Sachverständiger Berlin
+              <Link href="/kfz-gutachten-berlin" className="text-[#E11D2F] hover:underline">
+                Kfz-Gutachten Berlin
               </Link>
               , die Kosten in der{" "}
               <Link href="/kosten-kfz-gutachten-berlin" className="text-[#E11D2F] hover:underline">
