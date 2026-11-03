@@ -104,6 +104,15 @@ const galerie = [
   { src: "/foto3.jpg", alt: "Arbeitsplatz im Büro von Gutachten Prenzl mit Blick auf die Prenzlauer Allee", label: "Auswertung", ort: "Im Büro" },
 ];
 
+const leistungBild: Record<string, { src: string; alt: string }> = {
+  "Unfallgutachten": { src: "/foto10.jpg", alt: "Fahrzeug mit Frontschaden und geöffneter Motorhaube in der Werkstatt" },
+  "Meist kostenfrei für Sie": { src: "/foto2.jpg", alt: "Dunkle Limousine, die zur Begutachtung bereitsteht" },
+  "Heckaufprall": { src: "/foto5.jpg", alt: "Messkoffer von Gutachten Prenzl neben einem Fahrzeugrad" },
+  "Parkschaden": { src: "/Lackmessung.JPG", alt: "Lackschichtdickenmessung an einer Fahrzeugtür" },
+  "Totalschaden": { src: "/unfall-stock.jpg", alt: "Stark beschädigtes Fahrzeug nach einem Frontalunfall" },
+  "Schadensregulierung": { src: "/foto3.jpg", alt: "Büro von Gutachten Prenzl mit Arbeitsplätzen" },
+};
+
 const leistungen = [
   { icon: Search, badge: "Häufigster Fall", tag: "TOP 1", title: "Unfallgutachten", desc: "Unverschuldet erwischt? Die gegnerische Versicherung übernimmt in der Regel das Honorar. Wir sichern jeden Posten, der Ihnen zusteht.", href: "/unfallgutachten-berlin" },
   { icon: Banknote, badge: "Für Geschädigte", tag: "0 €", title: "Meist kostenfrei für Sie", desc: "Bei Fremdverschulden zahlen Sie in der Regel nichts. Die Gutachterkosten übernimmt die Haftpflicht des Verursachers.", href: null },
@@ -130,7 +139,7 @@ function Kapitel({ num, label }: { num: string; label: string }) {
   return (
     <div className="flex items-center justify-center gap-3 mb-4" data-reveal>
       <span className="font-display font-black text-[#E11D2F] text-[15px]">{num}</span>
-      <span className="text-[11px] font-bold tracking-[0.3em] text-white/40 uppercase">{label}</span>
+      <span className="text-[12px] font-bold tracking-[0.3em] text-white/65 uppercase">{label}</span>
     </div>
   );
 }
@@ -251,11 +260,11 @@ export default function NeuPage() {
                   {[...Array(5)].map((_, i) => <Star key={i} size={13} className="fill-[#FBBC04] text-[#FBBC04]" />)}
                 </span>
               </span>
-              <span className="text-[12.5px] text-white/60 sm:border-l sm:border-white/15 sm:pl-3">
+              <span className="text-[13.5px] text-white/85 sm:border-l sm:border-white/15 sm:pl-3">
                 {REVIEW_COUNT} Google Bewertungen
               </span>
             </a>
-            <span className="text-[11px] font-bold tracking-[0.2em] text-white/35 uppercase">
+            <span className="text-[12px] font-bold tracking-[0.2em] text-white/60 uppercase">
               TÜV Rheinland zertifiziert
             </span>
           </div>
@@ -265,10 +274,10 @@ export default function NeuPage() {
         <a
           href="#schaden"
           aria-label="Weiter zum Schadenformular"
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 hover:text-white/80 transition-colors animate-fade-up"
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/65 hover:text-white/80 transition-colors animate-fade-up"
           style={{ animationDelay: "400ms" }}
         >
-          <span className="text-[10px] font-bold tracking-[0.25em] uppercase">Weiter</span>
+          <span className="text-[11.5px] font-bold tracking-[0.25em] uppercase">Weiter</span>
           <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/20 bg-white/[0.04] backdrop-blur-sm animate-bounce">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
               <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
@@ -288,7 +297,7 @@ export default function NeuPage() {
       <DamageFormSection />
 
       {/* ============ 01 · BEWERTUNGEN ============ */}
-      <section className="px-5 py-20 md:py-24 border-t border-white/6">
+      <section className="px-5 py-20 md:py-24 border-t border-white/10">
         <div className="max-w-5xl mx-auto">
           <Kapitel num="01" label="Google Bewertungen" />
           <h2
@@ -301,17 +310,17 @@ export default function NeuPage() {
           <div className="flex flex-col items-center mb-12" data-reveal>
             <div className="flex items-end gap-2 mb-2">
               <span className="font-display font-black text-[64px] leading-none">5,0</span>
-              <span className="text-white/40 text-[15px] mb-2">von 5,0</span>
+              <span className="text-white/65 text-[15px] mb-2">von 5,0</span>
             </div>
             <div className="flex gap-1 mb-3">
               {[...Array(5)].map((_, i) => <Star key={i} size={20} className="fill-[#FBBC04] text-[#FBBC04]" />)}
             </div>
-            <p className="text-[11px] font-bold tracking-[0.25em] text-white/35 uppercase mb-5">
+            <p className="text-[12px] font-bold tracking-[0.25em] text-white/60 uppercase mb-5">
               Aus {REVIEW_COUNT} echten Google Bewertungen
             </p>
             <div className="flex flex-wrap gap-2 justify-center">
               {reviewChips.map((c) => (
-                <span key={c} className="text-[12px] font-semibold text-white/60 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-lg">
+                <span key={c} className="text-[13px] font-semibold text-white/85 bg-white/[0.05] border border-white/10 px-3 py-1.5 rounded-lg">
                   „{c}“
                 </span>
               ))}
@@ -324,19 +333,19 @@ export default function NeuPage() {
             {REVIEWS.slice(0, 6).map(({ name, text, sterne, monat }, i) => (
               <figure
                 key={name}
-                className="bg-white/[0.03] border border-white/8 rounded-xl p-6 flex flex-col"
+                className="bg-white/[0.05] border border-white/12 rounded-xl p-6 flex flex-col"
                 data-reveal
                 style={{ transitionDelay: `${(i % 3) * 80}ms` }}
               >
                 <div className="flex gap-0.5 mb-4">
                   {[...Array(sterne)].map((_, j) => <Star key={j} size={13} className="fill-[#FBBC04] text-[#FBBC04]" />)}
                 </div>
-                <blockquote className="text-white/60 text-[13.5px] leading-relaxed mb-5 flex-1 whitespace-pre-line line-clamp-[9]">
+                <blockquote className="text-white/85 text-[15px] leading-relaxed mb-5 flex-1 whitespace-pre-line line-clamp-[9]">
                   „{text}“
                 </blockquote>
-                <figcaption className="text-[12px] font-bold tracking-[0.15em] text-white/70 uppercase">
+                <figcaption className="text-[13px] font-bold tracking-[0.15em] text-white/90 uppercase">
                   {name}
-                  <span className="block text-[11px] font-semibold tracking-normal normal-case text-white/35 mt-1">
+                  <span className="block text-[12px] font-semibold tracking-normal normal-case text-white/60 mt-1">
                     {monat} · Google
                   </span>
                 </figcaption>
@@ -349,7 +358,7 @@ export default function NeuPage() {
               href={GOOGLE_PROFILE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[13px] font-semibold text-white/40 hover:text-white transition-colors underline underline-offset-4"
+              className="inline-flex items-center gap-2 text-[14.5px] font-semibold text-white/65 hover:text-white transition-colors underline underline-offset-4"
             >
               Alle {REVIEW_COUNT} Bewertungen auf Google lesen →
             </a>
@@ -358,7 +367,7 @@ export default function NeuPage() {
       </section>
 
       {/* ============ 02 · ABLAUF ============ */}
-      <section id="vertrauen" className="px-5 py-20 md:py-24 border-t border-white/6">
+      <section id="vertrauen" className="px-5 py-20 md:py-24 border-t border-white/10">
         <div className="max-w-4xl mx-auto">
           <Kapitel num="02" label="So läuft es ab" />
           <h2
@@ -367,7 +376,7 @@ export default function NeuPage() {
           >
             In fünf Schritten zu Ihrem Geld.
           </h2>
-          <p className="text-white/50 text-[16px] text-center max-w-xl mx-auto mb-14 leading-relaxed" data-reveal>
+          <p className="text-white/75 text-[16px] text-center max-w-xl mx-auto mb-14 leading-relaxed" data-reveal>
             Vom ersten Anruf bis zur Auszahlung durch die Versicherung. Sie müssen sich um nichts kümmern.
           </p>
 
@@ -376,10 +385,10 @@ export default function NeuPage() {
             {schritte.map((s, i) => (
               <Fragment key={s.num}>
                 <div className="flex flex-col items-center gap-2.5 w-[76px]">
-                  <div className="w-10 h-10 rounded-full border border-[#E11D2F]/40 bg-[#E11D2F]/10 flex items-center justify-center font-display font-black text-[#E11D2F] text-[14px]">
+                  <div className="w-10 h-10 rounded-full border border-[#E11D2F]/40 bg-[#E11D2F]/10 flex items-center justify-center font-display font-black text-[#E11D2F] text-[15px]">
                     {s.num}
                   </div>
-                  <span className="text-[10.5px] font-bold tracking-[0.12em] text-white/45 uppercase text-center leading-tight">
+                  <span className="text-[10.5px] font-bold tracking-[0.12em] text-white/70 uppercase text-center leading-tight">
                     {s.kurz}
                   </span>
                 </div>
@@ -407,20 +416,20 @@ export default function NeuPage() {
                     <Icon size={19} className="text-[#E11D2F]" />
                   </div>
 
-                  <div className="flex-1 bg-white/[0.03] border border-white/8 rounded-xl p-6 md:p-7 hover:border-white/20 transition-colors">
+                  <div className="flex-1 bg-white/[0.05] border border-white/12 rounded-xl p-6 md:p-7 hover:border-white/20 transition-colors">
                     <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1.5 mb-3">
                       <span className="font-display font-black text-[#E11D2F] text-[20px] leading-none">{num}</span>
                       <h3 className="font-display font-bold text-[19px] leading-none">{title}</h3>
-                      <span className="text-[10.5px] font-bold tracking-[0.18em] text-white/35 uppercase">
+                      <span className="text-[10.5px] font-bold tracking-[0.18em] text-white/60 uppercase">
                         {zeit}
                       </span>
                     </div>
-                    <p className="text-white/55 text-[14.5px] leading-relaxed mb-4">{text}</p>
+                    <p className="text-white/80 text-[15.5px] leading-relaxed mb-4">{text}</p>
                     <div className="flex flex-wrap gap-1.5">
                       {chips.map((c) => (
                         <span
                           key={c}
-                          className="text-[11.5px] font-semibold text-white/45 bg-white/[0.05] border border-white/10 px-2.5 py-1 rounded"
+                          className="text-[11.5px] font-semibold text-white/70 bg-white/[0.05] border border-white/10 px-2.5 py-1 rounded"
                         >
                           {c}
                         </span>
@@ -445,7 +454,7 @@ export default function NeuPage() {
       </section>
 
       {/* ============ 03 · EINBLICKE ============ */}
-      <section className="px-5 py-20 md:py-24 border-t border-white/6">
+      <section className="px-5 py-20 md:py-24 border-t border-white/10">
         <div className="max-w-6xl mx-auto">
           <Kapitel num="03" label="Einblicke" />
           <h2
@@ -454,7 +463,7 @@ export default function NeuPage() {
           >
             Kein anonymes Großbüro.
           </h2>
-          <p className="text-white/50 text-[16px] text-center max-w-xl mx-auto mb-14 leading-relaxed" data-reveal>
+          <p className="text-white/75 text-[16px] text-center max-w-xl mx-auto mb-14 leading-relaxed" data-reveal>
             Zwei eigene Büros, an der Prenzlauer Allee und in Schöneweide, und ein Sachverständiger, der
             jeden Schaden selbst in Augenschein nimmt.
           </p>
@@ -479,7 +488,7 @@ export default function NeuPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent" />
                 <figcaption className="absolute bottom-4 left-4 right-4">
-                  <p className="text-[9.5px] font-bold tracking-[0.22em] text-white/55 uppercase mb-0.5">{ort}</p>
+                  <p className="text-[11px] font-bold tracking-[0.22em] text-white/80 uppercase mb-0.5">{ort}</p>
                   <p className={`font-display font-bold leading-tight ${gross ? "text-[20px]" : "text-[15px]"}`}>
                     {label}
                   </p>
@@ -491,7 +500,7 @@ export default function NeuPage() {
       </section>
 
       {/* ============ 04 · LEISTUNGEN ============ */}
-      <section id="leistungen" className="px-5 py-20 md:py-24 border-t border-white/6">
+      <section id="leistungen" className="px-5 py-20 md:py-24 border-t border-white/10">
         <div className="max-w-6xl mx-auto">
           <Kapitel num="04" label="Leistungen" />
           <h2
@@ -502,7 +511,7 @@ export default function NeuPage() {
             <br className="hidden md:block" />
             <span className="text-[#E11D2F]"> Ihr voller Anspruch.</span>
           </h2>
-          <p className="text-white/50 text-[16px] text-center max-w-xl mx-auto mb-14 leading-relaxed" data-reveal>
+          <p className="text-white/75 text-[16px] text-center max-w-xl mx-auto mb-14 leading-relaxed" data-reveal>
             Jeder Schaden ist anders. Wir wählen die Gutachtenart, die Ihre Ansprüche bestmöglich absichert,
             vom Parkrempler bis zum Totalschaden.
           </p>
@@ -511,26 +520,38 @@ export default function NeuPage() {
             {leistungen.map(({ icon: Icon, badge, tag, title, desc, href }, i) => {
               const inner = (
                 <>
+                  {leistungBild[title] && (
+                    <div className="relative aspect-[16/9] -mx-6 -mt-6 mb-5 rounded-t-xl overflow-hidden">
+                      <Image
+                        src={leistungBild[title].src}
+                        alt={leistungBild[title].alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 380px"
+                        quality={65}
+                        className="object-cover group-hover:scale-[1.04] transition-transform duration-700"
+                      />
+                    </div>
+                  )}
                   <div className="flex items-start justify-between mb-5">
                     <div className="w-11 h-11 rounded-lg bg-[#E11D2F]/10 flex items-center justify-center group-hover:bg-[#E11D2F]/20 transition-colors">
                       <Icon size={20} className="text-[#E11D2F]" />
                     </div>
-                    <span className="text-[10px] font-black tracking-[0.15em] text-[#E11D2F] bg-[#E11D2F]/10 border border-[#E11D2F]/25 px-2 py-1 rounded uppercase">
+                    <span className="text-[11.5px] font-black tracking-[0.15em] text-[#E11D2F] bg-[#E11D2F]/10 border border-[#E11D2F]/25 px-2 py-1 rounded uppercase">
                       {tag}
                     </span>
                   </div>
-                  <p className="text-[10px] font-bold tracking-[0.2em] text-white/30 mb-1.5 uppercase">{badge}</p>
+                  <p className="text-[11.5px] font-bold tracking-[0.2em] text-white/55 mb-1.5 uppercase">{badge}</p>
                   <h3 className="font-display font-bold text-[18px] mb-2">{title}</h3>
-                  <p className="text-white/50 text-[13.5px] leading-relaxed">{desc}</p>
+                  <p className="text-white/75 text-[15px] leading-relaxed">{desc}</p>
                   {href && (
-                    <span className="block text-[12px] font-semibold text-white/30 group-hover:text-[#E11D2F] mt-4 transition-colors">
+                    <span className="block text-[13px] font-semibold text-white/55 group-hover:text-[#E11D2F] mt-4 transition-colors">
                       Mehr erfahren →
                     </span>
                   )}
                 </>
               );
               const cls =
-                "group bg-white/[0.03] border border-white/8 rounded-xl p-6 hover:border-[#E11D2F]/30 hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-1 block";
+                "group bg-white/[0.05] border border-white/12 rounded-xl p-6 hover:border-[#E11D2F]/30 hover:bg-white/[0.05] transition-all duration-300 hover:-translate-y-1 block";
               return href ? (
                 <Link key={title} href={href} className={cls} data-reveal style={{ transitionDelay: `${(i % 3) * 80}ms` }}>
                   {inner}
@@ -544,7 +565,7 @@ export default function NeuPage() {
           </div>
 
           <div className="text-center mt-10" data-reveal>
-            <p className="text-white/45 text-[14px] mb-4">
+            <p className="text-white/70 text-[15px] mb-4">
               Unsicher, welches Gutachten Sie brauchen? Wir sagen es Ihnen kostenlos.
             </p>
             <a
@@ -559,7 +580,7 @@ export default function NeuPage() {
       </section>
 
       {/* ============ 05 · WAS UNS TRÄGT ============ */}
-      <section id="vorteile" className="px-5 py-20 md:py-24 border-t border-white/6">
+      <section id="vorteile" className="px-5 py-20 md:py-24 border-t border-white/10">
         <div className="max-w-6xl mx-auto">
           <Kapitel num="05" label="Was uns trägt" />
           <h2
@@ -572,16 +593,16 @@ export default function NeuPage() {
             {haltung.map(({ num, wort, satz, text }, i) => (
               <div
                 key={num}
-                className="bg-white/[0.03] border border-white/8 rounded-xl p-7 hover:border-[#E11D2F]/30 transition-colors"
+                className="bg-white/[0.05] border border-white/12 rounded-xl p-7 hover:border-[#E11D2F]/30 transition-colors"
                 data-reveal
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
                 <div className="flex items-baseline justify-between mb-6">
                   <span className="font-display font-black text-[#E11D2F]/40 text-[26px]">{num}</span>
-                  <span className="text-[11px] font-black tracking-[0.3em] text-[#E11D2F] uppercase">{wort}</span>
+                  <span className="text-[12px] font-black tracking-[0.3em] text-[#E11D2F] uppercase">{wort}</span>
                 </div>
                 <p className="font-display font-bold text-[19px] leading-snug mb-3">{satz}</p>
-                <p className="text-white/50 text-[13.5px] leading-relaxed">{text}</p>
+                <p className="text-white/75 text-[15px] leading-relaxed">{text}</p>
               </div>
             ))}
           </div>
@@ -589,7 +610,7 @@ export default function NeuPage() {
       </section>
 
       {/* ============ 06 · GEPRÜFTE KOMPETENZ ============ */}
-      <section className="px-5 py-20 md:py-24 border-t border-white/6">
+      <section className="px-5 py-20 md:py-24 border-t border-white/10">
         <div className="max-w-4xl mx-auto">
           <Kapitel num="06" label="Geprüfte Kompetenz" />
           <h2
@@ -598,17 +619,17 @@ export default function NeuPage() {
           >
             Echte Qualifikation. Nachprüfbar.
           </h2>
-          <p className="text-white/50 text-[16px] text-center max-w-xl mx-auto mb-12 leading-relaxed" data-reveal>
+          <p className="text-white/75 text-[16px] text-center max-w-xl mx-auto mb-12 leading-relaxed" data-reveal>
             Kein Marketingversprechen, sondern eine unabhängig geprüfte Zertifizierung durch den TÜV Rheinland.
           </p>
 
-          <div className="bg-white/[0.03] border border-white/8 rounded-xl p-7 md:p-9 grid md:grid-cols-[auto,1fr] gap-7 items-start" data-reveal>
+          <div className="bg-white/[0.05] border border-white/12 rounded-xl p-7 md:p-9 grid md:grid-cols-[auto,1fr] gap-7 items-start" data-reveal>
             <div className="relative w-[200px] h-[250px] md:w-[240px] md:h-[300px] rounded-xl overflow-hidden border border-white/10 mx-auto md:mx-0">
               <Image src="/inhaber2.jpg" alt="Atakan Arslan bei der Fahrzeugbegutachtung" fill className="object-cover object-[center_20%]" sizes="240px" />
             </div>
             <div>
               <h3 className="font-display font-bold text-[22px] mb-1">Atakan Arslan</h3>
-              <p className="text-[11px] font-bold tracking-[0.2em] text-white/35 uppercase mb-5">
+              <p className="text-[12px] font-bold tracking-[0.2em] text-white/60 uppercase mb-5">
                 Inhaber und Kfz Sachverständiger
               </p>
               <ul className="space-y-3">
@@ -620,8 +641,8 @@ export default function NeuPage() {
                   <li key={t} className="flex items-start gap-3">
                     <ShieldCheck size={16} className="text-[#E11D2F] mt-0.5 flex-shrink-0" />
                     <div>
-                      <p className="text-[14px] font-semibold text-white">{t}</p>
-                      <p className="text-[12.5px] text-white/40">{sub}</p>
+                      <p className="text-[15px] font-semibold text-white">{t}</p>
+                      <p className="text-[13.5px] text-white/65">{sub}</p>
                     </div>
                   </li>
                 ))}
@@ -632,7 +653,7 @@ export default function NeuPage() {
       </section>
 
       {/* ============ 07 · FAQ ============ */}
-      <section id="faq" className="px-5 py-20 md:py-24 border-t border-white/6">
+      <section id="faq" className="px-5 py-20 md:py-24 border-t border-white/10">
         <div className="max-w-3xl mx-auto">
           <Kapitel num="07" label="FAQ" />
           <h2
@@ -646,7 +667,7 @@ export default function NeuPage() {
       </section>
 
       {/* ============ ABSCHLUSS ============ */}
-      <section id="kontakt" className="relative px-5 py-24 md:py-32 border-t border-white/6 overflow-hidden">
+      <section id="kontakt" className="relative px-5 py-24 md:py-32 border-t border-white/10 overflow-hidden">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#E11D2F]/10 rounded-full blur-[160px] pointer-events-none" />
         <div className="relative max-w-2xl mx-auto text-center">
           <h2 className="font-display font-black tracking-tight text-[clamp(30px,5.5vw,54px)] leading-[1.05] mb-5" data-reveal>
@@ -654,7 +675,7 @@ export default function NeuPage() {
             <br />
             <span className="text-[#E11D2F]">Rufen Sie jetzt an.</span>
           </h2>
-          <p className="text-white/50 text-[16px] mb-9 leading-relaxed" data-reveal>
+          <p className="text-white/75 text-[16px] mb-9 leading-relaxed" data-reveal>
             Ein Anruf kostet nichts und verpflichtet zu nichts. Sie erfahren sofort, welche Ansprüche Sie
             haben. Rund um die Uhr, auch am Wochenende.
           </p>
@@ -676,7 +697,7 @@ export default function NeuPage() {
               Kostenlos beraten lassen
             </a>
           </div>
-          <div className="flex items-center justify-center gap-6 text-[12px] text-white/35" data-reveal>
+          <div className="flex items-center justify-center gap-6 text-[13px] text-white/60" data-reveal>
             <span className="flex items-center gap-1.5"><Clock size={12} /> Rund um die Uhr erreichbar</span>
             <span className="flex items-center gap-1.5"><MapPin size={12} /> Prenzlauer Allee 88 · Brückenstraße 6</span>
           </div>
@@ -687,7 +708,7 @@ export default function NeuPage() {
       {/* ============ AKTUELLE FÄLLE ============
           Die drei neuesten Fälle aus dem Fallarchiv (lib/faelle.ts, SEO A10). */}
       {faelleSortiert.length > 0 && (
-        <section className="px-5 py-16 border-t border-white/6">
+        <section className="px-5 py-16 border-t border-white/10">
           <div className="max-w-4xl mx-auto">
             <h2
               className="font-display font-black tracking-tight text-center text-[clamp(24px,4vw,38px)] leading-[1.1] mb-8"
@@ -700,16 +721,16 @@ export default function NeuPage() {
                 <Link
                   key={f.slug}
                   href={`/faelle/${f.slug}`}
-                  className="block bg-white/[0.03] border border-white/8 rounded-xl px-5 py-5 hover:border-white/20 transition-colors"
+                  className="block bg-white/[0.05] border border-white/12 rounded-xl px-5 py-5 hover:border-white/20 transition-colors"
                 >
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-white/30 mb-2">{f.monat}</p>
+                  <p className="text-[12px] uppercase tracking-[0.18em] text-white/55 mb-2">{f.monat}</p>
                   <p className="font-display font-bold text-white text-[16px] leading-snug mb-2">{f.titel}</p>
-                  <p className="text-white/50 text-[13.5px] leading-relaxed">{f.teaser}</p>
+                  <p className="text-white/75 text-[15px] leading-relaxed">{f.teaser}</p>
                 </Link>
               ))}
             </div>
             <p className="text-center mt-6" data-reveal>
-              <Link href="/faelle" className="text-[14px] font-semibold text-white/70 underline underline-offset-4 hover:text-white">
+              <Link href="/faelle" className="text-[15px] font-semibold text-white/90 underline underline-offset-4 hover:text-white">
                 Alle Fälle im Fallarchiv
               </Link>
             </p>
@@ -727,7 +748,7 @@ export default function NeuPage() {
           festem Seitenverhältnis ersetzt — der starre Rahmen erzeugt auf dem
           Handy sonst waagerechtes Scrollen. loading="lazy" hält den iframe
           aus dem LCP heraus. */}
-      <section className="px-5 py-16 border-t border-white/6">
+      <section className="px-5 py-16 border-t border-white/10">
         <div className="max-w-4xl mx-auto">
           <h2
             className="font-display font-black tracking-tight text-center text-[clamp(24px,4vw,38px)] leading-[1.1] mb-3"
@@ -735,7 +756,7 @@ export default function NeuPage() {
           >
             Sie finden uns in Prenzlauer Berg und Schöneweide.
           </h2>
-          <p className="text-white/45 text-[15.5px] leading-relaxed text-center max-w-xl mx-auto mb-8" data-reveal>
+          <p className="text-white/70 text-[15.5px] leading-relaxed text-center max-w-xl mx-auto mb-8" data-reveal>
             Prenzlauer Allee 88, 10405 Berlin — wenige Minuten vom S-Bahnhof Prenzlauer Allee. Zweites Büro: Brückenstraße 6, 12439 Berlin (Schöneweide). Mehr zu
             Ihrem{" "}
             <Link
@@ -764,7 +785,7 @@ export default function NeuPage() {
           {/* Bis 28.09.2026 verlinkte die Startseite keinen Bezirk im Inhalt; Google zeigte
               deshalb für "kfz gutachter prenzlauer berg" die Startseite statt der Bezirksseite. */}
           <nav aria-label="Kfz Gutachter nach Bezirk" className="mt-10">
-            <p className="text-[11px] font-bold tracking-[0.2em] text-white/35 uppercase text-center mb-4">
+            <p className="text-[12px] font-bold tracking-[0.2em] text-white/60 uppercase text-center mb-4">
               Wir kommen in jeden Bezirk
             </p>
             <div className="flex flex-wrap justify-center gap-2">
@@ -772,7 +793,7 @@ export default function NeuPage() {
                 <Link
                   key={b.slug}
                   href={`/${b.slug}`}
-                  className="text-[13px] font-semibold text-white/70 hover:text-white bg-white/[0.03] border border-white/8 hover:border-white/25 px-3.5 py-1.5 rounded-lg transition-colors"
+                  className="text-[14.5px] font-semibold text-white/90 hover:text-white bg-white/[0.05] border border-white/12 hover:border-white/25 px-3.5 py-1.5 rounded-lg transition-colors"
                 >
                   Kfz Gutachter {b.h1Ort ?? b.nameShort}
                 </Link>
