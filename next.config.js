@@ -38,6 +38,11 @@ const nextConfig = {
   // Kompression aktivieren
   compress: true,
 
+  // Prüfungstrainer als statische Seite unter /trainer (public/trainer/index.html)
+  async rewrites() {
+    return [{ source: '/trainer', destination: '/trainer/index.html' }];
+  },
+
   // 301-Weiterleitungen für alte URLs (von Google noch gecrawlt → 404)
   // Next.js entfernt nachgestellte Slashes automatisch, daher genügt die Variante ohne Slash.
   async redirects() {
