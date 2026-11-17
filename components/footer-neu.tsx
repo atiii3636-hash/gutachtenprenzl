@@ -1,6 +1,7 @@
 import { Phone, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import CookieSettingsLink from "@/components/cookie-settings-link";
 import {
   PHONE_DISPLAY,
   PHONE_HREF,
@@ -203,6 +204,7 @@ export default function FooterNeu() {
           <div className="flex gap-5">
             <a href="/impressum" className="text-[14px] text-white/25 hover:text-white/60 transition-colors">Impressum</a>
             <a href="/datenschutz" className="text-[14px] text-white/25 hover:text-white/60 transition-colors">Datenschutz</a>
+            <CookieSettingsLink className="text-[14px] text-white/25 hover:text-white/60 transition-colors" />
           </div>
         </div>
       </div>

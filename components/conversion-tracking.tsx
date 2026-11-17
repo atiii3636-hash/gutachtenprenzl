@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import { trackOpenAIContact } from "@/components/openai-pixel";
 
 // Google Ads Conversion-ID (bereits im Konto vorhanden)
 const GOOGLE_ADS_ID = "AW-18025620294";
@@ -44,6 +45,9 @@ export default function ConversionTracking() {
           send_to: `${GOOGLE_ADS_ID}/${label}`,
         });
       }
+
+      // 3) OpenAI Ads (ChatGPT-Anzeigen) – nur mit Einwilligung
+      trackOpenAIContact(method);
     };
 
     document.addEventListener("click", handler, { capture: true });

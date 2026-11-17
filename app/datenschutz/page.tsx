@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import NavbarNeu from "@/components/navbar-neu";
 import FooterNeu from "@/components/footer-neu";
+import CookieSettingsLink from "@/components/cookie-settings-link";
 
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
@@ -27,7 +28,7 @@ export default function DatenschutzPage() {
           <h1 className="font-display font-black text-3xl md:text-4xl text-white uppercase tracking-tight">
             Datenschutzerklärung
           </h1>
-          <p className="text-white/40 text-[14px] mt-2">Stand: Oktober 2026</p>
+          <p className="text-white/40 text-[14px] mt-2">Stand: November 2026</p>
         </div>
       </div>
 
@@ -70,8 +71,29 @@ export default function DatenschutzPage() {
 
           <h3 className="font-bold text-[#080D14] mb-2">Google Ads &amp; Google Tag Manager (nur mit Einwilligung)</h3>
           <p className="text-[14px]">
-            Zur Erfolgsmessung unserer Werbeanzeigen nutzen wir <strong>Google Ads</strong> und den <strong>Google Tag Manager</strong> (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Erfasst wird dabei, ob ein Besuch über eine Anzeige zustande kam und ob anschließend eine Kontaktaufnahme erfolgte – etwa ein Anruf, ein WhatsApp-Klick oder eine Formularanfrage (sogenanntes Conversion-Tracking). Diese Dienste werden <strong>erst nach Ihrer aktiven Einwilligung</strong> über den Cookie-Hinweis aktiviert. Wir setzen den <strong>Google Consent Mode v2</strong> ein: Ohne Einwilligung werden keine Marketing-Cookies gesetzt; übermittelt werden dann lediglich anonyme, cookielose Signale ohne Personenbezug. Eine Datenübermittlung in die USA (Google LLC) kann erfolgen; Grundlage sind die EU-Standardvertragsklauseln (Art. 46 DSGVO) sowie das EU-US Data Privacy Framework. Rechtsgrundlage: <strong>Art. 6 Abs. 1 lit. a DSGVO</strong> (Einwilligung). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie die Website-Daten in Ihrem Browser löschen und Ihre Auswahl im Cookie-Hinweis neu treffen.{" "}
+            Zur Erfolgsmessung unserer Werbeanzeigen nutzen wir <strong>Google Ads</strong> und den <strong>Google Tag Manager</strong> (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland). Erfasst wird dabei, ob ein Besuch über eine Anzeige zustande kam und ob anschließend eine Kontaktaufnahme erfolgte – etwa ein Anruf, ein WhatsApp-Klick oder eine Formularanfrage (sogenanntes Conversion-Tracking). Diese Dienste werden <strong>erst nach Ihrer aktiven Einwilligung</strong> über den Cookie-Hinweis aktiviert. Ohne Einwilligung werden die Google-Skripte nicht geladen, es werden keine Marketing-Cookies gesetzt und keine Daten an Google übermittelt. Zusätzlich setzen wir den <strong>Google Consent Mode v2</strong> ein, der die Einwilligung an Google weitergibt. Eine Datenübermittlung in die USA (Google LLC) kann erfolgen; Grundlage sind die EU-Standardvertragsklauseln (Art. 46 DSGVO) sowie das EU-US Data Privacy Framework. Rechtsgrundlage: <strong>Art. 6 Abs. 1 lit. a DSGVO</strong> und <strong>§ 25 Abs. 1 TDDDG</strong> (Einwilligung). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft über den Link „Cookie-Einstellungen“ unten auf jeder Seite widerrufen.{" "}
             <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#E11D2F] hover:underline">Datenschutzerklärung Google</a>.
+          </p>
+
+          <h3 className="font-bold text-[#080D14] mt-5 mb-2">OpenAI Ads Measurement Pixel (nur mit Einwilligung)</h3>
+          <p className="text-[14px]">
+            Wir schalten auch Anzeigen in ChatGPT. Zur Erfolgsmessung dieser Anzeigen nutzen wir das <strong>Measurement Pixel von OpenAI Ads</strong>. Anbieter für Nutzer im Europäischen Wirtschaftsraum ist die <strong>OpenAI Ireland Limited</strong>, 1st Floor, The Liffey Trust Centre, 117-126 Sheriff Street Upper, Dublin 1, D01 YC43, Irland.
+          </p>
+          <p className="text-[14px] mt-2">
+            Das Pixel wird <strong>erst nach Ihrer aktiven Einwilligung</strong> über den Cookie-Hinweis geladen. Ohne Einwilligung wird keine Verbindung zu OpenAI hergestellt. Nach Ihrer Einwilligung werden verarbeitet:
+          </p>
+          <ul className="list-disc list-inside mt-2 space-y-1 text-[14px]">
+            <li>eine Kennung aus dem Anzeigenklick in ChatGPT (sofern Sie über eine Anzeige kommen),</li>
+            <li>die aufgerufenen Seiten unserer Website und der Zeitpunkt,</li>
+            <li>ob Sie Kontakt aufnehmen – Klick auf „Anrufen“, Klick auf WhatsApp oder Absenden des Schadenformulars (nur die Art der Kontaktaufnahme, keine Inhalte, Namen oder Telefonnummern),</li>
+            <li>technische Verbindungsdaten wie IP-Adresse und Browserangaben, die beim Laden des Skripts und Senden der Messdaten anfallen.</li>
+          </ul>
+          <p className="text-[14px] mt-2">
+            Dafür setzt das Pixel zwei Cookies auf unserer Domain: <code>__oppref</code> (speichert die Kennung aus dem Anzeigenklick, Laufzeit 30 Tage) und <code>__obref</code> (zufällige Browser-Kennung für unsere Website, Laufzeit 365 Tage). Wir übermitteln die Ereignisse mit dem Hinweis, dass sie nicht für personalisierte Werbung genutzt werden sollen.
+          </p>
+          <p className="text-[14px] mt-2">
+            Für die Erhebung und Übermittlung der Daten auf unserer Website sind wir verantwortlich. Für die weitere Verarbeitung ist OpenAI eigenständig verantwortlich; OpenAI kann die Daten nach seinen Bedingungen auch zur Bereitstellung, Messung und Verbesserung seiner Dienste nutzen. Eine Übermittlung an Unternehmen der OpenAI-Gruppe in den USA ist möglich; OpenAI sichert solche Übermittlungen nach eigenen Angaben über einen gültigen Übermittlungsmechanismus ab (z. B. EU-Standardvertragsklauseln, Art. 46 DSGVO). Rechtsgrundlage: <strong>Art. 6 Abs. 1 lit. a DSGVO</strong> und <strong>§ 25 Abs. 1 TDDDG</strong> (Einwilligung). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft über „Cookie-Einstellungen“ widerrufen; dabei werden die genannten Cookies gelöscht.{" "}
+            <a href="https://openai.com/policies/eu-privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-[#E11D2F] hover:underline">Datenschutzerklärung OpenAI</a>.
           </p>
 
           <h3 className="font-bold text-[#080D14] mt-5 mb-2">E-Mail-Versand (Resend)</h3>
@@ -112,9 +134,9 @@ export default function DatenschutzPage() {
         </section>
 
         <section>
-          <h2 className="font-display font-black text-xl text-[#080D14] uppercase mb-3">4. Lokaler Speicher (localStorage)</h2>
+          <h2 className="font-display font-black text-xl text-[#080D14] uppercase mb-3">4. Cookies und lokaler Speicher</h2>
           <p>
-            Diese Website verwendet den lokalen Speicher Ihres Browsers (localStorage), um Ihre Einwilligung oder Ablehnung zum Marketing-Tracking zu speichern. Dabei werden keine personenbezogenen Daten erhoben. Der Eintrag verbleibt in Ihrem Browser, bis Sie ihn manuell löschen (Browser-Einstellungen → Websitedaten löschen) — anschließend wird der Cookie-Hinweis erneut angezeigt und Sie können Ihre Auswahl widerrufen oder ändern.
+            Diese Website speichert Ihre Entscheidung im Cookie-Hinweis im lokalen Speicher Ihres Browsers (localStorage). Das ist technisch erforderlich, damit der Hinweis nicht bei jedem Seitenaufruf erneut erscheint (§ 25 Abs. 2 Nr. 2 TDDDG). Werbe-Cookies werden nur nach Ihrer Einwilligung gesetzt. Über den Link „Cookie-Einstellungen“ unten auf jeder Seite können Sie Ihre Auswahl jederzeit ändern oder widerrufen; bei einem Widerruf werden die Werbe-Cookies gelöscht.
           </p>
           <div className="mt-3 overflow-x-auto">
             <table className="w-full text-[13px] border border-gray-200 rounded-xl overflow-hidden">
@@ -128,12 +150,30 @@ export default function DatenschutzPage() {
               <tbody>
                 <tr className="border-t border-gray-100">
                   <td className="px-4 py-3 font-mono text-[12px]">cookie-consent</td>
-                  <td className="px-4 py-3">Speichert Ihre Einwilligung bzw. Ablehnung zum Marketing-Tracking (Google Ads / Tag Manager)</td>
-                  <td className="px-4 py-3">Bis zur manuellen Löschung</td>
+                  <td className="px-4 py-3">Speichert Ihre Einwilligung bzw. Ablehnung zum Marketing-Tracking (localStorage, technisch notwendig)</td>
+                  <td className="px-4 py-3">Bis zur Löschung oder Änderung</td>
+                </tr>
+                <tr className="border-t border-gray-100">
+                  <td className="px-4 py-3 font-mono text-[12px]">_gcl_au u. a.</td>
+                  <td className="px-4 py-3">Google Ads / Tag Manager: Zuordnung von Anzeigenklicks zu Kontaktaufnahmen (nur mit Einwilligung)</td>
+                  <td className="px-4 py-3">bis zu 90 Tage</td>
+                </tr>
+                <tr className="border-t border-gray-100">
+                  <td className="px-4 py-3 font-mono text-[12px]">__oppref</td>
+                  <td className="px-4 py-3">OpenAI Ads: Kennung aus dem Anzeigenklick in ChatGPT (nur mit Einwilligung)</td>
+                  <td className="px-4 py-3">30 Tage</td>
+                </tr>
+                <tr className="border-t border-gray-100">
+                  <td className="px-4 py-3 font-mono text-[12px]">__obref</td>
+                  <td className="px-4 py-3">OpenAI Ads: zufällige Browser-Kennung für diese Website (nur mit Einwilligung)</td>
+                  <td className="px-4 py-3">365 Tage</td>
                 </tr>
               </tbody>
             </table>
           </div>
+          <p className="mt-4">
+            <CookieSettingsLink className="inline-flex items-center px-4 py-2 rounded-xl border border-gray-300 text-[#080D14] font-semibold text-[14px] hover:border-[#E11D2F] hover:text-[#E11D2F] transition-colors" />
+          </p>
         </section>
 
         <section>

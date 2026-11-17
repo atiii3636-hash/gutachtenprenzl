@@ -5,6 +5,7 @@ import "./globals.css";
 import CookieBanner from "@/components/cookie-banner";
 import FloatingWhatsApp from "@/components/floating-whatsapp";
 import ConversionTracking from "@/components/conversion-tracking";
+import OpenAIPixel from "@/components/openai-pixel";
 import ScrollReveal from "@/components/scroll-reveal";
 
 export const viewport: Viewport = {
@@ -297,6 +298,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ConversionTracking />
         <CookieBanner />
         <GoogleTags />
+        <OpenAIPixel />
         {/* Einblenden der [data-reveal]-Elemente. Als Client-Komponente, weil sie
             bei jedem Seitenwechsel neu greifen muss: Next.js wechselt Seiten ohne
             Neuladen, ein einmalig laufendes Skript würde Folgeseiten unsichtbar lassen. */}

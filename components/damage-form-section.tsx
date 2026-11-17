@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import { Upload, Phone, CheckCircle, Camera, FileText, X, Loader2 } from "lucide-react";
+import { trackOpenAIContact } from "@/components/openai-pixel";
 
 export default function DamageFormSection() {
   const [unfallart, setUnfallart] = useState<"haftpflicht" | "kasko">("haftpflicht");
@@ -79,6 +80,8 @@ export default function DamageFormSection() {
           user_data: { phone_number: phoneE164 },
         });
       }
+      // OpenAI Ads – nur mit Einwilligung
+      trackOpenAIContact("form");
       setSubmitted(true);
     } catch (err: any) {
       setError(`Etwas ist schiefgelaufen (${err?.message ?? "unbekannt"}). Bitte ruf uns direkt an.`);
