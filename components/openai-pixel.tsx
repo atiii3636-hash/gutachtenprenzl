@@ -59,10 +59,11 @@ function load() {
   s.async = true;
   s.src = SDK_SRC;
   document.head.appendChild(s);
-  window.oaiq("init", { pixelId: OPENAI_PIXEL_ID });
   // Einwilligung liegt vor (sonst wären wir nicht hier). Setzt auch eine früher
-  // gespeicherte Ablehnung zurück, falls jemand erst ablehnt und später zustimmt.
+  // gespeicherte Ablehnung zurück. Laut Doku: consent vor init.
   window.oaiq("consent", true);
+  // debug-Ausgaben in der Konsole nur lokal, nie für Besucher
+  window.oaiq("init", { pixelId: OPENAI_PIXEL_ID, debug: process.env.NODE_ENV !== "production" });
 }
 
 /** Widerruf: Messung stoppen und die Pixel-Cookies entfernen. */
