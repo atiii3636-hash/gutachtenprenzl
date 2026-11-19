@@ -76,6 +76,7 @@ const nav = [
   { href: "/videos", label: "Videos" },
   { href: "/faq", label: "Häufige Fragen" },
   { href: "/ueber-uns", label: "Über uns" },
+  { href: "/qualifikationen", label: "Qualifikationen & Bewertungen" },
   { href: "/standorte", label: "Standorte" },
   { href: "/kontakt", label: "Kontakt" },
 ];

@@ -114,7 +114,13 @@ const jsonLd = {
         postalCode: "10405",
         addressCountry: "DE",
       },
-      hasCredential: {
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          name: "Masterabschluss",
+          credentialCategory: "degree",
+        },
+        {
         "@type": "EducationalOccupationalCredential",
         name: "TÜV Rheinland Zertifikat Kfz Sachverständiger",
         credentialCategory: "certification",
@@ -125,7 +131,8 @@ const jsonLd = {
         },
         identifier: "0217466029",
         validUntil: "2028-12-18",
-      },
+        },
+      ],
       knowsAbout: [
         "Unfallgutachten",
         "Kfz-Schadensregulierung",

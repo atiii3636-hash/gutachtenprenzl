@@ -117,6 +117,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/qualifikationen`,
+      ...mod("/qualifikationen"),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/kontakt`,
       ...mod("/kontakt"),
       changeFrequency: "monthly" as const,
