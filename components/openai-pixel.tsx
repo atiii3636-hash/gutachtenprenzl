@@ -80,14 +80,17 @@ export function revokeOpenAIConsent() {
 
 /**
  * Meldet eine Kontaktaufnahme an OpenAI Ads – nur mit Einwilligung.
- * - lead_created: Standard-Ereignis für alle Kontaktwege (Basis für die Kampagnen-Optimierung)
+ * - lead_created: NUR bei erfolgreich eingegangener Formularanfrage (method "form").
+ *   Ein Klick auf Telefon oder WhatsApp ist noch kein Lead (Stand 21.11.2026).
  * - anruf_klick / whatsapp_klick / formular_gesendet: Aufschlüsselung nach Kanal
  * Es werden keine Formularinhalte, Namen oder Telefonnummern übergeben.
  */
 export function trackOpenAIContact(method: ContactMethod) {
   if (typeof window === "undefined" || !hasConsent()) return;
   load();
-  window.oaiq?.("measure", "lead_created", { type: "customer_action" }, OPTIONS);
+  if (method === "form") {
+    window.oaiq?.("measure", "lead_created", { type: "customer_action" }, OPTIONS);
+  }
   window.oaiq?.(
     "measure",
     "custom",

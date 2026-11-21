@@ -7,16 +7,39 @@ export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
 
-    const name        = formData.get("name")        as string;
-    const telefon     = formData.get("telefon")     as string;
-    const beschreibung= formData.get("beschreibung")as string ?? "";
-    const unfallart   = formData.get("unfallart")   as string;
-    const schadenstyp = formData.get("schadenstyp") as string ?? "";
+    // Nutzereingaben landen im HTML der Mail, deshalb escapen und kürzen.
+    const feld = (key: string, max = 2000) =>
+      String(formData.get(key) ?? "")
+        .trim()
+        .slice(0, max)
+        .replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
+
+    const name        = feld("name", 120);
+    const telefon     = feld("telefon", 40);
+    const beschreibung= feld("beschreibung");
+    const unfallart   = feld("unfallart", 20);
+    const schadenstyp = feld("schadenstyp", 60);
+    const unfallort   = feld("unfallort", 200);
+    const unfallzeit  = feld("unfallzeit", 40);
+    const quelle      = feld("quelle", 80);
     const fotoFiles   = formData.getAll("fotos")    as File[];
 
-    if (!name || !telefon) {
+    if (!name || (telefon.match(/\d/g) ?? []).length < 6) {
       return NextResponse.json({ error: "Name und Telefon erforderlich" }, { status: 400 });
     }
+
+    const zusatz = [
+      ["Unfallort", unfallort],
+      ["Unfallzeitpunkt", unfallzeit],
+      ["Quelle", quelle],
+    ]
+      .filter(([, v]) => v)
+      .map(([k, v]) => `
+              <tr style="border-bottom: 1px solid #f0f0f0;">
+                <td style="padding: 12px 0; color: #888; font-size: 13px;">${k}</td>
+                <td style="padding: 12px 0; color: #333; font-size: 14px;">${v}</td>
+              </tr>`)
+      .join("");
 
     // Bilder in Resend-Anhänge umwandeln
     const attachments = await Promise.all(
@@ -31,7 +54,7 @@ export async function POST(req: NextRequest) {
     const { data, error } = await resend.emails.send({
       from: "Gutachten Prenzl <anfrage@gutachtenprenzl.de>",
       to: ["gutachtenprenzl@gmail.com"],
-      subject: `Neue Schadensmeldung von ${name}`,
+      subject: `Neue Schadensmeldung von ${String(formData.get("name") ?? "").trim().slice(0, 120)}`,
       attachments,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f9f9f9; padding: 20px; border-radius: 8px;">
@@ -62,6 +85,7 @@ export async function POST(req: NextRequest) {
                   </span>
                 </td>
               </tr>
+              ${zusatz}
               ${schadenstyp ? `
               <tr style="border-bottom: 1px solid #f0f0f0;">
                 <td style="padding: 12px 0; color: #888; font-size: 13px;">Schadenstyp</td>

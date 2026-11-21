@@ -55,6 +55,7 @@ export default function DatenschutzPage() {
             <li>Vor- und Nachname</li>
             <li>Telefonnummer</li>
             <li>Art des Unfalls (Haftpflicht oder Kasko)</li>
+            <li>Unfallort und Unfalldatum (optional)</li>
             <li>Beschreibung des Schadens (optional)</li>
             <li>Fotos des Fahrzeugschadens (optional)</li>
           </ul>
@@ -98,7 +99,7 @@ export default function DatenschutzPage() {
 
           <h3 className="font-bold text-[#080D14] mt-5 mb-2">E-Mail-Versand (Resend)</h3>
           <p className="text-[14px]">
-            Für den Versand von E-Mails nutzen wir <strong>Resend</strong> (Resend Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA). Die über das Kontaktformular übermittelten Daten (Name, Telefonnummer) werden zur E-Mail-Zustellung an Resend weitergeleitet. Die Übermittlung in die USA erfolgt auf Basis der EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO). Mit Resend besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO.{" "}
+            Für den Versand von E-Mails nutzen wir <strong>Resend</strong> (Resend Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA). Die über das Kontaktformular übermittelten Daten (insbesondere Name und Telefonnummer sowie Ihre optionalen Angaben) werden zur E-Mail-Zustellung an Resend weitergeleitet. Die Übermittlung in die USA erfolgt auf Basis der EU-Standardvertragsklauseln (Art. 46 Abs. 2 lit. c DSGVO). Mit Resend besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO.{" "}
             <a href="https://resend.com/privacy" target="_blank" rel="noopener noreferrer" className="text-[#E11D2F] hover:underline">Datenschutzerklärung Resend</a>.
           </p>
 
