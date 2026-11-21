@@ -13,6 +13,8 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   viewportFit: "cover",
+  // Statusleiste und Browserleisten auf dem Handy in der Seitenfarbe statt durchscheinend
+  themeColor: "#050507",
 };
 
 const karla = Karla({
